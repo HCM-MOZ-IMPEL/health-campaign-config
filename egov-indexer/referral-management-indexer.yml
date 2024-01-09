@@ -2,63 +2,20 @@ ServiceMaps:
   serviceName: referralmanagement
   version: 1.0.0
   mappings:
-    - topic: transformer-producer-bulk-referral-management-index-v1-topic
+    - topic: transformer-producer-referral-index-v1-topic
       configKey: INDEX
       indexes:
-        - name: referral-management-index-v1
-          type: referrals
-          id: $.id
+        - name: referral-index-v1
+          type: referral
+          id: $.referral.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
-            indexMapping: { "Data": {} }
+            indexMapping: { "Data": { } }
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.createdTime
-        - name: user-sync-index-v1
-          type: users
-          id: $.id
-          isBulk: true
-          jsonPath: $
-          customJsonMapping:
-            indexMapping: { "Data": {} }
-            fieldMapping:
-              - inJsonPath: $.lastModifiedBy
-                outJsonPath: $.Data.userId
-              - inJsonPath: $.createdTime
-                outJsonPath: $.Data.createdTime
-              - inJsonPath: $.province
-                outJsonPath: $.Data.province
-              - inJsonPath: $.district
-                outJsonPath: $.Data.district
-              - inJsonPath: $.administrativeProvince
-                outJsonPath: $.Data.administrativeProvince
-              - inJsonPath: $.locality
-                outJsonPath: $.Data.locality
-              - inJsonPath: $.village
-                outJsonPath: $.Data.village
-          timeStampField: $.lastModifiedTime
-
-    - topic: save-referral-topic
-      configKey: INDEX
-      indexes:
-        - name: referral-index-v1
-          type: referral
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.createdTime
-
-    - topic: update-referral-topic
-      configKey: INDEX
-      indexes:
-        - name: referral-index-v1
-          type: referral
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
+          timeStampField: $.referral.auditDetails.createdTime
 
     - topic: delete-referral-topic
       configKey: INDEX
@@ -77,7 +34,12 @@ ServiceMaps:
           type: side-effect
           id: $.sideEffect.id
           isBulk: true
-          jsonPath: $.*
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
           timeStampField: $.sideEffect.auditDetails.createdTime
 
     - topic: delete-side-effect-topic
