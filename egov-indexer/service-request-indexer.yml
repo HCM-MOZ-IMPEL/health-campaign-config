@@ -25,9 +25,9 @@ ServiceMaps:
             indexMapping: { "Data": { } }
             fieldMapping:
               - inJsonPath: $.createdBy
-                outJsonPath: $.Data.userId
+                outJsonPath: $.Data.syncedUserId
               - inJsonPath: $.userName
-                outJsonPath: $.Data.userName
+                outJsonPath: $.Data.syncedUserName
               - inJsonPath: $.role
                 outJsonPath: $.Data.role
               - inJsonPath: $.createdTime
@@ -64,9 +64,9 @@ ServiceMaps:
             indexMapping: { "Data": { } }
             fieldMapping:
               - inJsonPath: $.createdBy
-                outJsonPath: $.Data.userId
+                outJsonPath: $.Data.syncedUserId
               - inJsonPath: $.userName
-                outJsonPath: $.Data.userName
+                outJsonPath: $.Data.syncedUserName
               - inJsonPath: $.role
                 outJsonPath: $.Data.role
               - inJsonPath: $.boundaryHierarchy
