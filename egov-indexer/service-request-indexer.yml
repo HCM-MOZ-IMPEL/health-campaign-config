@@ -26,7 +26,7 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $.createdBy
                 outJsonPath: $.Data.syncedUserId
-              - inJsonPath: $.syncedUserName
+              - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName
               - inJsonPath: $.role
                 outJsonPath: $.Data.role
@@ -65,7 +65,7 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $.createdBy
                 outJsonPath: $.Data.syncedUserId
-              - inJsonPath: $.syncedUserName
+              - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName
               - inJsonPath: $.role
                 outJsonPath: $.Data.role
