@@ -5,11 +5,16 @@ ServiceMaps:
     - topic: transformer-producer-household-index-v1-topic
       configKey: INDEX
       indexes:
-        - name: household-index-v1
+        - name: new-household-index-v1
           type: household
           id: $.household.clientReferenceId
           isBulk: true
           jsonPath: $.*
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
           timeStampField: $.household.auditDetails.createdTime
     - topic: delete-household-topic
       configKey: INDEX
