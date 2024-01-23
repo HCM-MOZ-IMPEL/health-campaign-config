@@ -2,63 +2,45 @@ ServiceMaps:
   serviceName: referralmanagement
   version: 1.0.0
   mappings:
-    - topic: transformer-producer-bulk-referral-management-index-v1-topic
+    - topic: transformer-producer-referral-index-v1-topic
       configKey: INDEX
       indexes:
-        - name: referral-management-index-v1
-          type: referrals
-          id: $.id
+        - name: referral-index-v1
+          type: referral
+          id: $.referral.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
-            indexMapping: { "Data": {} }
+            indexMapping: { "Data": { } }
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.createdTime
+          timeStampField: $.referral.auditDetails.createdTime
         - name: user-sync-index-v1
           type: users
-          id: $.id
+          id: $.referral.id,$.referral.tenantId
           isBulk: true
           jsonPath: $
           customJsonMapping:
-            indexMapping: { "Data": {} }
+            indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.lastModifiedBy
-                outJsonPath: $.Data.userId
-              - inJsonPath: $.createdTime
+              - inJsonPath: $.referral.clientAuditDetails.lastModifiedBy
+                outJsonPath: $.Data.syncedUserId
+              - inJsonPath: $.userName
+                outJsonPath: $.Data.syncedUserName
+              - inJsonPath: $.role
+                outJsonPath: $.Data.role
+              - inJsonPath: $.boundaryHierarchy
+                outJsonPath: $.Data.boundaryHierarchy
+              - inJsonPath: $.referral.clientAuditDetails.createdTime
+                outJsonPath: $.Data.clientCreatedTime
+              - inJsonPath: $.referral.auditDetails.syncedTime
                 outJsonPath: $.Data.createdTime
-              - inJsonPath: $.province
-                outJsonPath: $.Data.province
-              - inJsonPath: $.district
-                outJsonPath: $.Data.district
-              - inJsonPath: $.administrativeProvince
-                outJsonPath: $.Data.administrativeProvince
-              - inJsonPath: $.locality
-                outJsonPath: $.Data.locality
-              - inJsonPath: $.village
-                outJsonPath: $.Data.village
-          timeStampField: $.lastModifiedTime
-
-    - topic: save-referral-topic
-      configKey: INDEX
-      indexes:
-        - name: referral-index-v1
-          type: referral
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.createdTime
-
-    - topic: update-referral-topic
-      configKey: INDEX
-      indexes:
-        - name: referral-index-v1
-          type: referral
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
+              - inJsonPath: $.@timestamp
+                outJsonPath: $.Data.syncedTimeStamp
+              - inJsonPath: $.@timestamp
+                outJsonPath: $.Data.@timestamp
+          timeStampField: $.referral.auditDetails.syncedTime
 
     - topic: delete-referral-topic
       configKey: INDEX
@@ -70,25 +52,45 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: save-side-effect-topic
+    - topic: transformer-producer-side-effect-index-v1-topic
       configKey: INDEX
       indexes:
         - name: side-effect-index-v1
           type: side-effect
-          id: $.id
+          id: $.sideEffect.id
           isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.createdTime
-
-    - topic: update-side-effect-topic
-      configKey: INDEX
-      indexes:
-        - name: side-effect-index-v1
-          type: side-effect
-          id: $.id
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.sideEffect.auditDetails.createdTime
+        - name: user-sync-index-v1
+          type: users
+          id: $.sideEffect.id,$.sideEffect.tenantId
           isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $.sideEffect.clientAuditDetails.lastModifiedBy
+                outJsonPath: $.Data.syncedUserId
+              - inJsonPath: $.userName
+                outJsonPath: $.Data.syncedUserName
+              - inJsonPath: $.role
+                outJsonPath: $.Data.role
+              - inJsonPath: $.boundaryHierarchy
+                outJsonPath: $.Data.boundaryHierarchy
+              - inJsonPath: $.sideEffect.clientAuditDetails.createdTime
+                outJsonPath: $.Data.clientCreatedTime
+              - inJsonPath: $.sideEffect.auditDetails.syncedTime
+                outJsonPath: $.Data.createdTime
+              - inJsonPath: $.@timestamp
+                outJsonPath: $.Data.syncedTimeStamp
+              - inJsonPath: $.@timestamp
+                outJsonPath: $.Data.@timestamp
+          timeStampField: $.sideEffect.auditDetails.syncedTime
 
     - topic: delete-side-effect-topic
       configKey: INDEX
