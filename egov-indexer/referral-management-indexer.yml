@@ -34,7 +34,7 @@ ServiceMaps:
                 outJsonPath: $.Data.boundaryHierarchy
               - inJsonPath: $.referral.clientAuditDetails.createdTime
                 outJsonPath: $.Data.clientCreatedTime
-              - inJsonPath: $.referral.auditDetails.syncedTime
+              - inJsonPath: $.referral.auditDetails.createdTime
                 outJsonPath: $.Data.createdTime
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.syncedTimeStamp
@@ -84,7 +84,7 @@ ServiceMaps:
                 outJsonPath: $.Data.boundaryHierarchy
               - inJsonPath: $.sideEffect.clientAuditDetails.createdTime
                 outJsonPath: $.Data.clientCreatedTime
-              - inJsonPath: $.sideEffect.auditDetails.syncedTime
+              - inJsonPath: $.sideEffect.auditDetails.createdTime
                 outJsonPath: $.Data.createdTime
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.syncedTimeStamp
