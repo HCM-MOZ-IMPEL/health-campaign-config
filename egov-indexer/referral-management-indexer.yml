@@ -34,7 +34,7 @@ ServiceMaps:
                 outJsonPath: $.Data.boundaryHierarchy
               - inJsonPath: $.referral.clientAuditDetails.createdTime
                 outJsonPath: $.Data.clientCreatedTime
-              - inJsonPath: $.referral.auditDetails.createdTime
+              - inJsonPath: $.referral.auditDetails.lastModifiedTime
                 outJsonPath: $.Data.createdTime
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.syncedTimeStamp
@@ -46,7 +46,7 @@ ServiceMaps:
                 outJsonPath: $.Data.syncedDate
               - inJsonPath: $.userAddress
                 outJsonPath: $.Data.userAddress
-          timeStampField: $.referral.auditDetails.syncedTime
+          timeStampField: $.referral.auditDetails.lastModifiedTime
 
     - topic: delete-referral-topic
       configKey: INDEX
@@ -90,13 +90,19 @@ ServiceMaps:
                 outJsonPath: $.Data.boundaryHierarchy
               - inJsonPath: $.sideEffect.clientAuditDetails.createdTime
                 outJsonPath: $.Data.clientCreatedTime
-              - inJsonPath: $.sideEffect.auditDetails.createdTime
+              - inJsonPath: $.sideEffect.auditDetails.lastModifiedTime
                 outJsonPath: $.Data.createdTime
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.syncedTimeStamp
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.@timestamp
-          timeStampField: $.sideEffect.auditDetails.syncedTime
+              - inJsonPath: $.taskDates
+                outJsonPath: $.Data.taskDates
+              - inJsonPath: $.syncedDate
+                outJsonPath: $.Data.syncedDate
+              - inJsonPath: $.userAddress
+                outJsonPath: $.Data.userAddress
+          timeStampField: $.sideEffect.auditDetails.lastModifiedTime
 
     - topic: delete-side-effect-topic
       configKey: INDEX
