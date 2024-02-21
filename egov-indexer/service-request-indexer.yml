@@ -44,6 +44,8 @@ ServiceMaps:
                 outJsonPath: $.Data.taskDates
               - inJsonPath: $.userAddress
                 outJsonPath: $.Data.userAddress
+              - inJsonPath: $.additionalDetails
+                outJsonPath: $.Data.additionalDetails
           timeStampField: $.createdTime
     - topic: transformer-producer-service-index-v2-topic
       configKey: INDEX

@@ -46,4 +46,6 @@ ServiceMaps:
                 outJsonPath: $.Data.syncedDate
               - inJsonPath: $.userAddress
                 outJsonPath: $.Data.userAddress
+              - inJsonPath: $.additionalDetails
+                outJsonPath: $.Data.additionalDetails
           timeStampField: $.createdTime

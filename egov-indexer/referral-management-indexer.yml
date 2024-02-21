@@ -102,6 +102,8 @@ ServiceMaps:
                 outJsonPath: $.Data.syncedDate
               - inJsonPath: $.userAddress
                 outJsonPath: $.Data.userAddress
+              - inJsonPath: $.additionalDetails
+                outJsonPath: $.Data.additionalDetails
           timeStampField: $.sideEffect.auditDetails.lastModifiedTime
 
     - topic: delete-side-effect-topic
