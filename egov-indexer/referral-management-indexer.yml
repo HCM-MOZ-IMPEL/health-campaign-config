@@ -24,7 +24,7 @@ ServiceMaps:
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.referral.clientAuditDetails.lastModifiedBy
+              - inJsonPath: $.referral.clientAuditDetails.createdBy
                 outJsonPath: $.Data.syncedUserId
               - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName
@@ -80,7 +80,7 @@ ServiceMaps:
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.sideEffect.clientAuditDetails.lastModifiedBy
+              - inJsonPath: $.sideEffect.clientAuditDetails.createdBy
                 outJsonPath: $.Data.syncedUserId
               - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName

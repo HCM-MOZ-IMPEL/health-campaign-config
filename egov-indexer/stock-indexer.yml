@@ -24,7 +24,7 @@ ServiceMaps:
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.lastModifiedBy
+              - inJsonPath: $.createdBy
                 outJsonPath: $.Data.syncedUserId
               - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName

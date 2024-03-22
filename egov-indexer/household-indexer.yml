@@ -15,7 +15,7 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.household.auditDetails.createdTime
+          timeStampField: $.household.clientAuditDetails.createdTime
     - topic: delete-household-topic
       configKey: INDEX
       indexes:
