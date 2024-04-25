@@ -10,7 +10,12 @@ ServiceMaps:
           id: $.household.clientReferenceId
           isBulk: true
           jsonPath: $.*
-          timeStampField: $.household.auditDetails.createdTime
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.household.clientAuditDetails.createdTime
     - topic: delete-household-topic
       configKey: INDEX
       indexes:
