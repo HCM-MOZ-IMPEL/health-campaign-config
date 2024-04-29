@@ -92,7 +92,7 @@ ServiceMaps:
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
           timeStampField: $.createdTime
-    - topic:
+    - topic: transformer-producer-hfreferral-service-index-topic
       configKey: INDEX
       indexes:
         - name: hf-referral-service-task-v1
@@ -108,7 +108,7 @@ ServiceMaps:
           timeStampField: $.createdTime
         - name: user-sync-index-v1
           type: users
-          id: $.id,$.ageGroup
+          id: $.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
