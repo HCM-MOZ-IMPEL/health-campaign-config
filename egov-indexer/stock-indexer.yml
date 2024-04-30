@@ -50,12 +50,12 @@ ServiceMaps:
                 outJsonPath: $.Data.additionalDetails
           timeStampField: $.createdTime
 
-    - topic: transformer-producer-stock-recon-index-v1-topic
+    - topic: save-stock-reconciliation-topic
       configKey: INDEX
       indexes:
         - name: stock-reconciliation-index-v1
           type: reconciliation
-          id: $.stockReconciliation.id
+          id: $.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
@@ -63,5 +63,5 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.stockReconciliation.auditDetails.createdTime
+          timeStampField: $.clientAuditDetails.createdTime
 
