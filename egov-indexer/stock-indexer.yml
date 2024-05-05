@@ -63,5 +63,5 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.stockReconciliation.clientAuditDetails.createdTime
+          timeStampField: $.stockReconciliation.clientAuditDetails.lastModifiedTime
 
