@@ -2,7 +2,7 @@ ServiceMaps:
   serviceName: python
   version: 1.0.0
   mappings:
-    - topic:
+    - topic: test-python-kafka
       configKey: INDEX
       indexes:
         - name: test-python-kafka
