@@ -1,13 +1,21 @@
 scripts:
   - name: script1.py
     path: script1.py
-    frequency: '1' # every {frequency} minutes
-    env: {}
-  - name: population_coverage_heatmap.py
-    path: population_coverage_heatmap.py
     frequency: '1'
     env: {}
   - name: script2.py
     path: script2.py
+    env: {}
     frequency: '2'
+  - name: population_coverage_heatmap.py
+    path: population_coverage_heatmap.py
+    frequency: '1'
+    env: {}
+  - name: delivered_coverage_heatmap.py
+    path: delivered_coverage_heatmap.py
+    frequency: '1'
+    env: {}
+  - name: dose_coverage_heatmap.py
+    path: dose_coverage_heatmap.py
+    frequency: '1'
     env: {}
