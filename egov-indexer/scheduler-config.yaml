@@ -1,0 +1,13 @@
+scripts:
+  - name: script1.py
+    path: script1.py
+    frequency: '1' # every {frequency} minutes
+    env: {}
+  - name: population_coverage_heatmap.py
+    path: population_coverage_heatmap.py
+    frequency: '1'
+    env: {}
+  - name: script2.py
+    path: script2.py
+    frequency: '2'
+    env: {}
