@@ -1,7 +1,7 @@
 {
   "populationCoverageHeatMap": [
     {
-      "destMapLayerIndex": "copy-kano-wards",
+      "destMapLayerIndex": "copy-minjibir-wards",
       "mapIndexIdVsBoundaryQuery": {
         "size": 200,
         "_source": [
@@ -84,7 +84,7 @@
   ],
   "householdCoverageHeatMap": [
     {
-      "destMapLayerIndex": "copy-kano-wards",
+      "destMapLayerIndex": "copy-minjibir-wards",
       "mapIndexIdVsBoundaryQuery": {
         "size": 200,
         "_source": [
@@ -159,7 +159,7 @@
   ],
   "deliveredCoverageHeatMap": [
     {
-      "destMapLayerIndex": "copy-kano-wards",
+      "destMapLayerIndex": "copy-minjibir-wards",
       "mapIndexIdVsBoundaryQuery": {
         "size": 200,
         "_source": [
@@ -242,7 +242,7 @@
   ],
   "productCoverageHeatMap": [
     {
-      "destMapLayerIndex": "copy-kano-wards",
+      "destMapLayerIndex": "copy-minjibir-wards",
       "mapIndexIdVsBoundaryQuery": {
         "size": 200,
         "_source": [
