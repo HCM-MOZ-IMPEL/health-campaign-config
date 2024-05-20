@@ -17,8 +17,8 @@ scripts:
     requirementKey: deliveredCoverageHeatMap
     frequency: '1'
     env: {}
-  - name: dose_coverage_heatmap.py
-    path: dose_coverage_heatmap.py
-    requirementKey: doseCoverageHeatMap
+  - name: product_coverage_heatmap.py
+    path: product_coverage_heatmap.py
+    requirementKey: productCoverageHeatMap
     frequency: '1'
     env: {}
