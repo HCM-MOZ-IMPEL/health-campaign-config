@@ -2,7 +2,7 @@ ServiceMaps:
   serviceName: household
   version: 1.0.0
   mappings:
-    - topic: transformer-producer-household-index-v1-topic
+    - topic: transformer-producer-household-index-v1-training-topic
       configKey: INDEX
       indexes:
         - name: household-index-v1
@@ -25,7 +25,7 @@ ServiceMaps:
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
-    - topic: transformer-producer-household-member-index-v1-topic
+    - topic: transformer-producer-household-member-index-v1-training-topic
       configKey: INDEX
       indexes:
         - name: household-member-index-v1

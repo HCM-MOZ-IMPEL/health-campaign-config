@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Persists Individual
-      fromTopic: save-individual-topic
+      fromTopic: save-individual-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: INDIVIDUAL
@@ -119,7 +119,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates Individual
-      fromTopic: update-individual-topic
+      fromTopic: update-individual-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: INDIVIDUAL-UPDATE
@@ -251,7 +251,7 @@ serviceMaps:
 
     - version: 1.0
       description: Deletes Individual and related Entities
-      fromTopic: delete-individual-topic
+      fromTopic: delete-individual-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: INDIVIDUAL-DELETE
@@ -297,7 +297,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates userId and userUuid received from user-service into an individual
-      fromTopic: update-user-id-topic
+      fromTopic: update-user-id-training-topic
       isTransaction: true
       queryMaps:
         - query: UPDATE individual SET userId=?, userUuid=? WHERE id=?;

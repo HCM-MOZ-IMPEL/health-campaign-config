@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Persists DHIS2 Records into the tables
-      fromTopic: create-dhis2-record
+      fromTopic: create-dhis2-record-training
       isTransaction: true
       queryMaps:
         - query: INSERT INTO eg_dhis2_record(dhis2RecordInternalID,dhis2Id,parentId,dhis2EntityType,dhis2DataPayload,source,createdBy,lastModifiedBy,createdTime,lastModifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
@@ -24,7 +24,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates DHIS2 records into the tables
-      fromTopic: update-dhis2-record
+      fromTopic: update-dhis2-record-training
       isTransaction: true  
       queryMaps:
         - query: UPDATE eg_dhis2_record SET  dhis2Id= ?, dhis2EntityType=?, dhis2DataPayload=?, lastModifiedTime=?, lastModifiedBy=?  WHERE dhis2RecordInternalID=?;
@@ -41,7 +41,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists DIGIT Records into the tables
-      fromTopic: create-digit-record
+      fromTopic: create-digit-record-training
       isTransaction: true
       queryMaps:
         - query: INSERT INTO eg_digit_record(digitRecordInternalId,digitId,parentId,referenceId,digitEntityType,digitDataPayload,source,createdBy,lastModifiedBy,createdTime,lastModifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
@@ -63,7 +63,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates DIGIT records into the tables
-      fromTopic: update-digit-record    
+      fromTopic: update-digit-record-training  
       isTransaction: true
       queryMaps:
         - query: UPDATE eg_digit_record SET  digitId= ?,referenceId=? ,digitEntityType=?, digitDataPayload=?, lastModifiedTime=?, lastModifiedBy=? WHERE digitRecordInternalId=?;
@@ -81,7 +81,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists DHIS2 to Digit identifiers mapping into the tables
-      fromTopic: create-dhis2-digit-mapping
+      fromTopic: create-dhis2-digit-mapping-training
       isTransaction: true
       queryMaps:
         - query: INSERT INTO eg_digit_mapping(digitMappingId, dhis2RecordInternalID, digitId, parentId, rowVersion, digitEntityType, createdBy,lastModifiedBy,createdTime,lastModifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
@@ -100,7 +100,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates DHIS2 to Digit identifiers mapping into the tables
-      fromTopic: update-dhis2-digit-mapping
+      fromTopic: update-dhis2-digit-mapping-training
       isTransaction: true
       queryMaps:
         - query: UPDATE eg_digit_mapping SET  digitId= ?, digitEntityType=?, dhis2RecordInternalID=?, lastModifiedTime=?, lastModifiedBy=?, rowVersion=?  WHERE digitMappingId=?;
@@ -116,7 +116,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists Digit to DHIS2 identifiers mapping into the tables
-      fromTopic: create-digit-dhis2-mapping
+      fromTopic: create-digit-dhis2-mapping-training
       isTransaction: true
       queryMaps:
         - query: INSERT INTO eg_dhis2_mapping(dhis2MappingId, digitRecordInternalId, dhis2d,parentId,dhis2EntityType, createdBy,lastModifiedBy,createdTime,lastModifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
@@ -134,7 +134,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates Digit to DHIS2 identifiers mapping into the tables
-      fromTopic: update-digit-dhis2-mapping
+      fromTopic: update-digit-dhis2-mapping-training
       isTransaction: true
       queryMaps:
         - query: UPDATE eg_dhis2_mapping SET  dhis2d= ?, dhis2EntityType=?, digitRecordInternalId=?, lastModifiedTime=?, lastModifiedBy=? WHERE dhis2MappingId=?;
@@ -149,7 +149,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists DHIS2 to Digit transformation job history into the tables
-      fromTopic: create-dhis2-job
+      fromTopic: create-dhis2-job-training
       isTransaction: true
       queryMaps:
         - query: INSERT INTO eg_scheduler_job_history(jobID, jobType, jobName, executionStartTime, executionCompletionTime, executionStatus, executionRetryCount, createdBy,lastModifiedBy,createdTime,lastModifiedTime,syncCount,province) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
@@ -173,7 +173,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update DHIS2 to Digit transformation job history in table
-      fromTopic: update-dhis2-job
+      fromTopic: update-dhis2-job-training
       isTransaction: true
       queryMaps:
         - query: UPDATE eg_scheduler_job_history SET executionStatus = ?, executionCompletionTime = ?, executionRetryCount = ?, syncCount = ? WHERE jobID=?;
@@ -200,7 +200,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists Boundary data into the table
-      fromTopic: create-boundary-data
+      fromTopic: create-boundary-data-training
       isTransaction: true
       queryMaps:
         - query: INSERT INTO eg_dhis2_boundary(id, name, parent, path, children, boundaryLevel, boundary, source, campaignStartDate, campaignEndDate, totalHouseholds, targetedHouseholds, totalIndividuals, targetedIndividuals, bednetsEstimated, totalBednets, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET name=?, parent=?, path=?, children=?, boundaryLevel=?, boundary=?, source=?, lastModifiedBy=?, lastModifiedTime=?, campaignStartDate=?, campaignEndDate=?, totalHouseholds=?, targetedHouseholds=?, totalIndividuals=?, targetedIndividuals=?, bednetsEstimated=?, totalBednets=?;
@@ -282,7 +282,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists Boundary(CSV) data into the table
-      fromTopic: create-boundaryCSV-data
+      fromTopic: create-boundaryCSV-data-training
       isTransaction: true
       queryMaps:
         - query: INSERT INTO eg_dhis2_boundary_csv(id, name, parent, path, children, boundaryLevel, boundary, source, campaignStartDate, campaignEndDate, objectNode, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET name=?, parent=?, path=?, children=?, boundaryLevel=?, boundary=?, source=?, lastModifiedBy=?, lastModifiedTime=?, objectNode=?;

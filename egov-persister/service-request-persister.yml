@@ -85,7 +85,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists service details in service table
-      fromTopic: save-service
+      fromTopic: save-service-training
       isTransaction: true
       isAuditEnabled: true
       module: SAVE-SERVICE

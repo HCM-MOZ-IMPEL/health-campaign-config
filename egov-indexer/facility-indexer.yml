@@ -2,7 +2,7 @@ ServiceMaps:
   serviceName: facility
   version: 1.0.0
   mappings:
-    - topic: save-facility-topic
+    - topic: save-facility-training-topic
       configKey: INDEX
       indexes:
         - name: facility-index-v1
@@ -11,7 +11,7 @@ ServiceMaps:
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
-    - topic: update-facility-topic
+    - topic: update-facility-training-topic
       configKey: INDEX
       indexes:
         - name: facility-index-v1

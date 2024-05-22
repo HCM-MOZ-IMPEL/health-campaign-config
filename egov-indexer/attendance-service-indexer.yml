@@ -62,7 +62,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: transformer-save-attendance-register
+    - topic: transformer-save-attendance-register-training
       configKey: INDEX
       indexes:
         - name: transformed-attendance-register-index-v1
@@ -72,7 +72,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.attendanceRegister.auditDetails.lastModifiedTime
 
-    - topic: transformer-save-attendance-log
+    - topic: transformer-save-attendance-log-training
       configKey: INDEX
       indexes:
         - name: attendance-log-index-v1
@@ -82,7 +82,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.attendanceLog.auditDetails.lastModifiedTime
 
-    - topic: update-attendance-log
+    - topic: update-attendance-log-training
       configKey: INDEX
       indexes:
         - name: attendance-log-index-v1

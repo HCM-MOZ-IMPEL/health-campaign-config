@@ -2,7 +2,7 @@ ServiceMaps:
   serviceName: stock
   version: 1.0.0
   mappings:
-    - topic: transformer-producer-bulk-stock-index-v1-topic
+    - topic: transformer-producer-bulk-stock-index-v1-training-topic
       configKey: INDEX
       indexes:
         - name: stock-index-v1
@@ -50,7 +50,7 @@ ServiceMaps:
                 outJsonPath: $.Data.additionalDetails
           timeStampField: $.createdTime
 
-    - topic: transformer-producer-stock-recon-index-v1-topic
+    - topic: transformer-producer-stock-recon-index-v1-training-topic
       configKey: INDEX
       indexes:
         - name: stock-reconciliation-index-v1

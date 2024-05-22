@@ -2,7 +2,7 @@ ServiceMaps:
   serviceName: Project Service
   version: 1.0.0
   mappings:
-    - topic: transformer-producer-bulk-project-index-v1-topic
+    - topic: transformer-producer-bulk-project-index-v1-training-topic
       configKey: INDEX
       indexes:
         - name: project-index-v1
@@ -17,7 +17,7 @@ ServiceMaps:
                 outJsonPath: $.Data
           timeStampField: $.createdTime
 
-    - topic: save-project-beneficiary-topic
+    - topic: save-project-beneficiary-training-topic
       configKey: INDEX
       indexes:
         - name: project-beneficiary-index-v1
@@ -27,7 +27,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-project-beneficiary-topic
+    - topic: update-project-beneficiary-training-topic
       configKey: INDEX
       indexes:
         - name: project-beneficiary-index-v1
@@ -37,7 +37,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: delete-project-beneficiary-topic
+    - topic: delete-project-beneficiary-training-topic
       configKey: INDEX
       indexes:
         - name: project-beneficiary-index-v1
@@ -48,7 +48,7 @@ ServiceMaps:
           timeStampField: $.auditDetails.lastModifiedTime
 
 
-    - topic: save-project-resource-topic
+    - topic: save-project-resource-training-topic
       configKey: INDEX
       indexes:
         - name: project-resource-index-v1
@@ -58,7 +58,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-project-resource-topic
+    - topic: update-project-resource-training-topic
       configKey: INDEX
       indexes:
         - name: project-resource-index-v1
@@ -68,7 +68,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: delete-project-resource-topic
+    - topic: delete-project-resource-training-topic
       configKey: INDEX
       indexes:
         - name: project-resource-index-v1
@@ -78,7 +78,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: save-project-facility-topic
+    - topic: save-project-facility-training-topic
       configKey: INDEX
       indexes:
         - name: project-facility-index-v1
@@ -88,7 +88,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-project-facility-topic
+    - topic: update-project-facility-training-topic
       configKey: INDEX
       indexes:
         - name: project-facility-index-v1
@@ -98,7 +98,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: delete-project-facility-topic
+    - topic: delete-project-facility-training-topic
       configKey: INDEX
       indexes:
         - name: project-facility-index-v1

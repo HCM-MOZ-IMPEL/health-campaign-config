@@ -155,7 +155,7 @@ serviceMaps:
  - version: 1.0
    name: Attendance Log
    description: Persists attendance logs and corresponding documents
-   fromTopic: save-attendance-log
+   fromTopic: save-attendance-log-training
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -224,7 +224,7 @@ serviceMaps:
  - version: 1.0
    name: Attendance Log
    description: Update attendance logs and corresponding documents
-   fromTopic: update-attendance-log
+   fromTopic: update-attendance-log-training
    isTransaction: true
    isAuditEnabled: true
    module: ATND

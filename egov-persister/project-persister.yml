@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Saves a project staff
-      fromTopic: save-project-staff-topic
+      fromTopic: save-project-staff-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-STAFF
@@ -36,7 +36,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update Project Staff
-      fromTopic: update-project-staff-topic
+      fromTopic: update-project-staff-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-STAFF-UPDATE
@@ -66,7 +66,7 @@ serviceMaps:
 
     - version: 1.0
       description: Deletes Project Staff
-      fromTopic: delete-project-staff-topic
+      fromTopic: delete-project-staff-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-STAFF-DELETE
@@ -92,7 +92,7 @@ serviceMaps:
 
     - version: 1.0
       description: Saves a project beneficiary
-      fromTopic: save-project-beneficiary-topic
+      fromTopic: save-project-beneficiary-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-BENEFICIARY
@@ -131,7 +131,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update Project Beneficiary
-      fromTopic: update-project-beneficiary-topic
+      fromTopic: update-project-beneficiary-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-BEBEFICIARY-UPDATE
@@ -165,7 +165,7 @@ serviceMaps:
 
     - version: 1.0
       description: Deletes Project Beneficiaries
-      fromTopic: delete-project-beneficiary-topic
+      fromTopic: delete-project-beneficiary-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-BENEFICIARY-DELETE
@@ -194,7 +194,7 @@ serviceMaps:
     - version: 1.0
       name: Projects
       description: Persists project details in project table
-      fromTopic: save-project
+      fromTopic: save-project-training
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -351,7 +351,7 @@ serviceMaps:
     - version: 1.0
       name: Projects
       description: Updates project details in project table
-      fromTopic: update-project
+      fromTopic: update-project-training
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-UPDATE
@@ -523,7 +523,7 @@ serviceMaps:
 
     - version: 1.0
       description: Saves a project resourcce
-      fromTopic: save-project-resource-topic
+      fromTopic: save-project-resource-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-RESOURCE
@@ -555,7 +555,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update a project resourcce
-      fromTopic: update-project-resource-topic
+      fromTopic: update-project-resource-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-RESOURCE-UPDATE
@@ -585,7 +585,7 @@ serviceMaps:
 
     - version: 1.0
       description: Delete a project resourcce
-      fromTopic: delete-project-resource-topic
+      fromTopic: delete-project-resource-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-RESOURCE-UPDATE
@@ -611,7 +611,7 @@ serviceMaps:
 
     - version: 1.0
       description: Saves a project facility
-      fromTopic: save-project-facility-topic
+      fromTopic: save-project-facility-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-FACILITY
@@ -653,7 +653,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update Project Facility
-      fromTopic: update-project-facility-topic
+      fromTopic: update-project-facility-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-FACILITY
@@ -689,7 +689,7 @@ serviceMaps:
 
     - version: 1.0
       description: Deletes Project Facility
-      fromTopic: delete-project-facility-topic
+      fromTopic: delete-project-facility-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT-FACILITY

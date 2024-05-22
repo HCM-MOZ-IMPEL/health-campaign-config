@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Saves a stock
-      fromTopic: save-stock-topic
+      fromTopic: save-stock-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: STOCK
@@ -48,7 +48,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates a stock
-      fromTopic: update-stock-topic
+      fromTopic: update-stock-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: STOCK-UPDATE
@@ -116,7 +116,7 @@ serviceMaps:
 
     - version: 1.0
       description: Saves a stock reconciliation
-      fromTopic: save-stock-reconciliation-topic
+      fromTopic: save-stock-reconciliation-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: STOCK-RECONCILE
@@ -158,7 +158,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates a stock reconciliation
-      fromTopic: update-stock-reconciliation-topic
+      fromTopic: update-stock-reconciliation-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: STOCK-RECONCILE-UPDATE

@@ -2,7 +2,7 @@ ServiceMaps:
   serviceName: referralmanagement
   version: 1.0.0
   mappings:
-    - topic: transformer-producer-referral-index-v1-topic
+    - topic: transformer-producer-referral-index-v1-training-topic
       configKey: INDEX
       indexes:
         - name: referral-index-v1
@@ -48,7 +48,7 @@ ServiceMaps:
                 outJsonPath: $.Data.userAddress
           timeStampField: $.referral.auditDetails.lastModifiedTime
 
-    - topic: delete-referral-topic
+    - topic: delete-referral-training-topic
       configKey: INDEX
       indexes:
         - name: referral-index-v1
@@ -58,7 +58,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: transformer-producer-side-effect-index-v1-topic
+    - topic: transformer-producer-side-effect-index-v1-training-topic
       configKey: INDEX
       indexes:
         - name: side-effect-index-v1
@@ -106,7 +106,7 @@ ServiceMaps:
                 outJsonPath: $.Data.additionalDetails
           timeStampField: $.sideEffect.auditDetails.lastModifiedTime
 
-    - topic: delete-side-effect-topic
+    - topic: delete-side-effect-training-topic
       configKey: INDEX
       indexes:
         - name: side-effect-index-v1
@@ -116,7 +116,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: save-hfreferral-topic
+    - topic: save-hfreferral-training-topic
       configKey: INDEX
       indexes:
         - name: hf-referral-index-v1
@@ -126,7 +126,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-hfreferral-topic
+    - topic: update-hfreferral-training-topic
       configKey: INDEX
       indexes:
         - name: hf-referral-index-v1
@@ -136,7 +136,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: delete-hfreferral-topic
+    - topic: delete-hfreferral-training-topic
       configKey: INDEX
       indexes:
         - name: hf-referral-index-v1

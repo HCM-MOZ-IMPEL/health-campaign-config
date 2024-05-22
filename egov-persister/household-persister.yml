@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Persists household.
-      fromTopic: save-household-topic
+      fromTopic: save-household-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD
@@ -56,7 +56,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates household.
-      fromTopic: update-household-topic
+      fromTopic: update-household-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD-UPDATE
@@ -145,7 +145,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists household member.
-      fromTopic: save-household-member-topic
+      fromTopic: save-household-member-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD-MEMBER
@@ -181,7 +181,7 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
     - version: 1.0
       description: Update household member.
-      fromTopic: update-household-member-topic
+      fromTopic: update-household-member-training-topic
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD-MEMBER-UPDATE

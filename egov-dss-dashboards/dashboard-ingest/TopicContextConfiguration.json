@@ -1,7 +1,7 @@
 {
   "topicContextConfigurations": [
     {
-      "topic": "dss-collection-update",
+      "topic": "dss-collection-update-training",
       "dataContext": "collection",
       "dataContextVersion": "v1"
     },
