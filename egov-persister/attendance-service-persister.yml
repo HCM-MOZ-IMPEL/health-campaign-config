@@ -164,7 +164,7 @@ serviceMaps:
    transactionCodeJsonPath: $.registerId
    auditAttributeBasePath: $.attendance.*
    queryMaps:
-    - query: INSERT INTO eg_wms_attendance_log(id,clientreferenceid,tenantid,individual_id,register_id,status,time,event_type,additionaldetails,createdby,lastmodifiedby,createdtime,lastmodifiedtimeclientcreatedby, clientlastmodifiedby, clientcreatedtime, clientlastmodifiedtime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+    - query: INSERT INTO eg_wms_attendance_log(id,clientreferenceid,tenantid,individual_id,register_id,status,time,event_type,additionaldetails,createdby,lastmodifiedby,createdtime,lastmodifiedtime,clientcreatedby, clientlastmodifiedby, clientcreatedtime, clientlastmodifiedtime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
       basePath: $.attendance.*
       jsonMaps:
        - jsonPath: $.attendance.*.id
