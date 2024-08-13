@@ -2,6 +2,24 @@ ServiceMaps:
   serviceName: project
   version: 1.0.0
   mappings:
+    - topic: save-project-task-topic
+      configKey: INDEX
+      indexes:
+        - name: sample-project-task-index-v1
+          type: individual
+          id: $.clientReferenceId
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.createdTime
+    - topic: save-project-task-bulk-topic
+      configKey: INDEX
+      indexes:
+        - name: bulk-project-task-index-v1
+          type: individual
+          id: $.clientReferenceId
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.createdTime
     - topic: transformer-producer-bulk-project-task-index-v1-topic
       configKey: INDEX
       indexes:
