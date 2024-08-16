@@ -4,10 +4,10 @@
     "queries" : [
       {
         "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\":\"Data.createdBy.keyword\"}",
+        "dateRefField": "",
+        "requestQueryMap": "",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"totalHouseholdSprayed\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}},\"query\":{\"match\":{\"Data.administrationStatus\":\"ADMINISTRATION_SUCCESS\"}}}"
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filter\": {\n        \"term\": {\n          \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n        }\n      },\n      \"aggs\": {\n        \"totalHouseholdSprayed\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "metric",
