@@ -4,7 +4,7 @@
     "queries" : [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filter\": {\n        \"term\": {\n          \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n        }\n      },\n      \"aggs\": {\n        \"totalHouseholdSprayed\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
