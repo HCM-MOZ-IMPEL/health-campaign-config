@@ -99,4 +99,6 @@ ServiceMaps:
                 outJsonPath: $.Data.gender
               - inJsonPath: $.geoPoint
                 outJsonPath: $.Data.geoPoint
+              - inJsonPath: $.tag
+                outJsonPath: $.Data.tag
           timeStampField: $.createdTime
