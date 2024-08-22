@@ -73,8 +73,8 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"projectId\":\"Data.projectId.keyword\"}",
+        "dateRefField": "",
+        "requestQueryMap": "",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"targetPerDay\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}"
       }
