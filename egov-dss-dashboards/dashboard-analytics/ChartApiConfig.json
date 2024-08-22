@@ -74,7 +74,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "",
+        "requestQueryMap": "{\"projectId\":\"Data.projectId.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"targetPerDay\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}"
       }
