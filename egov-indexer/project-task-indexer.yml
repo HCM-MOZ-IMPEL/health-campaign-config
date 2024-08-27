@@ -55,7 +55,7 @@ ServiceMaps:
           isBulk: true
           jsonPath: $
           customJsonMapping:
-            indexMapping: { "Data": {} }
+            indexMapping: { "Data": {"additionalDetails": {}} }
             fieldMapping:
               - inJsonPath: $.createdBy
                 outJsonPath: $.Data.createdBy
