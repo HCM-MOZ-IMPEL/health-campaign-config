@@ -77,6 +77,8 @@ ServiceMaps:
                 outJsonPath: $.Data.taskDates
               - inJsonPath: $.syncedDate
                 outJsonPath: $.Data.syncedDate
+              - inJsonPath: $.additionalDetails.cycleIndex
+                outJsonPath: $.Data.additionalDetails.cycleIndex
               - inJsonPath: $.projectTypeId
                 outJsonPath: $.Data.projectTypeId
               - inJsonPath: $.localityCode
