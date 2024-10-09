@@ -16,3 +16,4 @@ ServiceMaps:
               - inJsonPath: $
                 outJsonPath: $.Data
           timeStampField: $.service.auditDetails.lastModifiedTime
+
