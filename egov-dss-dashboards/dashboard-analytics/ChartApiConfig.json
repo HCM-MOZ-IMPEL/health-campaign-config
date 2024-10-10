@@ -195,7 +195,7 @@
         "fields" : ["Lastsyncedtime"],
         "newField" : "LastSyncedTime",
         "_comments": ""
-      },
+      }
     ],
     "insight": {
     },
