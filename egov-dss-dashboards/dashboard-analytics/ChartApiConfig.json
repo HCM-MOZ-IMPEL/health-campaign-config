@@ -106,14 +106,14 @@
         "dateRefField": "Data.household.clientAuditDetails.createdTime",
         "requestQueryMap": "{\"uuid\":\"Data.household.clientAuditDetails.createdBy.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Households Visited\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Households visited\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\":\"Data.createdBy.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"NAME\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.status.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"User Name\": {\n          \"terms\": {\n            \"field\": \"Data.userName.keyword\"\n          },\n          \"aggs\": {\n            \"Households Sprayed\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            },\n            \"NegativeHouseholdsSprayed\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"count\": \"Households Sprayed\"\n                },\n                \"script\": \"params.count*-1\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"NAME\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.status.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"User Name\": {\n          \"terms\": {\n            \"field\": \"Data.userName.keyword\"\n          },\n          \"aggs\": {\n            \"Households sprayed\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            },\n            \"NegativeHouseholdsSprayed\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"count\": \"Households Sprayed\"\n                },\n                \"script\": \"params.count*-1\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
@@ -144,12 +144,34 @@
     "documentType": "_doc",
     "action": "",
     "plotLabel" : "User Name",
-    "excludedColumns": ["NegativeHouseholdsSprayed", "NegativeBottlesUsedToday", "Stock count per user"],
+    "excludedColumns": ["NegativeHouseholdsSprayed", "NegativeBottlesUsedToday", "Stock count per user", "Households visited",
+    "Households sprayed", "Bottles used today", "Lastsyncedtime"],
     "computedFields" : [
       {
         "postAggregationTheory" : "",
         "actionName": "AdditiveComputedField",
-        "fields" : ["Households Visited","NegativeHouseholdsSprayed"],
+        "fields" : ["Households visited"],
+        "newField" : "Households Visited",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Households sprayed"],
+        "newField" : "Households Sprayed",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Bottles used today"],
+        "newField" : "Bottles Used Today",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Households visited","NegativeHouseholdsSprayed"],
         "newField" : "No. of houses not sprayed today",
         "_comments": ""
       },
@@ -166,7 +188,14 @@
         "fields" : ["Stock count per user","NegativeBottlesUsedToday"],
         "newField" : "No. of remaining bottles",
         "_comments": ""
-      }
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Lastsyncedtime"],
+        "newField" : "LastSyncedTime",
+        "_comments": ""
+      },
     ],
     "insight": {
     },
