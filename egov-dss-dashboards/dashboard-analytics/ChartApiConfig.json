@@ -144,7 +144,7 @@
     "documentType": "_doc",
     "action": "",
     "plotLabel" : "User Name",
-    "excludedColumns": ["NegativeHouseholdsSprayed", "NegativeBottlesUsedToday"],
+    "excludedColumns": ["NegativeHouseholdsSprayed", "NegativeBottlesUsedToday", "Stock count per user"],
     "computedFields" : [
       {
         "postAggregationTheory" : "",
@@ -158,6 +158,13 @@
         "actionName": "AdditiveComputedField",
         "fields" : ["Stock count per user","NegativeBottlesUsedToday"],
         "newField" : "No. of remaining bottles",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Stock count per user"],
+        "newField" : "Stock Count Per User",
         "_comments": ""
       }
     ],
