@@ -156,15 +156,15 @@
       {
         "postAggregationTheory" : "",
         "actionName": "AdditiveComputedField",
-        "fields" : ["Stock count per user","NegativeBottlesUsedToday"],
-        "newField" : "No. of remaining bottles",
+        "fields" : ["Stock count per user"],
+        "newField" : "Stock Count Per User",
         "_comments": ""
       },
       {
         "postAggregationTheory" : "",
         "actionName": "AdditiveComputedField",
-        "fields" : ["Stock count per user"],
-        "newField" : "Stock Count Per User",
+        "fields" : ["Stock count per user","NegativeBottlesUsedToday"],
+        "newField" : "No. of remaining bottles",
         "_comments": ""
       }
     ],
