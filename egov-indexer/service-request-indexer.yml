@@ -92,3 +92,17 @@ ServiceMaps:
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
           timeStampField: $.createdTime
+    - topic: transformer-producer-checklist-answer-index-v1-topic
+      configKey: INDEX
+      indexes:
+        - name: checklist-answer-index-v1
+          type: service
+          id: $.id,$.tenantId
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.createdTime
