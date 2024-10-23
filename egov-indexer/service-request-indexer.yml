@@ -98,7 +98,7 @@ ServiceMaps:
         - name: checklist-answer-index-v1
           type: service
           id: $.id,$.tenantId
-          isBulk: true
+          isBulk: false
           jsonPath: $
           customJsonMapping:
             indexMapping: { "Data": { } }
