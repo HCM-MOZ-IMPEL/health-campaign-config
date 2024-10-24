@@ -16557,8 +16557,8 @@
       ],
       "computedFields": [
         {
-          "postAggregationTheory": "repsonseToDifferenceOfDates",
-          "actionName": "",
+          "postAggregationTheory": "",
+          "actionName": "AdditiveComputedField",
           "sort": "sortValueDesc",
           "fields": [
             "Count"
