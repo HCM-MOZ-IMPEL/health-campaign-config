@@ -16513,7 +16513,11 @@
       "aggregationPaths": [
         "Households Refused"
       ],
-      "filterKeys": [],
+      "filterKeys": [
+        {
+          "key": "province"
+        }
+      ],
       "computedFields": [
         {
           "postAggregationTheory": "repsonseToDifferenceOfDates",
