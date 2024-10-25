@@ -16518,18 +16518,7 @@
           "key": "province"
         }
       ],
-      "computedFields": [
-        {
-          "postAggregationTheory": "repsonseToDifferenceOfDates",
-          "actionName": "",
-          "sort": "sortValueDesc",
-          "fields": [
-            "Count"
-          ],
-          "newField": "Count_Sorted",
-          "_comments": ""
-        }
-      ],
+      "sort": "sortValueDesc",
       "insight": {},
       "_comment": " "
     },
@@ -16555,18 +16544,7 @@
       "aggregationPaths": [
         "Households Refused"
       ],
-      "computedFields": [
-        {
-          "postAggregationTheory": "",
-          "actionName": "AdditiveComputedField",
-          "sort": "sortValueDesc",
-          "fields": [
-            "Count"
-          ],
-          "newField": "Count_Sorted",
-          "_comments": ""
-        }
-      ],
+      "sort": "sortValueDesc",
       "insight": {},
       "_comment": " "
     },
