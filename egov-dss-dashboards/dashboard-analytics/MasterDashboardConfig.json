@@ -4165,6 +4165,30 @@
                   ]
                 }
               ]
+            },
+            {
+              "row": 1,
+              "name": "DSS_HEALTH_CUSTOM_KPIS",
+              "vizArray": [
+                {
+                  "id": 3101,
+                  "name": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE",
+                  "label": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE",
+                  "vizType": "chart",
+                  "noUnit": true,
+                  "isCollapsible": false,
+                  "charts": [
+                    {
+                      "id": "sprayOperatorComplianceChecklist",
+                      "name": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE_CHECKLIST",
+                      "code": "",
+                      "chartType": "bar",
+                      "filter": "",
+                      "headers": []
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },

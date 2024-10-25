@@ -22404,6 +22404,43 @@
       "insight": {},
       "sort": "sortKeyAsc",
       "_comment": " "
+    },
+    "sprayOperatorComplianceChecklist" : {
+    "chartName": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE_CHECKLIST",
+      "queries": [
+        {
+          "module": "COMMON",
+          "dateRefField": "Data.createdTime",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+          "indexName": "checklist-answer-index-v1",
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.checklistName.keyword\":\"SOP\"}}]}},\"aggs\":{\"yes_checklist_answer_count\":{\"terms\":{\"script\":{\"source\":\"\\n            def checklist = params._source.Data.checklistAnswers;\\n            def keys = [];\\n            for (entry in checklist.entrySet()) {\\n              if (entry.value.value == 'YES') {\\n                keys.add(entry.key);\\n              }\\n            }\\n            return keys;\\n          \",\"lang\":\"painless\"},\"size\":1000}}}}}}"
+        },
+        {
+          "module": "COMMON",
+          "dateRefField": "Data.createdTime",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+          "indexName": "checklist-answer-index-v1",
+          "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.checklistName.keyword\": \"SOP\"\n              }\n            }\n            ]\n        }\n      },\n      \"aggs\": {\n        \"total_checklist_answer_count\": {\n          \"terms\": {\n            \"script\": {\n              \"source\": \"\"\"\n              def checklist = params._source.Data.checklistAnswers;\n              def keys = [];\n              def excludedKeys = ['SOP1', 'SOP13', 'SOP27.NO.ADT1'];  // Add any keys to exclude here\n              for (entry in checklist.entrySet()) {\n                if (!excludedKeys.contains(entry.key)) {\n                  keys.add(entry.key);\n                }\n              }\n              return keys;\n              \"\"\",\n              \"lang\": \"painless\"\n            },\n            \"size\": 100\n          }\n        }\n      }\n    }\n  }\n}"
+        }
+      ],
+      "chartType": "line",
+      "isCumulative": false,
+      "valueType": "percentage",
+      "drillChart": "none",
+      "plotLabel": "none",
+      "documentType": "_doc",
+      "action": "percentage",
+      "aggregationPaths": [
+        "yes_checklist_answer_count",
+        "total_checklist_answer_count"
+      ],
+      "filterKeys": [
+        {
+          "key": "province"
+        }
+      ],
+      "insight": {},
+      "_comment": " "
     }
   
 }
