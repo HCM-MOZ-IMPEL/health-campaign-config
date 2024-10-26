@@ -22410,29 +22410,21 @@
       "queries": [
         {
           "module": "COMMON",
-          "dateRefField": "Data.createdTime",
-          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
-          "indexName": "checklist-answer-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.checklistName.keyword\":\"SOP\"}}]}},\"aggs\":{\"yes_checklist_answer_count\":{\"terms\":{\"script\":{\"source\":\"\\n            def checklist = params._source.Data.checklistAnswers;\\n            def keys = [];\\n            for (entry in checklist.entrySet()) {\\n              if (entry.value.value == 'YES') {\\n                keys.add(entry.key);\\n              }\\n            }\\n            return keys;\\n          \",\"lang\":\"painless\"},\"size\":1000}}}}}}"
-        },
-        {
-          "module": "COMMON",
-          "dateRefField": "Data.createdTime",
-          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
-          "indexName": "checklist-answer-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.checklistName.keyword\":\"SOP\"}}]}},\"aggs\":{\"total_checklist_answer_count\":{\"terms\":{\"script\":{\"source\":\"def checklist = params._source.Data.checklistAnswers; def keys = []; def excludedKeys = ['SOP1', 'SOP13', 'SOP27.NO.ADT1']; for (entry in checklist.entrySet()) { if (!excludedKeys.contains(entry.key)) { keys.add(entry.key); } } return keys;\",\"lang\":\"painless\"},\"size\":100}}}}}}"
+          "dateRefField": "",
+          "requestQueryMap": "",
+          "indexName": "test-index",
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"yes_count_per_question\":{\"scripted_metric\":{\"init_script\":\"state.questions = new HashMap();\",\"map_script\":\"\\n          for (entry in params._source.entrySet()) {\\n            if (entry.getKey().startsWith(\\\"question\\\") && entry.getValue() == \\\"YES\\\") {\\n              if (state.questions.containsKey(entry.getKey())) {\\n                state.questions[entry.getKey()] += 1;\\n              } else {\\n                state.questions[entry.getKey()] = 1;\\n              }\\n            }\\n          }\\n        \",\"combine_script\":\"return state.questions;\",\"reduce_script\":\"\\n          Map combined = new HashMap();\\n          for (s in states) {\\n            for (entry in s.entrySet()) {\\n              if (combined.containsKey(entry.getKey())) {\\n                combined[entry.getKey()] += entry.getValue();\\n              } else {\\n                combined[entry.getKey()] = entry.getValue();\\n              }\\n            }\\n          }\\n          List buckets = new ArrayList();\\n          for (entry in combined.entrySet()) {\\n            Map bucket = new HashMap();\\n            bucket.put(\\\"key\\\", entry.getKey());\\n            bucket.put(\\\"value\\\", entry.getValue());\\n            buckets.add(bucket);\\n          }\\n          return buckets;\\n        \"}}}}"
         }
       ],
       "chartType": "line",
       "isCumulative": false,
-      "valueType": "percentage",
+      "valueType": "number",
       "drillChart": "none",
       "plotLabel": "none",
       "documentType": "_doc",
-      "action": "percentage",
+      "action": "",
       "aggregationPaths": [
-        "yes_checklist_answer_count",
-        "total_checklist_answer_count"
+        "yes_count_per_question"
       ],
       "filterKeys": [
         {
