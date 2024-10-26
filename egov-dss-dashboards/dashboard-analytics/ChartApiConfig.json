@@ -17597,7 +17597,7 @@
           "dateRefField": "",
           "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-staff-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\",\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"TEAM_SUPERVISOR\"]}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Total Users Created\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\",\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"TEAM_SUPERVISOR\"]}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Total Users Created\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
         },
         {
           "module": "COMMON",
