@@ -22412,15 +22412,15 @@
           "module": "COMMON",
           "dateRefField": "Data.createdTime",
           "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
-          "indexName": "checklist-answer-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.checklistName.keyword\":\"SOP\"}}]}},\"aggs\":{\"yes_checklist_answer_count\":{\"terms\":{\"script\":{\"source\":\"\\n            def checklist = params._source.Data.checklistAnswers;\\n            def keys = [];\\n            for (entry in checklist.entrySet()) {\\n              if (entry.value.value == 'YES') {\\n                keys.add(entry.key);\\n              }\\n            }\\n            return keys;\\n          \",\"lang\":\"painless\"},\"size\":1000}}}}}}"
+          "indexName": "service-task-v1",
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"SOP\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"SOP13\",\"SOP1\",\"SOP25.YES.ADT1\",\"SOP26.YES.ADT1.YES.ADT1\",\"SOP27.NO.ADT1\",\"SOP29\"]}}]}},\"aggs\":{\"True count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"term\":{\"Data.attributes.value.value.keyword\":\"YES\"}}}}}}}}}}}}}"
         },
         {
           "module": "COMMON",
           "dateRefField": "Data.createdTime",
           "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
-          "indexName": "checklist-answer-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.checklistName.keyword\":\"SOP\"}}]}},\"aggs\":{\"total_checklist_answer_count\":{\"terms\":{\"script\":{\"source\":\"def checklist = params._source.Data.checklistAnswers; def keys = []; def excludedKeys = ['SOP1', 'SOP13', 'SOP27.NO.ADT1']; for (entry in checklist.entrySet()) { if (!excludedKeys.contains(entry.key)) { keys.add(entry.key); } } return keys;\",\"lang\":\"painless\"},\"size\":100}}}}}}"
+          "indexName": "service-task-v1",
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"SOP\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"SOP13\",\"SOP1\",\"SOP25.YES.ADT1\",\"SOP26.YES.ADT1.YES.ADT1\",\"SOP27.NO.ADT1\",\"SOP29\"]}}]}},\"aggs\":{\"Total count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.attributes.value.value.keyword\"}}}}}}}}}}}}"
         }
       ],
       "chartType": "line",
@@ -22431,8 +22431,8 @@
       "documentType": "_doc",
       "action": "percentage",
       "aggregationPaths": [
-        "yes_checklist_answer_count",
-        "total_checklist_answer_count"
+        "True count",
+        "Total count"
       ],
       "filterKeys": [
         {
