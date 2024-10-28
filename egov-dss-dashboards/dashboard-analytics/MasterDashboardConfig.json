@@ -4207,6 +4207,30 @@
                   ]
                 }
               ]
+            },
+            {
+              "row": 2,
+              "name": "DSS_HEALTH_CUSTOM_KPIS",
+              "vizArray": [
+                {
+                  "id": 3013,
+                  "name": "DSS_HEALTH_EOD_CLEANING",
+                  "label": "DSS_HEALTH_EOD_CLEANING",
+                  "vizType": "chart",
+                  "noUnit": true,
+                  "isCollapsible": false,
+                  "charts": [
+                    {
+                      "id": "endOfDayCleaningChecklist",
+                      "name": "DSS_HEALTH_EOD_CLEANING_CHECKLIST",
+                      "code": "",
+                      "chartType": "bar",
+                      "filter": "",
+                      "headers": []
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
