@@ -134,7 +134,7 @@
       "dateRefField": "Data.createdTime",
       "requestQueryMap": "{\"uuid\":\"Data.syncedUserId.keyword\"}",
       "indexName": "user-sync-index-v1",
-      "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.syncedUserName.keyword\"},\"aggs\":{\"Lastsyncedtime\":{\"max\":{\"field\":\"Data.syncedTimeStamp\"}}}}}}"
+      "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"size\":2000,\"field\":\"Data.syncedUserName.keyword\"},\"aggs\":{\"Lastsyncedtime\":{\"max\":{\"field\":\"Data.syncedTimeStamp\"}}}}}}"
       }
   ],
   "filterKeys": [],
