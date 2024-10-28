@@ -22478,5 +22478,42 @@
       ],
       "insight": {},
       "_comment": " "
+    },
+    "endOfDayCleaningChecklist" : {
+      "chartName": "DSS_HEALTH_EOD_CLEANING_CHECKLIST",
+      "queries": [
+        {
+          "module": "COMMON",
+          "dateRefField": "Data.createdTime",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+          "indexName": "service-task-v1",
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"EOD_CLEANING\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"EODC1\",\"EODC2\",\"EODC6.NO.EODC20.YES.ADT1\",\"EODC6.NO.EODC20.YES.ADT2.YES.ADT1\",\"EODC32\"]}}]}},\"aggs\":{\"True count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"term\":{\"Data.attributes.value.value.keyword\":\"YES\"}}}}}}}}}}}}}"
+        },
+        {
+          "module": "COMMON",
+          "dateRefField": "Data.createdTime",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+          "indexName": "service-task-v1",
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"EOD_CLEANING\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"EODC1\",\"EODC2\",\"EODC6.NO.EODC20.YES.ADT1\",\"EODC6.NO.EODC20.YES.ADT2.YES.ADT1\",\"EODC32\"]}}]}},\"aggs\":{\"Total count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.attributes.value.value.keyword\"}}}}}}}}}}}}"
+        }
+      ],
+      "chartType": "line",
+      "isCumulative": false,
+      "valueType": "percentage",
+      "drillChart": "none",
+      "plotLabel": "none",
+      "documentType": "_doc",
+      "action": "percentage",
+      "aggregationPaths": [
+        "True count",
+        "Total count"
+      ],
+      "filterKeys": [
+        {
+          "key": "province"
+        }
+      ],
+      "insight": {},
+      "_comment": " "
     }
 }
