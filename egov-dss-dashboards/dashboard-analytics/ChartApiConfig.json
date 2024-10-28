@@ -22441,6 +22441,42 @@
       ],
       "insight": {},
       "_comment": " "
+    },
+    "warehouseManagerComplianceChecklist" : {
+      "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_COMPLIANCE_CHECKLIST",
+      "queries": [
+        {
+          "module": "COMMON",
+          "dateRefField": "Data.createdTime",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+          "indexName": "service-task-v1",
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"WAREHOUSE_MANAGER_PERFORMANCE\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"WMP1\",\"WMP2\",\"WMP9\",\"WMP35\",\"WMP37\"]}}]}},\"aggs\":{\"True count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"term\":{\"Data.attributes.value.value.keyword\":\"YES\"}}}}}}}}}}}}}"
+        },
+        {
+          "module": "COMMON",
+          "dateRefField": "Data.createdTime",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+          "indexName": "service-task-v1",
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"WAREHOUSE_MANAGER_PERFORMANCE\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"WMP1\",\"WMP2\",\"WMP9\",\"WMP35\",\"WMP37\"]}}]}},\"aggs\":{\"Total count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.attributes.value.value.keyword\"}}}}}}}}}}}}"
+        }
+      ],
+      "chartType": "line",
+      "isCumulative": false,
+      "valueType": "percentage",
+      "drillChart": "none",
+      "plotLabel": "none",
+      "documentType": "_doc",
+      "action": "percentage",
+      "aggregationPaths": [
+        "True count",
+        "Total count"
+      ],
+      "filterKeys": [
+        {
+          "key": "province"
+        }
+      ],
+      "insight": {},
+      "_comment": " "
     }
-  
 }
