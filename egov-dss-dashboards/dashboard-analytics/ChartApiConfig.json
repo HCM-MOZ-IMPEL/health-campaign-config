@@ -17604,7 +17604,7 @@
           "dateRefField": "",
           "requestQueryMap": "",
           "indexName": "project-staff-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\"]}}]}},\"aggs\":{\"Total National Users Created\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}"
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\"]}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province\"}}]}},\"aggs\":{\"Total National Users Created\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}"
         },
         {
           "module": "COMMON",
