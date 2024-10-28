@@ -193,7 +193,7 @@
       "postAggregationTheory" : "",
       "actionName": "AdditiveComputedField",
       "fields" : ["Lastsyncedtime"],
-      "newField" : "LastSyncedTime",
+      "newField" : "Last synced time",
       "_comments": ""
       }
   ],
