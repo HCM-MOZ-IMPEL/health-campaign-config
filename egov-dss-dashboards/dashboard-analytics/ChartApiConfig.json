@@ -10870,14 +10870,14 @@
           "dateRefField": "",
           "requestQueryMap": "",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.district.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"field\":\"Data.province.keyword\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+          "aggrQuery": "{\n  \"size\": 0, \n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.targetType.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"exists\": {\n                \"field\": \"Data.boundaryHierarchy.province.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.boundaryHierarchy.district.keyword\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Population Target\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.province.keyword\"\n          },\n          \"aggs\": {\n            \"Overall Population Target\": {\n              \"sum\": {\n                \"field\": \"Data.overallTarget\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
         },
         {
           "module": "COMMON",
           "dateRefField": "",
           "requestQueryMap": "",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.district.keyword\"}}]}},\"aggs\":{\"Project Start and End Dates\":{\"terms\":{\"field\":\"Data.province.keyword\"},\"aggs\":{\"Start Date\":{\"min\":{\"field\":\"Data.startDate\"}},\"End Date\":{\"max\":{\"field\":\"Data.endDate\"}}}}}}}}"
+          "aggrQuery": "{\n  \"size\": 0, \n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.targetType.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"exists\": {\n                \"field\": \"Data.boundaryHierarchy.province.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.boundaryHierarchy.district.keyword\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Project Start and End Dates\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.province.keyword\"\n          },\n          \"aggs\": {\n            \"Start Date\": {\n              \"min\": {\n                \"field\": \"Data.startDate\"\n              }\n            },\n            \"End Date\": {\n              \"max\": {\n                \"field\": \"Data.endDate\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
         }
       ],
       "chartType": "xtable",
@@ -11332,9 +11332,9 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.district.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Population per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd) * 365\"}}}}}}"
+          "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Campaign Filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.targetType.keyword\": \"INDIVIDUAL\"\n                  }\n                },\n                {\n                  \"exists\": {\n                    \"field\": \"Data.boundaryHierarchy.province.keyword\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"exists\": {\n                    \"field\": \"Data.boundaryHierarchy.district.keyword\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Overall Target\": {\n          \"sum\": {\n            \"field\": \"Data.overallTarget\"\n          }\n        },\n        \"Target per day\": {\n          \"sum\": {\n            \"field\": \"Data.targetPerDay\"\n          }\n        },\n        \"Target Population per Day\": {\n          \"bucket_script\": {\n            \"buckets_path\": {\n              \"tpd\": \"Target per day\"\n            },\n            \"script\": \"(params.tpd) * 365\"\n          }\n        }\n      }\n    }\n  }\n}"
         }
       ],
       "chartType": "metric",
@@ -11358,9 +11358,9 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Population per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd) * 365\"}}}}}}"
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Population per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd) * 365\"}}}}}}"
         }
       ],
       "chartType": "metric",
@@ -12407,7 +12407,7 @@
           "dateRefField": "Data.createdTime",
           "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-task-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Households Coverage\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+          "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Coverage\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
         },
         {
           "module": "COMMON",
@@ -12459,7 +12459,7 @@
           "dateRefField": "Data.createdTime",
           "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-task-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Households Coverage\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+          "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Coverage\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
         },
         {
           "module": "COMMON",
@@ -12511,7 +12511,7 @@
           "dateRefField": "Data.createdTime",
           "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
           "indexName": "project-task-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Households Coverage\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+          "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Coverage\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.locality.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
         },
         {
           "module": "COMMON",
@@ -12563,7 +12563,7 @@
           "dateRefField": "Data.createdTime",
           "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\"}",
           "indexName": "project-task-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Households Coverage\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+          "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Coverage\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.village.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
         },
         {
           "module": "COMMON",
@@ -15248,9 +15248,9 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.district.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Households per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd)*365\"}}}}}}"
+          "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Campaign Filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.targetType.keyword\": \"HOUSEHOLD\"\n                  }\n                },\n                {\n                  \"exists\": {\n                    \"field\": \"Data.boundaryHierarchy.province.keyword\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"exists\": {\n                    \"field\": \"Data.boundaryHierarchy.district.keyword\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Overall Target\": {\n          \"sum\": {\n            \"field\": \"Data.overallTarget\"\n          }\n        },\n        \"Target per day\": {\n          \"sum\": {\n            \"field\": \"Data.targetPerDay\"\n          }\n        },\n        \"Target Households per Day\": {\n          \"bucket_script\": {\n            \"buckets_path\": {\n              \"tpd\": \"Target per day\"\n            },\n            \"script\": \"(params.tpd)*365\"\n          }\n        }\n      }\n    }\n  }\n}"
         }
       ],
       "chartType": "metric",
@@ -15274,9 +15274,9 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Households per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd)*365\"}}}}}}"
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Households per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd)*365\"}}}}}}"
         }
       ],
       "chartType": "metric",
@@ -15300,9 +15300,9 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"Bednets Target\":{\"filters\":{\"filters\":{\"distributions\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.district.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target by Range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target\"},\"script\":\"(params.target) * 365\"}}}}}}"
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"Bednets Target\":{\"filters\":{\"filters\":{\"distributions\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target by Range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target\"},\"script\":\"(params.target) * 365\"}}}}}}"
         }
       ],
       "chartType": "metric",
@@ -15350,9 +15350,9 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"aggs\":{\"Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.district.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+          "aggrQuery": "{\"aggs\":{\"Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
         },
         {
           "module": "COMMON",
@@ -15389,9 +15389,9 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.administrativeProvince.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
         },
         {
           "module": "COMMON",
@@ -17387,9 +17387,9 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -17418,7 +17418,7 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
           "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.locality.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
         }
