@@ -19342,9 +19342,9 @@
         {
           "module": "COMMON",
           "dateRefField": "",
-          "requestQueryMap": "{\"province\": \"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+          "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
           "indexName": "project-index-v1",
-          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Overall Target\":{\"terms\":{\"size\":500,\"field\":\"Data.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Overall Target\":{\"bucket_script\":{\"buckets_path\":{\"ot\":\"SUM\"},\"script\":\"params.ot * (-1)\"}}}}}}}}"
+          "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Overall Target\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Overall Target\":{\"bucket_script\":{\"buckets_path\":{\"ot\":\"SUM\"},\"script\":\"params.ot * (-1)\"}}}}}}}}"
         },
         {
           "module": "COMMON",
