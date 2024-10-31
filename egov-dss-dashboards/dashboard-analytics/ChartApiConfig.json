@@ -20053,7 +20053,7 @@
     "plotLabel": "none",
     "drillChart": "roomCoverageRatioAp",
     "documentType": "_doc",
-    "action": "division",
+    "action": "percentage",
     "aggregationPaths": [
       "Total rooms sprayed",
       "Total rooms available"
@@ -20090,7 +20090,7 @@
     "plotLabel": "none",
     "drillChart": "roomCoverageRatioLocality",
     "documentType": "_doc",
-    "action": "division",
+    "action": "percentage",
     "aggregationPaths": [
       "Total rooms sprayed",
       "Total rooms available"
@@ -20127,7 +20127,7 @@
     "plotLabel": "none",
     "drillChart": "roomCoverageRatioVillage",
     "documentType": "_doc",
-    "action": "division",
+    "action": "percentage",
     "aggregationPaths": [
       "Total rooms sprayed",
       "Total rooms available"
@@ -20164,7 +20164,7 @@
     "plotLabel": "none",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "division",
+    "action": "percentage",
     "aggregationPaths": [
       "Total rooms sprayed",
       "Total rooms available"
