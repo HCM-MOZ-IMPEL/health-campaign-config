@@ -92,6 +92,19 @@ ServiceMaps:
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
           timeStampField: $.createdTime
+    - topic: transformer-producer-finance-checklist-index-v1-topic
+      configKey: INDEX
+      indexes:
+        - name: finance-checklist-index-v1
+          type: service
+          id: $.id,$.tenantId
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
     - topic: transformer-producer-hfreferral-service-index-topic
       configKey: INDEX
       indexes:
