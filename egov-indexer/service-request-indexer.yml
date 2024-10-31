@@ -105,6 +105,7 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
+          timeStampField: $.createdTime
     - topic: transformer-producer-hfreferral-service-index-topic
       configKey: INDEX
       indexes:
