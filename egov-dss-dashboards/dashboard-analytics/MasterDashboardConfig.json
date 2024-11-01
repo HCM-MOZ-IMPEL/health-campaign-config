@@ -6065,7 +6065,17 @@
                   "code": "",
                   "chartType": "v-bar",
                   "filter": "",
-                  "headers": []
+                  "headers": [],
+                  "tabName": "NUMBER"
+                },
+                {
+                  "id": "financeChecklistAmountUsedPercent",
+                  "name": "DSS_HEALTH_FINANCE_AMOUNT_USED",
+                  "code": "",
+                  "chartType": "v-bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
                 }
               ]
             }
