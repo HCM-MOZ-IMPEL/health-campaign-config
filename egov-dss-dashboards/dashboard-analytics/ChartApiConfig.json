@@ -22668,7 +22668,7 @@
         "dateRefField": "",
         "requestQueryMap": "",
         "indexName": "finance-checklist-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"nested_Agg\": {\n      \"nested\": {\n        \"path\": \"Data.attributes\"\n      },\n      \"aggs\": {\n        \"Total Amount Used\": {\n          \"sum\": {\n            \"field\": \"Data.attributes.value.value\"\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"nested_Agg\": {\n      \"nested\": {\n        \"path\": \"Data.attributes\"\n      },\n      \"aggs\": {\n        \"Amount Used\": {\n          \"terms\": {\n            \"field\": \"Data.attributes.attributeCode.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"sum\": {\n                \"field\": \"Data.attributes.value.value\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "line",
@@ -22679,7 +22679,7 @@
     "documentType": "_doc",
     "action": "none",
     "aggregationPaths": [
-      "Total Amount Used"
+      "Amount Used"
     ],
     "filterKeys": [
     ],
