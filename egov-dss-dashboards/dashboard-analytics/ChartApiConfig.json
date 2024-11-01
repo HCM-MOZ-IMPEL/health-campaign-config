@@ -22660,6 +22660,35 @@
     "insight": {},
     "_comment": " "
   },
+  "financeChecklistAmountUsed": {
+    "chartName": "DSS_HEALTH_FINANCE_AMOUNT_USED",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "",
+        "indexName": "finance-checklist-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"SOP Checklist Answers\": {\n      \"filter\": {\n        \"term\": {\n          \"Data.checklistName.keyword\": \"CAMPAIGN_COSTS\"\n        }\n      },\n      \"aggs\": {\n        \"nested_Agg\": {\n          \"nested\": {\n            \"path\": \"Data.attributes\"\n          },\n          \"aggs\": {\n            \"filtered_attributes\": {\n              \"filter\": {\n                \"bool\": {\n                  \"must_not\": [\n                    {\n                      \"terms\": {\n                        \"Data.attributes.attributeCode.keyword\": [\n                          \"SOP13\"\n                        ]\n                      }\n                    }\n                  ]\n                }\n              },\n              \"aggs\": {\n                \"True count\": {\n                  \"terms\": {\n                    \"field\": \"Data.attributes.attributeCode.keyword\",\n                    \"size\": 1000\n                  },\n                  \"aggs\": {\n                    \"Count\": {\n                      \"sum\": {\n                        \"field\": \"Data.attributes.value.value\"\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "plotLabel": "none",
+    "documentType": "_doc",
+    "action": "none",
+    "aggregationPaths": [
+      "True count"
+    ],
+    "filterKeys": [
+      {
+        "key": "province"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "warehouseManagerComplianceChecklist": {
     "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_COMPLIANCE_CHECKLIST",
     "queries": [

@@ -6048,6 +6048,30 @@
           ]
         },
         {
+          "row": 1,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 1011,
+              "name": "DSS_HEALTH_FINANCE_AMOUNT_USED",
+              "label": "DSS_HEALTH_FINANCE_AMOUNT_USED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "financeChecklistAmountUsed",
+                  "name": "DSS_HEALTH_FINANCE_AMOUNT_USED",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 4,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
