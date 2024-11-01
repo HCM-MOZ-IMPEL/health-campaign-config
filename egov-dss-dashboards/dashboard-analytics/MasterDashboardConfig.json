@@ -4254,6 +4254,32 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_KIBANA_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 401,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dummyId",
+                  "name": "DSS_HEALTH_ADDITION_CUSTOM_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "stock-custom-kpi",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
