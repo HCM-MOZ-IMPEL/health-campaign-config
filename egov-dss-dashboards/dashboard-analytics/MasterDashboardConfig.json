@@ -6048,7 +6048,7 @@
           ]
         },
         {
-          "row": 1,
+          "row": 4,
           "name": "DSS_HEALTH_CUSTOM_KPIS",
           "vizArray": [
             {
@@ -6072,7 +6072,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
             {
