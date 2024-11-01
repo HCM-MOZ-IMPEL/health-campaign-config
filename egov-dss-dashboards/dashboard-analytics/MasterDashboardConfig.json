@@ -6067,15 +6067,6 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "PERCENT"
-                },
-                {
-                  "id": "financeChecklistAmountUsed",
-                  "name": "DSS_HEALTH_FINANCE_AMOUNT_USED",
-                  "code": "",
-                  "chartType": "v-bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
                 }
               ]
             },
