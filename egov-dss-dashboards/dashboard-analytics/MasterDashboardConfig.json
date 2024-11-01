@@ -6063,7 +6063,7 @@
                   "id": "financeChecklistAmountUsed",
                   "name": "DSS_HEALTH_FINANCE_AMOUNT_USED",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "v-bar",
                   "filter": "",
                   "headers": []
                 }
