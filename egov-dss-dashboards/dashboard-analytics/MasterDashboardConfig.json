@@ -4306,6 +4306,32 @@
               ]
             }
           ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 2805,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dummyIdThree",
+                  "name": "DASHBOARD_SPECIAL_SPRAYING_CUSTOM_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "special-spraying-custom-kpi",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
