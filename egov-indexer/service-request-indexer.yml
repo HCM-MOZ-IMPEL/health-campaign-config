@@ -106,3 +106,17 @@ ServiceMaps:
               - inJsonPath: $
                 outJsonPath: $.Data
           timeStampField: $.createdTime
+    - topic: transformer-producer-special-spraying-index-topic
+      configKey: INDEX
+      indexes:
+        - name: special-spraying-index-v1
+          type: service
+          id: $.id,$.tenantId
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.createdTime
