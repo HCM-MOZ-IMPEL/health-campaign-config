@@ -19581,10 +19581,10 @@
     "drillChart": "InventorySummaryByAP",
     "documentType": "_doc",
     "action": "",
-    "plotLabel": "Inventory summary By District",
+    "plotLabel": "District",
     "filterKeys": [
       {
-        "key": "Data.boundaryHierarchy.district.keyword",
+        "key": "district",
         "column": "District"
       }
     ],
