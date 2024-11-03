@@ -19578,14 +19578,14 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "none",
+    "drillChart": "InventorySummaryByAP",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Inventory summary By District",
     "filterKeys": [
       {
         "key": "Data.boundaryHierarchy.district.keyword",
-        "column": "Inventory summary By District"
+        "column": "District"
       }
     ],
     "divisorFields": [],
