@@ -19206,13 +19206,6 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"exists\":{\"field\":\"Data.additionalDetails.lat\"}},{\"exists\":{\"field\":\"Data.additionalDetails.lng\"}},{\"term\":{\"Data.facilityType.keyword\":\"District Warehouse\"}}]}},\"aggs\":{\"POINTS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"LATITUDE\":{\"avg\":{\"field\":\"Data.additionalDetails.lat\"}},\"LONGITUDE\":{\"avg\":{\"field\":\"Data.additionalDetails.lng\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
         "requestQueryMap": "{\"locationKey\": \"Data.boundaryHierarchy.province.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.facilityType.keyword\":\"District Warehouse\"}},{\"exists\":{\"field\":\"Data.additionalDetails.lat\"}},{\"exists\":{\"field\":\"Data.additionalDetails.lng\"}}]}},\"aggs\":{\"POINTS\":{\"terms\":{\"field\":\"Data.facilityName.keyword\",\"size\":1000000},\"aggs\":{\"LATITUDE\":{\"avg\":{\"field\":\"Data.additionalDetails.lat\"}},\"LONGITUDE\":{\"avg\":{\"field\":\"Data.additionalDetails.lng\"}}}}}}}}"
