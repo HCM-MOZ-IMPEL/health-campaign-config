@@ -475,7 +475,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 2100,
+              "id": 4100,
               "name": "DSS_HEALTH_USER_SYNC_BY_DISTRIBUTORS_BAR_CHART",
               "label": "DSS_HEALTH_USER_SYNC_BY_DISTRIBUTORS_BAR_CHART",
               "vizType": "chart",
@@ -1002,7 +1002,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 2300,
+              "id": 4300,
               "name": "DSS_HEALTH_USER_SYNC_BY_WAREHOUSE_MANAGERS",
               "label": "DSS_HEALTH_USER_SYNC_BY_WAREHOUSE_MANAGERS",
               "vizType": "bannercard",
@@ -1026,7 +1026,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 2302,
+              "id": 4302,
               "name": "DSS_HEALTH_USER_SYNC_BY_LOCAL_MONITORS",
               "label": "DSS_HEALTH_USER_SYNC_BY_LOCAL_MONITORS",
               "vizType": "bannercard",
@@ -1050,7 +1050,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 2301,
+              "id": 4301,
               "name": "DSS_HEALTH_USER_SYNC_BY_WAREHOUSE_MANAGERS_BAR_CHART",
               "label": "DSS_HEALTH_USER_SYNC_BY_WAREHOUSE_MANAGERS_BAR_CHART",
               "vizType": "chart",
@@ -1214,7 +1214,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 2400,
+              "id": 4400,
               "name": "DSS_HEALTH_USER_SYNC_BY_SUPERVISORS",
               "label": "DSS_HEALTH_USER_SYNC_BY_SUPERVISORS",
               "vizType": "bannercard",
@@ -1238,7 +1238,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 2401,
+              "id": 4401,
               "name": "DSS_HEALTH_USER_SYNC_BY_SUPERVISORS_BAR_CHART",
               "label": "DSS_HEALTH_USER_SYNC_BY_SUPERVISORS_BAR_CHART",
               "vizType": "chart",
@@ -2542,7 +2542,7 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 201,
+              "id": 2001,
               "name": "DSS_HEALTH_HOUSEHOLDS",
               "label": "DSS_HEALTH_HOUSEHOLDS",
               "vizType": "stacked-collection",
@@ -2584,7 +2584,7 @@
               ]
             },
             {
-              "id": 202,
+              "id": 2002,
               "name": "DSS_HEALTH_POPULATION_COVERED",
               "label": "DSS_HEALTH_POPULATION_COVERED",
               "vizType": "stacked-collection",
@@ -2626,7 +2626,7 @@
               ]
             },
             {
-              "id": 203,
+              "id": 2003,
               "name": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
               "label": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
               "vizType": "stacked-collection",
@@ -2674,7 +2674,7 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 204,
+              "id": 2004,
               "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_OVERVIEW",
               "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_OVERVIEW",
               "vizType": "chart",
@@ -2692,7 +2692,7 @@
               ]
             },
             {
-              "id": 205,
+              "id": 2005,
               "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
               "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
               "vizType": "chart",
@@ -2716,7 +2716,7 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 206,
+              "id": 2006,
               "name": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
               "label": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
               "vizType": "chart",
@@ -2740,7 +2740,7 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 207,
+              "id": 2007,
               "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "vizType": "chart",
@@ -2758,7 +2758,7 @@
               ]
             },
             {
-              "id": 208,
+              "id": 2008,
               "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -2782,7 +2782,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 200,
+              "id": 2100,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -2806,7 +2806,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 211,
+              "id": 2101,
               "name": "DSS_HEALTH_SPRAY_COVERAGE",
               "label": "DSS_HEALTH_SPRAY_COVERAGE",
               "vizType": "chart",
@@ -2834,7 +2834,7 @@
               ]
             },
             {
-              "id": 212,
+              "id": 2102,
               "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
               "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
               "vizType": "chart",
@@ -2868,7 +2868,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 213,
+              "id": 2103,
               "name": "DSS_HEALTH_HOUSEHOLD_SPRAYED_WITH_VULNERABLE_POPULATION",
               "label": "DSS_HEALTH_HOUSEHOLD_SPRAYED_WITH_VULNERABLE_POPULATION",
               "vizType": "chart",
@@ -2892,7 +2892,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 276,
+              "id": 2104,
               "name": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN",
               "label": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN",
               "vizType": "chart",
@@ -2920,7 +2920,7 @@
               ]
             },
             {
-              "id": 277,
+              "id": 2105,
               "name": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5",
               "label": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5",
               "vizType": "chart",
@@ -2954,7 +2954,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 270,
+              "id": 2106,
               "name": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "label": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "vizType": "chart",
@@ -2982,7 +2982,7 @@
               ]
             },
             {
-              "id": 271,
+              "id": 2107,
               "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "vizType": "chart",
@@ -3006,7 +3006,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 272,
+              "id": 2108,
               "name": "DSS_HEALTH_INCOMPATIBLE_HOUSES",
               "label": "DSS_HEALTH_INCOMPATIBLE_HOUSES",
               "vizType": "chart",
@@ -3034,7 +3034,7 @@
               ]
             },
             {
-              "id": 273,
+              "id": 2109,
               "name": "DSS_HEALTH_INCOMPATIBLE_HOUSES_STRUCTURE_TYPES",
               "label": "DSS_HEALTH_INCOMPATIBLE_HOUSES_STRUCTURE_TYPES",
               "vizType": "chart",
@@ -3058,7 +3058,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 274,
+              "id": 2110,
               "name": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES",
               "label": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES",
               "vizType": "chart",
@@ -3086,7 +3086,7 @@
               ]
             },
             {
-              "id": 275,
+              "id": 2111,
               "name": "DSS_HEALTH_HOUSE_STRUCTURE_TYPES_COVERAGE",
               "label": "DSS_HEALTH_HOUSE_STRUCTURE_TYPES_COVERAGE",
               "vizType": "chart",
@@ -3110,7 +3110,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 215,
+              "id": 2112,
               "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
               "label": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
               "vizType": "chart",
@@ -3144,7 +3144,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 216,
+              "id": 2113,
               "name": "DSS_HEALTH_DELIVERY_SUMMARY_BY_DISTRICT",
               "label": "DSS_HEALTH_DELIVERY_SUMMARY_BY_DISTRICT",
               "vizType": "chart",
@@ -3178,7 +3178,7 @@
           "name": "DSS_KIBANA_MAPS",
           "vizArray": [
             {
-              "id": 401,
+              "id": 2200,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -3204,7 +3204,7 @@
           "name": "DSS_KIBANA_MAPS",
           "vizArray": [
             {
-              "id": 411,
+              "id": 2201,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -3230,7 +3230,7 @@
           "name": "DSS_KIBANA_MAPS",
           "vizArray": [
             {
-              "id": 412,
+              "id": 2202,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -3256,7 +3256,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 221,
+              "id": 2300,
               "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
               "label": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
               "vizType": "chart",
@@ -3274,7 +3274,7 @@
               ]
             },
             {
-              "id": 222,
+              "id": 2301,
               "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
               "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
               "vizType": "chart",
@@ -3298,7 +3298,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 223,
+              "id": 2302,
               "name": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_PROVINCIAL",
               "label": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_PROVINCIAL",
               "vizType": "chart",
@@ -3316,7 +3316,7 @@
               ]
             },
             {
-              "id": 224,
+              "id": 2303,
               "name": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_PROVINCIAL",
               "label": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_PROVINCIAL",
               "vizType": "chart",
@@ -3340,7 +3340,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 352,
+              "id": 2304,
               "name": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
               "label": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
               "vizType": "chart",
@@ -3358,7 +3358,7 @@
               ]
             },
             {
-              "id": 351,
+              "id": 2305,
               "name": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_PROVINCE",
               "label": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_PROVINCE",
               "vizType": "chart",
@@ -3382,7 +3382,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 226,
+              "id": 2306,
               "name": "DSS_HEALTH_COMPLAINTS_SUMMARY",
               "label": "DSS_HEALTH_COMPLAINTS_SUMMARY",
               "vizType": "chart",
@@ -3416,7 +3416,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 227,
+              "id": 2307,
               "name": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
               "label": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
               "vizType": "chart",
@@ -3440,7 +3440,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 240,
+              "id": 2400,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -3464,7 +3464,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 241,
+              "id": 2401,
               "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "vizType": "chart",
@@ -3482,7 +3482,7 @@
               ]
             },
             {
-              "id": 242,
+              "id": 2402,
               "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
               "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
               "vizType": "chart",
@@ -3506,7 +3506,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 245,
+              "id": 2403,
               "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
               "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
               "vizType": "chart",
@@ -3524,7 +3524,7 @@
               ]
             },
             {
-              "id": 244,
+              "id": 2404,
               "name": "DSS_HEALTH_PRODUCT_RETURNED",
               "label": "DSS_HEALTH_PRODUCT_RETURNED",
               "vizType": "chart",
@@ -3548,7 +3548,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 244,
+              "id": 2405,
               "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
               "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
               "vizType": "latlong",
@@ -3612,7 +3612,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 243,
+              "id": 2406,
               "name": "DSS_HEALTH_INVENTORY_SUMMARY",
               "label": "DSS_HEALTH_INVENTORY_SUMMARY",
               "vizType": "chart",
@@ -3636,7 +3636,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 265,
+              "id": 2500,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -3660,7 +3660,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 266,
+              "id": 2501,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -3684,7 +3684,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 261,
+              "id": 2502,
               "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -3702,7 +3702,7 @@
               ]
             },
             {
-              "id": 262,
+              "id": 2503,
               "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -3726,7 +3726,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 263,
+              "id": 2504,
               "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -3744,7 +3744,7 @@
               ]
             },
             {
-              "id": 264,
+              "id": 2505,
               "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -3768,7 +3768,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 288,
+              "id": 2506,
               "name": "DSS_HEALTH_SUPERVISION_SUMMARY",
               "label": "DSS_HEALTH_SUPERVISION_SUMMARY",
               "vizType": "chart",
@@ -3802,7 +3802,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 2000,
+              "id": 2600,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -3826,7 +3826,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 2001,
+              "id": 2601,
               "name": "DSS_HEALTH_INSECTICIDE_USAGE_EFFICIENCY",
               "label": "DSS_HEALTH_INSECTICIDE_USAGE_EFFICIENCY",
               "vizType": "chart",
@@ -3844,7 +3844,7 @@
               ]
             },
             {
-              "id": 2002,
+              "id": 2602,
               "name": "DSS_HEALTH_HOUSE_COVERAGE",
               "label": "DSS_HEALTH_HOUSE_COVERAGE",
               "vizType": "chart",
@@ -3868,7 +3868,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 2003,
+              "id": 2603,
               "name": "AVERAGE_NO_OF_HOUSES_SPRAYED",
               "label": "AVERAGE_NO_OF_HOUSES_SPRAYED",
               "vizType": "chart",
@@ -3886,7 +3886,7 @@
               ]
             },
             {
-              "id": 2004,
+              "id": 2604,
               "name": "DSS_HEALTH_IECS_NOT_VISITED",
               "label": "DSS_HEALTH_IECS_NOT_VISITED",
               "vizType": "chart",
@@ -3910,7 +3910,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 2005,
+              "id": 2605,
               "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR",
               "label": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR",
               "vizType": "chart",
@@ -3938,7 +3938,7 @@
               ]
             },
             {
-              "id": 2006,
+              "id": 2606,
               "name": "ROOM_COVERAGE_RATIO",
               "label": "ROOM_COVERAGE_RATIO",
               "vizType": "chart",
@@ -3962,7 +3962,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 216,
+              "id": 2607,
               "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
               "label": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
               "vizType": "chart",
@@ -3996,7 +3996,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2102,
+              "id": 2700,
               "name": "DSS_HOUSE_WITH_MORE_THAN_TEN_ROOMS",
               "label": "DSS_HOUSE_WITH_MORE_THAN_TEN_ROOMS",
               "vizType": "chart",
@@ -4020,7 +4020,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2103,
+              "id": 2701,
               "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
               "label": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
               "vizType": "chart",
@@ -4038,7 +4038,7 @@
               ]
             },
             {
-              "id": 2104,
+              "id": 2702,
               "name": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED",
               "label": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED",
               "vizType": "chart",
@@ -4062,7 +4062,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2105,
+              "id": 2703,
               "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
               "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
               "vizType": "chart",
@@ -4080,7 +4080,7 @@
               ]
             },
             {
-              "id": 2107,
+              "id": 2704,
               "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
               "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
               "vizType": "chart",
@@ -4104,7 +4104,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2108,
+              "id": 2705,
               "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
               "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
               "vizType": "chart",
@@ -4122,7 +4122,7 @@
               ]
             },
             {
-              "id": 2106,
+              "id": 2706,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
               "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
               "vizType": "chart",
@@ -4146,7 +4146,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2150,
+              "id": 2707,
               "name": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY",
               "label": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY",
               "vizType": "chart",
@@ -4170,7 +4170,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2151,
+              "id": 2708,
               "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
               "label": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
               "vizType": "chart",
@@ -4194,7 +4194,7 @@
           "name": "DSS_HEALTH_CUSTOM_KPIS",
           "vizArray": [
             {
-              "id": 3011,
+              "id": 2800,
               "name": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE",
               "label": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE",
               "vizType": "chart",
@@ -4212,7 +4212,7 @@
               ]
             },
             {
-              "id": 3012,
+              "id": 2801,
               "name": "DSS_HEALTH_WAREHOUSE_MANAGER_COMPLIANCE",
               "label": "DSS_HEALTH_WAREHOUSE_MANAGER_COMPLIANCE",
               "vizType": "chart",
@@ -4236,7 +4236,7 @@
           "name": "DSS_HEALTH_CUSTOM_KPIS",
           "vizArray": [
             {
-              "id": 3013,
+              "id": 2802,
               "name": "DSS_HEALTH_EOD_CLEANING",
               "label": "DSS_HEALTH_EOD_CLEANING",
               "vizType": "chart",
@@ -4248,6 +4248,84 @@
                   "name": "DSS_HEALTH_EOD_CLEANING_CHECKLIST",
                   "code": "",
                   "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 2803,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dummyIdOne",
+                  "name": "DASHBOARD_STOCK_CUSTOM_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "stock-custom-kpi",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 2804,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dummyIdTwo",
+                  "name": "DASHBOARD_REGISTRATION_SPRAYING_CUSTOM_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "registration-spraying-custom-kpi",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 2805,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dummyIdThree",
+                  "name": "DASHBOARD_SPECIAL_SPRAYING_CUSTOM_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "special-spraying-custom-kpi",
+                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -4274,7 +4352,7 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 301,
+              "id": 3001,
               "name": "DSS_HEALTH_HOUSEHOLDS",
               "label": "DSS_HEALTH_HOUSEHOLDS",
               "vizType": "stacked-collection",
@@ -4316,7 +4394,7 @@
               ]
             },
             {
-              "id": 302,
+              "id": 3002,
               "name": "DSS_HEALTH_POPULATION_COVERED",
               "label": "DSS_HEALTH_POPULATION_COVERED",
               "vizType": "stacked-collection",
@@ -4358,7 +4436,7 @@
               ]
             },
             {
-              "id": 303,
+              "id": 3003,
               "name": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
               "label": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
               "vizType": "stacked-collection",
@@ -4406,7 +4484,7 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 304,
+              "id": 3004,
               "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_OVERVIEW",
               "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_OVERVIEW",
               "vizType": "chart",
@@ -4424,7 +4502,7 @@
               ]
             },
             {
-              "id": 305,
+              "id": 3005,
               "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
               "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
               "vizType": "chart",
@@ -4448,7 +4526,7 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 306,
+              "id": 3006,
               "name": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
               "label": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
               "vizType": "chart",
@@ -4472,7 +4550,7 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 307,
+              "id": 3007,
               "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "vizType": "chart",
@@ -4490,7 +4568,7 @@
               ]
             },
             {
-              "id": 308,
+              "id": 3008,
               "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -4514,7 +4592,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 200,
+              "id": 3100,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -4538,7 +4616,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 311,
+              "id": 3101,
               "name": "DSS_HEALTH_SPRAY_COVERAGE",
               "label": "DSS_HEALTH_SPRAY_COVERAGE",
               "vizType": "chart",
@@ -4566,7 +4644,7 @@
               ]
             },
             {
-              "id": 312,
+              "id": 3102,
               "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
               "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
               "vizType": "chart",
@@ -4600,7 +4678,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 313,
+              "id": 3103,
               "name": "DSS_HEALTH_HOUSEHOLD_SPRAYED_WITH_VULNERABLE_POPULATION",
               "label": "DSS_HEALTH_HOUSEHOLD_SPRAYED_WITH_VULNERABLE_POPULATION",
               "vizType": "chart",
@@ -4624,7 +4702,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 376,
+              "id": 3104,
               "name": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN",
               "label": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN",
               "vizType": "chart",
@@ -4652,7 +4730,7 @@
               ]
             },
             {
-              "id": 377,
+              "id": 3105,
               "name": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5",
               "label": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5",
               "vizType": "chart",
@@ -4686,7 +4764,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 370,
+              "id": 3106,
               "name": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "label": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "vizType": "chart",
@@ -4714,7 +4792,7 @@
               ]
             },
             {
-              "id": 371,
+              "id": 3107,
               "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "vizType": "chart",
@@ -4738,7 +4816,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 372,
+              "id": 3108,
               "name": "DSS_HEALTH_INCOMPATIBLE_HOUSES",
               "label": "DSS_HEALTH_INCOMPATIBLE_HOUSES",
               "vizType": "chart",
@@ -4766,7 +4844,7 @@
               ]
             },
             {
-              "id": 373,
+              "id": 3109,
               "name": "DSS_HEALTH_INCOMPATIBLE_HOUSES_STRUCTURE_TYPES",
               "label": "DSS_HEALTH_INCOMPATIBLE_HOUSES_STRUCTURE_TYPES",
               "vizType": "chart",
@@ -4790,7 +4868,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 374,
+              "id": 3110,
               "name": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES",
               "label": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES",
               "vizType": "chart",
@@ -4818,7 +4896,7 @@
               ]
             },
             {
-              "id": 375,
+              "id": 3111,
               "name": "DSS_HEALTH_HOUSE_STRUCTURE_TYPES_COVERAGE",
               "label": "DSS_HEALTH_HOUSE_STRUCTURE_TYPES_COVERAGE",
               "vizType": "chart",
@@ -4842,7 +4920,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 315,
+              "id": 3112,
               "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
               "label": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
               "vizType": "chart",
@@ -4876,7 +4954,7 @@
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 316,
+              "id": 3113,
               "name": "DSS_HEALTH_DELIVERY_SUMMARY_BY_DISTRICT",
               "label": "DSS_HEALTH_DELIVERY_SUMMARY_BY_DISTRICT",
               "vizType": "chart",
@@ -4910,7 +4988,7 @@
           "name": "DSS_KIBANA_MAPS",
           "vizArray": [
             {
-              "id": 401,
+              "id": 3200,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -4936,7 +5014,7 @@
           "name": "DSS_KIBANA_MAPS",
           "vizArray": [
             {
-              "id": 411,
+              "id": 3201,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -4962,7 +5040,7 @@
           "name": "DSS_KIBANA_MAPS",
           "vizArray": [
             {
-              "id": 412,
+              "id": 3202,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -4988,7 +5066,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 321,
+              "id": 3300,
               "name": "DSS_HEALTH_COMPLAINTS_BY_AP",
               "label": "DSS_HEALTH_COMPLAINTS_BY_AP",
               "vizType": "chart",
@@ -5006,7 +5084,7 @@
               ]
             },
             {
-              "id": 331,
+              "id": 3301,
               "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
               "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
               "vizType": "chart",
@@ -5030,7 +5108,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 323,
+              "id": 3302,
               "name": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_DISTRICT",
               "label": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_DISTRICT",
               "vizType": "chart",
@@ -5048,7 +5126,7 @@
               ]
             },
             {
-              "id": 324,
+              "id": 3303,
               "name": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_DISTRICT",
               "label": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_DISTRICT",
               "vizType": "chart",
@@ -5072,7 +5150,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 325,
+              "id": 3304,
               "name": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
               "label": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
               "vizType": "chart",
@@ -5090,7 +5168,7 @@
               ]
             },
             {
-              "id": 326,
+              "id": 3305,
               "name": "DSS_HEALTH_COMPLAINTS_BY_AP",
               "label": "DSS_HEALTH_COMPLAINTS_BY_AP",
               "vizType": "chart",
@@ -5114,7 +5192,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 326,
+              "id": 3306,
               "name": "DSS_HEALTH_COMPLAINTS_SUMMARY",
               "label": "DSS_HEALTH_COMPLAINTS_SUMMARY",
               "vizType": "chart",
@@ -5148,7 +5226,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 327,
+              "id": 3307,
               "name": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
               "label": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
               "vizType": "chart",
@@ -5172,7 +5250,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 340,
+              "id": 3400,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -5196,7 +5274,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 341,
+              "id": 3401,
               "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "vizType": "chart",
@@ -5214,7 +5292,7 @@
               ]
             },
             {
-              "id": 342,
+              "id": 3402,
               "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
               "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
               "vizType": "chart",
@@ -5238,7 +5316,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 345,
+              "id": 3403,
               "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
               "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
               "vizType": "chart",
@@ -5256,7 +5334,7 @@
               ]
             },
             {
-              "id": 344,
+              "id": 3404,
               "name": "DSS_HEALTH_PRODUCT_RETURNED",
               "label": "DSS_HEALTH_PRODUCT_RETURNED",
               "vizType": "chart",
@@ -5280,7 +5358,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 344,
+              "id": 3405,
               "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
               "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
               "vizType": "latlong",
@@ -5288,7 +5366,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "warehouseDistributionLatLongPoints",
+                  "id": "warehouseDistributionLatLongPointsDistrict",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "points",
@@ -5296,7 +5374,7 @@
                   "headers": []
                 },
                 {
-                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilities",
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesDistrict",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "table",
@@ -5312,7 +5390,7 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 343,
+              "id": 3406,
               "name": "DSS_HEALTH_INVENTORY_SUMMARY",
               "label": "DSS_HEALTH_INVENTORY_SUMMARY",
               "vizType": "chart",
@@ -5336,7 +5414,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 365,
+              "id": 3500,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -5360,7 +5438,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 366,
+              "id": 3501,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -5384,7 +5462,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 361,
+              "id": 3502,
               "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -5402,7 +5480,7 @@
               ]
             },
             {
-              "id": 362,
+              "id": 3503,
               "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -5426,7 +5504,7 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 363,
+              "id": 3504,
               "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -5444,7 +5522,7 @@
               ]
             },
             {
-              "id": 364,
+              "id": 3505,
               "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -5464,11 +5542,11 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 388,
+              "id": 3506,
               "name": "DSS_HEALTH_SUPERVISION_SUMMARY",
               "label": "DSS_HEALTH_SUPERVISION_SUMMARY",
               "vizType": "chart",
@@ -5502,7 +5580,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 3000,
+              "id": 3600,
               "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
               "vizType": "bannercard",
@@ -5526,7 +5604,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 3001,
+              "id": 3601,
               "name": "DSS_HEALTH_INSECTICIDE_USAGE_EFFICIENCY",
               "label": "DSS_HEALTH_INSECTICIDE_USAGE_EFFICIENCY",
               "vizType": "chart",
@@ -5544,7 +5622,7 @@
               ]
             },
             {
-              "id": 3002,
+              "id": 3602,
               "name": "DSS_HEALTH_HOUSE_COVERAGE",
               "label": "DSS_HEALTH_HOUSE_COVERAGE",
               "vizType": "chart",
@@ -5568,7 +5646,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 3003,
+              "id": 3603,
               "name": "AVERAGE_NO_OF_HOUSES_SPRAYED",
               "label": "AVERAGE_NO_OF_HOUSES_SPRAYED",
               "vizType": "chart",
@@ -5586,7 +5664,7 @@
               ]
             },
             {
-              "id": 3004,
+              "id": 3604,
               "name": "DSS_HEALTH_IECS_NOT_VISITED",
               "label": "DSS_HEALTH_IECS_NOT_VISITED",
               "vizType": "chart",
@@ -5610,7 +5688,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 3005,
+              "id": 3605,
               "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR",
               "label": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR",
               "vizType": "chart",
@@ -5644,7 +5722,7 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 216,
+              "id": 3606,
               "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
               "label": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
               "vizType": "chart",
@@ -5678,7 +5756,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 3102,
+              "id": 3700,
               "name": "DSS_HOUSE_WITH_MORE_THAN_TEN_ROOMS",
               "label": "DSS_HOUSE_WITH_MORE_THAN_TEN_ROOMS",
               "vizType": "chart",
@@ -5702,7 +5780,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 3103,
+              "id": 3701,
               "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
               "label": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
               "vizType": "chart",
@@ -5720,7 +5798,7 @@
               ]
             },
             {
-              "id": 3104,
+              "id": 3702,
               "name": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED",
               "label": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED",
               "vizType": "chart",
@@ -5744,7 +5822,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 3105,
+              "id": 3703,
               "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
               "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
               "vizType": "chart",
@@ -5762,7 +5840,7 @@
               ]
             },
             {
-              "id": 3107,
+              "id": 3704,
               "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
               "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
               "vizType": "chart",
@@ -5786,7 +5864,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 3108,
+              "id": 3705,
               "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
               "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
               "vizType": "chart",
@@ -5804,7 +5882,7 @@
               ]
             },
             {
-              "id": 3106,
+              "id": 3706,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
               "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
               "vizType": "chart",
@@ -5828,7 +5906,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2150,
+              "id": 3707,
               "name": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY",
               "label": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY",
               "vizType": "chart",
@@ -5852,7 +5930,7 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 3151,
+              "id": 3708,
               "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
               "label": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
               "vizType": "chart",
@@ -5864,6 +5942,150 @@
                   "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_AP",
                   "code": "",
                   "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 3800,
+              "name": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE",
+              "label": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "sprayOperatorComplianceChecklist",
+                  "name": "DSS_HEALTH_SPRAY_OPERATOR_COMPLIANCE_CHECKLIST",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3801,
+              "name": "DSS_HEALTH_WAREHOUSE_MANAGER_COMPLIANCE",
+              "label": "DSS_HEALTH_WAREHOUSE_MANAGER_COMPLIANCE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseManagerComplianceChecklist",
+                  "name": "DSS_HEALTH_WAREHOUSE_MANAGER_COMPLIANCE_CHECKLIST",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 3802,
+              "name": "DSS_HEALTH_EOD_CLEANING",
+              "label": "DSS_HEALTH_EOD_CLEANING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "endOfDayCleaningChecklist",
+                  "name": "DSS_HEALTH_EOD_CLEANING_CHECKLIST",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 3803,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dummyIdOne",
+                  "name": "DASHBOARD_STOCK_CUSTOM_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "stock-custom-kpi",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 3804,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dummyIdTwo",
+                  "name": "DASHBOARD_REGISTRATION_SPRAYING_CUSTOM_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "registration-spraying-custom-kpi",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 3805,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dummyIdThree",
+                  "name": "DASHBOARD_SPECIAL_SPRAYING_CUSTOM_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "special-spraying-custom-kpi",
+                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -5884,7 +6106,7 @@
           "name": "DSS_NATIONAL_HEALTH",
           "vizArray": [
             {
-              "id": 101,
+              "id": 1001,
               "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_SPRAYED",
               "label": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_SPRAYED",
               "vizType": "stacked-collection",
@@ -5910,7 +6132,7 @@
               ]
             },
             {
-              "id": 102,
+              "id": 1002,
               "name": "DSS_HEALTH_POPULATION_COVERED",
               "label": "DSS_HEALTH_POPULATION_COVERED",
               "vizType": "stacked-collection",
@@ -5936,7 +6158,7 @@
               ]
             },
             {
-              "id": 103,
+              "id": 1003,
               "name": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
               "label": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
               "vizType": "stacked-collection",
@@ -5968,7 +6190,7 @@
           "name": "DSS_NATIONAL_HEALTH_HEATMAPS",
           "vizArray": [
             {
-              "id": 201,
+              "id": 1101,
               "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
               "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
               "vizType": "heatmap",
@@ -5986,7 +6208,7 @@
               ]
             },
             {
-              "id": 202,
+              "id": 1102,
               "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
               "label": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
               "vizType": "heatmap",
@@ -6010,7 +6232,7 @@
           "name": "DSS_NATIONAL_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
-              "id": 271,
+              "id": 1201,
               "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED",
               "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED",
               "vizType": "chart",
@@ -6028,7 +6250,7 @@
               ]
             },
             {
-              "id": 272,
+              "id": 1202,
               "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "label": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "vizType": "chart",
@@ -6049,10 +6271,54 @@
         },
         {
           "row": 4,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 1301,
+              "name": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
+              "label": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "financeChecklistAmountUsedPercent",
+                  "name": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
+                  "code": "",
+                  "chartType": "v-bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                }
+              ]
+            },
+            {
+              "id": 1302,
+              "name": "DSS_HEALTH_FINANCE_AMOUNT_USED",
+              "label": "DSS_HEALTH_FINANCE_AMOUNT_USED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "financeChecklistAmountUsed",
+                  "name": "DSS_HEALTH_FINANCE_AMOUNT_USED",
+                  "code": "",
+                  "chartType": "v-bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
             {
-              "id": 301,
+              "id": 1401,
               "name": "DSS_COVERAGE_BY_PROVINCE",
               "label": "DSS_COVERAGE_BY_PROVINCE",
               "vizType": "stacked-table",
