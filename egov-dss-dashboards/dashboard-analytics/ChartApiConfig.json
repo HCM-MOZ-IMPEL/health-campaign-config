@@ -23615,6 +23615,8 @@
     "excludedColumns": [
       "S.N."
     ],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
     "insight": {},
     "_comment": " "
   }
