@@ -159,30 +159,6 @@
         },
         {
           "row": 3,
-          "name": "DSS_HEALTH_FINANCIAL_SUMMARY",
-          "vizArray": [
-            {
-              "id": 107,
-              "name": "DSS_HEALTH_FINANCIAL_SUMMARY",
-              "label": "DSS_HEALTH_FINANCIAL_SUMMARY",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "financialSummaryReport",
-                  "name": "DSS_HEALTH_FINANCIAL_SUMMARY_REPORT",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 4,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
             {
@@ -6339,6 +6315,30 @@
         },
         {
           "row": 5,
+          "name": "DSS_HEALTH_FINANCIAL_SUMMARY",
+          "vizArray": [
+            {
+              "id": 1402,
+              "name": "DSS_HEALTH_FINANCIAL_SUMMARY",
+              "label": "DSS_HEALTH_FINANCIAL_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "financialSummaryReport",
+                  "name": "DSS_HEALTH_FINANCIAL_SUMMARY_REPORT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
             {
