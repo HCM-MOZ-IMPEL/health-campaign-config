@@ -23593,5 +23593,29 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "financialSummaryReport" : {
+    "chartName" : "DSS_HEALTH_FINANCIAL_SUMMARY_REPORT",
+    "queries" : [
+      {
+        "module" : "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "finance-checklist-index-v1",
+        "aggrQuery" : "{\"size\":0,\"aggs\":{\"Amount Used\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd MMM yyyy\"},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"Amount sum\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}}}"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "showFooter": true,
+    "plotLabel": "Summary Daywise",
+    "excludedColumns": [
+      "S.N."
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
