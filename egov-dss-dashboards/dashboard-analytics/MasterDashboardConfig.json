@@ -6275,25 +6275,6 @@
           "vizArray": [
             {
               "id": 1301,
-              "name": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
-              "label": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "financeChecklistAmountUsedPercent",
-                  "name": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
-                  "code": "",
-                  "chartType": "v-bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                }
-              ]
-            },
-            {
-              "id": 1302,
               "name": "DSS_HEALTH_FINANCE_AMOUNT_USED",
               "label": "DSS_HEALTH_FINANCE_AMOUNT_USED",
               "vizType": "chart",
@@ -6306,8 +6287,25 @@
                   "code": "",
                   "chartType": "v-bar",
                   "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 1302,
+              "name": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
+              "label": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "financeChecklistAmountUsedPercent",
+                  "name": "DSS_HEALTH_FINANCE_AMOUNT_USED_PERCENT",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }

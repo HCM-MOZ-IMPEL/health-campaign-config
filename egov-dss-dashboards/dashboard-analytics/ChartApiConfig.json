@@ -23644,22 +23644,14 @@
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "finance-checklist-index-v1",
         "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"nested_Agg\": {\n      \"nested\": {\n        \"path\": \"Data.attributes\"\n      },\n      \"aggs\": {\n        \"% of Amount Used\": {\n          \"terms\": {\n            \"field\": \"Data.attributes.attributeCode.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"sum\": {\n                \"field\": \"Data.attributes.value.value\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "",
-        "indexName": "finance-checklist-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"nested_Agg\": {\n      \"nested\": {\n        \"path\": \"Data.attributes\"\n      },\n      \"aggs\": {\n        \"Total Amount Used\": {\n          \"sum\": {\n            \"field\": \"Data.attributes.value.value\"\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "plotLabel": "none",
-    "drillChart": "None",
+    "chartType": "pie",
+    "valueType": "number",
+    "showLabel": true,
+    "drillChart": "",
     "documentType": "_doc",
-    "action": "divisionbyconstant",
+    "action": "",
     "aggregationPaths": [
       "% of Amount Used",
       "Total Amount Used"
