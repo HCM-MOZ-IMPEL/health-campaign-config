@@ -17517,12 +17517,44 @@
     "valueType": "number",
     "showLabel": true,
     "isCumulative": false,
+    "drillChart": "totalHousesRefusedAp",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Households Refused"
+    ],
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortValueDesc",
+    "insight": {},
+    "_comment": " "
+  },
+  "totalHousesRefusedAp": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"selectedStack\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Households Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "valueType": "number",
+    "showLabel": true,
+    "isCumulative": false,
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
       "Households Refused"
     ],
+    "filterKeys": [],
     "sort": "sortValueDesc",
     "insight": {},
     "_comment": " "
