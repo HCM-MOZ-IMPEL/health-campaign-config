@@ -10923,7 +10923,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"aggs\":{\"Todays Total visits\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Household Total Today\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"min_doc_count\":0},\"aggs\":{\"Total Count Households Visited Today\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
@@ -17335,7 +17335,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\",\"ADMINISTRATION_FAILED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.additionalDetails.reasonOfRefusal\"}}]}},\"aggs\":{\"Households not sprayed\":{\"terms\":{\"field\":\"Data.additionalDetails.reasonOfRefusal.keyword\",\"size\":1000}}}}}}"
