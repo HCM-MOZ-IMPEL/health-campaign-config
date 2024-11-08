@@ -10923,7 +10923,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.createdTime",
+        "dateRefField": "",
         "requestQueryMap": "",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"aggs\":{\"Todays Total visits\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Household Total Today\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"min_doc_count\":0},\"aggs\":{\"Total Count Households Visited Today\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
