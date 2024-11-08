@@ -23618,7 +23618,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "finance-checklist-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"nested_Agg\": {\n      \"nested\": {\n        \"path\": \"Data.attributes\"\n      },\n      \"aggs\": {\n        \"Amount Used\": {\n          \"terms\": {\n            \"field\": \"Data.attributes.attributeCode.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"sum\": {\n                \"field\": \"Data.attributes.value.value\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"Amount Used\":{\"terms\":{\"script\":{\"source\":\"'DSS_HEADER_' + doc['Data.attributes.attributeCode.keyword'].value\",\"lang\":\"painless\"},\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -23643,7 +23643,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "finance-checklist-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"nested_Agg\": {\n      \"nested\": {\n        \"path\": \"Data.attributes\"\n      },\n      \"aggs\": {\n        \"% of Amount Used\": {\n          \"terms\": {\n            \"field\": \"Data.attributes.attributeCode.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"sum\": {\n                \"field\": \"Data.attributes.value.value\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"% of Amount Used\":{\"terms\":{\"script\":{\"source\":\"'DSS_HEADER_' + doc['Data.attributes.attributeCode.keyword'].value\",\"lang\":\"painless\"},\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}"
       }
     ],
     "chartType": "pie",
