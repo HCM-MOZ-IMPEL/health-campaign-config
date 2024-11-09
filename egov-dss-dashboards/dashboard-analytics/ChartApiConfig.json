@@ -21316,7 +21316,6 @@
     "valueType": "percentage",
     "plotLabel": "none",
     "drillChart": "attendanceSprayOperatorsAPPercent",
-    "filterForCurrentDay": true,
     "documentType": "_doc",
     "action": "percentage",
     "aggregationPaths": [
@@ -21357,7 +21356,6 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "percentage",
-    "filterForCurrentDay": true,
     "aggregationPaths": [
       "Spray Operators Marked Present",
       "Total spray operators"
@@ -21463,7 +21461,6 @@
     "drillChart": "attendanceSprayOperatorsAP",
     "documentType": "_doc",
     "action": "",
-    "filterForCurrentDay": true,
     "aggregationPaths": [
       "Spray Operators Marked Present"
     ],
@@ -21493,7 +21490,6 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "filterForCurrentDay": true,
     "aggregationPaths": [
       "Spray Operators Marked Present"
     ],
