@@ -22068,7 +22068,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}}]}},\"aggs\":{\"Attend Daily Count\":{\"date_histogram\":{\"field\":\"@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd-MM-yyyy\"},\"aggs\":{\"Spray Operators Attendance\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       }
