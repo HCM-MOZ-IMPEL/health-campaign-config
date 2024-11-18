@@ -2741,6 +2741,40 @@
           "vizArray": [
             {
               "id": 2007,
+              "name": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsVisitedCoverageBarchartByDistrict",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "householdsVisitedNumberBarchartByDistrict",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 2008,
               "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "vizType": "chart",
@@ -2758,7 +2792,7 @@
               ]
             },
             {
-              "id": 2008,
+              "id": 2009,
               "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
@@ -4546,11 +4580,45 @@
           ]
         },
         {
-          "row": 4,
+          "row": 3,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
               "id": 3007,
+              "name": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageBarchartByAP",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_AP",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "householdsVisitedNumberBarchartByAp",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 3008,
               "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "vizType": "chart",
@@ -4568,7 +4636,7 @@
               ]
             },
             {
-              "id": 3008,
+              "id": 3009,
               "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "vizType": "chart",
