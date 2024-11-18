@@ -12743,6 +12743,34 @@
     "insight": {},
     "_comment": " "
   },
+  "householdsVisitedNumberBarchartByProvince": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Visited\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.province.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "householdsVisitedNumberBarchartByDistrict",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Households Visited"
+    ],
+    "filterKeys": [
+      {
+        "key": "province"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "householdsVisitedNumberBarchartByDistrict": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
     "queries": [
@@ -12849,6 +12877,57 @@
     "action": "",
     "aggregationPaths": [
       "Households Visited"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "householdsVisitedCoverageBarchartByProvince": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Coverage\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.province.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Households Target\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.province.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target Households\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target Households\"},\"script\":\"(params.tpd)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "householdsVisitedCoverageBarchartByDistrict",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Households Coverage",
+      "Households Target"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "repsonseToDifferenceOfDates",
+        "actionName": "",
+        "sort": "sortValueDesc",
+        "fields": [
+          "Target"
+        ],
+        "newField": "Coverage",
+        "_comments": ""
+      }
+    ],
+    "filterKeys": [
+      {
+        "key": "province"
+      }
     ],
     "insight": {},
     "_comment": " "

@@ -6313,17 +6313,7 @@
                   "code": "",
                   "chartType": "v-bar",
                   "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                },
-                {
-                  "id": "totalHousesRefusedProvince",
-                  "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED_PROVINCE",
-                  "code": "",
-                  "chartType": "v-bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
+                  "headers": []
                 }
               ]
             },
@@ -6349,6 +6339,48 @@
         },
         {
           "row": 4,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 1500,
+              "name": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsVisitedCoverageBarchartByDistrict",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 1501,
+              "name": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsVisitedNumberBarchartByDistrict",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
           "name": "DSS_HEALTH_CUSTOM_KPIS",
           "vizArray": [
             {
@@ -6390,7 +6422,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_FINANCIAL_SUMMARY",
           "vizArray": [
             {
@@ -6414,7 +6446,7 @@
           ]
         },
         {
-          "row": 6,
+          "row": 7,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
             {
