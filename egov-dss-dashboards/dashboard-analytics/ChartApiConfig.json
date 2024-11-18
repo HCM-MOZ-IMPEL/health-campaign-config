@@ -12763,7 +12763,6 @@
     "aggregationPaths": [
       "Households Visited"
     ],
-    "computedFields": [],
     "filterKeys": [
       {
         "key": "district"
@@ -12793,7 +12792,6 @@
     "aggregationPaths": [
       "Households Visited"
     ],
-    "computedFields": [],
     "filterKeys": [
       {
         "key": "district"
@@ -12823,7 +12821,6 @@
     "aggregationPaths": [
       "Households Visited"
     ],
-    "computedFields": [],
     "filterKeys": [
       {
         "key": "district"
@@ -12853,7 +12850,6 @@
     "aggregationPaths": [
       "Households Visited"
     ],
-    "computedFields": [],
     "filterKeys": [
       {
         "key": "district"
@@ -12959,7 +12955,7 @@
     ],
     "filterKeys": [
       {
-        "key": "district"
+        "key": "administrativeProvince"
       }
     ],
     "insight": {},
@@ -13011,7 +13007,7 @@
     ],
     "filterKeys": [
       {
-        "key": "district"
+        "key": "locality"
       }
     ],
     "insight": {},
@@ -13059,11 +13055,6 @@
         ],
         "newField": "Coverage",
         "_comments": ""
-      }
-    ],
-    "filterKeys": [
-      {
-        "key": "district"
       }
     ],
     "insight": {},
