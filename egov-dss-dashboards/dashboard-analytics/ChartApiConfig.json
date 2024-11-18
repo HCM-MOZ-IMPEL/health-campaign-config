@@ -12794,7 +12794,7 @@
     ],
     "filterKeys": [
       {
-        "key": "district"
+        "key": "administrativeProvince"
       }
     ],
     "insight": {},
@@ -12823,7 +12823,7 @@
     ],
     "filterKeys": [
       {
-        "key": "district"
+        "key": "locality"
       }
     ],
     "insight": {},
