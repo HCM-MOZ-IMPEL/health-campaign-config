@@ -6350,7 +6350,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "householdsVisitedCoverageBarchartByDistrict",
+                  "id": "householdsVisitedCoverageBarchartByProvince",
                   "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT",
                   "code": "",
                   "chartType": "v-bar",
@@ -6361,14 +6361,14 @@
             },
             {
               "id": 1501,
-              "name": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
-              "label": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "name": "DSS_HEALTH_HOUSEHOLD_VISTED_NUMBER_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISTED_NUMBER_RANKING",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "householdsVisitedNumberBarchartByDistrict",
+                  "id": "householdsVisitedNumberBarchartByProvince",
                   "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
                   "code": "",
                   "chartType": "v-bar",
