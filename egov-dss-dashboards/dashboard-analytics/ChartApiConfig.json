@@ -12844,16 +12844,11 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "",
+    "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
       "Households Visited"
-    ],
-    "filterKeys": [
-      {
-        "key": "district"
-      }
     ],
     "insight": {},
     "_comment": " "
@@ -13035,7 +13030,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "",
+    "drillChart": "none",
     "documentType": "_doc",
     "action": "percentage",
     "aggregationPaths": [
