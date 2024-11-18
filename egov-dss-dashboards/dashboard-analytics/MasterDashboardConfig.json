@@ -6353,7 +6353,7 @@
                   "id": "householdsVisitedCoverageBarchartByDistrict",
                   "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "v-bar",
                   "filter": "",
                   "headers": []
                 }
@@ -6371,7 +6371,7 @@
                   "id": "householdsVisitedNumberBarchartByDistrict",
                   "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "v-bar",
                   "filter": "",
                   "headers": []
                 }
