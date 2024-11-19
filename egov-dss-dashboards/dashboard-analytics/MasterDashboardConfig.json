@@ -2836,6 +2836,30 @@
           ]
         },
         {
+          "row": 7,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 2010,
+              "name": "DSS_HEALTH_OVERVIEW_USER_SYNC_SUMMARY_ALL_ROLES",
+              "label": "DSS_HEALTH_OVERVIEW_USER_SYNC_SUMMARY_ALL_ROLES",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userSyncSummaryAllRolesDistrict",
+                  "name": "DSS_HEALTH_OVERVIEW_USER_SYNC_SUMMARY_ALL_ROLES",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
