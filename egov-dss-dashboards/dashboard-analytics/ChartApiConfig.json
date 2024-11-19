@@ -19819,10 +19819,10 @@
     "filterKeys": [],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "",
+    "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "plotLabel": "DATA SYNC",
+    "plotLabel": "District",
     "excludedColumns": [
       "S.N.",
       "DATA SYNC",
