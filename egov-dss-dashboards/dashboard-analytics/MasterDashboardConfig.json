@@ -2860,6 +2860,32 @@
           ]
         },
         {
+          "row": 8,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 2011,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "sprayOperatorsSyncHistogram",
+                  "name": "DSS_HEALTH_SPRAY_OPERATORS_SYNC_HISTOGRAM",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "spray-ops-sync-histogram",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
