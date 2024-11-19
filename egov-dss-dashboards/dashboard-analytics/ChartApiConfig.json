@@ -12844,7 +12844,6 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "computeMultiPaths": true,
     "aggregationPaths": [
       "Households Visited",
       "Households Sprayed",
