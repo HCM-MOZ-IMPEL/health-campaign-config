@@ -12854,6 +12854,61 @@
     "insight": {},
     "_comment": " "
   },
+  "householdsVisitedNumberBarchartByApOverview": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Visited\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Sprayed\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Not Sprayed\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household that had secondary spray\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"household_buckets\":{\"terms\":{\"field\":\"Data.householdId.keyword\",\"min_doc_count\":2,\"size\":10000},\"aggs\":{\"status_buckets\":{\"terms\":{\"field\":\"Data.administrationStatus.keyword\"}},\"check_admin_success\":{\"filter\":{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},\"aggs\":{\"NAME\":{\"value_count\":{\"field\":\"Data.administrationStatus.keyword\"}}}},\"filter_by_status_count\":{\"bucket_selector\":{\"buckets_path\":{\"statusCount\":\"status_buckets._bucket_count\",\"checkSuccess\":\"check_admin_success.NAME\"},\"script\":\"params.statusCount > 1 && params.checkSuccess > 0\"}}}},\"final count\":{\"bucket_script\":{\"buckets_path\":{\"householdsCount\":\"household_buckets._bucket_count\"},\"script\":\"params.householdsCount\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"should\": [\n            {\n              \"bool\": {\n                \"must\": [\n                  {\n                    \"terms\": {\n                      \"Data.administrationStatus.keyword\": [\n                        \"BENEFICIARY_REFUSED\",\n                        \"CLOSED_HOUSEHOLD\"\n                      ]\n                    }\n                  },\n                  {\n                    \"term\": {\n                      \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n                    }\n                  }\n                ]\n              }\n            },\n            {\n              \"bool\": {\n                \"must\": [\n                  {\n                    \"term\": {\n                      \"Data.administrationStatus.keyword\": \"ADMINISTRATION_FAILED\"\n                    }\n                  },\n                  {\n                    \"term\": {\n                      \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n                    }\n                  },\n                  {\n                    \"terms\": {\n                      \"Data.additionalDetails.reasonOfRefusal.keyword\": [\n                        \"SICK\",\n                        \"FUNERAL\"\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total no. of Houses Required Secondary Spraying\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Households Visited",
+      "Households Sprayed",
+      "Households Not Sprayed",
+      "Total no. of Houses Required Secondary Spraying",
+      "Household that had secondary spray"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "householdsVisitedNumberBarchartByAp": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_VISITED_NUMBER_BAR_CHART_BY_DISTRICT",
@@ -19816,10 +19871,14 @@
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRICT_SUPERVISOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique District Supervisors Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
       }
     ],
-    "filterKeys": [],
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "none",
+    "drillChart": "userSyncSummaryAllRolesAp",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "District",
@@ -19946,6 +20005,160 @@
           "Total_District_Supervisors"
         ],
         "newField": "Unique_District_Supervisors_User_Sync_Rate",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "userSyncSummaryAllRolesAp": {
+    "chartName": "DSS_HEALTH_OVERVIEW_USER_SYNC_SUMMARY_ALL_ROLES",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Total Spray Operators\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Unique Spray Operators Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"TEAM_SUPERVISOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Total Team Supervisors\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"TEAM_SUPERVISOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Unique Team Supervisors Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"MOBILIZER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Total Mobilizers\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"MOBILIZER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Unique Mobilizers Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "District",
+    "excludedColumns": [
+      "S.N.",
+      "DATA SYNC",
+      "Total Spray Operators",
+      "Unique Spray Operators Synced",
+      "Total Team Supervisors",
+      "Unique Team Supervisors Synced",
+      "Total Mobilizers",
+      "Unique Mobilizers Synced"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Spray Operators"
+        ],
+        "newField": "Total_Spray_Operators",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Unique Spray Operators Synced"
+        ],
+        "newField": "Unique_Spray_Operators_Synced",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Unique_Spray_Operators_Synced",
+          "Total_Spray_Operators"
+        ],
+        "newField": "Unique_Spray_Operators_User_Sync_Rate",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Team Supervisors"
+        ],
+        "newField": "Total_Team_Supervisors",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Unique Team Supervisors Synced"
+        ],
+        "newField": "Unique_Team_Supervisors_Synced",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Unique_Team_Supervisors_Synced",
+          "Total_Team_Supervisors"
+        ],
+        "newField": "Unique_Team_Supervisors_User_Sync_Rate",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Mobilizers"
+        ],
+        "newField": "Total_Mobilizers",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Unique Mobilizers Synced"
+        ],
+        "newField": "Unique_Mobilizers_Synced",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Unique_Mobilizers_Synced",
+          "Total_Mobilizers"
+        ],
+        "newField": "Unique_Mobilizers_User_Sync_Rate",
         "_comments": ""
       }
     ],

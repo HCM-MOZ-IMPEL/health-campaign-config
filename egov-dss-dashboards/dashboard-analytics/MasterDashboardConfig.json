@@ -2741,8 +2741,8 @@
           "vizArray": [
             {
               "id": 2007,
-              "name": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
-              "label": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "name": "DSS_HEALTH_HOUSEHOLD_VISITED_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISITED_COVERAGE_RANKING",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -2775,8 +2775,8 @@
           "vizArray": [
             {
               "id": 20071,
-              "name": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
-              "label": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "name": "DSS_HEALTH_HOUSEHOLD_VISITED_NUMBER_OVERVIEW",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISITED_NUMBER_OVERVIEW",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -4659,14 +4659,14 @@
           "vizArray": [
             {
               "id": 3007,
-              "name": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
-              "label": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "name": "DSS_HEALTH_HOUSEHOLD_VISITED_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISITED_COVERAGE_RANKING",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "householdsCoverageBarchartByAP",
+                  "id": "householdsVisitedCoverageBarchartByAp",
                   "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_AP",
                   "code": "",
                   "chartType": "bar",
@@ -4688,7 +4688,31 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 30071,
+              "name": "DSS_HEALTH_HOUSEHOLD_VISITED_NUMBER_OVERVIEW",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISITED_NUMBER_OVERVIEW",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsVisitedNumberBarchartByDistrictOverview",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT_OVERVIEW",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -4722,6 +4746,56 @@
                   "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_AP",
                   "code": "",
                   "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 3010,
+              "name": "DSS_HEALTH_OVERVIEW_USER_SYNC_SUMMARY_ALL_ROLES",
+              "label": "DSS_HEALTH_OVERVIEW_USER_SYNC_SUMMARY_ALL_ROLES",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userSyncSummaryAllRolesAp",
+                  "name": "DSS_HEALTH_OVERVIEW_USER_SYNC_SUMMARY_ALL_ROLES",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 3011,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "sprayOperatorsSyncHistogram",
+                  "name": "DSS_HEALTH_SPRAY_OPERATORS_SYNC_HISTOGRAM",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "spray-ops-sync-histogram",
+                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
