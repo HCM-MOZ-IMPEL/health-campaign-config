@@ -19873,7 +19873,8 @@
     ],
     "filterKeys": [
       {
-        "key": "district"
+        "key": "district",
+        "column": "District"
       }
     ],
     "chartType": "xtable",
