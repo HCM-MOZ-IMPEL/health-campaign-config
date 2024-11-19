@@ -2770,7 +2770,31 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 20071,
+              "name": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_VISTED_COVERAGE_RANKING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsVisitedNumberBarchartByDistrictOverview",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT_OVERVIEW",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
