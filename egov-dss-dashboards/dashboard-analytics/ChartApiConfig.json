@@ -12844,7 +12844,7 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "stackBars": "false",
+    "stackBars": false,
     "aggregationPaths": [
       "Households Visited",
       "Households Sprayed",
@@ -12900,7 +12900,7 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "stackBars": "false",
+    "stackBars": false,
     "aggregationPaths": [
       "Households Visited",
       "Households Sprayed",
