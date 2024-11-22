@@ -24555,7 +24555,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "finance-checklist-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"Amount Used\":{\"terms\":{\"script\":{\"source\":\"'DSS_HEADER_' + doc['Data.attributes.attributeCode.keyword'].value\",\"lang\":\"painless\"},\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"CC1\",\"CC3\",\"CC5\",\"CC6\",\"CC7\",\"CC8\",\"CC10\",\"CC12\",\"CC14\",\"CC21\",\"CC22\",\"CC23\",\"CC24\",\"CC25\",\"CC26\",\"CC28\",\"CC29\",\"CC31\",\"CC32\",\"CC33\"]}}]}},\"aggs\":{\"Amount Used\":{\"terms\":{\"script\":{\"source\":\"'DSS_HEADER_' + doc['Data.attributes.attributeCode.keyword'].value\",\"lang\":\"painless\"},\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -24580,7 +24580,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "finance-checklist-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"% of Amount Used\":{\"terms\":{\"script\":{\"source\":\"'DSS_HEADER_' + doc['Data.attributes.attributeCode.keyword'].value\",\"lang\":\"painless\"},\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"CC1\",\"CC3\",\"CC5\",\"CC6\",\"CC7\",\"CC8\",\"CC10\",\"CC12\",\"CC14\",\"CC21\",\"CC22\",\"CC23\",\"CC24\",\"CC25\",\"CC26\",\"CC28\",\"CC29\",\"CC31\",\"CC32\",\"CC33\"]}}]}},\"aggs\":{\"% of Amount Used\":{\"terms\":{\"script\":{\"source\":\"'DSS_HEADER_' + doc['Data.attributes.attributeCode.keyword'].value\",\"lang\":\"painless\"},\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}}}"
       }
     ],
     "chartType": "pie",
@@ -24605,14 +24605,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"WAREHOUSE_MANAGER_PERFORMANCE\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"WMP1\",\"WMP2\",\"WMP9\",\"WMP35\",\"WMP37\"]}}]}},\"aggs\":{\"True count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"term\":{\"Data.attributes.value.value.keyword\":\"YES\"}}}}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"WAREHOUSE_MANAGER_PERFORMANCE\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"WMP3\",\"WMP6\",\"WMP8\",\"WMP26\",\"WMP27\",\"WMP33\"]}}]}},\"aggs\":{\"True count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"term\":{\"Data.attributes.value.value.keyword\":\"YES\"}}}}}}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"WAREHOUSE_MANAGER_PERFORMANCE\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"WMP1\",\"WMP2\",\"WMP9\",\"WMP35\",\"WMP37\"]}}]}},\"aggs\":{\"Total count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.attributes.value.value.keyword\"}}}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"WAREHOUSE_MANAGER_PERFORMANCE\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"WMP3\",\"WMP6\",\"WMP8\",\"WMP26\",\"WMP27\",\"WMP33\"]}}]}},\"aggs\":{\"Total count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.attributes.value.value.keyword\"}}}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -24642,14 +24642,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"EOD_CLEANING\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"EODC1\",\"EODC2\",\"EODC6.NO.EODC20.YES.ADT1\",\"EODC6.NO.EODC20.YES.ADT2.YES.ADT1\",\"EODC32\"]}}]}},\"aggs\":{\"True count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"term\":{\"Data.attributes.value.value.keyword\":\"YES\"}}}}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"EOD_CLEANING\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"EODC4\",\"EODC6\",\"EODC6.NO.EODC7\",\"EODC6.NO.EODC10\",\"EODC6.NO.EODC12\",\"EODC6.NO.EODC14\",\"EODC6.NO.EODC17\",\"EODC6.NO.EODC18\",\"EODC6.NO.EODC22\",\"EODC6.NO.EODC23\",\"EODC6.NO.EODC26\",\"EODC6.NO.EODC27\"]}}]}},\"aggs\":{\"True count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"term\":{\"Data.attributes.value.value.keyword\":\"YES\"}}}}}}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"EOD_CLEANING\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"EODC1\",\"EODC2\",\"EODC6.NO.EODC20.YES.ADT1\",\"EODC6.NO.EODC20.YES.ADT2.YES.ADT1\",\"EODC32\"]}}]}},\"aggs\":{\"Total count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.attributes.value.value.keyword\"}}}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"SOP Checklist Answers\":{\"filter\":{\"term\":{\"Data.checklistName.keyword\":\"EOD_CLEANING\"}},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"EODC4\",\"EODC6\",\"EODC6.NO.EODC7\",\"EODC6.NO.EODC10\",\"EODC6.NO.EODC12\",\"EODC6.NO.EODC14\",\"EODC6.NO.EODC17\",\"EODC6.NO.EODC18\",\"EODC6.NO.EODC22\",\"EODC6.NO.EODC23\",\"EODC6.NO.EODC26\",\"EODC6.NO.EODC27\"]}}]}},\"aggs\":{\"Total count\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.attributes.value.value.keyword\"}}}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -24679,7 +24679,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "finance-checklist-index-v1",
-        "aggrQuery" : "{\"size\":0,\"aggs\":{\"Amount Used\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd MMM yyyy\"},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"Amount sum\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}}}"
+        "aggrQuery" : "{\"size\":0,\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"CC1\",\"CC3\",\"CC5\",\"CC6\",\"CC7\",\"CC8\",\"CC10\",\"CC12\",\"CC14\",\"CC21\",\"CC22\",\"CC23\",\"CC24\",\"CC25\",\"CC26\",\"CC28\",\"CC29\",\"CC31\",\"CC32\",\"CC33\"]}}]}},\"aggs\":{\"Amount Used\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd MMM yyyy\"},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"Amount sum\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}}}}}}}"
       }
     ],
     "chartType": "xtable",
