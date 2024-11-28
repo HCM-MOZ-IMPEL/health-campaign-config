@@ -8,7 +8,7 @@ serviceMaps:
       fromTopic: create-resource-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO health.eg_cm_resource_details(id, "status", tenantId, fileStoreId,processedFileStoreId,"action", campaignId,"type", createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails, hierarchytype) VALUES (?, ?,?, ?,?,?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO eg_cm_resource_details(id, "status", tenantId, fileStoreId,processedFileStoreId,"action", campaignId,"type", createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails, hierarchytype) VALUES (?, ?,?, ?,?,?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.ResourceDetails
           jsonMaps:
             - jsonPath: $.ResourceDetails.id
@@ -36,7 +36,7 @@ serviceMaps:
       fromTopic: update-resource-details
       isTransaction: true
       queryMaps:
-        - query: UPDATE health.eg_cm_resource_details SET "status" = ?, processedFileStoreId = ?, lastModifiedBy = ?, lastModifiedTime = ?,additionalDetails = ? WHERE id = ?;
+        - query: UPDATE eg_cm_resource_details SET "status" = ?, processedFileStoreId = ?, lastModifiedBy = ?, lastModifiedTime = ?,additionalDetails = ? WHERE id = ?;
           basePath: $.ResourceDetails
           jsonMaps:
             - jsonPath: $.ResourceDetails.status
@@ -55,7 +55,7 @@ serviceMaps:
       fromTopic: create-resource-activity
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO health.eg_cm_resource_activity (id, "status", retryCount,tenantId, type, url, requestPayload, responsePayload, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails, resourceDetailsId) VALUES (?, ?,?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?,?);
+        - query: INSERT INTO eg_cm_resource_activity (id, "status", retryCount,tenantId, type, url, requestPayload, responsePayload, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails, resourceDetailsId) VALUES (?, ?,?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?,?);
           basePath: $.Activities.*
           jsonMaps:
             - jsonPath: $.Activities.*.id
@@ -86,7 +86,7 @@ serviceMaps:
       fromTopic: create-generated-resource-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO health.eg_cm_generated_resource_details (id,filestoreid, type,"status",count,tenantid,hierarchyType, createdby, createdtime, lastmodifiedby, lastmodifiedtime, additionaldetails,campaignid) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);
+        - query: INSERT INTO eg_cm_generated_resource_details (id,filestoreid, type,"status",count,tenantid,hierarchyType, createdby, createdtime, lastmodifiedby, lastmodifiedtime, additionaldetails,campaignid) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);
           basePath: generatedResource.*
           jsonMaps:
             - jsonPath: $.generatedResource.*.id
@@ -113,7 +113,7 @@ serviceMaps:
       fromTopic: update-generated-resource-details
       isTransaction: true
       queryMaps:
-        - query: UPDATE health.eg_cm_generated_resource_details SET status = ?,count=?, lastModifiedby =? , lastModifiedtime = ? , fileStoreid= ?, additionalDetails= ? WHERE id= ?;
+        - query: UPDATE eg_cm_generated_resource_details SET status = ?,count=?, lastModifiedby =? , lastModifiedtime = ? , fileStoreid= ?, additionalDetails= ? WHERE id= ?;
           basePath: generatedResource.*
           jsonMaps:
             - jsonPath: $.generatedResource.*.status
@@ -139,7 +139,7 @@ serviceMaps:
       transactionCodeJsonPath: $.campaignNumber
       auditAttributeBasePath: $.CampaignDetails
       queryMaps:
-        - query: INSERT INTO health.eg_cm_campaign_details(id, tenantId, "status","action",campaignName,projectType, campaignNumber,hierarchyType,boundaryCode, projectId,parentId,isActive,startDate,endDate, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails,campaignDetails) VALUES (?,?,?,?,?,?, ?,?, ?,?,?,?, ?, ?, ?, ?, ?, ?,?,?);
+        - query: INSERT INTO eg_cm_campaign_details(id, tenantId, "status","action",campaignName,projectType, campaignNumber,hierarchyType,boundaryCode, projectId,parentId,isActive,startDate,endDate, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails,campaignDetails) VALUES (?,?,?,?,?,?, ?,?, ?,?,?,?, ?, ?, ?, ?, ?, ?,?,?);
           basePath: $.CampaignDetails
           jsonMaps:
             - jsonPath: $.CampaignDetails.id
@@ -180,7 +180,7 @@ serviceMaps:
       transactionCodeJsonPath: $.campaignNumber
       auditAttributeBasePath: $.CampaignDetails
       queryMaps:
-        - query: UPDATE health.eg_cm_campaign_details SET campaignName = ?, "status" = ?, action = ?, projectType = ?, hierarchyType = ?, boundaryCode = ?, projectId = ?, parentId = ?, isActive = ?,startDate=?,endDate=?, lastModifiedBy = ?, lastModifiedTime = ?, additionalDetails = ?, campaignDetails = ? WHERE id = ?;
+        - query: UPDATE eg_cm_campaign_details SET campaignName = ?, "status" = ?, action = ?, projectType = ?, hierarchyType = ?, boundaryCode = ?, projectId = ?, parentId = ?, isActive = ?,startDate=?,endDate=?, lastModifiedBy = ?, lastModifiedTime = ?, additionalDetails = ?, campaignDetails = ? WHERE id = ?;
           basePath: $.CampaignDetails
           jsonMaps:
             - jsonPath: $.CampaignDetails.campaignName
@@ -210,7 +210,7 @@ serviceMaps:
       fromTopic: save-process-track
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO health.eg_cm_campaign_process(id, campaignId, "type","status",details,createdtime, lastmodifiedtime,additionaldetails) VALUES (?,?,?,?,?,?,?,?);
+        - query: INSERT INTO eg_cm_campaign_process(id, campaignId, "type","status",details,createdtime, lastmodifiedtime,additionaldetails) VALUES (?,?,?,?,?,?,?,?);
           basePath: processDetails.*
           jsonMaps:
             - jsonPath: $.processDetails.*.id
@@ -232,7 +232,7 @@ serviceMaps:
       fromTopic: update-process-track
       isTransaction: true
       queryMaps:
-        - query: UPDATE health.eg_cm_campaign_process SET campaignId = ?, "type" = ?, "status" = ?,details = ?,createdtime = ?,lastmodifiedtime = ?,additionaldetails = ? WHERE id = ?;
+        - query: UPDATE eg_cm_campaign_process SET campaignId = ?, "type" = ?, "status" = ?,details = ?,createdtime = ?,lastmodifiedtime = ?,additionaldetails = ? WHERE id = ?;
           basePath: $.processDetails
           jsonMaps:
             - jsonPath: $.processDetails.campaignId
