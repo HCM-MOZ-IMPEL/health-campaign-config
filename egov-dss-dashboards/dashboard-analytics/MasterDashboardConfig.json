@@ -6449,24 +6449,6 @@
           "vizArray": [
             {
               "id": 1201,
-              "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED",
-              "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "totalHousesRefusedProvince",
-                  "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED_PROVINCE",
-                  "code": "",
-                  "chartType": "v-bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 1202,
               "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "label": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
               "vizType": "chart",
@@ -6478,6 +6460,24 @@
                   "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_NATIONAL",
                   "code": "",
                   "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 1202,
+              "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED",
+              "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalHousesRefusedProvince",
+                  "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED_PROVINCE",
+                  "code": "",
+                  "chartType": "v-bar",
                   "filter": "",
                   "headers": []
                 }
