@@ -6062,7 +6062,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "incompleteRecordsByAp",
+                  "id": "incompleteRecordsByAP",
                   "name": "DSS_HEALTH_INCOMPLETE_HOUSES",
                   "code": "",
                   "chartType": "bar",
