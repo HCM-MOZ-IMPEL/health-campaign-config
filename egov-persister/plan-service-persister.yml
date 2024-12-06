@@ -14,7 +14,7 @@ serviceMaps:
       transactionCodeJsonPath: $.id
       auditAttributeBasePath: $.PlanConfiguration
       queryMaps:
-        - query: INSERT INTO health.plan_configuration(id, tenant_id, name, campaign_id, status, created_by, created_time, last_modified_by, last_modified_time, additional_details) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_configuration(id, tenant_id, name, campaign_id, status, created_by, created_time, last_modified_by, last_modified_time, additional_details) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.PlanConfiguration
           jsonMaps:
             - jsonPath: $.PlanConfiguration.id
@@ -30,7 +30,7 @@ serviceMaps:
               type: JSON
               dbType: JSONB
 
-        - query: INSERT INTO health.plan_configuration_files(id, plan_configuration_id, filestore_id, input_file_type, template_identifier, active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_configuration_files(id, plan_configuration_id, filestore_id, input_file_type, template_identifier, active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.PlanConfiguration.files.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.files.*.id
@@ -45,7 +45,7 @@ serviceMaps:
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedTime
 
 
-        - query: INSERT INTO health.plan_configuration_assumptions(id, key, value, source, category, active, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_configuration_assumptions(id, key, value, source, category, active, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.PlanConfiguration.assumptions.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.assumptions.*.id
@@ -60,7 +60,7 @@ serviceMaps:
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedBy
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_configuration_operations(id, input, operator, assumption_value, output, source, category, active, execution_order, show_on_estimation_dashboard, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_configuration_operations(id, input, operator, assumption_value, output, source, category, active, execution_order, show_on_estimation_dashboard, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.PlanConfiguration.operations.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.operations.*.id
@@ -79,7 +79,7 @@ serviceMaps:
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedBy
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_configuration_mapping(id, filestore_id, mapped_from, mapped_to, active, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_configuration_mapping(id, filestore_id, mapped_from, mapped_to, active, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.PlanConfiguration.resourceMapping.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.resourceMapping.*.id
@@ -107,7 +107,7 @@ serviceMaps:
       transactionCodeJsonPath: $.id
       auditAttributeBasePath: $.PlanConfiguration
       queryMaps:
-        - query: UPDATE health.plan_configuration SET tenant_id = ?, name = ?, campaign_id = ?, status = ?, last_modified_by = ?, last_modified_time = ?, additional_details = ? WHERE id = ?;
+        - query: UPDATE plan_configuration SET tenant_id = ?, name = ?, campaign_id = ?, status = ?, last_modified_by = ?, last_modified_time = ?, additional_details = ? WHERE id = ?;
           basePath: $.PlanConfiguration
           jsonMaps:
             - jsonPath: $.PlanConfiguration.tenantId
@@ -122,7 +122,7 @@ serviceMaps:
             - jsonPath: $.PlanConfiguration.id
 
 
-        - query: INSERT INTO health.plan_configuration_files(id, plan_configuration_id, filestore_id, input_file_type, template_identifier,  active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET filestore_id =?, input_file_type = ?, template_identifier = ?, active = ?, last_modified_by = ?, last_modified_time = ?;
+        - query: INSERT INTO plan_configuration_files(id, plan_configuration_id, filestore_id, input_file_type, template_identifier,  active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET filestore_id =?, input_file_type = ?, template_identifier = ?, active = ?, last_modified_by = ?, last_modified_time = ?;
           basePath: $.PlanConfiguration.files.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.files.*.id
@@ -142,12 +142,12 @@ serviceMaps:
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedBy
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedTime
 
-        - query: DELETE FROM health.plan_configuration_files WHERE id = ? and active = false;
+        - query: DELETE FROM plan_configuration_files WHERE id = ? and active = false;
           basePath: $.PlanConfiguration.files.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.files.*.id
 
-        - query: INSERT INTO health.plan_configuration_assumptions(id, key, value, source, category, active, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET key = ?, value = ?, active = ?, last_modified_by = ?, last_modified_time = ?;
+        - query: INSERT INTO plan_configuration_assumptions(id, key, value, source, category, active, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET key = ?, value = ?, active = ?, last_modified_by = ?, last_modified_time = ?;
           basePath: $.PlanConfiguration.assumptions.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.assumptions.*.id
@@ -167,12 +167,12 @@ serviceMaps:
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedBy
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedTime
 
-        - query: DELETE FROM health.plan_configuration_assumptions WHERE id = ? and active = false;
+        - query: DELETE FROM plan_configuration_assumptions WHERE id = ? and active = false;
           basePath: $.PlanConfiguration.assumptions.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.assumptions.*.id
 
-        - query: INSERT INTO health.plan_configuration_operations(id, input, operator, assumption_value, output, source, category, active, execution_order, show_on_estimation_dashboard, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET input = ?, operator = ?, assumption_value = ?, output = ?, active = ?, execution_order = ?, show_on_estimation_dashboard = ?, last_modified_by = ?, last_modified_time = ?;
+        - query: INSERT INTO plan_configuration_operations(id, input, operator, assumption_value, output, source, category, active, execution_order, show_on_estimation_dashboard, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET input = ?, operator = ?, assumption_value = ?, output = ?, active = ?, execution_order = ?, show_on_estimation_dashboard = ?, last_modified_by = ?, last_modified_time = ?;
           basePath: $.PlanConfiguration.operations.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.operations.*.id
@@ -200,12 +200,12 @@ serviceMaps:
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedBy
             - jsonPath: $.PlanConfiguration.auditDetails.lastModifiedTime
 
-        - query: DELETE FROM health.plan_configuration_operations WHERE id = ? and active = false;
+        - query: DELETE FROM plan_configuration_operations WHERE id = ? and active = false;
           basePath: $.PlanConfiguration.operations.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.operations.*.id
 
-        - query: INSERT INTO health.plan_configuration_mapping(id, filestore_id, mapped_from, mapped_to, active, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET mapped_from = ?, mapped_to = ?, filestore_id = ?, active = ?, last_modified_by = ?, last_modified_time = ?;
+        - query: INSERT INTO plan_configuration_mapping(id, filestore_id, mapped_from, mapped_to, active, plan_configuration_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET mapped_from = ?, mapped_to = ?, filestore_id = ?, active = ?, last_modified_by = ?, last_modified_time = ?;
           basePath: $.PlanConfiguration.resourceMapping.*
           jsonMaps:
             - jsonPath: $.PlanConfiguration.resourceMapping.*.id
@@ -233,7 +233,7 @@ serviceMaps:
       fromTopic: plan-employee-assignment-create-topic
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO health.plan_employee_assignment(id, tenant_id, plan_configuration_id, plan_configuration_name, employee_id, role, hierarchy_level, jurisdiction, additional_details, active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_employee_assignment(id, tenant_id, plan_configuration_id, plan_configuration_name, employee_id, role, hierarchy_level, jurisdiction, additional_details, active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.PlanEmployeeAssignment
           jsonMaps:
             - jsonPath: $.PlanEmployeeAssignment.id
@@ -259,7 +259,7 @@ serviceMaps:
       fromTopic: plan-employee-assignment-update-topic
       isTransaction: true
       queryMaps:
-        - query: UPDATE health.plan_employee_assignment SET jurisdiction = ?, hierarchy_level = ?, additional_details = ?, active = ?, last_modified_by = ?, last_modified_time = ? WHERE id = ?;
+        - query: UPDATE plan_employee_assignment SET jurisdiction = ?, hierarchy_level = ?, additional_details = ?, active = ?, last_modified_by = ?, last_modified_time = ? WHERE id = ?;
           basePath: $.PlanEmployeeAssignment
           jsonMaps:
             - jsonPath: $.PlanEmployeeAssignment.jurisdiction
@@ -277,7 +277,7 @@ serviceMaps:
       fromTopic: save-plan
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO health.plan(id, tenant_id, locality, campaign_id, plan_configuration_id, status, assignee, boundary_ancestral_path, additional_details, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan(id, tenant_id, locality, campaign_id, plan_configuration_id, status, assignee, boundary_ancestral_path, additional_details, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Plan
           jsonMaps:
             - jsonPath: $.Plan.id
@@ -308,7 +308,7 @@ serviceMaps:
 
             - jsonPath: $.Plan.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_activity(id, code, description, planned_start_date, planned_end_date, dependencies, plan_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_activity(id, code, description, planned_start_date, planned_end_date, dependencies, plan_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Plan.activities.*
           jsonMaps:
             - jsonPath: $.Plan.activities.*.id
@@ -335,7 +335,7 @@ serviceMaps:
 
             - jsonPath: $.Plan.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_activity_condition(id, entity, entity_property, expression, activity_id, is_active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_activity_condition(id, entity, entity_property, expression, activity_id, is_active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Plan.activities.*.conditions.*
           jsonMaps:
             - jsonPath: $.Plan.activities.*.conditions.*.id
@@ -358,7 +358,7 @@ serviceMaps:
 
             - jsonPath: $.Plan.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_resource(id, resource_type, estimated_number, plan_id, activity_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_resource(id, resource_type, estimated_number, plan_id, activity_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Plan.resources.*
           jsonMaps:
             - jsonPath: $.Plan.resources.*.id
@@ -379,7 +379,7 @@ serviceMaps:
 
             - jsonPath: $.Plan.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_target(id, metric, metric_value, metric_comparator, metric_unit, plan_id, activity_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_target(id, metric, metric_value, metric_comparator, metric_unit, plan_id, activity_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Plan.targets.*
           jsonMaps:
             - jsonPath: $.Plan.targets.*.id
@@ -409,7 +409,7 @@ serviceMaps:
       fromTopic: update-plan
       isTransaction: true
       queryMaps:
-        - query: UPDATE health.plan SET status = ?, assignee = ?, additional_details = ?, last_modified_by=?, last_modified_time=? WHERE id = ?;
+        - query: UPDATE plan SET status = ?, assignee = ?, additional_details = ?, last_modified_by=?, last_modified_time=? WHERE id = ?;
           basePath: $.Plan
           jsonMaps:
             - jsonPath: $.Plan.status
@@ -426,7 +426,7 @@ serviceMaps:
 
             - jsonPath: $.Plan.id
 
-        - query: INSERT INTO health.plan_activity(id, code, description, planned_start_date, planned_end_date, dependencies, plan_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET description = EXCLUDED.description, planned_start_date = EXCLUDED.planned_start_date, planned_end_date = EXCLUDED.planned_end_date, dependencies = EXCLUDED.dependencies, last_modified_by = EXCLUDED.last_modified_by, last_modified_time = EXCLUDED.last_modified_time;
+        - query: INSERT INTO plan_activity(id, code, description, planned_start_date, planned_end_date, dependencies, plan_id, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET description = EXCLUDED.description, planned_start_date = EXCLUDED.planned_start_date, planned_end_date = EXCLUDED.planned_end_date, dependencies = EXCLUDED.dependencies, last_modified_by = EXCLUDED.last_modified_by, last_modified_time = EXCLUDED.last_modified_time;
           basePath: $.Plan.activities.*
           jsonMaps:
             - jsonPath: $.Plan.activities.*.id
@@ -453,7 +453,7 @@ serviceMaps:
 
             - jsonPath: $.Plan.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_activity_condition(id, entity, entity_property, expression, activity_id, is_active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET entity = EXCLUDED.entity, entity_property = EXCLUDED.entity_property, expression = EXCLUDED.expression, is_active = EXCLUDED.is_active, last_modified_by = EXCLUDED.last_modified_by, last_modified_time = EXCLUDED.last_modified_time;
+        - query: INSERT INTO plan_activity_condition(id, entity, entity_property, expression, activity_id, is_active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET entity = EXCLUDED.entity, entity_property = EXCLUDED.entity_property, expression = EXCLUDED.expression, is_active = EXCLUDED.is_active, last_modified_by = EXCLUDED.last_modified_by, last_modified_time = EXCLUDED.last_modified_time;
           basePath: $.Plan.activities.*.conditions.*
           jsonMaps:
             - jsonPath: $.Plan.activities.*.conditions.*.id
@@ -476,7 +476,7 @@ serviceMaps:
 
             - jsonPath: $.Plan.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_resource(id, resource_type, estimated_number, plan_id, activity_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET resource_type = EXCLUDED.resource_type, estimated_number = EXCLUDED.estimated_number, last_modified_by = EXCLUDED.last_modified_by, last_modified_time = EXCLUDED.last_modified_time;
+        - query: INSERT INTO plan_resource(id, resource_type, estimated_number, plan_id, activity_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET resource_type = EXCLUDED.resource_type, estimated_number = EXCLUDED.estimated_number, last_modified_by = EXCLUDED.last_modified_by, last_modified_time = EXCLUDED.last_modified_time;
           basePath: $.Plan.resources.*
           jsonMaps:
             - jsonPath: $.Plan.resources.*.id
@@ -497,7 +497,7 @@ serviceMaps:
 
             - jsonPath: $.Plan.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO health.plan_target(id, metric, metric_value, metric_comparator, metric_unit, plan_id, activity_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET metric = EXCLUDED.metric, metric_value = EXCLUDED.metric_value, metric_comparator = EXCLUDED.metric_comparator, metric_unit = EXCLUDED.metric_unit, last_modified_by = EXCLUDED.last_modified_by, last_modified_time = EXCLUDED.last_modified_time;
+        - query: INSERT INTO plan_target(id, metric, metric_value, metric_comparator, metric_unit, plan_id, activity_code, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET metric = EXCLUDED.metric, metric_value = EXCLUDED.metric_value, metric_comparator = EXCLUDED.metric_comparator, metric_unit = EXCLUDED.metric_unit, last_modified_by = EXCLUDED.last_modified_by, last_modified_time = EXCLUDED.last_modified_time;
           basePath: $.Plan.targets.*
           jsonMaps:
             - jsonPath: $.Plan.targets.*.id
@@ -529,7 +529,7 @@ serviceMaps:
       isTransaction: true
       isAuditEnabled: true
       queryMaps:
-        - query: INSERT INTO health.plan_facility_linkage(id, tenant_id, plan_configuration_id, plan_configuration_name, facility_id, facility_name, residing_boundary, service_boundaries, boundary_ancestral_path, additional_details, active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO plan_facility_linkage(id, tenant_id, plan_configuration_id, plan_configuration_name, facility_id, facility_name, residing_boundary, service_boundaries, boundary_ancestral_path, additional_details, active, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.PlanFacility
           jsonMaps:
             - jsonPath: $.PlanFacility.id
@@ -569,7 +569,7 @@ serviceMaps:
       fromTopic: update-plan-facility
       isTransaction: true
       queryMaps:
-        - query: UPDATE health.plan_facility_linkage SET residing_boundary = ?, service_boundaries = ?, additional_details = ?, active = ?,  last_modified_by = ?, last_modified_time = ? WHERE id = ?;
+        - query: UPDATE plan_facility_linkage SET residing_boundary = ?, service_boundaries = ?, additional_details = ?, active = ?,  last_modified_by = ?, last_modified_time = ? WHERE id = ?;
           basePath: $.PlanFacility
           jsonMaps:
             - jsonPath: $.PlanFacility.residingBoundary
