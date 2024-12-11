@@ -11461,10 +11461,6 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Target Population per Day"
-    ],
-    "postAggregationTheory": "repsonseToDifferenceOfDates",
-    "isCappedByCampaignPeriod": [
       "Overall Target"
     ],
     "insight": {},
@@ -16658,10 +16654,6 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Target Households per Day"
-    ],
-    "postAggregationTheory": "repsonseToDifferenceOfDates",
-    "isCappedByCampaignPeriod": [
       "Overall Target"
     ],
     "insight": {},
@@ -16705,16 +16697,12 @@
       }
     ],
     "chartType": "metric",
-    "postAggregationTheory": "repsonseToDifferenceOfDates",
-    "isCappedByCampaignPeriod": [
-      "Overall Target"
-    ],
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Target by Range"
+      "Overall Target"
     ],
     "insight": {},
     "_comment": " "
