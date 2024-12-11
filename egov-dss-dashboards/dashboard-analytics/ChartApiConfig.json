@@ -10967,6 +10967,7 @@
     "plotLabel": "Provinces",
     "excludedColumns": [
       "Total Count Households Visited Cumulative",
+      "Total Households Sprayed Cumulative",
       "Total Count Households Sprayed Cumulative",
       "Total Count Households Visited Today",
       "Overall Population Target",
