@@ -11474,7 +11474,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Population per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd) * 365\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Population per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd) * 365\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -11483,10 +11483,8 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Target Population per Day"
+      "Overall Target"
     ],
-    "postAggregationTheory": "repsonseToDifferenceOfDates",
-    "isCappedByCampaignPeriod": true,
     "insight": {},
     "_comment": " "
   },
@@ -16676,10 +16674,6 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Target Households per Day"
-    ],
-    "postAggregationTheory": "repsonseToDifferenceOfDates",
-    "isCappedByCampaignPeriod": [
       "Overall Target"
     ],
     "insight": {},
@@ -16719,14 +16713,12 @@
       }
     ],
     "chartType": "metric",
-    "postAggregationTheory": "repsonseToDifferenceOfDates",
-    "isCappedByCampaignPeriod": true,
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Target by Range"
+      "Overall Target"
     ],
     "insight": {},
     "_comment": " "
