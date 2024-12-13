@@ -11592,7 +11592,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.additionalDetails.houseStructureTypes.keyword\":[\"null\",\"\"]}}],\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"House Structure Types\":{\"terms\":{\"field\":\"Data.additionalDetails.houseStructureTypes.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.additionalDetails.houseStructureTypes.keyword\":[\"null\",\"\"]}},{\"term\":{\"Data.additionalDetails.houseStructureTypes.keyword\":{\"value\":\"METAL\"}}}],\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"House Structure Types\":{\"terms\":{\"field\":\"Data.additionalDetails.houseStructureTypes.keyword\"}}}}}}"
       }
     ],
     "chartType": "pie",
@@ -13309,7 +13309,13 @@
       "Total Households sprayed",
       "Overall Household target",
       "Total Population covered",
-      "Overall Population target"
+      "Overall Population target",
+      "Households non delivery incompatible",
+      "Households non delivery closed",
+      "Households non delivery refused",
+      "Households non delivery funeral",
+      "Households non delivery sick",
+      "Households non delivery other reason"
     ],
     "computedFields": [
       {
@@ -14531,7 +14537,13 @@
       "Total Households sprayed",
       "Overall Household target",
       "Total Population covered",
-      "Overall Population target"
+      "Overall Population target",
+      "Households non delivery incompatible",
+      "Households non delivery closed",
+      "Households non delivery refused",
+      "Households non delivery funeral",
+      "Households non delivery sick",
+      "Households non delivery other reason"
     ],
     "computedFields": [
       {
