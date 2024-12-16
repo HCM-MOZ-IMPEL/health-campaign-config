@@ -164,7 +164,7 @@ serviceMaps:
    transactionCodeJsonPath: $.registerId
    auditAttributeBasePath: $.attendance.*
    queryMaps:
-    - query: INSERT INTO eg_wms_attendance_log(id,clientreferenceid,tenantid,individual_id,register_id,status,time,event_type,additionaldetails,createdby,lastmodifiedby,createdtime,lastmodifiedtime, clientcreatedby, clientlastmodifiedby, clientcreatedtime, clientlastmodifiedtime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+    - query: INSERT INTO eg_wms_attendance_log(id,clientreferenceid,tenantid,individual_id,register_id,status,time,event_type,additionaldetails,createdby,lastmodifiedby,createdtime,lastmodifiedtime,clientcreatedby, clientlastmodifiedby, clientcreatedtime, clientlastmodifiedtime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
       basePath: $.attendance.*
       jsonMaps:
        - jsonPath: $.attendance.*.id
@@ -194,13 +194,9 @@ serviceMaps:
        - jsonPath: $.attendance.*.auditDetails.createdTime
 
        - jsonPath: $.attendance.*.auditDetails.lastModifiedTime
-
        - jsonPath: $.attendance.*.clientAuditDetails.createdBy
-
        - jsonPath: $.attendance.*.clientAuditDetails.lastModifiedBy
-                     
        - jsonPath: $.attendance.*.clientAuditDetails.createdTime
-
        - jsonPath: $.attendance.*.clientAuditDetails.lastModifiedTime
 
     - query: INSERT INTO eg_wms_attendance_document(id,filestore_id,document_type,attendance_log_id,additionaldetails,createdby,lastmodifiedby,createdtime,lastmodifiedtime,tenantid,status) VALUES (?,?,?,?,?,?,?,?,?,?,?);
@@ -262,7 +258,6 @@ serviceMaps:
        - jsonPath: $.attendance.*.auditDetails.lastModifiedTime
 
        - jsonPath: $.attendance.*.clientAuditDetails.lastModifiedBy
-
        - jsonPath: $.attendance.*.clientAuditDetails.lastModifiedTime
        
        - jsonPath: $.attendance.*.id

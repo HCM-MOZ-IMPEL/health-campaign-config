@@ -20,38 +20,38 @@ ServiceMaps:
             outJsonPath: $.Data.tenantId
           externalUriMapping:
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Provincia,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=LGA,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.province
+                  outJsonPath: $.Data.lga
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Distrito,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Ward,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.district
+                  outJsonPath: $.Data.ward
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Posto Administrativo,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=FLHF,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.administrativeProvince
+                  outJsonPath: $.Data.flhf
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Localidade,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Community,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.locality
+                  outJsonPath: $.Data.community
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Aldeia,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Settlement,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.village
+                  outJsonPath: $.Data.settlement
             - path: http://egov-workflow-v2.egov:8080/egov-workflow-v2/egov-wf/process/_search
               queryParam: businessIds=$.service.serviceRequestId,history=true,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.ProcessInstances
                   outJsonPath: $.Data.history
@@ -61,7 +61,7 @@ ServiceMaps:
           - path: http://egov-mdms-service.egov:8080/egov-mdms-service/v1/_search
             moduleName: common-masters
             masterName: Department
-            tenantId: mz
+            tenantId: ng
             filter: "[?(@.code == $department)]"
             filterMapping:
             - variable: $department
@@ -72,7 +72,7 @@ ServiceMaps:
           - path: http://egov-mdms-service.egov:8080/egov-mdms-service/v1/_search
             moduleName: RAINMAKER-PGR
             masterName: ServiceDefs
-            tenantId: mz
+            tenantId: ng
             filter: "[?((@.serviceCode == $servicecode) && (@.active == true))]"
             filterMapping:
             - variable: $servicecode
@@ -83,7 +83,7 @@ ServiceMaps:
           - path: http://egov-mdms-service.egov:8080/egov-mdms-service/v1/_search
             moduleName: tenant
             masterName: tenants
-            tenantId: mz
+            tenantId: ng
             filter: "[?(@.code == $tenant)]"
             filterMapping:
             - variable: $tenant
@@ -110,38 +110,38 @@ ServiceMaps:
             outJsonPath: $.Data.tenantId
           externalUriMapping:
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Provincia,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=LGA,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.province
+                  outJsonPath: $.Data.lga
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Distrito,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Ward,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.district
+                  outJsonPath: $.Data.ward
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Posto Administrativo,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=FLHF,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.administrativeProvince
+                  outJsonPath: $.Data.flhf
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Localidade,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Community,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.locality
+                  outJsonPath: $.Data.community
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Aldeia,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Settlement,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
-                  outJsonPath: $.Data.village
+                  outJsonPath: $.Data.settlement
             - path: http://egov-workflow-v2.egov:8080/egov-workflow-v2/egov-wf/process/_search
               queryParam: businessIds=$.service.serviceRequestId,history=true,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.ProcessInstances
                   outJsonPath: $.Data.history
@@ -149,7 +149,7 @@ ServiceMaps:
           - path: http://egov-mdms-service.egov:8080/egov-mdms-service/v1/_search
             moduleName: tenant
             masterName: tenants
-            tenantId: mz
+            tenantId: ng
             filter: "[?(@.code == $tenant)]"
             filterMapping:
             - variable: $tenant
@@ -160,7 +160,7 @@ ServiceMaps:
           - path: http://egov-mdms-service.egov:8080/egov-mdms-service/v1/_search
             moduleName: RAINMAKER-PGR
             masterName: ServiceDefs
-            tenantId: mz
+            tenantId: ng
             filter: "[?((@.serviceCode == $servicecode) && (@.active == true))]"
             filterMapping:
               - variable: $servicecode
@@ -187,37 +187,37 @@ ServiceMaps:
           externalUriMapping:
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
               queryParam: hierarchyTypeCode=ADMIN,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
                   outJsonPath: $.Data.province
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Distrito,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Ward,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
                   outJsonPath: $.Data.district
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Posto Administrativo,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=FLHF,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
                   outJsonPath: $.Data.administrativeProvince
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Localidade,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Community,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
                   outJsonPath: $.Data.locality
             - path: http://egov-location.egov:8080/egov-location/location/v11/boundarys/_search
-              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Aldeia,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              queryParam: hierarchyTypeCode=ADMIN,boundaryType=Settlement,codes=$.service.address.locality.code,tenantId=$.service.tenantId
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.TenantBoundary[0].boundary[0].name
                   outJsonPath: $.Data.village
             - path: http://egov-workflow-v2.egov:8080/egov-workflow-v2/egov-wf/process/_search
               queryParam: businessIds=$.service.serviceRequestId,history=true,tenantId=$.service.tenantId
-              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "mz","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "mz" } ] } } }
+              apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "ng","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "ng" } ] } } }
               uriResponseMapping:
                 - inJsonPath: $.ProcessInstances
                   outJsonPath: $.Data.history
@@ -225,7 +225,7 @@ ServiceMaps:
           - path: http://egov-mdms-service.egov:8080/egov-mdms-service/v1/_search
             moduleName: tenant
             masterName: tenants
-            tenantId: mz
+            tenantId: ng
             filter: "[?(@.code == $tenant)]"
             filterMapping:
             - variable: $tenant

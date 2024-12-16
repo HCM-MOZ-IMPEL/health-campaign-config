@@ -7,7 +7,7 @@ ServiceMaps:
       indexes:
         - name: service-task-v1
           type: service
-          id: $.clientReferenceId,$.tenantId
+          id: $.id,$.tenantId
           isBulk: true
           jsonPath: $
           customJsonMapping:
@@ -92,48 +92,31 @@ ServiceMaps:
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
           timeStampField: $.createdTime
-    - topic: transformer-producer-hfreferral-service-index-topic
+    - topic: transformer-producer-finance-checklist-index-v1-topic
       configKey: INDEX
       indexes:
-        - name: hf-referral-service-task-v1
+        - name: finance-checklist-index-v1
           type: service
-          id: $.id
-          isBulk: true
-          jsonPath: $
-          customJsonMapping:
-            indexMapping: { "Data": {} }
-            fieldMapping:
-              - inJsonPath: $
-                outJsonPath: $.Data
-          timeStampField: $.createdTime
-        - name: user-sync-index-v1
-          type: users
-          id: $.id
+          id: $.id,$.tenantId
           isBulk: true
           jsonPath: $
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.createdBy
-                outJsonPath: $.Data.syncedUserId
-              - inJsonPath: $.userName
-                outJsonPath: $.Data.syncedUserName
-              - inJsonPath: $.role
-                outJsonPath: $.Data.role
-              - inJsonPath: $.boundaryHierarchy
-                outJsonPath: $.Data.boundaryHierarchy
-              - inJsonPath: $.createdTime
-                outJsonPath: $.Data.clientCreatedTime
-              - inJsonPath: $.syncedTime
-                outJsonPath: $.Data.createdTime
-              - inJsonPath: $.syncedTimeStamp
-                outJsonPath: $.Data.syncedTimeStamp
-              - inJsonPath: $.@timestamp
-                outJsonPath: $.Data.@timestamp
-              - inJsonPath: $.taskDates
-                outJsonPath: $.Data.taskDates
-              - inJsonPath: $.userAddress
-                outJsonPath: $.Data.userAddress
-              - inJsonPath: $.additionalDetails
-                outJsonPath: $.Data.additionalDetails
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.createdTime
+    - topic: transformer-producer-special-spraying-index-topic
+      configKey: INDEX
+      indexes:
+        - name: special-spraying-index-v1
+          type: service
+          id: $.id,$.tenantId
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
           timeStampField: $.createdTime
