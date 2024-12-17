@@ -17602,7 +17602,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "",
         "indexName": "irs-distribution-index",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Houses Sprayed Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Houses Sprayed\":{\"sum\":{\"field\":\"Data.houses\"}}}}}}"
