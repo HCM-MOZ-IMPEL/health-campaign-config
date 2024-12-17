@@ -17622,7 +17622,7 @@
     "documentType": "_doc",
     "action": "percentage",
     "aggregationPaths": [
-      "Total houses sprayed",
+      "Houses Sprayed Count",
       "Target for the Days"
     ],
     "filterKeys": [
@@ -17651,7 +17651,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Total houses sprayed"
+      "Houses Sprayed Count"
     ],
     "filterKeys": [
       {
