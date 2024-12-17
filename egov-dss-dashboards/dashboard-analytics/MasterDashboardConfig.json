@@ -2539,6 +2539,40 @@
       "visualizations": [
         {
           "row": 1,
+          "name": "DSS_HEALTH_TEST",
+          "vizArray": [
+            {
+              "id": 9999,
+              "name": "TEST",
+              "label": "TEST",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "testIrsRankingPercentage",
+                  "name": "TEST_PERCENTAGE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "testIrsRanking",
+                  "name": "TEST",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {

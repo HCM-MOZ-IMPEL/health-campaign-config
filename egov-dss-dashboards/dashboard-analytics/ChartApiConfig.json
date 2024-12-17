@@ -17597,6 +17597,70 @@
     "insight": {},
     "_comment": " "
   },
+  "testIrsRankingPercentage": {
+    "chartName": "DSS_HEALTH_SPRAY_COVERAGE_DISTRICT_PERCENT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "",
+        "indexName": "irs-distribution-index",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Houses Sprayed Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Houses Sprayed\":{\"sum\":{\"field\":\"Data.houses\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.todaysEpoch",
+        "requestQueryMap": "",
+        "indexName": "custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"query\":{\"bool\":{\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district\"}}]}},\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district\"}}]}},\"aggs\":{\"Target for the Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Target\":{\"sum\":{\"field\":\"Data.todaysTarget\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Total houses sprayed",
+      "Target for the Days"
+    ],
+    "filterKeys": [
+      {
+        "key": "province"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "testIrsRanking": {
+    "chartName": "DSS_HEALTH_SPRAY_COVERAGE_DISTRICT_PERCENT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "",
+        "indexName": "irs-distribution-index",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Houses Sprayed Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Houses Sprayed\":{\"sum\":{\"field\":\"Data.houses\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Total houses sprayed"
+    ],
+    "filterKeys": [
+      {
+        "key": "province"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "sprayCoverageBarChartDistrictPercent": {
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_DISTRICT_PERCENT",
     "queries": [
