@@ -3339,15 +3339,15 @@
           "vizArray": [
             {
               "id": 2300,
-              "name": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT",
-              "label": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT",
+              "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByHealthDistrictTotal",
-                  "name": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT_TOTAL",
+                  "id": "complaintsByDistrictTotal",
+                  "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
