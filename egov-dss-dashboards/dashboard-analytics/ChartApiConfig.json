@@ -25404,7 +25404,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"total houses visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.household.id.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"total houses visited\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
       }
     ],
     "chartType": "metric",
