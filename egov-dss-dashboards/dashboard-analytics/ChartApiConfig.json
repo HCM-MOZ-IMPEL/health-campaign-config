@@ -25646,6 +25646,7 @@
     "_comment": " "
   },
   "complaintsByStatusBreakdownHealthDistrictBurundi": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_HEALTHDISTRICT_BURUNDI",
     "queries": [
       {
@@ -25676,6 +25677,7 @@
     "_comment": " "
   },
   "complaintsByStatusBreakdownMunicipalityBurundi": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_MUNICIPALITY_BURUNDI",
     "queries": [
       {
@@ -25706,6 +25708,7 @@
     "_comment": " "
   },
   "complaintsByStatusBreakdownAreaOfResponsibilityBurundi": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_AREAOFPRESPONSIBILITY_BURUNDI",
     "queries": [
       {
@@ -25736,6 +25739,7 @@
     "_comment": " "
   },
   "complaintsByStatusBreakdownHillsBurundi": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_HILLS_BURUNDI",
     "queries": [
       {
