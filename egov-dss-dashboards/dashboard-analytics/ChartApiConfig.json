@@ -25381,7 +25381,7 @@
     "isCumulative": false,
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "complaintsByMunicipalityTotal",
+    "drillChart": "complaintsByMunicipalityTotalBurundi",
     "filterKeys": [
       {
         "key": "healthDistrict"
@@ -25410,7 +25410,7 @@
     "isCumulative": false,
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "complaintsByAreaOfResponsibilityTotal",
+    "drillChart": "complaintsByAreaOfResponsibilityTotalBurundi",
     "filterKeys": [
       {
         "key": "municipality"
@@ -25439,7 +25439,7 @@
     "isCumulative": false,
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "complaintsByHillsTotal",
+    "drillChart": "complaintsByHillsTotalBurundi",
     "filterKeys": [
       {
         "key": "areaOfResponsibility"
@@ -25468,7 +25468,7 @@
     "isCumulative": false,
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "complaintsBySubHillsTotal",
+    "drillChart": "complaintsBySubHillsTotalBurundi",
     "filterKeys": [
       {
         "key": "hills"
