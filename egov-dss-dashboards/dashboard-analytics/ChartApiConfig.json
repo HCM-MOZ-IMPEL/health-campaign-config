@@ -25395,6 +25395,7 @@
   },
 
   "complaintsByMunicipalityTotalBurundi": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_MUNICIPALITY_TOTAL_BURUNDI",
     "queries": [
       {
@@ -25423,6 +25424,7 @@
   },
 
   "complaintsByAreaOfResponsibilityTotalBurundi": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_AREA_OF_RESPONSIBILITY_TOTAL_BURUNDI",
     "queries": [
       {
@@ -25451,6 +25453,7 @@
   },
 
   "complaintsByHillsTotalBurundi": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_HILLS_TOTAL_BURUNDI",
     "queries": [
       {
@@ -25479,6 +25482,7 @@
   },
 
   "complaintsBySubHillsTotalBurundi": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_SUB_HILLS_TOTAL_BURUNDI",
     "queries": [
       {
