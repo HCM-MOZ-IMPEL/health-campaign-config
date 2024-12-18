@@ -6623,6 +6623,46 @@
           ]
         }
       ]
+    },
+    {
+      "name": "DSS_HEALTH_NATIONAL_DASHBOARD_BURUNDI_HEADING",
+      "id": "national-health-dashboard-burundi",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 1,
+          "name": "DSS_NATIONAL_HEALTH",
+          "vizArray": [
+            {
+              "id": 1601,
+              "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED",
+              "label": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "todaysVistsBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVisitedBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
