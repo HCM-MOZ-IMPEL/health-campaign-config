@@ -26339,6 +26339,512 @@
     "insight": {},
     "_comment": " "
   },
+  "complaintsByStatusSummaryProvinceBurundi": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by Health District\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by Health District\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by healthDistricts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict",
+        "column": "Health District"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "complaintsByStatusSummaryHealthDistrictBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Health District",
+    "excludedColumns": [
+      "Resolved Complaints Count",
+      "Rejected Complaints Count",
+      "Open Complaints Count"
+    ],
+    "hideInsights": true,
+    "showFooter": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count",
+          "Rejected Complaints Count",
+          "Open Complaints Count"
+        ],
+        "newField": "Registered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count"
+        ],
+        "newField": "Resolved",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Rejected Complaints Count"
+        ],
+        "newField": "Rejected",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Open Complaints Count"
+        ],
+        "newField": "Open",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "_comment": " "
+  },
+  "complaintsByStatusSummaryHealthDistrictBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_HEALTH_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by Municipality\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by Municipality\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by municipality\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality",
+        "column": "Municipality"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "complaintsByStatusSummaryMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "showFooter": true,
+    "plotLabel": "Municipality",
+    "excludedColumns": [
+      "Resolved Complaints Count",
+      "Rejected Complaints Count",
+      "Open Complaints Count"
+    ],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count",
+          "Rejected Complaints Count",
+          "Open Complaints Count"
+        ],
+        "newField": "Registered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count"
+        ],
+        "newField": "Resolved",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Rejected Complaints Count"
+        ],
+        "newField": "Rejected",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Open Complaints Count"
+        ],
+        "newField": "Open",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "_comment": " "
+  },
+  "complaintsByStatusSummaryMunicipalityBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_MUNICIPALITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by AreaOfResponsibility\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by AreaOfResponsibility\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by AreaOfResponsibility\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility",
+        "column": "AreaOfResponsibility"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "complaintsByStatusSummaryAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "showFooter": true,
+    "plotLabel": "AreaOfResponsibility",
+    "excludedColumns": [
+      "Resolved Complaints Count",
+      "Rejected Complaints Count",
+      "Open Complaints Count"
+    ],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count",
+          "Rejected Complaints Count",
+          "Open Complaints Count"
+        ],
+        "newField": "Registered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count"
+        ],
+        "newField": "Resolved",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Rejected Complaints Count"
+        ],
+        "newField": "Rejected",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Open Complaints Count"
+        ],
+        "newField": "Open",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "_comment": " "
+  },
+  "complaintsByStatusSummaryAreaOfResponsibilityBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_AreaOfResponsibility_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by Hills\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by Hills\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Hills\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [
+      {
+        "key": "hills",
+        "column": "Hills"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "complaintsByStatusSummaryHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "showFooter": true,
+    "plotLabel": "Hills",
+    "excludedColumns": [
+      "Resolved Complaints Count",
+      "Rejected Complaints Count",
+      "Open Complaints Count"
+    ],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count",
+          "Rejected Complaints Count",
+          "Open Complaints Count"
+        ],
+        "newField": "Registered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count"
+        ],
+        "newField": "Resolved",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Rejected Complaints Count"
+        ],
+        "newField": "Rejected",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Open Complaints Count"
+        ],
+        "newField": "Open",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "_comment": " "
+  },
+  "complaintsByStatusSummaryHillsBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_Hills_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by SubHills\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by SubHills\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by SubHills\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills",
+        "column": "SubHills"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "complaintsListBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "showFooter": true,
+    "plotLabel": "SubHills",
+    "excludedColumns": [
+      "Resolved Complaints Count",
+      "Rejected Complaints Count",
+      "Open Complaints Count"
+    ],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count",
+          "Rejected Complaints Count",
+          "Open Complaints Count"
+        ],
+        "newField": "Registered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count"
+        ],
+        "newField": "Resolved",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Rejected Complaints Count"
+        ],
+        "newField": "Rejected",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Open Complaints Count"
+        ],
+        "newField": "Open",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "_comment": " "
+  },
+  "complaintsListBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_LIST_SUMMARY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"subHills\": \"Data.boundaryHierarchy.subHills.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Complaints Id\":{\"terms\":{\"field\":\"Data.service.serviceRequestId.keyword\",\"size\":10000},\"aggs\":{\"Created Time\":{\"terms\":{\"script\":{\"lang\":\"painless\",\"source\":\"def createdTime = doc['Data.service.auditDetails.createdTime'].value;\\n def dateFormat = new SimpleDateFormat('dd MMM yyyy hh mm ss');\\n def formattedDate = dateFormat.format(new Date(createdTime));\\n def stringDate = formattedDate.toString();\\n def day = stringDate.substring(0, 2);\\n def month = stringDate.substring(3, 6);\\n def year = stringDate.substring(7, 11);\\n def hour = stringDate.substring(12, 14);\\n def minute = stringDate.substring(15, 17);\\n def seconds = stringDate.substring(18, 20);\\n  return day + ' ' + month + ' ' + year + ' ' + hour + 'h ' + minute + 'm ' + seconds + 's'\"},\"size\":1,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaint Status\":{\"terms\":{\"field\":\"Data.service.applicationStatus.keyword\",\"size\":1},\"aggs\":{\"Complaint Type\":{\"terms\":{\"field\":\"Data.service.serviceCode.keyword\",\"size\":1},\"aggs\":{\"Administrative Area\":{\"terms\":{\"script\":{\"lang\":\"painless\",\"source\":\"def subHills = params['_source']['Data']['boundaryHierarchy']['subHills']; \\n def hills = params['_source']['Data']['boundaryHierarchy']['hills']; \\n def areaOfResponsibility = params['_source']['Data']['boundaryHierarchy']['areaOfResponsibility']; \\n def municipality = params['_source']['Data']['boundaryHierarchy']['municipality']; \\n def healthDistrict = params['_source']['Data']['boundaryHierarchy']['healthDistrict']; \\n def province = params['_source']['Data']['boundaryHierarchy']['province']; \\n if(subHills != null ) {return subHills;\\n}\\n else if(hills != null ) {return hills;\\n}\\n else if(areaOfResponsibility != null ) {return areaOfResponsibility;\\n}\\n else if(municipality != null ) {return municipality;\\n}\\n else if(healthDistrict != null ) {return healthDistrict;\\n}\\n else if(province != null ) {return province;\\n} \\n else {return 'N/A'; \\n}\\n\"},\"size\":1},\"aggs\":{\"Complainant Phone Number\":{\"terms\":{\"field\":\"Data.service.user.mobileNumber.keyword\",\"size\":1},\"aggs\":{\"Supervisor Contact Number\":{\"terms\":{\"script\":{\"lang\":\"painless\",\"source\":\"def additionalDetail = params['_source']['Data']['service']['additionalDetail'];\\nif (additionalDetail != null && additionalDetail.contains('\\\"supervisorContactNumber\\\":\\\"')) {\\n  int startIndex = additionalDetail.indexOf('\\\"supervisorContactNumber\\\":') + 27;\\n  int endIndex = additionalDetail.indexOf(',', startIndex);\\n  if (endIndex != -1) {\\n    String supervisorContactNumber = additionalDetail.substring(startIndex, endIndex-1);\\n    if (supervisorContactNumber!=':null ') return supervisorContactNumber;\\n  }\\n}\\nreturn 'N/A';\"},\"size\":1},\"aggs\":{\"Details\":{\"terms\":{\"field\":\"Data.service.description.keyword\",\"size\":1}}}}}}}}}}}}}}}}}}"
+      }
+    ],
+    "chartType": "table",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "pathDataTypeMapping": [
+      {
+        "Complaints Id": "string"
+      },
+      {
+        "Created Time": "string"
+      },
+      {
+        "Complaint Status": "string"
+      },
+      {
+        "Complaint Type": "string"
+      },
+      {
+        "Administrative Area": "string"
+      },
+      {
+        "Complainant Phone Number": "string"
+      },
+      {
+        "Supervisor Contact Number": "string"
+      },
+      {
+        "Details": "string"
+      }
+    ],
+    "plotLabel": "Complaint ID",
+    "aggregationPaths": [
+      "Complaints Id",
+      "Created Time",
+      "Complaint Status",
+      "Complaint Type",
+      "Details",
+      "Administrative Area",
+      "Complainant Phone Number",
+      "Supervisor Contact Number"
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "_comment": " "
+  },
+  "complaintsByStatusSummaryDayBurundi": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Open\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "showFooter": true,
+    "plotLabel": "Summary Daywise",
+    "excludedColumns": [
+      "S.N.",
+      "Resolved Complaints Count",
+      "Rejected Complaints Count",
+      "Open Complaints Count"
+    ],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count",
+          "Rejected Complaints Count",
+          "Open Complaints Count"
+        ],
+        "newField": "Registered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Resolved Complaints Count"
+        ],
+        "newField": "Resolved",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Rejected Complaints Count"
+        ],
+        "newField": "Rejected",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Open Complaints Count"
+        ],
+        "newField": "Open",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "totalVouchersDistributedBurundi": {
     "chartName": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_BURUNDI",
     "queries": [
