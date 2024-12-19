@@ -26012,7 +26012,7 @@
     "_comment": " "
   },
   "ComplaintsShareByHealthDistrictBurundi": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY_BURUNDI",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -26050,7 +26050,7 @@
   },
   "ComplaintsShareByMunicipalityBurundi": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY_BURUNDI",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_MUNICIPALITY_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -26088,7 +26088,7 @@
   },
   "ComplaintsShareByAreaOfResponsibilityBurundi": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY_BURUNDI",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_AREA_OF_RESPONSIBILITY_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -26126,7 +26126,7 @@
   },
   "ComplaintsShareByHillsBurundi": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY_BURUNDI",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_HILLS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -26164,7 +26164,7 @@
   },
   "ComplaintsShareBySubHillsBurundi": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY_BURUNDI",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_SUBHILLS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
