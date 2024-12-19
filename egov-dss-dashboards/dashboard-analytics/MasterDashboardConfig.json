@@ -6713,6 +6713,54 @@
               ]
             }
           ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_NATIONAL_HEALTH",
+          "vizArray": [
+            {
+              "id": 1701,
+              "name": "DSS_HEALTH_NATIONAL_VOUCHERS_SCANNED",
+              "label": "DSS_HEALTH_NATIONAL_VOUCHERS_SCANNED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "vouchersDistributedTodayBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVouchersDistributedBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "vouchersRedeemedTodayBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_VOUCHERS_REDEEMED_TODAY_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVouchersRedeemedBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_REDEEMED_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     }
