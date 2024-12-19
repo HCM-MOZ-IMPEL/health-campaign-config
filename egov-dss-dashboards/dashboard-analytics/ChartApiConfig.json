@@ -26194,5 +26194,149 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "averageResolutionTimeProvinceBurundi": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVVERAGE_RESOLUTION_TIME_PROVINCE_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageResolutionTimeHealthDistrictBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Resolution time in hours"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageResolutionTimeHealthDistrictBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_HEALTH_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageResolutionTimeMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Resolution time in hours"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageResolutionTimeMunicipalityBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_MUNICIPALITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageResolutionTimeAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Resolution time in hours"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageResolutionTimeAreaOfResponsibilityBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_AREA_OF_RESPONSIBILITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageResolutionTimeHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Resolution time in hours"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageResolutionTimeHillsBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_HILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Resolution time in hours"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
