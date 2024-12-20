@@ -26995,7 +26995,9 @@
       "Total household visited count",
       "Total population covered count",
       "End Date",
-      "Start Date"
+      "Start Date",
+      "Overall Population Target",
+      "Overall Household Target"
     ],
     "hideInsights": true,
     "hideHeaderDenomination": true,
