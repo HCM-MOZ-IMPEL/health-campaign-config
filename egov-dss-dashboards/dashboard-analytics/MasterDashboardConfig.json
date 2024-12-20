@@ -6781,7 +6781,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 221,
+              "id": 3050,
               "name": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT",
               "label": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT",
               "vizType": "chart",
@@ -6799,7 +6799,7 @@
               ]
             },
             {
-              "id": 222,
+              "id": 3051,
               "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
               "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
               "vizType": "chart",
@@ -6823,7 +6823,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 223,
+              "id": 3052,
               "name": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_PROVINCIAL",
               "label": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_PROVINCIAL",
               "vizType": "chart",
@@ -6841,7 +6841,7 @@
               ]
             },
             {
-              "id": 224,
+              "id": 3053,
               "name": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_PROVINCIAL",
               "label": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_PROVINCIAL",
               "vizType": "chart",
@@ -6865,7 +6865,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 225,
+              "id": 3054,
               "name": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
               "label": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
               "vizType": "chart",
@@ -6883,7 +6883,7 @@
               ]
             },
             {
-              "id": 226,
+              "id": 3055,
               "name": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_PROVINCE",
               "label": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_PROVINCE",
               "vizType": "chart",
@@ -6907,7 +6907,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 227,
+              "id": 3056,
               "name": "DSS_HEALTH_COMPLAINTS_SUMMARY",
               "label": "DSS_HEALTH_COMPLAINTS_SUMMARY",
               "vizType": "chart",
@@ -6941,7 +6941,7 @@
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
-              "id": 228,
+              "id": 3057,
               "name": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
               "label": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
               "vizType": "chart",
