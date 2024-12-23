@@ -27328,7 +27328,7 @@
     ],
     "filterKeys": [
       {
-        "key": "district"
+        "key": "healthDistrict"
       }
     ],
     "insight": {},
@@ -27437,6 +27437,146 @@
     "action": "",
     "aggregationPaths": [
       "Household with more than 20 members"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "locationNotEnabledByHealthDistrictBurundi": {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_HEALTH_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "locationNotEnabledByMunicipalityBurunndi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Location Not Enabled"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "locationNotEnabledByMunicipalityBurunndi" : {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_MUNICIPALITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "locationNotEnabledByAreaOfResponsibilityBurunndi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Location Not Enabled"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "locationNotEnabledByAreaOfResponsibilityBurunndi" : {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_AREA_OF_RESPONSIBILITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "locationNotEnabledByHillsBurunndi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Location Not Enabled"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "locationNotEnabledByHillsBurunndi" : {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_HILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "locationNotEnabledBySubHillsBurunndi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Location Not Enabled"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "locationNotEnabledBySubHillsBurunndi": {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_SUB_HILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Location Not Enabled"
     ],
     "filterKeys": [
       {
