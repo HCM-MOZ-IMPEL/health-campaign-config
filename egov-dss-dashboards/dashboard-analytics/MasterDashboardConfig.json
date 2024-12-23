@@ -2539,40 +2539,6 @@
       "visualizations": [
         {
           "row": 1,
-          "name": "DSS_HEALTH_TEST",
-          "vizArray": [
-            {
-              "id": 9999,
-              "name": "TEST",
-              "label": "TEST",
-              "vizType": "chart",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "testIrsRankingPercentage",
-                  "name": "TEST_PERCENTAGE",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
-                  "id": "testIrsRanking",
-                  "name": "TEST",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2592,8 +2558,8 @@
                   "headers": []
                 },
                 {
-                  "id": "totalSprayed",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_SPRAYED",
+                  "id": "targetHousesForDateRange",
+                  "name": "DSS_HEALTH_OVERVIEW_TARGET_FOR_DATE_RANGE",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2708,6 +2674,66 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
+              "id": 20011,
+              "name": "DSS_HEALTH_HOUSEHOLDS",
+              "label": "DSS_HEALTH_HOUSEHOLDS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalHouseholdCoverageProvince",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_SPRAYED_PROVINCE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 20021,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "stacked-collection",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewPopulationCoverageAchievedProvince",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 20031,
+              "name": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
+              "label": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageProvince",
+                  "name": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
               "id": 2004,
               "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_OVERVIEW",
               "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_OVERVIEW",
@@ -2746,7 +2772,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2770,7 +2796,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2804,7 +2830,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2828,7 +2854,7 @@
           ]
         },
         {
-          "row": 6,
+          "row": 7,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2870,7 +2896,7 @@
           ]
         },
         {
-          "row": 7,
+          "row": 8,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2886,66 +2912,6 @@
                   "name": "DSS_HEALTH_OVERVIEW_USER_SYNC_SUMMARY_ALL_ROLES",
                   "code": "",
                   "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 7,
-          "name": "DSS_HEALTH_OVERVIEW",
-          "vizArray": [
-            {
-              "id": 2001,
-              "name": "DSS_HEALTH_HOUSEHOLDS",
-              "label": "DSS_HEALTH_HOUSEHOLDS",
-              "vizType": "stacked-collection",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "totalHouseholdCoverageProvince",
-                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_SPRAYED_PROVINCE",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 2002,
-              "name": "DSS_HEALTH_POPULATION_COVERED",
-              "label": "DSS_HEALTH_POPULATION_COVERED",
-              "vizType": "stacked-collection",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "overviewPopulationCoverageAchievedProvince",
-                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 2003,
-              "name": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
-              "label": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
-              "vizType": "stacked-collection",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "distributionCoverageProvince",
-                  "name": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE",
-                  "code": "",
-                  "chartType": "metric",
                   "filter": "",
                   "headers": []
                 }

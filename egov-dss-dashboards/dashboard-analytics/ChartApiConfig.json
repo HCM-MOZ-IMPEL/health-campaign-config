@@ -16948,7 +16948,29 @@
     "insight": {},
     "_comment": " "
   },
-  "householdSprayedTargetProvince": {
+  "targetHousesForDateRange": {
+    "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_SPRAYED_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Campaign Filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.targetType.keyword\": \"HOUSEHOLD\"\n                  }\n                },\n                {\n                  \"exists\": {\n                    \"field\": \"Data.boundaryHierarchy.province.keyword\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"exists\": {\n                    \"field\": \"Data.boundaryHierarchy.district.keyword\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Overall Target\": {\n          \"sum\": {\n            \"field\": \"Data.overallTarget\"\n          }\n        },\n        \"Target per day\": {\n          \"sum\": {\n            \"field\": \"Data.targetPerDay\"\n          }\n        },\n        \"Target Households per Day\": {\n          \"bucket_script\": {\n            \"buckets_path\": {\n              \"tpd\": \"Target per day\"\n            },\n            \"script\": \"(params.tpd)*365\"\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Overall Target"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "householdSprayedTargetProvinceCopy": {
     "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_SPRAYED_PROVINCE",
     "queries": [
       {
@@ -16969,6 +16991,28 @@
     ],
     "postAggregationTheory": "repsonseToDifferenceOfDates",
     "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "householdSprayedTargetProvince": {
+    "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_SPRAYED_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Campaign Filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.targetType.keyword\": \"HOUSEHOLD\"\n                  }\n                },\n                {\n                  \"exists\": {\n                    \"field\": \"Data.boundaryHierarchy.province.keyword\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"exists\": {\n                    \"field\": \"Data.boundaryHierarchy.district.keyword\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Overall Target\": {\n          \"sum\": {\n            \"field\": \"Data.overallTarget\"\n          }\n        },\n        \"Target per day\": {\n          \"sum\": {\n            \"field\": \"Data.targetPerDay\"\n          }\n        },\n        \"Target Households per Day\": {\n          \"bucket_script\": {\n            \"buckets_path\": {\n              \"tpd\": \"Target per day\"\n            },\n            \"script\": \"(params.tpd)*365\"\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
       "Overall Target"
     ],
     "insight": {},
