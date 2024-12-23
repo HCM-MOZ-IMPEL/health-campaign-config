@@ -2937,7 +2937,7 @@
               "id": 2003,
               "name": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
               "label": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
-              "vizType": "stacked-collection",
+              "vizType": "metric-collection",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
