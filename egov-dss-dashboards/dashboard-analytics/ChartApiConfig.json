@@ -25653,7 +25653,7 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
+        "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population Covered\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}"
       }
     ],
