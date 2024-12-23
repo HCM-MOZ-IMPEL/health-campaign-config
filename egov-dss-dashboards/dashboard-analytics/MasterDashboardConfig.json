@@ -2894,6 +2894,66 @@
           ]
         },
         {
+          "row": 7,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 2001,
+              "name": "DSS_HEALTH_HOUSEHOLDS",
+              "label": "DSS_HEALTH_HOUSEHOLDS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalHouseholdCoverageProvince",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_SPRAYED_PROVINCE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 2002,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "stacked-collection",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewPopulationCoverageAchievedProvince",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 2003,
+              "name": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
+              "label": "DSS_HEALTH_INSECTICIDE_BOTTLES_USED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageProvince",
+                  "name": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
