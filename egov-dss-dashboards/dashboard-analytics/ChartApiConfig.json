@@ -28385,12 +28385,12 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "incompleteRecordsByMunicipality",
+    "drillChart": "incompleteRecordsByMunicipalityBurundi",
     "documentType": "_doc",
     "action": "",
     "filterKeys": [
       {
-        "key": "district"
+        "key": "healthDistrict"
       }
     ],
     "plotLabel": "Incomplete record",
@@ -28442,7 +28442,7 @@
     "action": "",
     "filterKeys": [
       {
-        "key": "district"
+        "key": "municipality"
       }
     ],
     "plotLabel": "Incomplete record",
@@ -28494,7 +28494,7 @@
     "action": "",
     "filterKeys": [
       {
-        "key": "district"
+        "key": "areaOfResponsibility"
       }
     ],
     "plotLabel": "Incomplete record",
@@ -28546,7 +28546,7 @@
     "action": "",
     "filterKeys": [
       {
-        "key": "district"
+        "key": "hills"
       }
     ],
     "plotLabel": "Incomplete record",
@@ -28598,7 +28598,7 @@
     "action": "",
     "filterKeys": [
       {
-        "key": "district"
+        "key": "subHills"
       }
     ],
     "plotLabel": "Incomplete record",
