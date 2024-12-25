@@ -28624,7 +28624,7 @@
     "_comment": " "
   },
   "entriesDoneByWMsHealthDistrictBurundi" : {
-    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT",
+    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_HEALTH_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
