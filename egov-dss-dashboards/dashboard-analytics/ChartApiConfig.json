@@ -28239,5 +28239,537 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "totalVouchersDistributedOverviewBurundi": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_OVERVIEW_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"total vouchers distributed\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Overall target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}]}}}},\"aggs\":{\"TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "isCappedTillToday": true,
+    "action": "percentage",
+    "aggregationPaths": [
+      "total vouchers distributed",
+      "Overall target"
+    ],
+    "insight": {
+      "chartResponseMap": "totalVouchersDistributedOverviewBurundi",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
+  "vouchersDistributedTodayOverviewBurundi": {
+    "chartName": "DSS_HEALTH_NATIONAL_VOUCHERS_DISTRIBUTED_TODAY_OVERVIEW_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"vouchers distributed today\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "filterForCurrentDay": true,
+    "action": "",
+    "aggregationPaths": [
+      "vouchers distributed today"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "vouchersRedeemedTodayOverviewBurundi": {
+    "chartName": "DSS_HEALTH_NATIONAL_VOUCHERS_REDEEMED_TODAY_OVERVIEW_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vouchers redeemed today\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "filterForCurrentDay": true,
+    "action": "",
+    "aggregationPaths": [
+      "Vouchers redeemed today"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "totalVouchersRedeemedOverviewBurundi": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_REDEEMED_OVERVIEW_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total vouchers redeemed\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total household registered\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "isCappedTillToday": true,
+    "action": "percentage",
+    "aggregationPaths": [
+      "Total vouchers redeemed",
+      "Total household registered"
+    ],
+    "insight": {
+      "chartResponseMap": "totalVouchersRedeemedOverviewBurundi",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
+  "incompleteRecordsByHealthDistrictBurundi": {
+    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict\"}}]}},\"aggs\":{\"Total Houses Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500},\"aggs\":{\"NegativeHouseholdsSprayDetailsRecorded\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count * -1;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "incompleteRecordsByMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "plotLabel": "Incomplete record",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Total Houses Registered",
+          "Total Houses Visited"
+        ],
+        "newField": "Incomplete Houses",
+        "_comments": ""
+      }
+    ],
+    "aggregationPaths": [
+      "Total Houses Registered",
+      "Total Houses Visited"
+    ],
+    "sort": "sortKeyAsc",
+    "computeMultiPaths": true,
+    "insight": {},
+    "_comment": " "
+  },
+  "incompleteRecordsByMunicipalityBurundi": {
+    "kind" : "drillDown",
+    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality\"}}]}},\"aggs\":{\"Total Houses Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500},\"aggs\":{\"NegativeHouseholdsSprayDetailsRecorded\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count * -1;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "incompleteRecordsByAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "plotLabel": "Incomplete record",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Total Houses Registered",
+          "Total Houses Visited"
+        ],
+        "newField": "Incomplete Houses",
+        "_comments": ""
+      }
+    ],
+    "aggregationPaths": [
+      "Total Houses Registered",
+      "Total Houses Visited"
+    ],
+    "sort": "sortKeyAsc",
+    "computeMultiPaths": true,
+    "insight": {},
+    "_comment": " "
+  },
+  "incompleteRecordsByAreaOfResponsibilityBurundi" : {
+    "kind" : "drillDown",
+    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility\"}}]}},\"aggs\":{\"Total Houses Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500},\"aggs\":{\"NegativeHouseholdsSprayDetailsRecorded\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count * -1;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "incompleteRecordsByHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "plotLabel": "Incomplete record",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Total Houses Registered",
+          "Total Houses Visited"
+        ],
+        "newField": "Incomplete Houses",
+        "_comments": ""
+      }
+    ],
+    "aggregationPaths": [
+      "Total Houses Registered",
+      "Total Houses Visited"
+    ],
+    "sort": "sortKeyAsc",
+    "computeMultiPaths": true,
+    "insight": {},
+    "_comment": " "
+  },
+  "incompleteRecordsByHillsBurundi" : {
+    "kind" : "drillDown",
+    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.hills\"}}]}},\"aggs\":{\"Total Houses Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500},\"aggs\":{\"NegativeHouseholdsSprayDetailsRecorded\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count * -1;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "incompleteRecordsBySubHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "plotLabel": "Incomplete record",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Total Houses Registered",
+          "Total Houses Visited"
+        ],
+        "newField": "Incomplete Houses",
+        "_comments": ""
+      }
+    ],
+    "aggregationPaths": [
+      "Total Houses Registered",
+      "Total Houses Visited"
+    ],
+    "sort": "sortKeyAsc",
+    "computeMultiPaths": true,
+    "insight": {},
+    "_comment": " "
+  },
+  "incompleteRecordsBySubHillsBurundi" : {
+    "kind" : "drillDown",
+    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.subHills\"}}]}},\"aggs\":{\"Total Houses Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500},\"aggs\":{\"NegativeHouseholdsSprayDetailsRecorded\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count * -1;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "plotLabel": "Incomplete record",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Total Houses Registered",
+          "Total Houses Visited"
+        ],
+        "newField": "Incomplete Houses",
+        "_comments": ""
+      }
+    ],
+    "aggregationPaths": [
+      "Total Houses Registered",
+      "Total Houses Visited"
+    ],
+    "sort": "sortKeyAsc",
+    "computeMultiPaths": true,
+    "insight": {},
+    "_comment": " "
+  },
+  "entriesDoneByWMsHealthDistrictBurundi" : {
+    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_HEALTH_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "plotLabel": "none",
+    "chartType": "line",
+    "valueType": "number",
+    "drillChart": "none",
+    "isCumulative": false,
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "WM Stock Entries"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ]
+  },
+  "entriesDoneByWMsMunicipalityBurundi" : {
+    "kind" : "drillDown",
+    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_MUNICIPALITY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "plotLabel": "none",
+    "chartType": "line",
+    "valueType": "number",
+    "drillChart": "none",
+    "isCumulative": false,
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "WM Stock Entries"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ]
+  },
+  "entriesDoneByWMsAreaOfResponsibilityBurundi" : {
+    "kind" : "drillDown",
+    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_AREA_OF_RESPONSIBILITY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "plotLabel": "none",
+    "chartType": "line",
+    "valueType": "number",
+    "drillChart": "none",
+    "isCumulative": false,
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "WM Stock Entries"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ]
+  },
+  "entriesDoneByWMsHillsBurundi" : {
+    "kind" : "drillDown",
+    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_HILLS",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "plotLabel": "none",
+    "chartType": "line",
+    "valueType": "number",
+    "drillChart": "none",
+    "isCumulative": false,
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "WM Stock Entries"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ]
+  },
+  "entriesDoneByWMsSubHillsBurundi" : {
+    "kind" : "drillDown",
+    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_SUBHILLS",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "plotLabel": "none",
+    "chartType": "line",
+    "valueType": "number",
+    "drillChart": "none",
+    "isCumulative": false,
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "WM Stock Entries"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ]
   }
 }
