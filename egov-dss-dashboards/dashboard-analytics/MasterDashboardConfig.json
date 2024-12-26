@@ -7260,6 +7260,474 @@
           ]
         }
       ]
+    },
+    {
+      "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_BURUNDI_HEADING",
+      "id": "district-health-dashboard-burundi",
+      "isActive": "",
+      "hideFilterFields": [
+        "DDR",
+        "Ulb",
+        "Denomination",
+        "ModuleFilter"
+      ],
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 3081,
+              "name": "DSS_HEALTH_HOUSEHOLDS",
+              "label": "DSS_HEALTH_HOUSEHOLDS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdVisitsWithinDateRangeBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_HOUSEHOLDS_VISITED_OVER_DATERANGE_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVisitsBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITS_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "householdVisitsTargetDistrictBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_VISITS_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalHouseholdCoverageDistrictBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3082,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "stacked-collection",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewPopulationCoveredBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERED_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewTotalPopulationCoveredBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_POPULATION_COVERED_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewPopulationTargetedDistrictBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewPopulationCoverageAchievedDistrictBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3083,
+              "name": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionsByRangeBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_DISTRIBUTIONS_DATE_RANGE_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalDistributionsTillTodayBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_DISTRIBUTED_TILL_TODAY_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "distributionTargetDistrictBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_DISTRIBUTION_TARGET_PROVINCE_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "distributionCoverageDistrictBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE_PROVINCE_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 3084,
+              "name": "DSS_HEALTH_VOUCHERS_SCANNED",
+              "label": "DSS_HEALTH_VOUCHERS_SCANNED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "vouchersDistributedTodayOverviewBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_VOUCHERS_DISTRIBUTED_TODAY_OVERVIEW_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVouchersDistributedOverviewBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_OVERVIEW_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "vouchersRedeemedTodayOverviewBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_VOUCHERS_REDEEMED_TODAY_OVERVIEW_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVouchersRedeemedOverviewBurundi",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_REDEEMED_OVERVIEW_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 3085,
+              "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
+              "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalComplaintsRegisteredBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BREAKDOWN_BURUNDI",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 3086,
+              "name": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageBarchartByHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_HealthDistrict_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 3087,
+              "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "daysInventoryStockLastsDistrictBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3088,
+              "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateDistrictBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 3089,
+              "name": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByHealthDistrictTotalBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT_TOTAL_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3090,
+              "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
+              "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalComplaintsRegisteredByTypeBurundi",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE_BURUNDI",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 3091,
+              "name": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByStatusBreakdownHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_HEALTHDISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3092,
+              "name": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByTypeBreakdownHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 3093,
+              "name": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
+              "label": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "ComplaintsShareByHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_BY_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3094,
+              "name": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageResolutionTimeHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 3095,
+              "name": "DSS_HEALTH_COMPLAINTS_SUMMARY",
+              "label": "DSS_HEALTH_COMPLAINTS_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByStatusSummaryDistrictBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "complaintsByStatusSummaryDayBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 3096,
+              "name": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
+              "label": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "openComplaintsSummaryByHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
