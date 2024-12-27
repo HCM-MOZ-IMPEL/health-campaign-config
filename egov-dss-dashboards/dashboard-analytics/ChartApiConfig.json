@@ -12896,18 +12896,6 @@
         "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"should\": [\n            {\n              \"bool\": {\n                \"must\": [\n                  {\n                    \"terms\": {\n                      \"Data.administrationStatus.keyword\": [\n                        \"BENEFICIARY_REFUSED\",\n                        \"CLOSED_HOUSEHOLD\"\n                      ]\n                    }\n                  },\n                  {\n                    \"term\": {\n                      \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n                    }\n                  }\n                ]\n              }\n            },\n            {\n              \"bool\": {\n                \"must\": [\n                  {\n                    \"term\": {\n                      \"Data.administrationStatus.keyword\": \"ADMINISTRATION_FAILED\"\n                    }\n                  },\n                  {\n                    \"term\": {\n                      \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n                    }\n                  },\n                  {\n                    \"terms\": {\n                      \"Data.additionalDetails.reasonOfRefusal.keyword\": [\n                        \"SICK\",\n                        \"FUNERAL\"\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total no. of Houses Required Secondary Spraying\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"size\": 1000\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Copy Households Not Sprayed",
-          "Negative Household that had secondary spray"
-        ],
-        "newField": "Households Not Sprayed",
-        "_comments": ""
-      }
-    ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
@@ -12922,6 +12910,19 @@
       "Negative Household that had secondary spray",
       "Total no. of Houses Required Secondary Spraying",
       "Household that had secondary spray"
+    ],
+    "computeMultiPaths": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Copy Households Not Sprayed",
+          "Negative Household that had secondary spray"
+        ],
+        "newField": "Households Not Sprayed",
+        "_comments": ""
+      }
     ],
     "insight": {},
     "_comment": " "
