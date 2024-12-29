@@ -13402,42 +13402,35 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Household Total\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Households visited count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.household.id.keyword\"}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Population Total\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Quantity\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Total Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Insecticides Total\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Insecticides sprayed count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household non delivery by reason closed\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"CLOSED_HOUSEHOLD\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"CLOSED_HOUSEHOLD\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household closed non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason refused\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"BENEFICIARY_REFUSED\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household refused non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason incompatible\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household incompatible non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason funeral\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"FUNERAL\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household funeral non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason sick\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"SICK\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household sick non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason other reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.additionalDetails.reasonOfRefusal.keyword\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"CLOSED_HOUSEHOLD\",\"FUNERAL\",\"INCOMPATIBLE\",\"BENEFICIARY_REFUSED\",\"SICK\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household other reason non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"CLOSED_HOUSEHOLD\",\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household required secondary spraying count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"protected children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"protected children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"protected pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"protected pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}},\"not protected population\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected population count\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}},\"not protected children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"not protected pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}},\"negative houses sprayed\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Total Households sprayed\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"negative houses sprayed count\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"Total Households sprayed\"},\"script\":\"-params.count\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -13483,7 +13476,8 @@
       "Households non delivery refused",
       "Households non delivery funeral",
       "Households non delivery sick",
-      "Households non delivery other reason"
+      "Households non delivery other reason",
+      "Houses visited coverage"
     ],
     "computedFields": [
       {
@@ -13718,42 +13712,35 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Household Total\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Households visited count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.household.id.keyword\"}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Population Total\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Insecticides Total\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Insecticides sprayed count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household non delivery by reason closed\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"CLOSED_HOUSEHOLD\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"CLOSED_HOUSEHOLD\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household closed non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason refused\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"BENEFICIARY_REFUSED\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household refused non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason incompatible\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household incompatible non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason funeral\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"FUNERAL\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household funeral non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason sick\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"SICK\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household sick non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason other reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.additionalDetails.reasonOfRefusal.keyword\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"CLOSED_HOUSEHOLD\",\"FUNERAL\",\"INCOMPATIBLE\",\"BENEFICIARY_REFUSED\",\"SICK\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household other reason non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"CLOSED_HOUSEHOLD\",\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household required secondary spraying count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"protected children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"protected children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"protected pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"protected pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}},\"not protected population\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected population count\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}},\"not protected children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"not protected pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}},\"negative houses sprayed\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Total Households sprayed\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"negative houses sprayed count\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"Total Households sprayed\"},\"script\":\"-params.count\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -13793,7 +13780,8 @@
       "Total Households sprayed",
       "Overall Household target",
       "Total Population covered",
-      "Overall Population target"
+      "Overall Population target",
+      "Houses visited coverage"
     ],
     "computedFields": [
       {
@@ -14028,42 +14016,35 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Household Total\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.locality.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Households visited count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.household.id.keyword\"}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Population Total\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Insecticides Total\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Insecticides sprayed count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household non delivery by reason closed\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"CLOSED_HOUSEHOLD\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"CLOSED_HOUSEHOLD\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household closed non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason refused\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"BENEFICIARY_REFUSED\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household refused non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason incompatible\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household incompatible non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason funeral\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"FUNERAL\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household funeral non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason sick\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"SICK\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household sick non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason other reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.additionalDetails.reasonOfRefusal.keyword\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"CLOSED_HOUSEHOLD\",\"FUNERAL\",\"INCOMPATIBLE\",\"BENEFICIARY_REFUSED\",\"SICK\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household other reason non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"CLOSED_HOUSEHOLD\",\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household required secondary spraying count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"protected children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"protected children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"protected pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"protected pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}},\"not protected population\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected population count\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}},\"not protected children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"not protected pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}},\"negative houses sprayed\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Total Households sprayed\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"negative houses sprayed count\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"Total Households sprayed\"},\"script\":\"-params.count\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -14103,7 +14084,8 @@
       "Total Households sprayed",
       "Overall Household target",
       "Total Population covered",
-      "Overall Population target"
+      "Overall Population target",
+      "Houses visited coverage"
     ],
     "computedFields": [
       {
@@ -14338,42 +14320,35 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Household Total\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.village.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Households visited count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.household.id.keyword\"}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Population Total\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Insecticides Total\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Insecticides sprayed count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household non delivery by reason closed\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"CLOSED_HOUSEHOLD\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"CLOSED_HOUSEHOLD\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household closed non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason refused\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"BENEFICIARY_REFUSED\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household refused non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason incompatible\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household incompatible non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason funeral\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"FUNERAL\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household funeral non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason sick\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"SICK\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household sick non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household non delivery by reason other reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.additionalDetails.reasonOfRefusal.keyword\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"CLOSED_HOUSEHOLD\",\"FUNERAL\",\"INCOMPATIBLE\",\"BENEFICIARY_REFUSED\",\"SICK\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household other reason non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"CLOSED_HOUSEHOLD\",\"BENEFICIARY_REFUSED\"]}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_FAILED\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Household required secondary spraying count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"protected children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"protected children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"protected pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"protected pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}},\"not protected population\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected population count\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}},\"not protected children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"not protected pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_FAILED\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"not protected pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}},\"negative houses sprayed\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Total Households sprayed\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"negative houses sprayed count\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"Total Households sprayed\"},\"script\":\"-params.count\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -14407,7 +14382,8 @@
       "Total Households sprayed",
       "Overall Household target",
       "Total Population covered",
-      "Overall Population target"
+      "Overall Population target",
+      "Houses visited coverage"
     ],
     "computedFields": [
       {
@@ -14666,6 +14642,13 @@
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"houses registered count\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.household.id.keyword\"}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Households visited count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}},\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"houses registered count\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"household count\": {\n          \"date_histogram\": {\n            \"field\": \"Data.@timestamp\",\n            \"calendar_interval\": \"day\",\n            \"format\": \"dd MMM yyyy\",\n            \"min_doc_count\": 1\n          },\n          \"aggs\": {\n            \"Households Visited Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "xtable",
@@ -14701,25 +14684,27 @@
       "negative houses sprayed count",
       "Insecticides sprayed count",
       "Households visited count",
+      "Households Visited Count",
       "Quantity",
       "Total Households sprayed",
-      "Overall Household target",
+      "Overall Household Target",
       "Total Population covered",
-      "Overall Population target",
+      "Overall Population Target",
       "Households non delivery incompatible",
       "Households non delivery closed",
       "Households non delivery refused",
       "Households non delivery funeral",
       "Households non delivery sick",
-      "Households non delivery other reason"
+      "Households non delivery other reason",
+      "Houses visited coverage"
     ],
     "computedFields": [
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Households visited count",
-          "Overall Household target"
+          "Households Visited Count",
+          "Overall Household Target"
         ],
         "newField": "Target Achievement Household Visited",
         "_comments": ""
@@ -14729,7 +14714,7 @@
         "actionName": "PercentageComputedField",
         "fields": [
           "Total Households sprayed",
-          "Overall Household target"
+          "Overall Household Target"
         ],
         "newField": "Target Achievement Household",
         "_comments": ""
@@ -14738,7 +14723,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Households visited count"
+          "Households Visited Count"
         ],
         "newField": "Households visited",
         "_comments": ""
@@ -14756,7 +14741,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Households visited count",
+          "Households Visited Count",
           "negative houses sprayed count"
         ],
         "newField": "Households not sprayed",
@@ -14829,7 +14814,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Households visited count",
+          "Households Visited Count",
           "Total Households sprayed"
         ],
         "newField": "Houses visited coverage",
@@ -14967,6 +14952,13 @@
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"houses registered count\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.household.id.keyword\"}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Households visited count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}},\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"houses registered count\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"household count\": {\n          \"date_histogram\": {\n            \"field\": \"Data.@timestamp\",\n            \"calendar_interval\": \"day\",\n            \"format\": \"dd MMM yyyy\",\n            \"min_doc_count\": 1\n          },\n          \"aggs\": {\n            \"Households Visited Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "xtable",
@@ -15002,19 +14994,21 @@
       "negative houses sprayed count",
       "Insecticides sprayed count",
       "Households visited count",
+      "Households Visited Count",
       "Quantity",
       "Total Households sprayed",
-      "Overall Household target",
+      "Overall Household Target",
       "Total Population covered",
-      "Overall Population target"
+      "Overall Population Target",
+      "Houses visited coverage"
     ],
     "computedFields": [
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Households visited count",
-          "Overall Household target"
+          "Households Visited Count",
+          "Overall Household Target"
         ],
         "newField": "Target Achievement Household Visited",
         "_comments": ""
@@ -15024,7 +15018,7 @@
         "actionName": "PercentageComputedField",
         "fields": [
           "Total Households sprayed",
-          "Overall Household target"
+          "Overall Household Target"
         ],
         "newField": "Target Achievement Household",
         "_comments": ""
@@ -15033,7 +15027,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Households visited count"
+          "Households Visited Count"
         ],
         "newField": "Households visited",
         "_comments": ""
@@ -15051,7 +15045,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Households visited count",
+          "Households Visited Count",
           "negative houses sprayed count"
         ],
         "newField": "Households not sprayed",
@@ -15124,7 +15118,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Households visited count",
+          "Households Visited Count",
           "Total Households sprayed"
         ],
         "newField": "Houses visited coverage",
