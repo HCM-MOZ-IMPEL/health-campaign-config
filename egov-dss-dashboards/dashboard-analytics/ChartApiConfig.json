@@ -23686,7 +23686,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total houses sprayed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Houses sprayed\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total houses sprayed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Houses sprayed\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}},\"Active Task Dates\":{\"cardinality\":{\"field\":\"Data.taskDates\"}},\"Average\":{\"bucket_script\":{\"buckets_path\":{\"hh_sprayed\":\"Houses sprayed\",\"dates_count\":\"Active Task Dates\"},\"script\":\"params.hh_sprayed/params.dates_count\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -23723,7 +23723,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total houses sprayed\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Houses sprayed\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total houses sprayed\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Houses sprayed\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}},\"Active Task Dates\":{\"cardinality\":{\"field\":\"Data.taskDates\"}},\"Average\":{\"bucket_script\":{\"buckets_path\":{\"hh_sprayed\":\"Houses sprayed\",\"dates_count\":\"Active Task Dates\"},\"script\":\"params.hh_sprayed/params.dates_count\"}}}}}}}}"
       },
       {
         "module": "COMMON",
