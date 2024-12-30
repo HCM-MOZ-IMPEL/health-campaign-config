@@ -12529,7 +12529,7 @@
     "insight": {},
     "_comment": " "
   },
-  "householdsCoverageBarchartByDistrict": {
+  "householdsCoverageBarchartByDistrictCopy": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_DISTRICT",
     "queries": [
       {
@@ -12580,7 +12580,7 @@
     "insight": {},
     "_comment": " "
   },
-  "householdsCoverageBarchartByAP": {
+  "householdsCoverageBarchartByAPCopy": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_AP",
     "queries": [
@@ -12623,6 +12623,79 @@
         "newField": "Coverage",
         "_comments": ""
       }
+    ],
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "householdsCoverageBarchartByDistrict": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Coverage\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.dateEpoch",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "irs-custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Households Target\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "householdsCoverageBarchartByAP",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Households Coverage",
+      "Households Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "householdsCoverageBarchartByAP": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Coverage\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.dateEpoch",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "irs-custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Households Target\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "householdsCoverageBarchartByLocality",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Households Coverage",
+      "Households Target"
     ],
     "filterKeys": [
       {
