@@ -28772,6 +28772,282 @@
       }
     ]
   },
+  "daysInventoryStockLastsProvinceBurundi": {
+    "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}}}},\"aggs\":{\"No. of Days Stock Can Last\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "No. of Days Stock Can Last",
+      "Target Per Day"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "daysInventoryStockLastsDistrictBurundi": {
+    "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"}}]}}}},\"aggs\":{\"No. of Days Stock Can Last\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "No. of Days Stock Can Last",
+      "Target Per Day"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "householdVisitsTargetDistrictBurundi": {
+    "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_VISITS_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\": 0,\"aggs\": {\"AGGR\": {\"filters\": {\"filters\": {\"Campaign Filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.targetType.keyword\": \"HOUSEHOLD\"}},{\"exists\": {\"field\": \"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.municipality.keyword\"}}]}}}},\"aggs\": {\"Overall Target\": {\"sum\": {\"field\": \"Data.overallTarget\"}},\"Target per day\": {\"sum\": {\"field\": \"Data.targetPerDay\"}},\"Target Households per Day\": {\"bucket_script\": {\"buckets_path\": {\"tpd\": \"Target per day\"},\"script\": \"(params.tpd)*365\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Target Households per Day"
+    ],
+    "postAggregationTheory": "repsonseToDifferenceOfDates",
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "totalHouseholdCoverageDistrictBurundi": {
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total visits\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Overall target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}}}},\"aggs\":{\"TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "isCappedTillToday": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Total visits",
+      "Overall target"
+    ],
+    "postAggregationTheory": "",
+    "insight": {
+      "chartResponseMap": "totalHouseholdCoverageDistrictBurundi",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
+  "overviewPopulationTargetedDistrictBurundi": {
+    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\": 0,\"aggs\": {\"AGGR\": {\"filters\": {\"filters\": {\"Campaign Filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.targetType.keyword\": \"INDIVIDUAL\"}},{\"exists\": {\"field\": \"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.municipality.keyword\"}}]}}}},\"aggs\": {\"Overall Target\": {\"sum\": {\"field\": \"Data.overallTarget\"}},\"Target per day\": {\"sum\": {\"field\": \"Data.targetPerDay\"}},\"Target Population per Day\": {\"bucket_script\": {\"buckets_path\": {\"tpd\": \"Target per day\"},\"script\": \"(params.tpd) * 365\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Overall Target"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "overviewPopulationCoverageAchievedDistrictBurundi": {
+    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population Covered till Today\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "isCappedTillToday": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Population Covered till Today",
+      "Overall Population Target"
+    ],
+    "insight": {
+      "chartResponseMap": "overviewPopulationCoverageAchievedDistrictBurundi",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
+  "distributionTargetDistrictBurundi": {
+    "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_TARGET_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Bednets Target\":{\"filters\":{\"filters\":{\"distributions\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target by Range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target\"},\"script\":\"(params.target) * 365\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Bednets Target"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "distributionCoverageDistrictBurundi": {
+    "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Distributions Coverage\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"overallQuantity\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "isCappedTillToday": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Total Distributions Coverage",
+      "Distribution Target"
+    ],
+    "insight": {
+      "chartResponseMap": "distributionCoverageDistrictBurundi",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
+  "checklistCompletionRateDistrictBurundi": {
+    "chartName": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "service-task-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"NATIONAL_SUPERVISOR\",\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\"]}}]}},\"aggs\":{\"Checklists Filled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "showLabel": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "filterKeys": [],
+    "aggregationPaths": [
+      "Checklists Filled"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "warehouseManagerUserSyncBurundi": {
     "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_BURUNDI",
     "queries": [
