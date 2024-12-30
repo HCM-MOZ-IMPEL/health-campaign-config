@@ -2896,7 +2896,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "sprayCoverageBarChartDistrictPercentCopy",
+                  "id": "sprayCoverageBarChartDistrictPercent",
                   "name": "DSS_HEALTH_SPRAY_COVERAGE_DISTRICT_PERCENT",
                   "code": "",
                   "chartType": "bar",
