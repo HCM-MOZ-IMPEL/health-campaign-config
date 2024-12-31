@@ -29293,5 +29293,31 @@
     "insight": {},
     "sort": "sortKeyAsc",
     "_comment": " "
+  },
+  "checklistCompletionRateOfDistrictSupervisorBurundi": {
+    "chartName": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "service-task-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"DISTRICT_SUPERVISOR\"]}}]}},\"aggs\":{\"Checklist name\":{\"terms\":{\"field\":\"Data.checklistName.keyword\"},\"aggs\":{\"Checklist Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "showLabel": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "filterKeys": [],
+    "aggregationPaths": [
+      "Checklist name"
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
