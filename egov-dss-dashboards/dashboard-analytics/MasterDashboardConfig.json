@@ -2542,6 +2542,30 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
+              "id": 20001,
+              "name": "DSS_HEALTH_TARGETS_FOR_THE_CAMPAIGN",
+              "label": "DSS_HEALTH_TARGETS_FOR_THE_CAMPAIGN",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "targetsForCampaign",
+                  "name": "DSS_HEALTH_TARGETS_FOR_THE_CAMPAIGN",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
               "id": 2001,
               "name": "DSS_HEALTH_HOUSEHOLDS",
               "label": "DSS_HEALTH_HOUSEHOLDS",
@@ -2670,7 +2694,7 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2712,7 +2736,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2736,7 +2760,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2770,7 +2794,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2794,7 +2818,7 @@
           ]
         },
         {
-          "row": 6,
+          "row": 7,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -2836,7 +2860,7 @@
           ]
         },
         {
-          "row": 7,
+          "row": 8,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
