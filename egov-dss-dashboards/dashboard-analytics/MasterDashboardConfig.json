@@ -2582,8 +2582,8 @@
                   "headers": []
                 },
                 {
-                  "id": "totalSprayed",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_SPRAYED",
+                  "id": "dateRangeHouseholdCoverageProvince",
+                  "name": "DSS_HEALTH_NATIONAL_HOUSEHOLD_SPRAYED_COVERAGE_OVER_DATERANGE",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
