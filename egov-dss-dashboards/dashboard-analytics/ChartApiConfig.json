@@ -26860,6 +26860,7 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
+    "isCappedTillToday" : true,
     "action": "",
     "aggregationPaths": [
       "total vouchers distributed"
@@ -26936,6 +26937,7 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
+    "isCappedTillToday" : true,
     "action": "",
     "aggregationPaths": [
       "Total vouchers redeemed"
