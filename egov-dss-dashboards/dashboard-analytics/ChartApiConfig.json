@@ -29319,5 +29319,144 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "suspectedFraudsByHealthDistrictBurundi" : {
+    "queries" : [
+      {
+        "module" : "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery" : "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "suspectedFraudsByMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Suspected Frauds"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "suspectedFraudsByMunicipalityBurundi" : {
+    "kind" : "drillDown",
+    "queries" : [
+      {
+        "module" : "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery" : "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "suspectedFraudsByAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Suspected Frauds"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "suspectedFraudsByAreaOfResponsibilityBurundi" : {
+    "kind" : "drillDown",
+    "queries" : [
+      {
+        "module" : "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery" : "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "suspectedFraudsByHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Suspected Frauds"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "suspectedFraudsByHillsBurundi" : {
+    "kind" : "drillDown",
+    "queries" : [
+      {
+        "module" : "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery" : "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "suspectedFraudsBySubHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Suspected Frauds"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "suspectedFraudsBySubHillsBurundi" : {
+    "kind" : "drillDown",
+    "queries" : [
+      {
+        "module" : "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery" : "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Suspected Frauds"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
