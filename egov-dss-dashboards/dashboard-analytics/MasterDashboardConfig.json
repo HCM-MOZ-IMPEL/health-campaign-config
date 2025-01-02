@@ -2583,7 +2583,7 @@
                 },
                 {
                   "id": "dateRangeHouseholdCoverageProvince",
-                  "name": "DSS_HEALTH_NATIONAL_HOUSEHOLD_SPRAYED_COVERAGE_OVER_DATERANGE",
+                  "name": "DSS_HEALTH_OVERVIEW_DATERANGE_COVERAGE_HOUSEHOLD_SPRAYED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2624,8 +2624,8 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewTotalPopulationCovered",
-                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_POPULATION_COVERED",
+                  "id": "dateRangeOverviewPopulationCoverageAchievedProvince",
+                  "name": "DSS_HEALTH_OVERVIEW_DATERANGE_POPULATION_COVERAGE_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2666,8 +2666,8 @@
                   "headers": []
                 },
                 {
-                  "id": "totalDistributionsTillToday",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_DISTRIBUTED_TILL_TODAY",
+                  "id": "dateRangeDistributionCoverageProvince",
+                  "name": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_COVERAGE_OVER_DATERANGE",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4524,8 +4524,8 @@
                   "headers": []
                 },
                 {
-                  "id": "totalSprayed",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_SPRAYED",
+                  "id": "dateRangeTotalHouseholdCoverageDistrict",
+                  "name": "DSS_HEALTH_OVERVIEW_DATERANGE_COVERAGE_HOUSEHOLD_SPRAYED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4566,8 +4566,8 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewTotalPopulationCovered",
-                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_POPULATION_COVERED",
+                  "id": "dateRangeOverviewPopulationCoverageAchievedDistrict",
+                  "name": "DSS_HEALTH_OVERVIEW_DATERANGE_POPULATION_COVERAGE_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4608,8 +4608,8 @@
                   "headers": []
                 },
                 {
-                  "id": "totalDistributionsTillToday",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_DISTRIBUTED_TILL_TODAY",
+                  "id": "dateRangeDistributionCoverageDistrict",
+                  "name": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_COVERAGE_OVER_DATERANGE",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
