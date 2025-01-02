@@ -13505,6 +13505,7 @@
       "Households Coverage",
       "Households Target"
     ],
+    "sort": "sortValueDesc",
     "filterKeys": [],
     "insight": {},
     "_comment": " "
@@ -13588,6 +13589,7 @@
       "Households Coverage",
       "Households Target"
     ],
+    "sort": "sortValueDesc",
     "filterKeys": [
       {
         "key": "district"
@@ -13677,6 +13679,7 @@
       "Households Coverage",
       "Households Target"
     ],
+    "sort": "sortValueDesc",
     "filterKeys": [
       {
         "key": "administrativeProvince"
@@ -13766,6 +13769,7 @@
       "Households Coverage",
       "Households Target"
     ],
+    "sort": "sortValueDesc",
     "filterKeys": [
       {
         "key": "locality"
@@ -13850,6 +13854,7 @@
       "Households Coverage",
       "Households Target"
     ],
+    "sort": "sortValueDesc",
     "insight": {},
     "_comment": " "
   },
