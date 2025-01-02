@@ -29300,7 +29300,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"PROVINCIAL_SUPERVISOR\"]}}]}},\"aggs\":{\"Checklist name\":{\"terms\":{\"field\":\"Data.checklistName.keyword\"},\"aggs\":{\"Checklist Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
