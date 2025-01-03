@@ -16506,7 +16506,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -16519,15 +16519,15 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}"
+        "indexName": "irs-custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Histogram Overall Household Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}"
+        "indexName": "irs-custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Histogram Overall Population Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -16548,7 +16548,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"houses registered count\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"household count\": {\n          \"date_histogram\": {\n            \"field\": \"Data.@timestamp\",\n            \"calendar_interval\": \"day\",\n            \"format\": \"dd MMM yyyy\",\n            \"min_doc_count\": 1\n          },\n          \"aggs\": {\n            \"Households Visited Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"houses registered count\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.householdId.keyword\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Households Visited Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for(shardList in states) { if(shardList != null) { for(key in shardList) { if(!uniqueValueMap.containsKey(key)) { count +=1; uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Unique Household required secondary spraying count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); int intersectionSize = successSet.size(); int notSuccessSetSize = notSuccessSet.size(); return notSuccessSetSize - intersectionSize;\"}}}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -16574,6 +16581,7 @@
       "Household incompatible non delivery count",
       "Household other reason non delivery count",
       "Household required secondary spraying count",
+      "Unique Household required secondary spraying count",
       "protected children u5 count",
       "not protected children u5 count",
       "registered children u5 count",
@@ -16596,7 +16604,8 @@
       "Households non delivery funeral",
       "Households non delivery sick",
       "Households non delivery other reason",
-      "Houses visited coverage"
+      "Houses visited coverage",
+      "Households not sprayed"
     ],
     "computedFields": [
       {
@@ -16705,7 +16714,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Household required secondary spraying count"
+          "Unique Household required secondary spraying count"
         ],
         "newField": "Household required secondary spraying",
         "_comments": ""
@@ -16725,7 +16734,7 @@
         "actionName": "PercentageComputedField",
         "fields": [
           "Total Population covered",
-          "Overall Population target"
+          "Overall Population Target"
         ],
         "newField": "Target Achievement Population",
         "_comments": ""
@@ -16816,7 +16825,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -16829,15 +16838,15 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}"
+        "indexName": "irs-custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Histogram Overall Household Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}"
+        "indexName": "irs-custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Histogram Overall Population Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -16859,6 +16868,13 @@
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"houses registered count\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"household count\": {\n          \"date_histogram\": {\n            \"field\": \"Data.@timestamp\",\n            \"calendar_interval\": \"day\",\n            \"format\": \"dd MMM yyyy\",\n            \"min_doc_count\": 1\n          },\n          \"aggs\": {\n            \"Households Visited Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Unique Household required secondary spraying count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); int intersectionSize = successSet.size(); int notSuccessSetSize = notSuccessSet.size(); return notSuccessSetSize - intersectionSize;\"}}}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -16884,6 +16900,7 @@
       "Household incompatible non delivery count",
       "Household other reason non delivery count",
       "Household required secondary spraying count",
+      "Unique Household required secondary spraying count",
       "protected children u5 count",
       "not protected children u5 count",
       "registered children u5 count",
@@ -16900,7 +16917,8 @@
       "Overall Household Target",
       "Total Population covered",
       "Overall Population Target",
-      "Houses visited coverage"
+      "Houses visited coverage",
+      "Households not sprayed"
     ],
     "computedFields": [
       {
@@ -17009,7 +17027,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Household required secondary spraying count"
+          "Unique Household required secondary spraying count"
         ],
         "newField": "Household required secondary spraying",
         "_comments": ""
@@ -17029,7 +17047,7 @@
         "actionName": "PercentageComputedField",
         "fields": [
           "Total Population covered",
-          "Overall Population target"
+          "Overall Population Target"
         ],
         "newField": "Target Achievement Population",
         "_comments": ""
