@@ -19794,10 +19794,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Total Households\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.householdId.keyword\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for(shardList in states) {if(shardList != null) { for(key in shardList) {if(!uniqueValueMap.containsKey(key)) { count +=1; uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -19809,7 +19809,7 @@
     "action": "percentage",
     "aggregationPaths": [
       "Households_not_sprayed",
-      "Total Households"
+      "Household Total"
     ],
     "insight": {},
     "_comment": " ",
@@ -19862,10 +19862,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Total Households\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.householdId.keyword\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for(shardList in states) {if(shardList != null) { for(key in shardList) {if(!uniqueValueMap.containsKey(key)) { count +=1; uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -19877,7 +19877,7 @@
     "action": "percentage",
     "aggregationPaths": [
       "Households_not_sprayed",
-      "Total Households"
+      "Household Total"
     ],
     "insight": {},
     "_comment": " ",
@@ -19930,10 +19930,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Total Households\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.householdId.keyword\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for(shardList in states) {if(shardList != null) { for(key in shardList) {if(!uniqueValueMap.containsKey(key)) { count +=1; uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -19945,7 +19945,7 @@
     "action": "percentage",
     "aggregationPaths": [
       "Households_not_sprayed",
-      "Total Households"
+      "Household Total"
     ],
     "insight": {},
     "_comment": " ",
@@ -19993,10 +19993,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Total Households\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.householdId.keyword\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for(shardList in states) {if(shardList != null) { for(key in shardList) {if(!uniqueValueMap.containsKey(key)) { count +=1; uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -20008,7 +20008,7 @@
     "action": "percentage",
     "aggregationPaths": [
       "Households_not_sprayed",
-      "Total Households"
+      "Household Total"
     ],
     "insight": {},
     "_comment": " "
