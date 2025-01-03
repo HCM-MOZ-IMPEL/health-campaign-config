@@ -29321,6 +29321,7 @@
     "_comment": " "
   },
   "suspectedFraudsByHealthDistrictBurundi" : {
+    "chartName" : "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries" : [
       {
         "module" : "COMMON",
@@ -29349,6 +29350,7 @@
   },
   "suspectedFraudsByMunicipalityBurundi" : {
     "kind" : "drillDown",
+    "chartName" : "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries" : [
       {
         "module" : "COMMON",
@@ -29377,6 +29379,7 @@
   },
   "suspectedFraudsByAreaOfResponsibilityBurundi" : {
     "kind" : "drillDown",
+    "chartName" : "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries" : [
       {
         "module" : "COMMON",
@@ -29405,6 +29408,7 @@
   },
   "suspectedFraudsByHillsBurundi" : {
     "kind" : "drillDown",
+    "chartName" : "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries" : [
       {
         "module" : "COMMON",
@@ -29433,6 +29437,7 @@
   },
   "suspectedFraudsBySubHillsBurundi" : {
     "kind" : "drillDown",
+    "chartName" : "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries" : [
       {
         "module" : "COMMON",
