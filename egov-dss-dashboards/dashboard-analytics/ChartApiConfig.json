@@ -16520,14 +16520,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "irs-custom-date-targets",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"range\":{\"Data.dateEpoch\":{\"lte\":\"now\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Histogram Overall Household Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"range\":{\"Data.dateEpoch\":{\"lte\":\"now\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Histogram Overall Household Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"time_zone\": \"Africa/Harare\"},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "irs-custom-date-targets",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"range\":{\"Data.dateEpoch\":{\"lte\":\"now\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Histogram Overall Population Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"range\":{\"Data.dateEpoch\":{\"lte\":\"now\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Histogram Overall Population Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"time_zone\": \"Africa/Harare\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -16839,14 +16839,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "irs-custom-date-targets",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"range\":{\"Data.dateEpoch\":{\"lte\":\"now\"}}}]}},\"aggs\":{\"Histogram Overall Household Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"range\":{\"Data.dateEpoch\":{\"lte\":\"now\"}}}]}},\"aggs\":{\"Histogram Overall Household Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"time_zone\": \"Africa/Harare\"},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "irs-custom-date-targets",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"range\":{\"Data.dateEpoch\":{\"lte\":\"now\"}}}]}},\"aggs\":{\"Histogram Overall Population Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"range\":{\"Data.dateEpoch\":{\"lte\":\"now\"}}}]}},\"aggs\":{\"Histogram Overall Population Target\":{\"date_histogram\":{\"field\":\"Data.dateEpoch\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"time_zone\": \"Africa/Harare\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
