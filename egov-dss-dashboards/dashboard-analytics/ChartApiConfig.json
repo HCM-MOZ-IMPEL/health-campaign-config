@@ -28365,7 +28365,7 @@
     "_comment": " "
   },
   "incompleteRecordsByHealthDistrictBurundi": {
-    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -28417,7 +28417,7 @@
   },
   "incompleteRecordsByMunicipalityBurundi": {
     "kind" : "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -28469,7 +28469,7 @@
   },
   "incompleteRecordsByAreaOfResponsibilityBurundi" : {
     "kind" : "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -28521,7 +28521,7 @@
   },
   "incompleteRecordsByHillsBurundi" : {
     "kind" : "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -28573,7 +28573,7 @@
   },
   "incompleteRecordsBySubHillsBurundi" : {
     "kind" : "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES_BURUNDI",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
