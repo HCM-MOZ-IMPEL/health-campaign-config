@@ -11236,10 +11236,10 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.dateEpoch",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.targetType.keyword\": \"INDIVIDUAL\"\n              }\n            },\n            {\n              \"exists\": {\n                \"field\": \"Data.boundaryHierarchy.district.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Population Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"Data.boundaryHierarchy.district.keyword\"\n          },\n          \"aggs\": {\n            \"target\": {\n              \"sum\": {\n                \"field\": \"Data.targetPerDay\"\n              }\n            },\n            \"Target for daterange\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"SUM\": \"target\"\n                },\n                \"script\": \"(params.SUM) * 365\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "indexName": "irs-custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Target for Day\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -11256,23 +11256,11 @@
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Districts",
-    "isCappedByCampaignPeriod": [
-      "Overall Target"
-    ],
     "excludedColumns": [
       "S.N.",
       "Target for daterange"
     ],
     "computedFields": [
-      {
-        "postAggregationTheory": "repsonseToDifferenceOfDates",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Target for daterange"
-        ],
-        "newField": "Population Target",
-        "_comments": ""
-      },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
