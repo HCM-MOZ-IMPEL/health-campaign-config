@@ -7596,6 +7596,138 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 4100,
+              "name": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "label": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesWithMoreThanTwentyMembersByHealthDistrictBurundi",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 4101,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "locationNotEnabledByHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 4102,
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "entriesDoneByWMsHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_HEALTH_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 4103,
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "incompleteRecordsByHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 4104,
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "suspectedFraudsByHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 4105,
+              "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "label": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dataQualitySummaryDistrictBurundi",
+                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -8366,6 +8498,138 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 4200,
+              "name": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "label": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesWithMoreThanTwentyMembersByMunicipalityBurundi",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 4201,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "locationNotEnabledByMunicipalityBurunndi",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 4202,
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "entriesDoneByWMsMunicipalityBurundi",
+                  "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_MUNICIPALITY",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 4203,
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "incompleteRecordsByMunicipalityBurundi",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 4204,
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "suspectedFraudsByMunicipalityBurundi",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 4205,
+              "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "label": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dataQualitySummaryMunicipalityBurundi",
+                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
