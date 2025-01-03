@@ -7454,6 +7454,148 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 3073,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "supervisorUserSyncBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 3074,
+              "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfNationalSupervisorBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3075,
+              "name": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+              "label": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userDataSyncRateBurundi",
+                  "name": "DSS_HEALTH_USER_DATA_SYNC_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 3076,
+              "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfProvincialSupervisorBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3077,
+              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisorBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 3078,
+              "name": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "label": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "checklistCompletionRateBySupervisorsDaySummaryBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -8082,6 +8224,148 @@
                   "chartType": "table",
                   "filter": "",
                   "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 4005,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "supervisorUserSyncBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 4006,
+              "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfNationalSupervisorBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 4007,
+              "name": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+              "label": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userDataSyncRateBurundi",
+                  "name": "DSS_HEALTH_USER_DATA_SYNC_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 4008,
+              "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfProvincialSupervisorBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 4009,
+              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisorBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 4010,
+              "name": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "label": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryMunicipalityBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "checklistCompletionRateBySupervisorsDaySummaryBurundi",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
                 }
               ]
             }
