@@ -30693,6 +30693,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartMunicipalityBurundi" : {
+    "kind" :"drillDown",
     "chartName": "DSS_HEALTH_HOUSES_VISITED_MUNICIPALITY_BURUNDI",
     "queries": [
       {
@@ -30721,6 +30722,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartMunicipalityPercentBurundi" : {
+    "kind" :"drillDown",
     "chartName": "DSS_HEALTH_HOUSES_VISITED_MUNICIPALITY_PERCENT_BURUNDI",
     "queries": [
       {
@@ -30771,6 +30773,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartAreaOfResponsibilityBurundi" : {
+    "kind" :"drillDown",
     "chartName": "DSS_HEALTH_HOUSES_VISITED_AREA_OF_RESPONSIBILITY_BURUNDI",
     "queries": [
       {
@@ -30799,6 +30802,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartAreaOfResponsibilityPercentBurundi" : {
+    "kind" :"drillDown",
     "chartName": "DSS_HEALTH_HOUSES_VISITED_AREA_OF_RESPONSIBILITY_PERCENT_BURUNDI",
     "queries": [
       {
@@ -30849,6 +30853,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartHillsBurundi" : {
+    "kind" :"drillDown",
     "chartName": "DSS_HEALTH_HOUSES_VISITED_HILLS_BURUNDI",
     "queries": [
       {
@@ -30877,6 +30882,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartHillsPercentBurundi" : {
+    "kind" :"drillDown",
     "chartName": "DSS_HEALTH_HOUSES_VISITED_HILLS_PERCENT_BURUNDI",
     "queries": [
       {
@@ -30927,6 +30933,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartSubHillsBurundi" : {
+    "kind" :"drillDown",
     "chartName": "DSS_HEALTH_HOUSES_VISITED_SUB_HILLS_BURUNDI",
     "queries": [
       {
@@ -30955,6 +30962,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartSubHillsPercentBurundi" : {
+    "kind" :"drillDown",
     "chartName": "DSS_HEALTH_HOUSES_VISITED_SUB_HILLS_PERCENT_BURUNDI",
     "queries": [
       {
