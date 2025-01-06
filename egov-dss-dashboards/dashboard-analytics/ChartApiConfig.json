@@ -1,4 +1,387 @@
 {
+  "todayRegisteredHousesSmc": {
+    "chartName": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_REGISTERED_TODAY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"houses registered today\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "filterForCurrentDay": true,
+    "action": "",
+    "aggregationPaths": [
+      "houses registered today"
+    ],
+    "insight": {
+      "chartResponseMap": "todayRegisteredHousesSmc",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "day"
+    },
+    "_comment": " "
+  },
+  "totalRegisteredNationalSmc": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_REGISTERED_NATIONAL",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"houses registered total\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "houses registered total"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "todayChildrenAdministeredSmc": {
+    "chartName": "DSS_HEALTH_NATIONAL_CHILDREN_ADMINISTERED_TODAY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.lastModifiedTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"children administered today\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "filterForCurrentDay": true,
+    "action": "",
+    "aggregationPaths": [
+      "children administered today"
+    ],
+    "insight": {
+      "chartResponseMap": "todayChildrenAdministeredSmc",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "day"
+    },
+    "_comment": " "
+  },
+  "totalChildrenAdministeredNationalSmc": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_CHILDREN_ADMINISTERED_NATIONAL",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"children administered total\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "children administered total"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredByReasonNationalSmc": {
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_BY_REASON_NATIONAL",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.administrationStatus.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "side-effect-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"script\":{\"source\":\"'SideEffect'\"}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.referral.auditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "referral-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"script\":{\"source\":\"'Referral'\"}}}}}}}"
+      }
+    ],
+    "chartType": "pie",
+    "valueType": "number",
+    "showLabel": true,
+    "drillChart": "childrenNotAdministeredByReasonDrilldownNational",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Beneficiary Refused",
+      "Total Side Effects",
+      "Total Referrals"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "successfullAdministrationAcrossCyclesSmc": {
+    "chartName": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Cycle 1\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"01\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Cycle 1 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"CYCLE_1\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"Cycle 2\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"02\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Cycle 2 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"CYCLE_2\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"Cycle 3\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"03\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Cycle 3 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"CYCLE_3\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"Cycle 4\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"04\"}},{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Cycle 4 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"CYCLE_4\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Cycle 1 & Cycle 2\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"01\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"02\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 1 & Cycle 2 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_1+CYCLE_2\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}},\"Cycle 2 & Cycle 3\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"02\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"03\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 2 & Cycle 3 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_2+CYCLE_3\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}},\"Cycle 3 & Cycle 4\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"03\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"04\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 3 & Cycle 4 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_3+CYCLE_4\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}},\"Cycle 4 & Cycle 1\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"04\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"01\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 4 & Cycle 1 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_4+CYCLE_1\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}},\"Cycle 3 & Cycle 1\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"03\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"01\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 3 & Cycle 1 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_3+CYCLE_1\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}},\"Cycle 2 & Cycle 4\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"02\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"04\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 2 & Cycle 4 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_2+CYCLE_4\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Cycle 1 & Cycle 2 & Cycle 3\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"01\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"02\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"03\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 1 & Cycle 2 & Cycle 3 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_1+CYCLE_2+CYCLE_3\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}},\"Cycle 1 & Cycle 2 & Cycle 4\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"01\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"02\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"04\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 1 & Cycle 2 & Cycle 4 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_1+CYCLE_2+CYCLE_4\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}},\"Cycle 1 & Cycle 3 & Cycle 4\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"01\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"04\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"03\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 1 & Cycle 3 & Cycle 4 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_1+CYCLE_3+CYCLE_4\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}},\"Cycle 2 & Cycle 3 & Cycle 4\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"02\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"04\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"03\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 2 & Cycle 3 & Cycle 4 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_2+CYCLE_3+CYCLE_4\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Cycle 1 & Cycle 2 & Cycle 3 & Cycle 4\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}],\"should\":[{\"term\":{\"Data.additionalDetails.cycleIndex\":\"01\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"02\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"04\"}},{\"term\":{\"Data.additionalDetails.cycleIndex\":\"03\"}}],\"minimum_should_match\":1}},\"aggs\":{\"Cycle 1 & Cycle 2 & Cycle 3 & Cycle 4 Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"successful_count\":{\"terms\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"min_doc_count\":2},\"aggs\":{\"Intersection\":{\"terms\":{\"field\":\"Data.additionalDetails.cycleIndex\"}},\"Bucket Count\":{\"bucket_selector\":{\"buckets_path\":{\"intersection_count\":\"Intersection._bucket_count\"},\"script\":\"params.intersection_count > 1\"}}}},\"CYCLE_1+CYCLE_2+CYCLE_3+CYCLE_4\":{\"bucket_script\":{\"buckets_path\":{\"successful_count\":\"successful_count._bucket_count\"},\"script\":\"params.successful_count\"}}}}}}}}"
+      }
+    ],
+    "chartType": "xtable",
+    "isCumulative": false,
+    "valueType": "number",
+    "excludedBucketKeys": [
+      "successful_count"
+    ],
+    "excludedColumns": [
+      "S.N.",
+      "VENN",
+      "CYCLE_1",
+      "CYCLE_2",
+      "CYCLE_3",
+      "CYCLE_4",
+      "CYCLE_1+CYCLE_2",
+      "CYCLE_2+CYCLE_3",
+      "CYCLE_3+CYCLE_4",
+      "CYCLE_3+CYCLE_1",
+      "CYCLE_4+CYCLE_1",
+      "CYCLE_2+CYCLE_4",
+      "CYCLE_1+CYCLE_2+CYCLE_3",
+      "CYCLE_1+CYCLE_2+CYCLE_4",
+      "CYCLE_1+CYCLE_3+CYCLE_4",
+      "CYCLE_2+CYCLE_3+CYCLE_4",
+      "CYCLE_1+CYCLE_2+CYCLE_3+CYCLE_4"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_1"
+        ],
+        "newField": "CYCLE_1",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_2"
+        ],
+        "newField": "CYCLE_2",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_3"
+        ],
+        "newField": "CYCLE_3",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_4"
+        ],
+        "newField": "CYCLE_4",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_1+CYCLE_2"
+        ],
+        "newField": "CYCLE_1+CYCLE_2",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_2+CYCLE_3"
+        ],
+        "newField": "CYCLE_2+CYCLE_3",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_3+CYCLE_4"
+        ],
+        "newField": "CYCLE_3+CYCLE_4",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_3+CYCLE_1"
+        ],
+        "newField": "CYCLE_3+CYCLE_1",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_4+CYCLE_1"
+        ],
+        "newField": "CYCLE_4+CYCLE_1",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_2+CYCLE_4"
+        ],
+        "newField": "CYCLE_2+CYCLE_4",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_1+CYCLE_2+CYCLE_3"
+        ],
+        "newField": "CYCLE_1+CYCLE_2+CYCLE_3",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_1+CYCLE_2+CYCLE_4"
+        ],
+        "newField": "CYCLE_1+CYCLE_2+CYCLE_4",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_1+CYCLE_3+CYCLE_4"
+        ],
+        "newField": "CYCLE_1+CYCLE_3+CYCLE_4",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_2+CYCLE_3+CYCLE_4"
+        ],
+        "newField": "CYCLE_2+CYCLE_3+CYCLE_4",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "NoOpsComputedField",
+        "fields": [
+          "CYCLE_1+CYCLE_2+CYCLE_3+CYCLE_4"
+        ],
+        "newField": "CYCLE_1+CYCLE_2+CYCLE_3+CYCLE_4",
+        "_comments": ""
+      }
+    ],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "plotLabel": "VENN",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "insight": {},
+    "_comment": " "
+  },
+  "sideEffectsSummaryBreakdownByDistrictsSmc": {
+    "chartName": "DSS_HEALTH_SIDE_EFFECTS_SUMMARY_BY_DISTRICTS",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.sideEffect.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.projectTypeId.keyword\"}",
+        "indexName": "side-effect-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"SideEffects Diarrhoea\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.sideEffect.symptoms.keyword\":[\"DIARRHOEA\"]}},{\"exists\":{\"field\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"}}]}},\"aggs\":{\"Diarrhoea\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"SideEffects Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}},\"SideEffects Fever\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.sideEffect.symptoms.keyword\":[\"FEVER\"]}},{\"exists\":{\"field\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"}}]}},\"aggs\":{\"Fever\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"SideEffects Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}},\"SideEffects Vomitting\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.sideEffect.symptoms.keyword\":[\"VOMITTING\"]}},{\"exists\":{\"field\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"}}]}},\"aggs\":{\"Vomitting\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"SideEffects Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}},\"SideEffects Abdominal Pain\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.sideEffect.symptoms.keyword\":[\"ABDOMINAL_PAIN\"]}},{\"exists\":{\"field\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"}}]}},\"aggs\":{\"Abdominal Pain\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"SideEffects Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}},\"SideEffects Skin Reaction\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.sideEffect.symptoms.keyword\":[\"SKIN_REACTION\"]}},{\"exists\":{\"field\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"}}]}},\"aggs\":{\"Skin reaction\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"SideEffects Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}},\"SideEffects Weakness\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.sideEffect.symptoms.keyword\":[\"WEAKNESS\"]}},{\"exists\":{\"field\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"}}]}},\"aggs\":{\"Weakness\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"SideEffects Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}},\"SideEffects Others\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.sideEffect.symptoms.keyword\":[\"OTHER\",\"OTHERS\"]}},{\"exists\":{\"field\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"}}]}},\"aggs\":{\"Others\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"SideEffects Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.sideEffect.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0 && doc[params.fieldName].value != null) { state.list.add(doc[params.fieldName].value); }\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for (shardList in states) { if (shardList != null) { for (key in shardList) { if (!uniqueValueMap.containsKey(key)) { count += 1; uniqueValueMap.put(key, key); } } } } return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "sideEffectsSummaryBreakdownByAPs",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Diarrhoea",
+      "Fever",
+      "Vomitting",
+      "Abdominal Pain",
+      "Skin reaction",
+      "Weakness",
+      "Others"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "childrenAdministeredSmc": {
     "chartName": "DSS_TOTAL_CHILDREN_ADMINISTERED",
     "queries": [
