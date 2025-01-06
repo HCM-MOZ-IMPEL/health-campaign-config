@@ -6961,7 +6961,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "sideEffectsSummaryBreakdownByDistricts",
+                  "id": "sideEffectsSummaryBreakdownByDistrictsSmc",
                   "name": "DSS_HEALTH_SIDE_EFFECTS_SUMMARY",
                   "code": "",
                   "chartType": "bar",
@@ -9883,7 +9883,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "todayRegisteredHouses",
+                  "id": "todayRegisteredHousesSmc",
                   "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_REGISTERED_TODAY",
                   "code": "",
                   "chartType": "metric",
@@ -9891,7 +9891,7 @@
                   "headers": []
                 },
                 {
-                  "id": "totalRegisteredNational",
+                  "id": "totalRegisteredNationalSmc",
                   "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_REGISTERED_NATIONAL",
                   "code": "",
                   "chartType": "metric",
@@ -9909,7 +9909,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "todayChildrenAdministered",
+                  "id": "todayChildrenAdministeredSmc",
                   "name": "DSS_HEALTH_NATIONAL_CHILDREN_ADMINISTERED_TODAY",
                   "code": "",
                   "chartType": "metric",
@@ -9917,7 +9917,7 @@
                   "headers": []
                 },
                 {
-                  "id": "totalChildrenAdministeredNational",
+                  "id": "totalChildrenAdministeredNationalSmc",
                   "name": "DSS_HEALTH_NATIONAL_TOTAL_CHILDREN_ADMINISTERED_NATIONAL",
                   "code": "",
                   "chartType": "metric",
@@ -10027,7 +10027,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "childrenNotAdministeredByReasonNational",
+                  "id": "childrenNotAdministeredByReasonNationalSmc",
                   "name": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_BY_REASON_NATIONAL",
                   "code": "",
                   "chartType": "donut",
@@ -10051,7 +10051,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "successfullAdministrationAcrossCycles",
+                  "id": "successfullAdministrationAcrossCyclesSmc",
                   "name": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
                   "code": "",
                   "chartType": "venn",
