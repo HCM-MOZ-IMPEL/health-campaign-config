@@ -6932,6 +6932,47 @@
           ]
         },
         {
+          "row": 5,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 2252,
+              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "charts": [
+                {
+                  "id": "referralSummaryByDistricts",
+                  "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 2251,
+              "name": "DSS_HEALTH_SIDE_EFFECTS_SUMMARY",
+              "label": "DSS_HEALTH_SIDE_EFFECTS_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "sideEffectsSummaryBreakdownByDistrictsSmc",
+                  "name": "DSS_HEALTH_SIDE_EFFECTS_SUMMARY",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
