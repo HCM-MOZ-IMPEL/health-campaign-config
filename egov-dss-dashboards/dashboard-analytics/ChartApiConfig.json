@@ -31011,5 +31011,403 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "populationCoveredBarChartDistrictBurundi" : {
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "populationCoveredBarChartMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Population covered"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartDistrictPercentBurundi": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_PERCENT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}},\"aggs\":{\"Population Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "populationCoveredBarChartMunicipalityPercentBurundi",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Population coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Population covered",
+      "Population Targeted"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartMunicipalityBurundi" : {
+    "kind" :"drillDown",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_MUNICIPALITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "populationCoveredBarChartAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Population covered"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartMunicipalityPercentBurundi" : {
+    "kind" :"drillDown",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_MUNICIPALITY_PERCENT_BURUNDI",
+    "queries" : [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"}}]}},\"aggs\":{\"Population Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "populationCoveredBarChartAreaOfResponsibilityPercentBurundi",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Population coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Population covered",
+      "Population Targeted"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartAreaOfResponsibilityBurundi" : {
+    "kind" :"drillDown",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_AREA_OF_RESPONSIBILITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "populationCoveredBarChartHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Population covered"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartAreaOfResponsibilityPercentBurundi" : {
+    "kind" :"drillDown",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_AREA_OF_RESPONSIBILITY_PERCENT_BURUNDI",
+    "queries" : [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\"}}]}},\"aggs\":{\"Population Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "populationCoveredBarChartHillsPercentBurundi",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Population coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Population covered",
+      "Population Targeted"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartHillsBurundi" : {
+    "kind" :"drillDown",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_SUBHILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "populationCoveredBarChartSubHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Population covered"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartHillsPercentBurundi" : {
+    "kind" :"drillDown",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_HILLS_PERCENT_BURUNDI",
+    "queries" : [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\"}}]}},\"aggs\":{\"Population Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "populationCoveredBarChartSubHillsPercentBurundi",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Population coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Population covered",
+      "Population Targeted"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartSubHillsBurundi" : {
+    "kind" :"drillDown",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_SUBHILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Population covered"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoveredBarChartSubHillsPercentBurundi" : {
+    "kind" :"drillDown",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_SUBHILLS_PERCENT_BURUNDI",
+    "queries" : [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\"}}]}},\"aggs\":{\"Population Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM) * 365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Population coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Population covered",
+      "Population Targeted"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
