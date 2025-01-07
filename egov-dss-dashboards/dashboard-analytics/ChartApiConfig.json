@@ -31757,5 +31757,149 @@
     "computeMultiPaths": true,
     "insight": {},
     "_comment": " "
+  },
+  "averageBednetsDistributedProvinceBurundi": {
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_PROVINCE_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageBednetsDistributedHealthDistrictBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Average Bednets Per Day"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageBednetsDistributedHealthDistrictBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HEALTH_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageBednetsDistributedMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Average Bednets Per Day"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageBednetsDistributedMunicipalityBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_MUNICIPALITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageBednetsDistributedAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Average Bednets Per Day"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageBednetsDistributedAreaOfResponsibilityBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_AreaOfResponsibility_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageBednetsDistributedHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Average Bednets Per Day"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageBednetsDistributedHillsBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Average Bednets Per Day"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
