@@ -25690,6 +25690,7 @@
       }
     ],
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "PENDING_ASSIGNMENT",
       "RESOLVED",
@@ -25752,6 +25753,7 @@
       }
     ],
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "PENDING_ASSIGNMENT",
       "RESOLVED",
@@ -25783,6 +25785,7 @@
       }
     ],
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "PENDING_ASSIGNMENT",
       "RESOLVED",
@@ -25814,6 +25817,7 @@
       }
     ],
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "PENDING_ASSIGNMENT",
       "RESOLVED",
