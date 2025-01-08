@@ -31758,8 +31758,8 @@
     "insight": {},
     "_comment": " "
   },
-  "averageBednetsDistributedProvinceBurundi": {
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_PROVINCE_BURUNDI",
+  "averageBednetsDistributedHealthDistrictBurundi": {
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HEALTH_DISTRICT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -31779,7 +31779,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageBednetsDistributedHealthDistrictBurundi",
+    "drillChart": "averageBednetsDistributedMunicipalityBurundi",
     "documentType": "_doc",
     "action": "division",
     "aggregationPaths": [
@@ -31794,9 +31794,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageBednetsDistributedHealthDistrictBurundi": {
+  "averageBednetsDistributedMunicipalityBurundi": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HEALTH_DISTRICT_BURUNDI",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_MUNICIPALITY_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -31816,7 +31816,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageBednetsDistributedMunicipalityBurundi",
+    "drillChart": "averageBednetsDistributedAreaOfResponsibilityBurundi",
     "documentType": "_doc",
     "action": "division",
     "aggregationPaths": [
@@ -31831,9 +31831,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageBednetsDistributedMunicipalityBurundi": {
+  "averageBednetsDistributedAreaOfResponsibilityBurundi": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_MUNICIPALITY_BURUNDI",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_AreaOfResponsibility_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -31853,7 +31853,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageBednetsDistributedAreaOfResponsibilityBurundi",
+    "drillChart": "averageBednetsDistributedHillsBurundi",
     "documentType": "_doc",
     "action": "division",
     "aggregationPaths": [
@@ -31868,9 +31868,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageBednetsDistributedAreaOfResponsibilityBurundi": {
+  "averageBednetsDistributedHillsBurundi": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_AreaOfResponsibility_BURUNDI",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HILLS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -31890,7 +31890,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageBednetsDistributedHillsBurundi",
+    "drillChart": "averageBednetsDistributedSubHillsBurundi",
     "documentType": "_doc",
     "action": "division",
     "aggregationPaths": [
@@ -31905,9 +31905,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageBednetsDistributedHillsBurundi": {
+  "averageBednetsDistributedSubHillsBurundi": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HILLS_BURUNDI",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_SUB_HILLS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
