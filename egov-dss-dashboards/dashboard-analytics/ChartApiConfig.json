@@ -31975,15 +31975,7 @@
         "key": "healthDistrict"
       }
     ],
-    "insight": {
-      "chartResponseMap": "registrationAndDistributionBarChartBurundi",
-      "action": "differenceOfNumbers",
-      "upwardIndicator": "positive",
-      "downwardIndicator": "negative",
-      "textMessage": "$indicator$value% than last $insightInterval",
-      "colorCode": "#228B22",
-      "insightInterval": "dateRange"
-    },
+    "insight": {},
     "_comment": ""
   },
   "registrationAndDistributionBarChartMunicipalityBurundi": {
@@ -32019,15 +32011,7 @@
         "key": "municipality"
       }
     ],
-    "insight": {
-      "chartResponseMap": "registrationAndDistributionBarChartBurundi",
-      "action": "differenceOfNumbers",
-      "upwardIndicator": "positive",
-      "downwardIndicator": "negative",
-      "textMessage": "$indicator$value% than last $insightInterval",
-      "colorCode": "#228B22",
-      "insightInterval": "dateRange"
-    },
+    "insight": {},
     "_comment": ""
   },
   "registrationAndDistributionBarChartAreaOfResponsibilityBurundi": {
@@ -32063,15 +32047,7 @@
         "key": "areaOfResponsibility"
       }
     ],
-    "insight": {
-      "chartResponseMap": "registrationAndDistributionBarChartBurundi",
-      "action": "differenceOfNumbers",
-      "upwardIndicator": "positive",
-      "downwardIndicator": "negative",
-      "textMessage": "$indicator$value% than last $insightInterval",
-      "colorCode": "#228B22",
-      "insightInterval": "dateRange"
-    },
+    "insight": {},
     "_comment": ""
   },
   "registrationAndDistributionBarChartHillsBurundi": {
@@ -32107,15 +32083,7 @@
         "key": "hills"
       }
     ],
-    "insight": {
-      "chartResponseMap": "registrationAndDistributionBarChartBurundi",
-      "action": "differenceOfNumbers",
-      "upwardIndicator": "positive",
-      "downwardIndicator": "negative",
-      "textMessage": "$indicator$value% than last $insightInterval",
-      "colorCode": "#228B22",
-      "insightInterval": "dateRange"
-    },
+    "insight": {},
     "_comment": ""
   },
   "registrationAndDistributionBarChartSubHillsBurundi": {
@@ -32151,15 +32119,7 @@
         "key": "subHills"
       }
     ],
-    "insight": {
-      "chartResponseMap": "registrationAndDistributionBarChartBurundi",
-      "action": "differenceOfNumbers",
-      "upwardIndicator": "positive",
-      "downwardIndicator": "negative",
-      "textMessage": "$indicator$value% than last $insightInterval",
-      "colorCode": "#228B22",
-      "insightInterval": "dateRange"
-    },
+    "insight": {},
     "_comment": ""
   }
 }
