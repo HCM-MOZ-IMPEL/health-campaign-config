@@ -31766,7 +31766,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\":\"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -31774,9 +31781,10 @@
     "valueType": "number",
     "drillChart": "averageBednetsDistributedHealthDistrictBurundi",
     "documentType": "_doc",
-    "action": "",
+    "action": "division",
     "aggregationPaths": [
-      "Average Bednets Per Day"
+      "Total Bednets Distributed",
+      "Distribution Days"
     ],
     "filterKeys": [
       {
@@ -31795,7 +31803,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\":\"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -31803,9 +31818,10 @@
     "valueType": "number",
     "drillChart": "averageBednetsDistributedMunicipalityBurundi",
     "documentType": "_doc",
-    "action": "",
+    "action": "division",
     "aggregationPaths": [
-      "Average Bednets Per Day"
+      "Total Bednets Distributed",
+      "Distribution Days"
     ],
     "filterKeys": [
       {
@@ -31824,7 +31840,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -31832,9 +31855,10 @@
     "valueType": "number",
     "drillChart": "averageBednetsDistributedAreaOfResponsibilityBurundi",
     "documentType": "_doc",
-    "action": "",
+    "action": "division",
     "aggregationPaths": [
-      "Average Bednets Per Day"
+      "Total Bednets Distributed",
+      "Distribution Days"
     ],
     "filterKeys": [
       {
@@ -31853,7 +31877,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -31861,9 +31892,10 @@
     "valueType": "number",
     "drillChart": "averageBednetsDistributedHillsBurundi",
     "documentType": "_doc",
-    "action": "",
+    "action": "division",
     "aggregationPaths": [
-      "Average Bednets Per Day"
+      "Total Bednets Distributed",
+      "Distribution Days"
     ],
     "filterKeys": [
       {
@@ -31882,7 +31914,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Filtered Boundaries\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"boundaries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":100},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Unique Distribution Days\":{\"cardinality\":{\"field\":\"Data.syncedDate\"}},\"Average Bednets Per Day\":{\"bucket_script\":{\"buckets_path\":{\"total\":\"Total Bednets\",\"days\":\"Unique Distribution Days\"},\"script\":\"params.total/(params.days==0?1:params.days)\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -31890,9 +31929,10 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "",
+    "action": "division",
     "aggregationPaths": [
-      "Average Bednets Per Day"
+      "Total Bednets Distributed",
+      "Distribution Days"
     ],
     "filterKeys": [
       {
