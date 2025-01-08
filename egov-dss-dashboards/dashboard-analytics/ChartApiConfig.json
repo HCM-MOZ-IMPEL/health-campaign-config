@@ -31941,5 +31941,185 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "registrationAndDistributionBarChartHealthDistrictBurundi": {
+    "chartName": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_HEALTH_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distributed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "bar",
+    "isStacked": true,
+    "valueType": "number",
+    "drillChart": "registrationAndDistributionBarChartMunicipalityBurundi",
+    "documentType": "_doc",
+    "aggregationPaths": [
+      "Distributed Vouchers",
+      "Redeemed Vouchers"
+    ],
+    "computedFields": [],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": ""
+  },
+  "registrationAndDistributionBarChartMunicipalityBurundi": {
+    "chartName": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_MUNICIPALITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distributed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "bar",
+    "isStacked": true,
+    "valueType": "number",
+    "drillChart": "registrationAndDistributionBarChartAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "aggregationPaths": [
+      "Distributed Vouchers",
+      "Redeemed Vouchers"
+    ],
+    "computedFields": [],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": ""
+  },
+  "registrationAndDistributionBarChartAreaOfResponsibilityBurundi": {
+    "chartName": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_AreaOfResponsibility_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distributed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "bar",
+    "isStacked": true,
+    "valueType": "number",
+    "drillChart": "registrationAndDistributionBarChartHillsBurundi",
+    "documentType": "_doc",
+    "aggregationPaths": [
+      "Distributed Vouchers",
+      "Redeemed Vouchers"
+    ],
+    "computedFields": [],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": ""
+  },
+  "registrationAndDistributionBarChartHillsBurundi": {
+    "chartName": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_HILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distributed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "bar",
+    "isStacked": true,
+    "valueType": "number",
+    "drillChart": "registrationAndDistributionBarChartSubHillsBurundi",
+    "documentType": "_doc",
+    "aggregationPaths": [
+      "Distributed Vouchers",
+      "Redeemed Vouchers"
+    ],
+    "computedFields": [],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": ""
+  },
+  "registrationAndDistributionBarChartSubHillsBurundi": {
+    "chartName": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_SUBHILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distributed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "bar",
+    "isStacked": true,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "aggregationPaths": [
+      "Distributed Vouchers",
+      "Redeemed Vouchers"
+    ],
+    "computedFields": [],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": ""
   }
 }
