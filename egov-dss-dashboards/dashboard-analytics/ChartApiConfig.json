@@ -31757,5 +31757,189 @@
     "computeMultiPaths": true,
     "insight": {},
     "_comment": " "
+  },
+  "averageBednetsDistributedHealthDistrictBurundi": {
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HEALTH_DISTRICT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\":\"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageBednetsDistributedMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "Total Bednets Distributed",
+      "Distribution Days"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageBednetsDistributedMunicipalityBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_MUNICIPALITY_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\":\"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageBednetsDistributedAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "Total Bednets Distributed",
+      "Distribution Days"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageBednetsDistributedAreaOfResponsibilityBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_AreaOfResponsibility_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageBednetsDistributedHillsBurundi",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "Total Bednets Distributed",
+      "Distribution Days"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageBednetsDistributedHillsBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageBednetsDistributedSubHillsBurundi",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "Total Bednets Distributed",
+      "Distribution Days"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "averageBednetsDistributedSubHillsBurundi": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_SUB_HILLS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "Total Bednets Distributed",
+      "Distribution Days"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
