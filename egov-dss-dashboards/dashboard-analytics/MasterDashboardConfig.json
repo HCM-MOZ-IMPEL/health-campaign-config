@@ -7599,6 +7599,48 @@
         },
         {
           "row": 1,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4106,
+              "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageBednetsDistributedHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 4107,
+              "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART",
+              "label": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationAndDistributionBarChartHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -8498,6 +8540,48 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4108,
+              "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageBednetsDistributedMunicipalityBurundi",
+                  "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 4109,
+              "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART",
+              "label": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationAndDistributionBarChartMunicipalityBurundi",
+                  "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
