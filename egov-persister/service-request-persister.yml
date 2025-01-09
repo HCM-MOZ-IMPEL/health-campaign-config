@@ -35,7 +35,7 @@ serviceMaps:
 
             - jsonPath: $.ServiceDefinition.auditDetails.lastModifiedTime
 
-            - jsonPath: $.ServiceDefinition.additionalDetails
+            - jsonPath: $.ServiceDefinition.additionalFields
               type: JSON
               dbType: JSONB
 
@@ -75,7 +75,7 @@ serviceMaps:
 
             - jsonPath: $.ServiceDefinition.attributes.*.auditDetails.lastModifiedTime
 
-            - jsonPath: $.ServiceDefinition.attributes.*.additionalDetails
+            - jsonPath: $.ServiceDefinition.attributes.*.additionalFields
               type: JSON
               dbType: JSONB
 
@@ -95,7 +95,7 @@ serviceMaps:
       transactionCodeJsonPath: $.referenceId
       #below twofields of audit are applied on the whole object recieved in the kafka
       userUuidJsonPath: $.RequestInfo.userInfo.uuid
-      auditAttributeBasePath: $.Service      
+      auditAttributeBasePath: $.Service
       queryMaps:
 
 
@@ -118,7 +118,7 @@ serviceMaps:
 
             - jsonPath: $.Service.auditDetails.lastModifiedTime
 
-            - jsonPath: $.Service.additionalDetails
+            - jsonPath: $.Service.additionalFields
               type: JSON
               dbType: JSONB
 
@@ -148,13 +148,13 @@ serviceMaps:
 
             - jsonPath: $.Service.attributes.*.auditDetails.lastModifiedTime
 
-            - jsonPath: $.Service.attributes.*.additionalDetails
+            - jsonPath: $.Service.attributes.*.additionalFields
               type: JSON
               dbType: JSONB
 
 
     - version: 1.0
-      description: Update Service Definition 
+      description: Update Service Definition
       fromTopic: update-service-definition-health
       isTransaction: true
       queryMaps:
@@ -171,7 +171,7 @@ serviceMaps:
               type: JSON
               dbType: JSONB
 
-            - jsonPath: $.ServiceDefinition.isActive  
+            - jsonPath: $.ServiceDefinition.isActive
 
             - jsonPath: $.ServiceDefinition.id
 
