@@ -7349,17 +7349,17 @@
             },
             {
               "id": 3070,
-              "name": "DSS_HEALTH_PRODUCT_RETURNED",
-              "label": "DSS_HEALTH_PRODUCT_RETURNED",
+              "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "productReturnedBarChartDistrictBurundi",
-                  "name": "DSS_HEALTH_PRODUCT_RETURNED_DISTRICT_BURUNDI",
+                  "id": "stockTransactionsBreakdownProvincialBurundi",
+                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_BURUNDI",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": []
                 }
@@ -8329,17 +8329,17 @@
             },
             {
               "id": 4002,
-              "name": "DSS_HEALTH_PRODUCT_RETURNED",
-              "label": "DSS_HEALTH_PRODUCT_RETURNED",
+              "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "productReturnedBarChartMunicipalityBurundi",
-                  "name": "DSS_HEALTH_PRODUCT_RETURNED_MUNICIPALITY__BURUNDI",
+                  "id": "stockTransactionsBreakdownDistrictBurundi",
+                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT_BURUNDI",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": []
                 }
