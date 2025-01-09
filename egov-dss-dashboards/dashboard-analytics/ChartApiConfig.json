@@ -24002,7 +24002,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Target Per Day\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Active Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}},\"Quantity Sprayed\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Target for days to last\":{\"bucket_script\":{\"buckets_path\":{\"quantity\":\"Quantity Sprayed\",\"days\":\"Active Days\"},\"script\":\"params.quantity / (params.days)\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Target Per Day\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Active Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}},\"Quantity Sprayed\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Target for days to last\":{\"bucket_script\":{\"buckets_path\":{\"quantity\":\"Quantity Sprayed\",\"days\":\"Active Days\"},\"script\":\"params.quantity * 100 / (params.days)\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -24136,9 +24136,9 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Target Per Day\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Active Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}},\"Quantity Sprayed\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Target for days to last\":{\"bucket_script\":{\"buckets_path\":{\"quantity\":\"Quantity Sprayed\",\"days\":\"Active Days\"},\"script\":\"params.quantity / (params.days)\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Target Per Day\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Active Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}},\"Quantity Sprayed\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Target for days to last\":{\"bucket_script\":{\"buckets_path\":{\"quantity\":\"Quantity Sprayed\",\"days\":\"Active Days\"},\"script\":\"params.quantity * 100 / (params.days)\"}}}}}}"
       },
       {
         "module": "COMMON",
