@@ -32209,6 +32209,7 @@
     "valueType": "number",
     "drillChart": "registrationAndDistributionBarChartMunicipalityBurundi",
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "Distributed Vouchers",
       "Redeemed Vouchers"
@@ -32245,6 +32246,7 @@
     "valueType": "number",
     "drillChart": "registrationAndDistributionBarChartAreaOfResponsibilityBurundi",
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "Distributed Vouchers",
       "Redeemed Vouchers"
@@ -32281,6 +32283,7 @@
     "valueType": "number",
     "drillChart": "registrationAndDistributionBarChartHillsBurundi",
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "Distributed Vouchers",
       "Redeemed Vouchers"
@@ -32317,6 +32320,7 @@
     "valueType": "number",
     "drillChart": "registrationAndDistributionBarChartSubHillsBurundi",
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "Distributed Vouchers",
       "Redeemed Vouchers"
@@ -32353,6 +32357,7 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
+    "action": "",
     "aggregationPaths": [
       "Distributed Vouchers",
       "Redeemed Vouchers"
