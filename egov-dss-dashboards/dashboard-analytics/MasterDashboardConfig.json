@@ -7372,70 +7372,6 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 3071,
-              "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-              "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-              "vizType": "latlong",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "warehouseDistributionLatLongPointsBurundi",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-                  "code": "",
-                  "chartType": "points",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardBurundi",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardBurundi",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesBurundi",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardBurundi",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardBurundi",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 5,
-          "name": "DSS_HEALTH_INVENTORY",
-          "vizArray": [
-            {
               "id": 3072,
               "name": "DSS_HEALTH_INVENTORY_SUMMARY",
               "label": "DSS_HEALTH_INVENTORY_SUMMARY",
@@ -8349,38 +8285,6 @@
         },
         {
           "row": 4,
-          "name": "DSS_HEALTH_INVENTORY",
-          "vizArray": [
-            {
-              "id": 4003,
-              "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-              "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-              "vizType": "latlong",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "warehouseDistributionLatLongPointsDistrictBurundi",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-                  "code": "",
-                  "chartType": "points",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesDistrictBurundi",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_BURUNDI",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 5,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
