@@ -32219,8 +32219,8 @@
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
       }
     ],
-    "chartType": "bar",
-    "isStacked": true,
+    "chartType": "line",
+    "isCumulative": false,
     "valueType": "number",
     "drillChart": "registrationAndDistributionBarChartMunicipalityBurundi",
     "documentType": "_doc",
@@ -32256,8 +32256,8 @@
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
       }
     ],
-    "chartType": "bar",
-    "isStacked": true,
+    "chartType": "line",
+    "isCumulative": false,
     "valueType": "number",
     "drillChart": "registrationAndDistributionBarChartAreaOfResponsibilityBurundi",
     "documentType": "_doc",
@@ -32293,8 +32293,8 @@
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
       }
     ],
-    "chartType": "bar",
-    "isStacked": true,
+    "chartType": "line",
+    "isCumulative": false,
     "valueType": "number",
     "drillChart": "registrationAndDistributionBarChartHillsBurundi",
     "documentType": "_doc",
@@ -32330,8 +32330,8 @@
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
       }
     ],
-    "chartType": "bar",
-    "isStacked": true,
+    "chartType": "line",
+    "isCumulative": false,
     "valueType": "number",
     "drillChart": "registrationAndDistributionBarChartSubHillsBurundi",
     "documentType": "_doc",
@@ -32367,8 +32367,8 @@
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Redeemed Vouchers\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
       }
     ],
-    "chartType": "bar",
-    "isStacked": true,
+    "chartType": "line",
+    "isCumulative": false,
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
