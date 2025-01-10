@@ -30309,6 +30309,9 @@
       "Total Houses Registered count",
       "negative_households_visited_count"
     ],
+    "excludedBucketKeys": [
+      "daily_users"
+    ],
     "hideInsights": true,
     "showFooter": true,
     "hideHeaderDenomination": true,
@@ -30416,6 +30419,9 @@
       "total_users_registered_more_than_15",
       "Total Houses Registered count",
       "negative_households_visited_count"
+    ],
+    "excludedBucketKeys": [
+      "daily_users"
     ],
     "hideInsights": true,
     "showFooter": true,
@@ -30525,6 +30531,9 @@
       "Total Houses Registered count",
       "negative_households_visited_count"
     ],
+    "excludedBucketKeys": [
+      "daily_users"
+    ],
     "hideInsights": true,
     "showFooter": true,
     "hideHeaderDenomination": true,
@@ -30633,6 +30642,9 @@
       "Total Houses Registered count",
       "negative_households_visited_count"
     ],
+    "excludedBucketKeys": [
+      "daily_users"
+    ],
     "hideInsights": true,
     "showFooter": true,
     "hideHeaderDenomination": true,
@@ -30740,6 +30752,9 @@
       "total_users_registered_more_than_15",
       "Total Houses Registered count",
       "negative_households_visited_count"
+    ],
+    "excludedBucketKeys": [
+      "daily_users"
     ],
     "hideInsights": true,
     "showFooter": true,
