@@ -7359,7 +7359,7 @@
                   "id": "stockTransactionsBreakdownProvincialBurundi",
                   "name": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_BURUNDI",
                   "code": "",
-                  "chartType": "sideBySideBar",
+                  "chartType": "bar",
                   "filter": "",
                   "headers": []
                 }
@@ -8339,7 +8339,7 @@
                   "id": "stockTransactionsBreakdownDistrictBurundi",
                   "name": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT_BURUNDI",
                   "code": "",
-                  "chartType": "sideBySideBar",
+                  "chartType": "bar",
                   "filter": "",
                   "headers": []
                 }
