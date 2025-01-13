@@ -31792,7 +31792,7 @@
     "valueType": "percentage",
     "drillChart": "closedHouseholdsMunicipalityPercentBurundi",
     "documentType": "_doc",
-    "action": "",
+    "action": "percentage",
     "filterKeys": [
       {
         "key": "healthDistrict"
@@ -31860,7 +31860,7 @@
     "valueType": "percentage",
     "drillChart": "closedHouseholdsAreaOfResponsibilityPercentBurundi",
     "documentType": "_doc",
-    "action": "",
+    "action": "percentage",
     "filterKeys": [
       {
         "key": "municipality"
@@ -31928,7 +31928,7 @@
     "valueType": "percentage",
     "drillChart": "closedHouseholdsHillsPercentBurundi",
     "documentType": "_doc",
-    "action": "",
+    "action": "percentage",
     "filterKeys": [
       {
         "key": "areaOfResponsibility"
@@ -31996,7 +31996,7 @@
     "valueType": "percentage",
     "drillChart": "closedHouseholdsSubHillsPercentBurundi",
     "documentType": "_doc",
-    "action": "",
+    "action": "percentage",
     "filterKeys": [
       {
         "key": "hills"
@@ -32064,7 +32064,7 @@
     "valueType": "percentage",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "",
+    "action": "percentage",
     "filterKeys": [
       {
         "key": "subHills"
