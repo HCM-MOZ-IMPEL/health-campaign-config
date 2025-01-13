@@ -32789,7 +32789,7 @@
     "_comment": " "
   },
   "actualVsPlannedPopulationLineGraphProvinceBurundi": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE",
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
