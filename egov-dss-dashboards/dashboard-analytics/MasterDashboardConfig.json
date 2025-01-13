@@ -7234,49 +7234,6 @@
           "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
-              "id": 217,
-              "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
-              "label": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "actualVsPlannedHouseholdLineGraphProvinceBurundi",
-                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_PROVINCE_BURUNDI",
-                  "code": "",
-                  "chartType": "line",
-                  "filter": "",
-                  "tabName": "Household",
-                  "headers": []
-                },
-                {
-                  "id": "actualVsPlannedPopulationLineGraphProvinceBurundi",
-                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE_BURUNDI",
-                  "code": "",
-                  "chartType": "line",
-                  "filter": "",
-                  "tabName": "Population",
-                  "headers": []
-                },
-                {
-                  "id": "actualVsPlannedBednetsLineGraphProvinceBurundi",
-                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_PROVINCE_BURUNDI",
-                  "code": "",
-                  "chartType": "line",
-                  "filter": "",
-                  "tabName": "Bednets",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 6,
-          "name": "DSS_HEALTH_REGISTRATION",
-          "vizArray": [
-            {
               "id": 2607,
               "name": "DSS_HEALTH_SUMMARY_REGISTRATION",
               "label": "DSS_HEALTH_SUMMARY_REGISTRATION",
