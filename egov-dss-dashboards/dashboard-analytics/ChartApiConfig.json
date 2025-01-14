@@ -34083,6 +34083,7 @@
     "_comment": " "
   },
   "distributionCoverageByMunicipalityBurundi" : {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_BURUNDI",
     "queries" : [
       {
@@ -34111,6 +34112,7 @@
     "_comment": " "
   },
   "distributionCoverageByMunicipalityPercentBurundi" : {
+    "kind": "drillDown",
     "chartName" : "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_MUNICIPALITY_PERCENT_BURUNDI",
     "queries" : [
       {
@@ -34149,6 +34151,7 @@
     "_comment": " "
   },
   "distributionCoverageByAreaOfResponsibilityBurundi" : {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_AREA_OF_RESPONSIBILITY_BURUNDI",
     "queries" : [
       {
@@ -34177,6 +34180,7 @@
     "_comment": " "
   },
   "distributionCoverageByAreaOfResponsibilityPercentBurundi" : {
+    "kind": "drillDown",
     "chartName" : "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_AREA_OF_RESPONSIBILITY_PERCENT_BURUNDI",
     "queries" : [
       {
@@ -34215,6 +34219,7 @@
     "_comment": " "
   },
   "distributionCoverageByHillsBurundi" : {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_HILLS_BURUNDI",
     "queries" : [
       {
@@ -34243,6 +34248,7 @@
     "_comment": " "
   },
   "distributionCoverageByHillsPercentBurundi" : {
+    "kind": "drillDown",
     "chartName" : "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_HILLS_PERCENT_BURUNDI",
     "queries" : [
       {
@@ -34281,6 +34287,7 @@
     "_comment": " "
   },
   "distributionCoverageBySubHillsBurundi" : {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_HILLS_BURUNDI",
     "queries" : [
       {
@@ -34309,6 +34316,7 @@
     "_comment": " "
   },
   "distributionCoverageBySubHillsPercentBurundi" : {
+    "kind": "drillDown",
     "chartName" : "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_SUBHILLS_PERCENT_BURUNDI",
     "queries" : [
       {
