@@ -34353,5 +34353,189 @@
     "sort": "sortKeyAsc",
     "insight": {},
     "_comment": " "
+  },
+  "householdsCoverageHeatMapBurundi": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}]}},\"aggs\":{\"Household Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Households visited\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.province.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"total_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "householdsCoverageHeatMapNationalProvinceBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Province",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "householdsCoverageHeatMapNationalProvinceBurundi": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Household Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Households visited\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"total_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Health District",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": false,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "populationCoverageHeatMapBurundi": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"total_count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "populationCoverageHeatMapNationalProvinceBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Province",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Population target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Population target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "populationCoverageHeatMapNationalProvinceBurundi": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"},\"aggs\":{\"total_count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Health District",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Population target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Population target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": false,
+    "hideHeaderDenomination": true,
+    "_comment": " "
   }
 }
