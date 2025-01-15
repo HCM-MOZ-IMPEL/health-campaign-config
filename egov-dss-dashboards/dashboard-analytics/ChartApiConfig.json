@@ -29800,7 +29800,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"PROVINCIAL_SUPERVISOR\"]}}]}},\"aggs\":{\"Checklist name\":{\"terms\":{\"field\":\"Data.checklistName.keyword\"},\"aggs\":{\"Checklist Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"TEAM_SUPERVISOR\"]}}]}},\"aggs\":{\"Checklist name\":{\"terms\":{\"field\":\"Data.checklistName.keyword\"},\"aggs\":{\"Checklist Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -29826,7 +29826,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"DISTRICT_SUPERVISOR\"]}}]}},\"aggs\":{\"Checklist name\":{\"terms\":{\"field\":\"Data.checklistName.keyword\"},\"aggs\":{\"Checklist Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"MOBILIZER\",\"FINANCIAL_CONTROLLER\"]}}]}},\"aggs\":{\"Checklist name\":{\"terms\":{\"field\":\"Data.checklistName.keyword\"},\"aggs\":{\"Checklist Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
