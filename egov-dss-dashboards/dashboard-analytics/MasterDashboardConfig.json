@@ -2527,7 +2527,7 @@
     },
     {
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_IRS_HEADING",
-      "id": "provincial-health-dashboard",
+      "id": "provincial-health-dashboard-smc",
       "isActive": "",
       "style": "linear",
       "hideFilterFields": [
@@ -4505,7 +4505,7 @@
     },
     {
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_IRS_HEADING",
-      "id": "district-health-dashboard",
+      "id": "district-health-dashboard-smc",
       "isActive": "",
       "hideFilterFields": [
         "DDR",
@@ -6373,7 +6373,7 @@
     },
     {
       "name": "DSS_HEALTH_NATIONAL_DASHBOARD_IRS_HEADING",
-      "id": "national-health-dashboard",
+      "id": "national-health-dashboard-smc",
       "isActive": "",
       "style": "linear",
       "visualizations": [
@@ -6686,7 +6686,7 @@
     },
     {
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_SMC_HEADING",
-      "id": "provincial-health-dashboard-smc",
+      "id": "provincial-health-dashboard",
       "isActive": "",
       "style": "linear",
       "hideFilterFields": ["DDR", "Ulb", "Denomination", "ModuleFilter"],
@@ -8292,7 +8292,7 @@
     },
     {
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_SMC_HEADING",
-      "id": "district-health-dashboard-smc",
+      "id": "district-health-dashboard",
       "isActive": "",
       "hideFilterFields": ["DDR", "Ulb", "Denomination", "ModuleFilter"],
       "style": "linear",
@@ -9866,7 +9866,7 @@
     },
     {
       "name": "DSS_HEALTH_NATIONAL_DASHBOARD_SMC_HEADING",
-      "id": "national-health-dashboard-smc",
+      "id": "national-health-dashboard",
       "isActive": "",
       "style": "linear",
       "visualizations": [
