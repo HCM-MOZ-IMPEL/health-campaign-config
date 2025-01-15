@@ -9142,7 +9142,7 @@
     },
     {
       "name": "DSS_HEALTH_NATIONAL_DASHBOARD_TEST",
-      "id": "national-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2",
+      "id": "national-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2",
       "isActive": "",
       "style": "linear",
       "visualizations": [
@@ -9234,7 +9234,7 @@
     },
     {
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_TEST",
-      "id": "provincial-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2",
+      "id": "provincial-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2",
       "isActive": "",
       "style": "linear",
       "hideFilterFields": [
@@ -9380,7 +9380,7 @@
     },
     {
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_TEST",
-      "id": "district-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2",
+      "id": "district-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2",
       "isActive": "",
       "hideFilterFields": [
         "DDR",

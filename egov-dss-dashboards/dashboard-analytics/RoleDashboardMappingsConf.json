@@ -163,15 +163,15 @@
       "dashboards": [
         {
           "name": "National Health Dashboard",
-          "id": "national-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2"
+          "id": "national-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2"
         },
         {
           "name": "Provincial Health Dashboard",
-          "id": "provincial-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2"
+          "id": "provincial-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2"
         },
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2"
+          "id": "district-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2"
         }
       ]
     },
@@ -184,11 +184,11 @@
       "dashboards": [
         {
           "name": "Provincial Health Dashboard",
-          "id": "provincial-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2"
+          "id": "provincial-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2"
         },
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2"
+          "id": "district-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "dashboards": [
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard/dbd45c31-de9e-4e62-a9b6-abb818928fd2"
+          "id": "district-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2"
         }
       ]
     }
