@@ -32291,7 +32291,7 @@
       "Distributed Vouchers",
       "Redeemed Vouchers"
     ],
-    "computedFields": [],
+    "plotLabel" : "none",
     "filterKeys": [
       {
         "key": "healthDistrict"
