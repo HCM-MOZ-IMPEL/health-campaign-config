@@ -7870,6 +7870,58 @@
           ]
         },
         {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4108,
+              "name": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+              "label": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationTeamPerformanceSummaryTableDistrictBurundi",
+                  "name": "DASHBOARD_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "registration-team-performance-district",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4109,
+              "name": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+              "label": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionTeamPerformanceSummaryTableDistrictBurundi",
+                  "name": "DASHBOARD_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "distribution-team-performance-district",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
