@@ -7242,6 +7242,32 @@
           "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
+              "id": 3074,
+              "name": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "label": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communitiesCoveredNotCoveredBurundi",
+                  "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "communities-covered-and-not-covered",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
               "id": 3075,
               "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
               "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
@@ -7300,6 +7326,58 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 4101,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "successfulRegistrationDistribution",
+                  "name": "DASHBOARD_SUCCESSFUL_REGISTRATION_DISTRIBUTION",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "successful-registration-distribution-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 4102,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "closedHouseholdMap",
+                  "name": "DASHBOARD_CLOSED_HOUSEHOLD",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "closed-household-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
@@ -7870,6 +7948,58 @@
           ]
         },
         {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4108,
+              "name": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationTeamPerformanceSummaryTableDistrictBurundi",
+                  "name": "DASHBOARD_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "registration-team-performance-district",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4109,
+              "name": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionTeamPerformanceSummaryTableDistrictBurundi",
+                  "name": "DASHBOARD_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "distribution-team-performance-district",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
@@ -8410,6 +8540,32 @@
           "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
+              "id": 3074,
+              "name": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "label": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communitiesCoveredNotCoveredBurundi",
+                  "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "communities-covered-and-not-covered",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
               "id": 4005,
               "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
               "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
@@ -8440,7 +8596,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
@@ -8483,7 +8639,7 @@
           ]
         },
         {
-          "row": 6,
+          "row": 7,
           "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
@@ -8511,6 +8667,58 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 4101,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "successfulRegistrationDistribution",
+                  "name": "DASHBOARD_SUCCESSFUL_REGISTRATION_DISTRIBUTION",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "successful-registration-distribution-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 4102,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "closedHouseholdMap",
+                  "name": "DASHBOARD_CLOSED_HOUSEHOLD",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "closed-household-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
@@ -9041,6 +9249,58 @@
                   "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_MUNICIPALITY_BURUNDI",
                   "code": "",
                   "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4110,
+              "name": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationTeamPerformanceSummaryTableMunicipalityBurundi",
+                  "name": "DASHBOARD_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_MUNICIPALITY",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "registration-team-performance-municipality",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4111,
+              "name": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_MUNICIPALITY",
+              "label": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_MUNICIPALITY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionTeamPerformanceSummaryTableMunicipalityBurundi",
+                  "name": "DASHBOARD_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_MUNICIPALITY",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "distribution-team-performance-municipality",
+                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
