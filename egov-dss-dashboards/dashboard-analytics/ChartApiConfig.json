@@ -28805,6 +28805,7 @@
       "No. of Days Stock Can Last",
       "Target Per Day"
     ],
+    "plotLabel" : "none",
     "insight": {},
     "_comment": " "
   },
@@ -28836,6 +28837,7 @@
       "No. of Days Stock Can Last",
       "Target Per Day"
     ],
+    "plotLabel" : "none",
     "insight": {},
     "_comment": " "
   },
