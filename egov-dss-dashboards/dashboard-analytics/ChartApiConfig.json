@@ -32328,7 +32328,7 @@
       "Distributed Vouchers",
       "Redeemed Vouchers"
     ],
-    "computedFields": [],
+    "plotLabel" : "none",
     "filterKeys": [
       {
         "key": "municipality"
@@ -32365,7 +32365,7 @@
       "Distributed Vouchers",
       "Redeemed Vouchers"
     ],
-    "computedFields": [],
+    "plotLabel" : "none",
     "filterKeys": [
       {
         "key": "areaOfResponsibility"
@@ -32402,7 +32402,7 @@
       "Distributed Vouchers",
       "Redeemed Vouchers"
     ],
-    "computedFields": [],
+    "plotLabel" : "none",
     "filterKeys": [
       {
         "key": "hills"
@@ -32439,7 +32439,7 @@
       "Distributed Vouchers",
       "Redeemed Vouchers"
     ],
-    "computedFields": [],
+    "plotLabel" : "none",
     "filterKeys": [
       {
         "key": "subHills"
