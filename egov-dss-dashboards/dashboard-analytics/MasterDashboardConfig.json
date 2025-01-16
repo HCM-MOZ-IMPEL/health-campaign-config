@@ -7875,8 +7875,8 @@
           "vizArray": [
             {
               "id": 4108,
-              "name": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
-              "label": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+              "name": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -7901,8 +7901,8 @@
           "vizArray": [
             {
               "id": 4109,
-              "name": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
-              "label": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+              "name": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -9093,6 +9093,58 @@
                   "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_MUNICIPALITY_BURUNDI",
                   "code": "",
                   "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4110,
+              "name": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationTeamPerformanceSummaryTableMunicipalityBurundi",
+                  "name": "DASHBOARD_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_MUNICIPALITY",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "registration-team-performance-municipality",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 4111,
+              "name": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_MUNICIPALITY",
+              "label": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_MUNICIPALITY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionTeamPerformanceSummaryTableMunicipalityBurundi",
+                  "name": "DASHBOARD_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_MUNICIPALITY",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "distribution-team-performance-municipality",
+                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
