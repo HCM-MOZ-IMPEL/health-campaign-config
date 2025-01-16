@@ -7059,30 +7059,6 @@
           ]
         },
         {
-          "row": 3,
-          "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
-          "vizArray": [
-            {
-              "id": 213,
-              "name": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-              "label": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "successfullAdministrationAcrossCycles",
-                  "name": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-                  "code": "",
-                  "chartType": "venn",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
           "row": 4,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
@@ -10040,30 +10016,6 @@
         },
         {
           "row": 4,
-          "name": "DSS_NATIONAL_HEALTH_SUCCESSFUL_ADMINISTRATION",
-          "vizArray": [
-            {
-              "id": 213,
-              "name": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-              "label": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "successfullAdministrationAcrossCyclesSmc",
-                  "name": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-                  "code": "",
-                  "chartType": "venn",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 5,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
             {
@@ -10074,7 +10026,7 @@
               "noUnit": true,
               "isCollapsible": false,
               "ref": {
-                "url": "provincial-health-dashboard-smc",
+                "url": "provincial-health-dashboard",
                 "logoUrl": "",
                 "type": "internal"
               },
