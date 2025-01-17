@@ -28805,6 +28805,11 @@
       "No. of Days Stock Can Last",
       "Target Per Day"
     ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
     "plotLabel" : "none",
     "insight": {},
     "_comment": " "
@@ -28836,6 +28841,11 @@
     "aggregationPaths": [
       "No. of Days Stock Can Last",
       "Target Per Day"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
     ],
     "plotLabel" : "none",
     "insight": {},
