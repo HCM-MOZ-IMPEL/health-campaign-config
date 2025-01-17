@@ -7333,6 +7333,221 @@
         },
         {
           "row": 1,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 3080,
+              "name": "DSS_HEALTH_DISTRIBUTION_USER_SYNC",
+              "label": "DSS_HEALTH_DISTRIBUTION_USER_SYNC",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributorSyncSummaryProvinceBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTOR_SYNC_SUMMARY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 3081,
+              "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE",
+              "label": "DSS_HEALTH_DISTRIBUTION_COVERAGE",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageByDistrictPercentBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "distributionCoverageByDistrictBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 3082,
+              "name": "DSS_HEALTH_POPULATION_COVERAGE",
+              "label": "DSS_HEALTH_POPULATION_COVERAGE",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoveredDistributionDistrictPercentageBurundi",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_DISTRIBUTION_DISTRICT_PERCENTAGE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "populationCoveredDistributionDistrictBurundi",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_DISTRIBUTION_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 3083,
+              "name": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bednetsDistributionCoverageDistrictPercentBurundi",
+                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "bednetsDistributionCoverageDistrictBurundi",
+                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 3084,
+              "name": "DSS_HEALTH_VOUCHERS_REDEEMED",
+              "label": "DSS_HEALTH_VOUCHERS_REDEEMED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationAndDistributionBarChartHealthDistrictBurundi",
+                  "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_HEALTH_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 3085,
+              "name": "DSS_HEALTH_TARGET_ACHIEVEMENT",
+              "label": "DSS_HEALTH_TARGET_ACHIEVEMENT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageHeatMapDistributionDistrictBurundi",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "HOUSEHOLD"
+                },
+                {
+                  "id": "populationCoverageHeatMapDistributionDistrictBurundi",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRIBUTION_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "POPULATION"
+                },
+                {
+                  "id": "bednetsCoverageHeatMapDistrictBurundi",
+                  "name": "DSS_HEALTH_BEDNETS_COVERAGE_HEATMAP_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BEDNETS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 3086,
+              "name": "DSS_HEALTH_SUMMARY_DISTRIBUTION",
+              "label": "DSS_HEALTH_SUMMARY_DISTRIBUTION",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionSummaryByDistrictBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_SUMMARY_BY_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "distributionSummaryByDistrictDayBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_SUMMARY_BY_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
           "name": "DSS_KIBANA_MAPS",
           "vizArray": [
             {
@@ -8662,6 +8877,221 @@
                 {
                   "id": "registrationSummaryByMunicipalityDayBurundi",
                   "name": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 4010,
+              "name": "DSS_HEALTH_DISTRIBUTION_USER_SYNC",
+              "label": "DSS_HEALTH_DISTRIBUTION_USER_SYNC",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributorSyncSummaryDistrictBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTOR_SYNC_SUMMARY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 4011,
+              "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE",
+              "label": "DSS_HEALTH_DISTRIBUTION_COVERAGE",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageByMunicipalityPercentBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_MUNICIPALITY_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "distributionCoverageByMunicipalityBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 4012,
+              "name": "DSS_HEALTH_POPULATION_COVERAGE",
+              "label": "DSS_HEALTH_POPULATION_COVERAGE",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoveredDistributionMunicipalityPercentageBurundi",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_DISTRIBUTION_MUNICIPALITY_PERCENTAGE_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "populationCoveredDistributionMunicipalityBurundi",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_DISTRIBUTION_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 4013,
+              "name": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bednetsDistributionCoverageMunicipalityPercentBurundi",
+                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_MUNICIPALITY_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "bednetsDistributionCoverageMunicipalityBurundi",
+                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 4014,
+              "name": "DSS_HEALTH_VOUCHERS_REDEEMED",
+              "label": "DSS_HEALTH_VOUCHERS_REDEEMED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationAndDistributionBarChartMunicipalityBurundi",
+                  "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 4015,
+              "name": "DSS_HEALTH_TARGET_ACHIEVEMENT",
+              "label": "DSS_HEALTH_TARGET_ACHIEVEMENT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageHeatMapDistributionDistrictBurundi",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "HOUSEHOLD"
+                },
+                {
+                  "id": "populationCoverageHeatMapDistributionDistrictBurundi",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRIBUTION_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "POPULATION"
+                },
+                {
+                  "id": "bednetsCoverageHeatMapDistrictBurundi",
+                  "name": "DSS_HEALTH_BEDNETS_COVERAGE_HEATMAP_DISTRICT_BURUNDI",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BEDNETS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 4016,
+              "name": "DSS_HEALTH_SUMMARY_DISTRIBUTION",
+              "label": "DSS_HEALTH_SUMMARY_DISTRIBUTION",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionSummaryByMunicipalityBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_SUMMARY_BY_MUNICIPALITY_BURUNDI",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "distributionSummaryByMunicipalityDayBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_SUMMARY_BY_MUNICIPALITY_BURUNDI",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
