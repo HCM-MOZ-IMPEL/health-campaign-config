@@ -34086,7 +34086,7 @@
   },
   "distributionCoverageByMunicipalityBurundi" : {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_BURUNDI",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_MUNICIPALITY_BURUNDI",
     "queries" : [
       {
         "module": "COMMON",
@@ -36100,7 +36100,7 @@
     "_comment": " "
   },
   "distributionSummaryByDistrictDayBurundi": {
-    "chartName": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_DISTRICT_BURUNDI",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_SUMMARY_BY_DISTRICT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -36235,7 +36235,7 @@
     "_comment": " "
   },
   "distributionSummaryByMunicipalityDayBurundi": {
-    "chartName": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_MUNICIPALITY_BURUNDI",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_SUMMARY_BY_MUNICIPALITY_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
