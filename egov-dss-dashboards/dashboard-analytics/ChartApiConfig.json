@@ -37488,5 +37488,395 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsDistrictBurundi": {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "bednetDistributionCoverageSpecialGroupsMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Special groups bednet delivered"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsPercentDistrictBurundi" : {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT_SPECIAL_GROUPS\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}]}},\"aggs\":{\"Special groups targeted bednets\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "bednetDistributionCoverageSpecialGroupsPercentMunicipalityBurundi",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Special groups bednet coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Special groups bednet delivered",
+      "Special groups targeted bednets"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsMunicipalityBurundi": {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.municipality.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "bednetDistributionCoverageSpecialGroupsAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Special groups bednet delivered"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsPercentMunicipalityBurundi" : {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.municipality.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT_SPECIAL_GROUPS\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.municipality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"}}]}},\"aggs\":{\"Special groups targeted bednets\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.municipality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "bednetDistributionCoverageSpecialGroupsPercentAreaOfResponsibilityBurundi",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Special groups bednet coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Special groups bednet delivered",
+      "Special groups targeted bednets"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "municipality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsAreaOfResponsibilityBurundi": {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "bednetDistributionCoverageSpecialGroupsHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Special groups bednet delivered"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsPercentAreaOfResponsibilityBurundi" : {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT_SPECIAL_GROUPS\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\"}}]}},\"aggs\":{\"Special groups targeted bednets\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.areaOfResponsibility.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "bednetDistributionCoverageSpecialGroupsPercentHillsBurundi",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Special groups bednet coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Special groups bednet delivered",
+      "Special groups targeted bednets"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "areaOfResponsibility"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsHillsBurundi": {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.hills.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "bednetDistributionCoverageSpecialGroupsSubHillsBurundi",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Special groups bednet delivered"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsPercentHillsBurundi" : {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.hills.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT_SPECIAL_GROUPS\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.hills.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\"}}]}},\"aggs\":{\"Special groups targeted bednets\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.hills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "bednetDistributionCoverageSpecialGroupsPercentSubHillsBurundi",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Special groups bednet coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Special groups bednet delivered",
+      "Special groups targeted bednets"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "hills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsSubHillsBurundi": {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"municipality\": \"Data.boundaryHierarchy.municipality.keyword\", \"areaOfResponsibility\": \"Data.boundaryHierarchy.areaOfResponsibility.keyword\", \"hills\": \"Data.boundaryHierarchy.hills.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.hills.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Special groups bednet delivered"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "bednetDistributionCoverageSpecialGroupsPercentSubHillsBurundi" : {
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Special groups bednet delivered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.subHills.keyword\"},\"aggs\":{\"Special groups bednet delivered count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT_SPECIAL_GROUPS\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\"}}]}},\"aggs\":{\"Special groups targeted bednets\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.subHills.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Special groups bednet coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Special groups bednet delivered",
+      "Special groups targeted bednets"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "subHills"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
