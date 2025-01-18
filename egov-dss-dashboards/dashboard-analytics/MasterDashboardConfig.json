@@ -7076,6 +7076,58 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 3066,
+              "name": "DSS_HEALTH_NATIONAL_SPECIAL_GROUPS",
+              "label": "DSS_HEALTH_NATIONAL_SPECIAL_GROUPS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalSpecialGroups",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_SPECIAL_GROUPS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalSpecialGroupsDistributions",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_SPECIAL_GROUPS_DISTRIBUTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3067,
+              "name": "DSS_HEALTH_REFUGEE_CAMPS",
+              "label": "DSS_HEALTH_REFUGEE_CAMPS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalRefugeeCamps",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_REFUGEE_CAMPS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalRefugeeCampsDistributions",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_REFUGEE_CAMPS_DISTRIBUTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -8707,6 +8759,58 @@
                 {
                   "id": "totalVouchersRedeemedOverviewBurundi",
                   "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_REDEEMED_OVERVIEW_BURUNDI",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3089,
+              "name": "DSS_HEALTH_SPECIAL_GROUPS",
+              "label": "DSS_HEALTH_SPECIAL_GROUPS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalSpecialGroups",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_SPECIAL_GROUPS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalSpecialGroupsDistributions",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_SPECIAL_GROUPS_DISTRIBUTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3090,
+              "name": "DSS_HEALTH_REFUGEE_CAMPS",
+              "label": "DSS_HEALTH_REFUGEE_CAMPS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalRefugeeCamps",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_REFUGEE_CAMPS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalRefugeeCampsDistributions",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_REFUGEE_CAMPS_DISTRIBUTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
