@@ -38268,5 +38268,49 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "totalSpecialGroups": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_SPECIAL_GROUPS",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPECIAL_GROUPS\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.subHills.keyword\"}}]}},\"aggs\":{\"Total special groups\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Total special groups"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "totalSpecialGroupsDistributions": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_SPECIAL_GROUPS_DISTRIBUTION",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.communityKey.keyword\":\"special_groups\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total special groups delivery count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Total special groups delivery count"
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }

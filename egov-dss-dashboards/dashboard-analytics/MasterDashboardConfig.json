@@ -6759,6 +6759,32 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 1702,
+              "name": "DSS_HEALTH_NATIONAL_SPECIAL_GROUPS",
+              "label": "DSS_HEALTH_NATIONAL_SPECIAL_GROUPS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalSpecialGroups",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_SPECIAL_GROUPS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalSpecialGroupsDistributions",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_SPECIAL_GROUPS_DISTRIBUTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
