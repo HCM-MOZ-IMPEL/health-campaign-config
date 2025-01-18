@@ -37490,7 +37490,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsDistrictBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37518,7 +37518,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsPercentDistrictBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37568,7 +37568,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsMunicipalityBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37596,7 +37596,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsPercentMunicipalityBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37646,7 +37646,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsAreaOfResponsibilityBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37674,7 +37674,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsPercentAreaOfResponsibilityBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37724,7 +37724,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsHillsBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37752,7 +37752,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsPercentHillsBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37802,7 +37802,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsSubHillsBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37830,7 +37830,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageSpecialGroupsPercentSubHillsBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37880,7 +37880,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsDistrictBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37908,7 +37908,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsPercentDistrictBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37958,7 +37958,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsMunicipalityBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -37986,7 +37986,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsPercentMunicipalityBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -38036,7 +38036,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsAreaOfResponsibilityBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -38064,7 +38064,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsPercentAreaOfResponsibilityBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -38114,7 +38114,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsHillsBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -38142,7 +38142,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsPercentHillsBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -38192,7 +38192,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsSubHillsBurundi": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
@@ -38220,7 +38220,7 @@
     "_comment": " "
   },
   "bednetDistributionCoverageRefugeeCampsPercentSubHillsBurundi" : {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+    "chartName": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
     "queries": [
       {
         "module": "COMMON",
