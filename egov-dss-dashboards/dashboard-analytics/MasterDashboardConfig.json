@@ -7509,6 +7509,34 @@
                   "tabName": "BEDNETS"
                 }
               ]
+            },
+            {
+              "id": 3086,
+              "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS",
+              "label": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageSpecialGroupsPercentDistrictBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "distributionCoverageSpecialGroupsDistrictBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
             }
           ]
         },
@@ -7517,7 +7545,103 @@
           "name": "DSS_HEALTH_DISTRIBUTION",
           "vizArray": [
             {
-              "id": 3086,
+              "id": 3087,
+              "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS",
+              "label": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageRefugeeCampsPercentDistrictBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "distributionCoverageRefugeeCampsDistrictBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 3088,
+              "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS",
+              "label": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bednetDistributionCoverageSpecialGroupsPercentDistrictBurundi",
+                  "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "bednetDistributionCoverageSpecialGroupsDistrictBurundi",
+                  "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 3089,
+              "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS",
+              "label": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bednetDistributionCoverageRefugeeCampsPercentDistrictBurundi",
+                  "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "bednetDistributionCoverageRefugeeCampsDistrictBurundi",
+                  "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 3090,
               "name": "DSS_HEALTH_SUMMARY_DISTRIBUTION",
               "label": "DSS_HEALTH_SUMMARY_DISTRIBUTION",
               "vizType": "chart",
@@ -9065,6 +9189,34 @@
                   "tabName": "BEDNETS"
                 }
               ]
+            },
+            {
+              "id": 4016,
+              "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS",
+              "label": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageSpecialGroupsPercentMunicipalityBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "distributionCoverageSpecialGroupsMunicipalityBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
             }
           ]
         },
@@ -9073,7 +9225,103 @@
           "name": "DSS_HEALTH_DISTRIBUTION",
           "vizArray": [
             {
-              "id": 4016,
+              "id": 4017,
+              "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS",
+              "label": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageRefugeeCampsPercentMunicipalityBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "distributionCoverageRefugeeCampsMunicipalityBurundi",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 4018,
+              "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS",
+              "label": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bednetDistributionCoverageSpecialGroupsPercentMunicipalityBurundi",
+                  "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "bednetDistributionCoverageSpecialGroupsMunicipalityBurundi",
+                  "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_SPECIAL_GROUPS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 4019,
+              "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS",
+              "label": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bednetDistributionCoverageRefugeeCampsPercentMunicipalityBurundi",
+                  "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "bednetDistributionCoverageRefugeeCampsMunicipalityBurundi",
+                  "name": "DSS_HEALTH_BEDNET_DISTRIBUTION_COVERAGE_REFUGEE_CAMPS_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_DISTRIBUTION",
+          "vizArray": [
+            {
+              "id": 4020,
               "name": "DSS_HEALTH_SUMMARY_DISTRIBUTION",
               "label": "DSS_HEALTH_SUMMARY_DISTRIBUTION",
               "vizType": "chart",
