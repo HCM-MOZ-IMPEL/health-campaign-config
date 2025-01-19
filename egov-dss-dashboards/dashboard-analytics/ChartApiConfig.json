@@ -28299,7 +28299,6 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
-    "filterForCurrentDay": true,
     "action": "",
     "aggregationPaths": [
       "vouchers distributed today"
@@ -28322,7 +28321,6 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
-    "filterForCurrentDay": true,
     "action": "",
     "aggregationPaths": [
       "Vouchers redeemed today"
