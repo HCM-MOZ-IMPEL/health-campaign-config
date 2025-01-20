@@ -7693,7 +7693,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "supervisorUserSync",
+                  "id": "supervisorUserSyncSMC",
                   "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE",
                   "code": "",
                   "chartType": "table",
@@ -7717,7 +7717,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "teamSupervisorUserSync",
+                  "id": "teamSupervisorUserSyncSMC",
                   "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISOR_USER_SYNC_RATE",
                   "code": "",
                   "chartType": "table",
@@ -9267,7 +9267,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "supervisorUserSync",
+                  "id": "supervisorUserSyncSMC",
                   "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE",
                   "code": "",
                   "chartType": "table",
@@ -9291,7 +9291,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "teamSupervisorUserSync",
+                  "id": "teamSupervisorUserSyncSMC",
                   "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISOR_USER_SYNC_RATE",
                   "code": "",
                   "chartType": "table",
