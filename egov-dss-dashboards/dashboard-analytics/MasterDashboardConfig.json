@@ -4060,7 +4060,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "attendanceSprayOperatorsDistrictPercent",
+                  "id": "attendanceSprayOperatorsDistrictPercentSMC",
                   "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_PERCENT",
                   "code": "",
                   "chartType": "bar",
@@ -7949,7 +7949,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "attendanceSprayOperatorsDistrictPercent",
+                  "id": "attendanceSprayOperatorsDistrictPercentSMC",
                   "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
                   "code": "",
                   "chartType": "bar",
@@ -7958,7 +7958,7 @@
                   "tabName": "PERCENT"
                 },
                 {
-                  "id": "attendanceSprayOperatorsDistrict",
+                  "id": "attendanceSprayOperatorsDistrictSMC",
                   "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
                   "code": "",
                   "chartType": "bar",
