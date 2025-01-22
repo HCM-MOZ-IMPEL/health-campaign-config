@@ -7473,7 +7473,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "openComplaintsSummaryByDistrict",
+                  "id": "openComplaintsSummaryByDistrictSMC",
                   "name": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT",
                   "code": "",
                   "chartType": "table",
@@ -9013,7 +9013,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "openComplaintsSummaryByAP",
+                  "id": "openComplaintsSummaryByAPSMC",
                   "name": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_AP",
                   "code": "",
                   "chartType": "table",
