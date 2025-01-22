@@ -7034,7 +7034,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateAllSupervisorsDistrictSMC",
+                  "id": "checklistCompletionRateProvinceSMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -8640,7 +8640,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateAllSupervisorsApSMC",
+                  "id": "checklistCompletionRateDistrictSMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_AP",
                   "code": "",
                   "chartType": "bar",
