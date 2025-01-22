@@ -33831,8 +33831,6 @@
     ],
     "documentType": "_doc",
     "action": "",
-    "computedFields": [
-    ],
     "aggregationPaths": [
       "Children Not Administered"
     ],
@@ -33864,8 +33862,6 @@
     ],
     "documentType": "_doc",
     "action": "",
-    "computedFields": [
-    ],
     "aggregationPaths": [
       "Children Not Administered"
     ],
@@ -33897,8 +33893,6 @@
     ],
     "documentType": "_doc",
     "action": "",
-    "computedFields": [
-    ],
     "aggregationPaths": [
       "Children Not Administered"
     ],
@@ -33930,8 +33924,6 @@
     ],
     "documentType": "_doc",
     "action": "",
-    "computedFields": [
-    ],
     "aggregationPaths": [
       "Children Not Administered"
     ],
