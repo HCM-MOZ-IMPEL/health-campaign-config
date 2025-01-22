@@ -9803,24 +9803,6 @@
           "name": "DSS_NATIONAL_HEALTH_HEATMAPS",
           "vizArray": [
             {
-              "id": 201,
-              "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
-              "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
-              "vizType": "heatmap",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "householdsCoverageHeatMapSMC",
-                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
-                  "code": "",
-                  "chartType": "heatmap",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
               "id": 202,
               "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP",
               "label": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP",
