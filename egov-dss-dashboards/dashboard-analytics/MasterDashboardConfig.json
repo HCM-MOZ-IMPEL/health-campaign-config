@@ -3424,7 +3424,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "totalComplaintsRegisteredByTypeSMC",
+                  "id": "totalComplaintsRegisteredByType",
                   "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
                   "code": "",
                   "chartType": "donut",
@@ -7331,7 +7331,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "totalComplaintsRegisteredByType",
+                  "id": "totalComplaintsRegisteredByTypeSMC",
                   "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
                   "code": "",
                   "chartType": "donut",
