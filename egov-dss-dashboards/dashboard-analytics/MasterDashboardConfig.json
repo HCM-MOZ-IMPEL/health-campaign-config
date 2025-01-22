@@ -7313,7 +7313,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByDistrictTotal",
+                  "id": "complaintsByDistrictTotalSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL",
                   "code": "",
                   "chartType": "bar",
@@ -7355,7 +7355,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByStatusBreakdownProvincial",
+                  "id": "complaintsByStatusBreakdownProvincialSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCIAL",
                   "code": "",
                   "chartType": "bar",
@@ -7373,7 +7373,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByTypeBreakdownProvincial",
+                  "id": "complaintsByTypeBreakdownProvincialSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_PROVINCIAL",
                   "code": "",
                   "chartType": "bar",
@@ -7397,7 +7397,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "ComplaintsShareByDistrict",
+                  "id": "ComplaintsShareByDistrictSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
                   "code": "",
                   "chartType": "bar",
@@ -7415,7 +7415,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "averageResolutionTimeProvince",
+                  "id": "averageResolutionTimeProvinceSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_PROVINCE",
                   "code": "",
                   "chartType": "bar",
@@ -7439,7 +7439,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByStatusSummaryProvince",
+                  "id": "complaintsByStatusSummaryProvinceSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE",
                   "code": "",
                   "chartType": "table",
@@ -7448,7 +7448,7 @@
                   "tabName": "BOUNDARY"
                 },
                 {
-                  "id": "complaintsByStatusSummaryDay",
+                  "id": "complaintsByStatusSummaryDaySMC",
                   "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY",
                   "code": "",
                   "chartType": "table",
@@ -7883,7 +7883,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "distributorSyncSummaryProvince",
+                  "id": "distributorSyncSummaryProvinceSMC",
                   "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
                   "code": "",
                   "chartType": "table",
@@ -8008,7 +8008,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "distributorSyncSummaryProvince",
+                  "id": "distributorSyncSummaryProvinceSMC",
                   "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
                   "code": "",
                   "chartType": "table",
@@ -8032,7 +8032,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "housesWithMoreThanTwentyMembersByDistrict",
+                  "id": "housesWithMoreThanTwentyMembersByDistrictSMC",
                   "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -8056,7 +8056,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "locationNotEnabledByDistrict",
+                  "id": "locationNotEnabledByDistrictSMC",
                   "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -8074,7 +8074,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "entriesDoneByWMsDistrict",
+                  "id": "entriesDoneByWMsDistrictSMC",
                   "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -8163,7 +8163,7 @@
               "noUnit": true,
               "charts": [
                 {
-                  "id": "referralSummaryByDistricts",
+                  "id": "referralSummaryByDistrictsSMC",
                   "name": "DSS_HEALTH_REFERRAL_SUMMARY_BY_DISTRICTS",
                   "code": "",
                   "chartType": "sideBySideBar",
@@ -8187,7 +8187,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "summaryOfReferredChildrenByDistricts",
+                  "id": "summaryOfReferredChildrenByDistrictsSMC",
                   "name": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_DISTRICTS",
                   "code": "",
                   "chartType": "table",
@@ -8853,7 +8853,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByAPTotal",
+                  "id": "complaintsByAPTotalSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_BY_AP_TOTAL",
                   "code": "",
                   "chartType": "bar",
@@ -8871,7 +8871,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "totalComplaintsRegisteredByType",
+                  "id": "totalComplaintsRegisteredByTypeSMC",
                   "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
                   "code": "",
                   "chartType": "donut",
@@ -8895,7 +8895,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByStatusBreakdownDistrict",
+                  "id": "complaintsByStatusBreakdownDistrictSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -8913,7 +8913,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByTypeBreakdownDistrict",
+                  "id": "complaintsByTypeBreakdownDistrictSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -8937,7 +8937,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "ComplaintsShareByAP",
+                  "id": "ComplaintsShareByAPSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
                   "code": "",
                   "chartType": "bar",
@@ -8955,7 +8955,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "averageResolutionTimeDistrict",
+                  "id": "averageResolutionTimeDistrictSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -8979,7 +8979,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByStatusSummaryDistrict",
+                  "id": "complaintsByStatusSummaryDistrictSMC",
                   "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT",
                   "code": "",
                   "chartType": "table",
@@ -8988,7 +8988,7 @@
                   "tabName": "BOUNDARY"
                 },
                 {
-                  "id": "complaintsByStatusSummaryDay",
+                  "id": "complaintsByStatusSummaryDaySMC",
                   "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY",
                   "code": "",
                   "chartType": "table",
@@ -9391,7 +9391,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "distributorSyncSummaryDistrict",
+                  "id": "distributorSyncSummaryDistrictSMC",
                   "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
                   "code": "",
                   "chartType": "table",
@@ -9457,7 +9457,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "attendanceSprayOperatorsAPPercent",
+                  "id": "attendanceSprayOperatorsAPPercentSMC",
                   "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
                   "code": "",
                   "chartType": "bar",
@@ -9466,7 +9466,7 @@
                   "tabName": "PERCENT"
                 },
                 {
-                  "id": "attendanceSprayOperatorsAP",
+                  "id": "attendanceSprayOperatorsAPSMC",
                   "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
                   "code": "",
                   "chartType": "bar",
@@ -9516,7 +9516,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "distributorSyncSummaryDistrict",
+                  "id": "distributorSyncSummaryDistrictSMC",
                   "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
                   "code": "",
                   "chartType": "table",
@@ -9540,7 +9540,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "housesWithMoreThanTwentyMembersByAP",
+                  "id": "housesWithMoreThanTwentyMembersByAPSMC",
                   "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_AP",
                   "code": "",
                   "chartType": "bar",
@@ -9564,7 +9564,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "locationNotEnabledByAP",
+                  "id": "locationNotEnabledByAPSMC",
                   "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_AP",
                   "code": "",
                   "chartType": "bar",
@@ -9582,7 +9582,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "entriesDoneByWMsAp",
+                  "id": "entriesDoneByWMsApSMC",
                   "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_AP",
                   "code": "",
                   "chartType": "bar",
@@ -9671,7 +9671,7 @@
               "noUnit": true,
               "charts": [
                 {
-                  "id": "referralSummaryByAPs",
+                  "id": "referralSummaryByAPsSMC",
                   "name": "DSS_HEALTH_REFERRAL_SUMMARY_BY_APS",
                   "code": "",
                   "chartType": "sideBySideBar",
@@ -9695,7 +9695,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "summaryOfReferredChildrenByAPs",
+                  "id": "summaryOfReferredChildrenByAPsSMC",
                   "name": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_APS",
                   "code": "",
                   "chartType": "table",
