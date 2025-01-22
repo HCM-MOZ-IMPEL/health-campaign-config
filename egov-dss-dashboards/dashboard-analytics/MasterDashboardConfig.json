@@ -7075,7 +7075,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "userSyncSummaryProvinceSMC",
+                  "id": "distributorSyncSummaryProvinceSMC",
                   "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
                   "code": "",
                   "chartType": "table",
@@ -7099,10 +7099,10 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "administrationCoverageBarChartDistrictPercentSMC",
+                  "id": "administeredByAgeGroupDistrictPercentSMC",
                   "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_DISTRICT_PERCENT",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": [],
                   "tabName": "PERCENT"
@@ -8681,7 +8681,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "userSyncSummaryDistrictSMC",
+                  "id": "distributorSyncSummaryDistrictSMC",
                   "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
                   "code": "",
                   "chartType": "table",
