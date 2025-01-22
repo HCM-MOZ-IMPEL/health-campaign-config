@@ -7099,10 +7099,10 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "administeredByAgeGroupDistrictPercentSMC",
+                  "id": "administrationCoverageBarChartDistrictPercentSMC",
                   "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_DISTRICT_PERCENT",
                   "code": "",
-                  "chartType": "sideBySideBar",
+                  "chartType": "bar",
                   "filter": "",
                   "headers": [],
                   "tabName": "PERCENT"
@@ -7126,15 +7126,6 @@
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
-                {
-                  "id": "householdsCoverageHeatMapProvinceSMC",
-                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
-                  "code": "",
-                  "chartType": "heatmap",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "HOUSEHOLD"
-                },
                 {
                   "id": "populationCoverageHeatMapProvinceSMC",
                   "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP_PROVINCE",
@@ -7161,7 +7152,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "administeredByAgeGroupDistrict",
+                  "id": "administeredByAgeGroupDistrictSMC",
                   "name": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_DISTRICT",
                   "code": "",
                   "chartType": "sideBySideBar",
@@ -7180,7 +7171,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "administeredByGenderDistrict",
+                  "id": "administeredByGenderDistrictSMC",
                   "name": "DSS_HEALTH_ADMINISTERED_BY_GENDER_DISTRICT",
                   "code": "",
                   "chartType": "sideBySideBar",
@@ -7233,7 +7224,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "childrenNotAdministeredByReasonProvince",
+                  "id": "childrenNotAdministeredByReasonProvinceSMC",
                   "name": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_BY_REASON_PROVINCE",
                   "code": "",
                   "chartType": "donut",
@@ -7256,15 +7247,6 @@
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
-                {
-                  "id": "actualVsPlannedHouseholdLineGraphProvinceSMC",
-                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_PROVINCE",
-                  "code": "",
-                  "chartType": "line",
-                  "filter": "",
-                  "tabName": "Household",
-                  "headers": []
-                },
                 {
                   "id": "actualVsPlannedPopulationLineGraphProvinceSMC",
                   "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE",
@@ -8733,15 +8715,6 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "householdsCoverageHeatMapDistrictSMC",
-                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_DISTRICT",
-                  "code": "",
-                  "chartType": "heatmap",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "HOUSEHOLD"
-                },
-                {
                   "id": "populationCoverageHeatMapDistrictSMC",
                   "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRICT",
                   "code": "",
@@ -8749,30 +8722,6 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "CHILDREN"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
-          "vizArray": [
-            {
-              "id": 313,
-              "name": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-              "label": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "successfullAdministrationAcrossCyclesDistrict",
-                  "name": "DSS_HEALTH_SUCCESS_ADMINISTRATION_ACROSS_CYCLES",
-                  "code": "",
-                  "chartType": "venn",
-                  "filter": "",
-                  "headers": []
                 }
               ]
             }
@@ -8791,7 +8740,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "administeredByAgeGroupAp",
+                  "id": "administeredByAgeGroupApSMC",
                   "name": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_AP",
                   "code": "",
                   "chartType": "sideBySideBar",
@@ -8810,7 +8759,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "administeredByGenderAp",
+                  "id": "administeredByGenderApSMC",
                   "name": "DSS_HEALTH_ADMINISTERED_BY_GENDER_AP",
                   "code": "",
                   "chartType": "sideBySideBar",
@@ -8863,7 +8812,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "childrenNotAdministeredByReasonDistrict",
+                  "id": "childrenNotAdministeredByReasonDistrictSMC",
                   "name": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_BY_REASON_DISTRICT",
                   "code": "",
                   "chartType": "donut",
@@ -8886,15 +8835,6 @@
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
-                {
-                  "id": "actualVsPlannedHouseholdLineGraphDistrictSMC",
-                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_DISTRICT",
-                  "code": "",
-                  "chartType": "line",
-                  "filter": "",
-                  "tabName": "Household",
-                  "headers": []
-                },
                 {
                   "id": "actualVsPlannedPopulationLineGraphDistrictSMC",
                   "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_DISTRICT",

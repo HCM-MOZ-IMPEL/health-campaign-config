@@ -23828,324 +23828,6 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "administrationCoverageBarChartDistrictPercentReferenceCopy": {
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_DISTRICT_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Children Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "drillChart": "administrationCoverageBarChartAPPercentSMC",
-    "documentType": "_doc",
-    "action": "percentage",
-    "computedFields": [
-      {
-        "_comments": "",
-        "actionName": "",
-        "fields": [
-          "Target for daterange"
-        ],
-        "newField": "Children coverage over daterange",
-        "postAggregationTheory": "repsonseToDifferenceOfDates"
-      }
-    ],
-    "aggregationPaths": [
-      "Total children administered",
-      "Children Targeted"
-    ],
-    "isCappedByCampaignPeriod": [
-      "Overall Target"
-    ],
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administrationCoverageBarChartAPPercentSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_AP_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Children Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "drillChart": "administrationCoverageBarChartLocalityPercentSMC",
-    "documentType": "_doc",
-    "action": "percentage",
-    "computedFields": [
-      {
-        "_comments": "",
-        "actionName": "",
-        "fields": [
-          "Target for daterange"
-        ],
-        "newField": "Children coverage over daterange",
-        "postAggregationTheory": "repsonseToDifferenceOfDates"
-      }
-    ],
-    "aggregationPaths": [
-      "Total children administered",
-      "Children Targeted"
-    ],
-    "isCappedByCampaignPeriod": [
-      "Overall Target"
-    ],
-    "filterKeys": [
-      {
-        "key": "administrativeProvince"
-      }
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administrationCoverageBarChartLocalityPercentSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_LOCALITY_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Children Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "drillChart": "administrationCoverageBarChartVillagePercentSMC",
-    "documentType": "_doc",
-    "action": "percentage",
-    "computedFields": [
-      {
-        "_comments": "",
-        "actionName": "",
-        "fields": [
-          "Target for daterange"
-        ],
-        "newField": "Children coverage over daterange",
-        "postAggregationTheory": "repsonseToDifferenceOfDates"
-      }
-    ],
-    "aggregationPaths": [
-      "Total children administered",
-      "Children Targeted"
-    ],
-    "isCappedByCampaignPeriod": [
-      "Overall Target"
-    ],
-    "filterKeys": [
-      {
-        "key": "locality"
-      }
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administrationCoverageBarChartVillagePercentSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_VILLAGE_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Children Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM) * 365\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "action": "percentage",
-    "computedFields": [
-      {
-        "_comments": "",
-        "actionName": "",
-        "fields": [
-          "Target for daterange"
-        ],
-        "newField": "Children coverage over daterange",
-        "postAggregationTheory": "repsonseToDifferenceOfDates"
-      }
-    ],
-    "aggregationPaths": [
-      "Total children administered",
-      "Children Targeted"
-    ],
-    "isCappedByCampaignPeriod": [
-      "Overall Target"
-    ],
-    "filterKeys": [
-      {
-        "key": "village"
-      }
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administrationCoverageBarChartDistrictSMC": {
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_DISTRICT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "drillChart": "administrationCoverageBarChartAPSMC",
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "Total children administered"
-    ],
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administrationCoverageBarChartAPSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_AP",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "drillChart": "administrationCoverageBarChartLocalitySMC",
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "Total children administered"
-    ],
-    "filterKeys": [
-      {
-        "key": "administrativeProvince"
-      }
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administrationCoverageBarChartLocalitySMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_LOCALITY",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "drillChart": "administrationCoverageBarChartVillageSMC",
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "Total children administered"
-    ],
-    "filterKeys": [
-      {
-        "key": "locality"
-      }
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administrationCoverageBarChartVillageSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_VILLAGE",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "Total children administered"
-    ],
-    "filterKeys": [
-      {
-        "key": "village"
-      }
-    ],
-    "insight": {},
-    "_comment": " "
-  },
   "householdsCoverageHeatMapProvinceSMC": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
     "queries": [
@@ -24204,687 +23886,6 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "populationCoverageHeatMapProvinceSMC": {
-    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP_PROVINCE",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM) * 365\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"total_count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "filterKeys": [],
-    "chartType": "xtable",
-    "valueType": "number",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "action": "",
-    "plotLabel": "Districts",
-    "excludedColumns": [
-      "S.N.",
-      "Target for daterange"
-    ],
-    "computedFields": [
-      {
-        "postAggregationTheory": "repsonseToDifferenceOfDates",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Target for daterange"
-        ],
-        "newField": "Population Target",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "total_count",
-          "Population Target"
-        ],
-        "newField": "percentage_value",
-        "_comments": ""
-      }
-    ],
-    "insight": {},
-    "hideInsights": false,
-    "hideHeaderDenomination": true,
-    "_comment": " "
-  },
-  "childrenNotAdministeredDistrictPercentSMC": {
-    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_DISTRICT_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "side-effect-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.sideEffect.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "plotLabel": "none",
-    "drillChart": "childrenNotAdministeredApPercentSMC",
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "percentage",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Beneficiary Refused",
-          "Total Side Effects",
-          "Total Referrals",
-          "Total Ineligible"
-        ],
-        "newField": "Children Not Administered",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Total Children Registered"
-        ],
-        "newField": "Children Registered",
-        "_comments": ""
-      }
-    ],
-    "aggregationPaths": [
-      "Beneficiary Refused",
-      "Total Side Effects",
-      "Total Referrals",
-      "Total Ineligible",
-      "Total Children Registered"
-    ],
-    "sort": "sortKeyAsc",
-    "computeMultiPaths": true,
-    "insight": {},
-    "_comment": " "
-  },
-  "childrenNotAdministeredApPercentSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_AP_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "side-effect-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.sideEffect.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "plotLabel": "none",
-    "drillChart": "childrenNotAdministeredLocalityPercentSMC",
-    "filterKeys": [
-      {
-        "key": "administrativeProvince"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "percentage",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Beneficiary Refused",
-          "Total Side Effects",
-          "Total Referrals",
-          "Total Ineligible"
-        ],
-        "newField": "Children Not Administered",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Total Children Registered"
-        ],
-        "newField": "Children Registered",
-        "_comments": ""
-      }
-    ],
-    "aggregationPaths": [
-      "Beneficiary Refused",
-      "Total Side Effects",
-      "Total Referrals",
-      "Total Ineligible",
-      "Total Children Registered"
-    ],
-    "sort": "sortKeyAsc",
-    "computeMultiPaths": true,
-    "insight": {},
-    "_comment": " "
-  },
-  "childrenNotAdministeredLocalityPercentSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_LOCALITY_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "side-effect-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.sideEffect.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "plotLabel": "none",
-    "drillChart": "childrenNotAdministeredVillagePercentSMC",
-    "filterKeys": [
-      {
-        "key": "locality"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "percentage",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Beneficiary Refused",
-          "Total Side Effects",
-          "Total Referrals",
-          "Total Ineligible"
-        ],
-        "newField": "Children Not Administered",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Total Children Registered"
-        ],
-        "newField": "Children Registered",
-        "_comments": ""
-      }
-    ],
-    "aggregationPaths": [
-      "Beneficiary Refused",
-      "Total Side Effects",
-      "Total Referrals",
-      "Total Ineligible",
-      "Total Children Registered"
-    ],
-    "sort": "sortKeyAsc",
-    "computeMultiPaths": true,
-    "insight": {},
-    "_comment": " "
-  },
-  "childrenNotAdministeredVillagePercentSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_VILLAGE_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "side-effect-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.sideEffect.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "plotLabel": "none",
-    "drillChart": "none",
-    "filterKeys": [
-      {
-        "key": "village"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "percentage",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Beneficiary Refused",
-          "Total Side Effects",
-          "Total Referrals",
-          "Total Ineligible"
-        ],
-        "newField": "Children Not Administered",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Total Children Registered"
-        ],
-        "newField": "Children Registered",
-        "_comments": ""
-      }
-    ],
-    "aggregationPaths": [
-      "Beneficiary Refused",
-      "Total Side Effects",
-      "Total Referrals",
-      "Total Ineligible",
-      "Total Children Registered"
-    ],
-    "sort": "sortKeyAsc",
-    "computeMultiPaths": true,
-    "insight": {},
-    "_comment": " "
-  },
-  "childrenNotAdministeredDistrictSMC": {
-    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_DISTRICT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "side-effect-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.sideEffect.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "childrenNotAdministeredApSMC",
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Beneficiary Refused",
-          "Total Side Effects",
-          "Total Referrals",
-          "Total Ineligible"
-        ],
-        "newField": "Children Not Administered",
-        "_comments": ""
-      }
-    ],
-    "aggregationPaths": [
-      "Beneficiary Refused",
-      "Total Side Effects",
-      "Total Referrals",
-      "Total Ineligible"
-    ],
-    "sort": "sortKeyAsc",
-    "computeMultiPaths": true,
-    "insight": {},
-    "_comment": " "
-  },
-  "childrenNotAdministeredApSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_AP",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "side-effect-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.sideEffect.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "childrenNotAdministeredLocalitySMC",
-    "filterKeys": [
-      {
-        "key": "administrativeProvince"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Beneficiary Refused",
-          "Total Side Effects",
-          "Total Referrals",
-          "Total Ineligible"
-        ],
-        "newField": "Children Not Administered",
-        "_comments": ""
-      }
-    ],
-    "aggregationPaths": [
-      "Beneficiary Refused",
-      "Total Side Effects",
-      "Total Referrals",
-      "Total Ineligible"
-    ],
-    "sort": "sortKeyAsc",
-    "computeMultiPaths": true,
-    "insight": {},
-    "_comment": " "
-  },
-  "childrenNotAdministeredLocalitySMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_LOCALITY",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "side-effect-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.sideEffect.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "childrenNotAdministeredVillageSMC",
-    "filterKeys": [
-      {
-        "key": "locality"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Beneficiary Refused",
-          "Total Side Effects",
-          "Total Referrals",
-          "Total Ineligible"
-        ],
-        "newField": "Children Not Administered",
-        "_comments": ""
-      }
-    ],
-    "aggregationPaths": [
-      "Beneficiary Refused",
-      "Total Side Effects",
-      "Total Referrals",
-      "Total Ineligible"
-    ],
-    "sort": "sortKeyAsc",
-    "computeMultiPaths": true,
-    "insight": {},
-    "_comment": " "
-  },
-  "childrenNotAdministeredVillageSMC": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_VILLAGE",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFUSED\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.sideEffect.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "side-effect-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Side Effects\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.sideEffect.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}},\"aggs\":{\"Total Referrals\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.referral.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "none",
-    "filterKeys": [
-      {
-        "key": "village"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Beneficiary Refused",
-          "Total Side Effects",
-          "Total Referrals",
-          "Total Ineligible"
-        ],
-        "newField": "Children Not Administered",
-        "_comments": ""
-      }
-    ],
-    "aggregationPaths": [
-      "Beneficiary Refused",
-      "Total Side Effects",
-      "Total Referrals",
-      "Total Ineligible"
-    ],
-    "sort": "sortKeyAsc",
-    "computeMultiPaths": true,
-    "insight": {},
-    "_comment": " "
-  },
   "actualVsPlannedHouseholdLineGraphProvinceSMC": {
     "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_PROVINCE",
     "queries": [
@@ -24916,41 +23917,6 @@
     "aggregationPaths": [
       "Household Target",
       "Household Distribution"
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "actualVsPlannedPopulationLineGraphProvinceSMC": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Distribution\":{\"date_histogram\":{\"field\":\"Data.createdTime\",\"calendar_interval\":\"day\",\"min_doc_count\":1},\"aggs\":{\"Population distributed\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"startDate\":{\"terms\":{\"field\":\"Data.startDate\"}},\"endDate\":{\"terms\":{\"field\":\"Data.endDate\"}},\"Population Target\":{\"date_histogram\":{\"field\":\"Data.startDate\",\"calendar_interval\":\"day\"},\"aggs\":{\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}},\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": true,
-    "valueType": "percentage",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "action": "",
-    "predictionPath": "Population Target",
-    "distributionPath": "Population Distribution",
-    "cappedTarget": "Overall Target",
-    "showPercentageValue": true,
-    "aggregationPaths": [
-      "Population Target",
-      "Population Distribution"
     ],
     "insight": {},
     "_comment": " "
@@ -26728,61 +25694,6 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "populationCoverageHeatMapDistrictSMC": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRICT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM) * 365\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"total_count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "filterKeys": [],
-    "chartType": "xtable",
-    "valueType": "number",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "action": "",
-    "plotLabel": "APs",
-    "excludedColumns": [
-      "S.N.",
-      "Target for daterange"
-    ],
-    "computedFields": [
-      {
-        "postAggregationTheory": "repsonseToDifferenceOfDates",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Target for daterange"
-        ],
-        "newField": "Population Target",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "total_count",
-          "Population Target"
-        ],
-        "newField": "percentage_value",
-        "_comments": ""
-      }
-    ],
-    "insight": {},
-    "hideInsights": false,
-    "hideHeaderDenomination": true,
-    "_comment": " "
-  },
   "actualVsPlannedHouseholdLineGraphDistrictSMC": {
     "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_DISTRICT",
     "queries": [
@@ -26814,41 +25725,6 @@
     "aggregationPaths": [
       "Household Target",
       "Household Distribution"
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "actualVsPlannedPopulationLineGraphDistrictSMC": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_DISTRICT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Distribution\":{\"date_histogram\":{\"field\":\"Data.createdTime\",\"calendar_interval\":\"day\",\"min_doc_count\":1},\"aggs\":{\"Population distributed\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"startDate\":{\"terms\":{\"field\":\"Data.startDate\"}},\"endDate\":{\"terms\":{\"field\":\"Data.endDate\"}},\"Population Target\":{\"date_histogram\":{\"field\":\"Data.startDate\",\"calendar_interval\":\"day\"},\"aggs\":{\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}},\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": true,
-    "valueType": "percentage",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "action": "",
-    "predictionPath": "Population Target",
-    "distributionPath": "Population Distribution",
-    "cappedTarget": "Overall Target",
-    "showPercentageValue": true,
-    "aggregationPaths": [
-      "Population Target",
-      "Population Distribution"
     ],
     "insight": {},
     "_comment": " "
@@ -27459,67 +26335,6 @@
     "insight": {},
     "_comment": " "
   },
-  "administeredByAgeGroupDistrict": {
-    "chartName": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_DISTRICT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"3 to 11 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":3,\"lte\":11}}}]}},\"aggs\":{\"3 to 11 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"12 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":12,\"lte\":59}}}]}},\"aggs\":{\"12 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"3 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":3,\"lte\":59}}}]}},\"aggs\":{\"3 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "administeredByAgeGroupAp",
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "3 to 11 months",
-      "12 to 59 months",
-      "3 to 59 months"
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administeredByGenderDistrict": {
-    "chartName": "DSS_HEALTH_ADMINISTERED_BY_GENDER_DISTRICT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"administered male\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"MALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"administered female\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"FEMALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "administeredByGenderAp",
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "administered male",
-      "administered female"
-    ],
-    "insight": {},
-    "_comment": " "
-  },
   "sideEffectsSummaryBreakdownByDistricts": {
     "chartName": "DSS_HEALTH_SIDE_EFFECTS_SUMMARY_BY_DISTRICTS",
     "queries": [
@@ -27972,69 +26787,6 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "insight": {},
-    "_comment": " "
-  },
-  "administeredByAgeGroupAp": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_AP",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"3 to 11 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":3,\"lte\":11}}}]}},\"aggs\":{\"3 to 11 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"12 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":12,\"lte\":59}}}]}},\"aggs\":{\"12 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"3 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":3,\"lte\":59}}}]}},\"aggs\":{\"3 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "administeredByAgeGroupLocality",
-    "filterKeys": [
-      {
-        "key": "administrativeProvince"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "3 to 11 months",
-      "12 to 59 months",
-      "3 to 59 months"
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "administeredByGenderAp": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ADMINISTERED_BY_GENDER_AP",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"administered male\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"MALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}},\"administered female\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"FEMALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "administeredByGenderLocality",
-    "filterKeys": [
-      {
-        "key": "administrativeProvince"
-      }
-    ],
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "administered male",
-      "administered female"
-    ],
     "insight": {},
     "_comment": " "
   },
@@ -34223,7 +32975,57 @@
     "insight": {},
     "_comment": " "
   },
-  "administrationCoverageBarChartAPPercentSMC1": {
+  "administrationCoverageBarChartDistrictPercentSMC": {
+    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_DISTRICT_PERCENT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Children Targeted\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "administrationCoverageBarChartAPPercentSMC",
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+      {
+        "_comments": "",
+        "actionName": "",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Children coverage over daterange",
+        "postAggregationTheory": "repsonseToDifferenceOfDates"
+      }
+    ],
+    "aggregationPaths": [
+      "Total children administered",
+      "Children Targeted"
+    ],
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "administrationCoverageBarChartAPPercentSMC": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_AP_PERCENT",
     "queries": [
@@ -34232,7 +33034,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -34274,7 +33076,7 @@
     "insight": {},
     "_comment": " "
   },
-  "administrationCoverageBarChartLocalityPercentSMC1": {
+  "administrationCoverageBarChartLocalityPercentSMC": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_LOCALITY_PERCENT",
     "queries": [
@@ -34283,7 +33085,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -34325,7 +33127,7 @@
     "insight": {},
     "_comment": " "
   },
-  "administrationCoverageBarChartVillagePercentSMC1": {
+  "administrationCoverageBarChartVillagePercentSMC": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_VILLAGE_PERCENT",
     "queries": [
@@ -34334,7 +33136,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -34376,7 +33178,7 @@
     "insight": {},
     "_comment": " "
   },
-  "administrationCoverageBarChartDistrictSMC1": {
+  "administrationCoverageBarChartDistrictSMC": {
     "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_DISTRICT",
     "queries": [
       {
@@ -34384,7 +33186,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -34404,7 +33206,7 @@
     "insight": {},
     "_comment": " "
   },
-  "administrationCoverageBarChartAPSMC1": {
+  "administrationCoverageBarChartAPSMC": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_AP",
     "queries": [
@@ -34413,7 +33215,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -34433,7 +33235,7 @@
     "insight": {},
     "_comment": " "
   },
-  "administrationCoverageBarChartLocalitySMC1": {
+  "administrationCoverageBarChartLocalitySMC": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_LOCALITY",
     "queries": [
@@ -34442,7 +33244,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -34462,7 +33264,7 @@
     "insight": {},
     "_comment": " "
   },
-  "administrationCoverageBarChartVillageSMC1": {
+  "administrationCoverageBarChartVillageSMC": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_VILLAGE",
     "queries": [
@@ -34471,7 +33273,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -34487,6 +33289,730 @@
       {
         "key": "village"
       }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "populationCoverageHeatMapProvinceSMC": {
+    "chartName": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM) * 365\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"total_count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Districts",
+    "excludedColumns": [
+      "S.N.",
+      "Target for daterange"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Population Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Population Target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": false,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "populationCoverageHeatMapDistrictSMC": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM) * 365\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"total_count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "APs",
+    "excludedColumns": [
+      "S.N.",
+      "Target for daterange"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Target for daterange"
+        ],
+        "newField": "Population Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Population Target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": false,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "administeredByAgeGroupDistrictSMC": {
+    "chartName": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"3 to 11 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"lte\":11}}}]}},\"aggs\":{\"3 to 11 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"12 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":12}}}]}},\"aggs\":{\"12 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"3 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":0}}}]}},\"aggs\":{\"3 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "administeredByAgeGroupApSMC",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "3 to 11 months",
+      "12 to 59 months",
+      "3 to 59 months"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "administeredByAgeGroupApSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"3 to 11 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"lte\":11}}}]}},\"aggs\":{\"3 to 11 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"12 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":12}}}]}},\"aggs\":{\"12 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"3 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":0}}}]}},\"aggs\":{\"3 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "administeredByAgeGroupLocalitySMC",
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "3 to 11 months",
+      "12 to 59 months",
+      "3 to 59 months"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "administeredByAgeGroupLocalitySMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"3 to 11 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"lte\":11}}}]}},\"aggs\":{\"3 to 11 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"12 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":12}}}]}},\"aggs\":{\"12 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"3 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":0}}}]}},\"aggs\":{\"3 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "administeredByAgeGroupVillageSMC",
+    "filterKeys": [
+      {
+        "key": "locality"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "3 to 11 months",
+      "12 to 59 months",
+      "3 to 59 months"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "administeredByAgeGroupVillageSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"3 to 11 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"lte\":11}}}]}},\"aggs\":{\"3 to 11 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"12 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":12}}}]}},\"aggs\":{\"12 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"3 to 59 months\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"range\":{\"Data.age\":{\"gte\":0}}}]}},\"aggs\":{\"3 to 59 months count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "3 to 11 months",
+      "12 to 59 months",
+      "3 to 59 months"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "administeredByGenderDistrictSMC": {
+    "chartName": "DSS_HEALTH_ADMINISTERED_BY_GENDER_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"administered male\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"MALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"administered female\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"FEMALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "administeredByGenderApSMC",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "administered male",
+      "administered female"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "administeredByGenderApSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_ADMINISTERED_BY_GENDER_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"administered male\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"MALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"administered female\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"FEMALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "administeredByGenderLocalitySMC",
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "administered male",
+      "administered female"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "administeredByGenderLocalitySMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_ADMINISTERED_BY_GENDER_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"administered male\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"MALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"administered female\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"FEMALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "administeredByGenderVillageSMC",
+    "filterKeys": [
+      {
+        "key": "locality"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "administered male",
+      "administered female"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "administeredByGenderVillageSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_ADMINISTERED_BY_GENDER_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"administered male\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"MALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}},\"administered female\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.gender.keyword\":\"FEMALE\"}}]}},\"aggs\":{\"administered count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "administered male",
+      "administered female"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredDistrictPercentSMC": {
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_DISTRICT_PERCENT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFERRED\",\"BENEFICIARY_INELIGIBLE\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Not Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "childrenNotAdministeredApPercentSMC",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+    ],
+    "aggregationPaths": [
+      "Children Not Administered",
+      "Children Administered"
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredApPercentSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_AP_PERCENT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFERRED\",\"BENEFICIARY_INELIGIBLE\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Not Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "childrenNotAdministeredLocalityPercentSMC",
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+    ],
+    "aggregationPaths": [
+      "Children Not Administered",
+      "Children Administered"
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredLocalityPercentSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_LOCALITY_PERCENT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFERRED\",\"BENEFICIARY_INELIGIBLE\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Not Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "childrenNotAdministeredVillagePercentSMC",
+    "filterKeys": [
+      {
+        "key": "locality"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+    ],
+    "aggregationPaths": [
+      "Children Not Administered",
+      "Children Administered"
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredVillagePercentSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_VILLAGE_PERCENT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFERRED\",\"BENEFICIARY_INELIGIBLE\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Not Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "filterKeys": [
+      {
+        "key": "village"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "percentage",
+    "computedFields": [
+    ],
+    "aggregationPaths": [
+      "Children Not Administered",
+      "Children Administered"
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredDistrictSMC": {
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFERRED\",\"BENEFICIARY_INELIGIBLE\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Not Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "childrenNotAdministeredApSMC",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "computedFields": [
+    ],
+    "aggregationPaths": [
+      "Children Not Administered"
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredApSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFERRED\",\"BENEFICIARY_INELIGIBLE\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Not Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "childrenNotAdministeredLocalitySMC",
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "computedFields": [
+    ],
+    "aggregationPaths": [
+      "Children Not Administered"
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredLocalitySMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_LOCALITY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFERRED\",\"BENEFICIARY_INELIGIBLE\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Not Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "childrenNotAdministeredVillageSMC",
+    "filterKeys": [
+      {
+        "key": "locality"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "computedFields": [
+    ],
+    "aggregationPaths": [
+      "Children Not Administered"
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenNotAdministeredVillageSMC": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_VILLAGE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"BENEFICIARY_REFERRED\",\"BENEFICIARY_INELIGIBLE\"]}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"Children Not Administered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "filterKeys": [
+      {
+        "key": "village"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "computedFields": [
+    ],
+    "aggregationPaths": [
+      "Children Not Administered"
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "actualVsPlannedPopulationLineGraphProvinceSMC": {
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Distribution\":{\"date_histogram\":{\"field\":\"Data.createdTime\",\"calendar_interval\":\"day\",\"min_doc_count\":1},\"aggs\":{\"Population distributed\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"startDate\":{\"terms\":{\"field\":\"Data.startDate\"}},\"endDate\":{\"terms\":{\"field\":\"Data.endDate\"}},\"Population Target\":{\"date_histogram\":{\"field\":\"Data.startDate\",\"calendar_interval\":\"day\"},\"aggs\":{\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}},\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": true,
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "predictionPath": "Population Target",
+    "distributionPath": "Population Distribution",
+    "cappedTarget": "Overall Target",
+    "showPercentageValue": true,
+    "aggregationPaths": [
+      "Population Target",
+      "Population Distribution"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "actualVsPlannedPopulationLineGraphDistrictSMC": {
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Distribution\":{\"date_histogram\":{\"field\":\"Data.createdTime\",\"calendar_interval\":\"day\",\"min_doc_count\":1},\"aggs\":{\"Population distributed\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"chartSpecificProperty\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"startDate\":{\"terms\":{\"field\":\"Data.startDate\"}},\"endDate\":{\"terms\":{\"field\":\"Data.endDate\"}},\"Population Target\":{\"date_histogram\":{\"field\":\"Data.startDate\",\"calendar_interval\":\"day\"},\"aggs\":{\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}},\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": true,
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "predictionPath": "Population Target",
+    "distributionPath": "Population Distribution",
+    "cappedTarget": "Overall Target",
+    "showPercentageValue": true,
+    "aggregationPaths": [
+      "Population Target",
+      "Population Distribution"
     ],
     "insight": {},
     "_comment": " "
