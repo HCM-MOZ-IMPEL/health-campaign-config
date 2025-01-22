@@ -27780,6 +27780,10 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
+      "Target Population per Day"
+    ],
+    "postAggregationTheory": "repsonseToDifferenceOfDates",
+    "isCappedByCampaignPeriod": [
       "Overall Target"
     ],
     "insight": {},
@@ -27894,6 +27898,10 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
+      "Target by Range"
+    ],
+    "postAggregationTheory": "repsonseToDifferenceOfDates",
+    "isCappedByCampaignPeriod": [
       "Overall Target"
     ],
     "insight": {},
