@@ -6902,7 +6902,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "daysInventoryStockLastsProvince",
+                  "id": "daysInventoryStockLastsProvinceSMC",
                   "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE",
                   "code": "",
                   "chartType": "bar",
@@ -7521,7 +7521,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "daysInventoryStockLastsProvince",
+                  "id": "daysInventoryStockLastsProvinceSMC",
                   "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE",
                   "code": "",
                   "chartType": "bar",
@@ -7563,7 +7563,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "inventoryTheoreticalVsManualStockDistrict",
+                  "id": "inventoryTheoreticalVsManualStockDistrictSMC",
                   "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -8484,7 +8484,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "daysInventoryStockLastsDistrict",
+                  "id": "daysInventoryStockLastsDistrictSMC",
                   "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -9127,7 +9127,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "daysInventoryStockLastsDistrict",
+                  "id": "daysInventoryStockLastsDistrictSMC",
                   "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -9169,7 +9169,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "inventoryTheoreticalVsManualStockAp",
+                  "id": "inventoryTheoreticalVsManualStockApSMC",
                   "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_AP",
                   "code": "",
                   "chartType": "bar",

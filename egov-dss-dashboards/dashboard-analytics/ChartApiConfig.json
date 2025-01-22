@@ -557,21 +557,42 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"NAME\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"User Name\": {\n          \"terms\": {\n            \"field\": \"Data.userName.keyword\"\n          },\n          \"aggs\": {\n            \"Households sprayed\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            },\n            \"NegativeHouseholdsSprayed\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"count\": \"Households sprayed\"\n                },\n                \"script\": \"params.count*-1\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"range\":{\"Data.age\":{\"lte\":11}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Children Administered 3 to 11\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Bottles used today\":{\"sum\":{\"field\":\"Data.quantity\"}},\"NegativeBottlesUsedToday\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"Bottles used today\"},\"script\":\"params.count*-1\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"range\":{\"Data.age\":{\"gte\":12}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Children Administered 12 to 59\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
-        "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.facilityType.keyword\":\"STAFF\"}},{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Stock count per user\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"term\":{\"Data.productName.keyword\":{\"value\":\"SPAQ 2 (12 a 59 meses)\"}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"SPAQ2 used\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"term\":{\"Data.productName.keyword\":{\"value\":\"SPAQ 1 (3 a 11 meses)\"}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"SPAQ1 used\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"BENEFICIARY_REFERRED\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Beneficiary Referred\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Recusa\"}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Household Refused\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -589,12 +610,13 @@
     "action": "",
     "plotLabel": "User Name",
     "excludedColumns": [
-      "NegativeHouseholdsSprayed",
-      "NegativeBottlesUsedToday",
-      "Stock count per user",
       "Households visited",
-      "Households sprayed",
-      "Bottles used today",
+      "Children Administered 3 to 11",
+      "Children Administered 12 to 59",
+      "SPAQ1 used",
+      "SPAQ2 used",
+      "Beneficiary Referred",
+      "Household Refused",
       "Lastsyncedtime"
     ],
     "computedFields": [
@@ -611,47 +633,54 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Households sprayed"
+          "Children Administered 3 to 11"
         ],
-        "newField": "Households Sprayed",
+        "newField": "Children_Administered_3_11",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Bottles used today"
+          "Children Administered 12 to 59"
         ],
-        "newField": "Bottles Used Today",
+        "newField": "Children_Administered_12_59",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Households visited",
-          "NegativeHouseholdsSprayed"
+          "SPAQ1 used"
         ],
-        "newField": "No. of houses not sprayed today",
+        "newField": "SPAQ1_used",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Stock count per user"
+          "SPAQ2 used"
         ],
-        "newField": "Stock Count Per User",
+        "newField": "SPAQ2_used",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Stock count per user",
-          "NegativeBottlesUsedToday"
+          "Beneficiary Referred"
         ],
-        "newField": "No. of remaining bottles",
+        "newField": "Beneficiary_Referred",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Household Refused"
+        ],
+        "newField": "Household_Refused",
         "_comments": ""
       },
       {
@@ -19695,6 +19724,68 @@
     "insight": {},
     "_comment": " "
   },
+  "daysInventoryStockLastsProvinceSMC": {
+    "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"No. of Days Stock Can Last\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "No. of Days Stock Can Last",
+      "Target Per Day"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "daysInventoryStockLastsDistrictSMC": {
+    "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"No. of Days Stock Can Last\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "division",
+    "aggregationPaths": [
+      "No. of Days Stock Can Last",
+      "Target Per Day"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "daysInventoryStockLastsDistrict": {
     "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT",
     "queries": [
@@ -21921,7 +22012,77 @@
     "insight": {},
     "_comment": " "
   },
+  "inventoryTheoreticalVsManualStockDistrictSMC": {
+    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}]}}}},\"aggs\":{\"Theoretical Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.stockReconciliation.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
+        "indexName": "stock-reconciliation-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_docs\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest\":{\"top_hits\":{\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"size\":1}},\"sum_calculatedCount\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}},\"Total Stock\":{\"sum_bucket\":{\"buckets_path\":\"latest_docs>sum_calculatedCount\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Theoretical Stock",
+      "Manual Stock"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "inventoryTheoreticalVsManualStockAp": {
+    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.facilityName.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Operational Base\"}}}]}}}},\"aggs\":{\"Theoretical Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.facilityName.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.stockReconciliation.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
+        "indexName": "stock-reconciliation-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.facilityName.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Operational Base\"}}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.facilityName.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_docs\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest\":{\"top_hits\":{\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"size\":1}},\"sum_calculatedCount\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}},\"Total Stock\":{\"sum_bucket\":{\"buckets_path\":\"latest_docs>sum_calculatedCount\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "filterKeys": [],
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Theoretical Stock",
+      "Manual Stock"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "inventoryTheoreticalVsManualStockApSMC": {
     "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_AP",
     "queries": [
       {
