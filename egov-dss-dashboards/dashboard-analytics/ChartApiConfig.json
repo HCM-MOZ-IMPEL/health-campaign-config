@@ -34076,7 +34076,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
         "indexName": "service-task-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"NATIONAL_SUPERVISOR\",\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Checklists Filled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
@@ -34102,7 +34102,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
         "indexName": "service-task-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.supervisorLevel.keyword\":[\"NATIONAL_SUPERVISOR\",\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Checklists Filled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
