@@ -7140,7 +7140,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 3,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
             {
@@ -7184,7 +7184,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 4,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
             {
@@ -7261,7 +7261,7 @@
           ]
         },
         {
-          "row": 7,
+          "row": 6,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
             {
@@ -8728,7 +8728,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 3,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
             {
@@ -8772,7 +8772,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 4,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
             {
@@ -8824,7 +8824,7 @@
           ]
         },
         {
-          "row": 6,
+          "row": 5,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
             {
@@ -8849,7 +8849,7 @@
           ]
         },
         {
-          "row": 7,
+          "row": 6,
           "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
           "vizArray": [
             {

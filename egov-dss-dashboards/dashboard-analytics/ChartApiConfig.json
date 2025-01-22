@@ -33683,8 +33683,6 @@
     ],
     "documentType": "_doc",
     "action": "percentage",
-    "computedFields": [
-    ],
     "aggregationPaths": [
       "Children Not Administered",
       "Children Administered"
@@ -33724,8 +33722,6 @@
     ],
     "documentType": "_doc",
     "action": "percentage",
-    "computedFields": [
-    ],
     "aggregationPaths": [
       "Children Not Administered",
       "Children Administered"
@@ -33765,8 +33761,6 @@
     ],
     "documentType": "_doc",
     "action": "percentage",
-    "computedFields": [
-    ],
     "aggregationPaths": [
       "Children Not Administered",
       "Children Administered"
@@ -33806,8 +33800,6 @@
     ],
     "documentType": "_doc",
     "action": "percentage",
-    "computedFields": [
-    ],
     "aggregationPaths": [
       "Children Not Administered",
       "Children Administered"
