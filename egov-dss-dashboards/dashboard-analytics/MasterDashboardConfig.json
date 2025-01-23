@@ -7030,23 +7030,6 @@
                   "headers": []
                 }
               ]
-            },
-            {
-              "id": 2252,
-              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
-              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
-              "vizType": "chart",
-              "noUnit": true,
-              "charts": [
-                {
-                  "id": "referralSummaryByDistrictsSMC",
-                  "name": "DSS_HEALTH_REFERRAL_SUMMARY",
-                  "code": "",
-                  "chartType": "sideBySideBar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
             }
           ]
         },
@@ -8614,6 +8597,23 @@
                   "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_AP",
                   "code": "",
                   "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 2252,
+              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "charts": [
+                {
+                  "id": "referralSummaryByAPsSMC",
+                  "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+                  "code": "",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": []
                 }
