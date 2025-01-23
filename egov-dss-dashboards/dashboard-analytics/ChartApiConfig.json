@@ -38521,5 +38521,113 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "totalVouchersDistributedCarboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_CARBO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"total vouchers distributed\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "isCappedTillToday" : true,
+    "action": "",
+    "aggregationPaths": [
+      "total vouchers distributed"
+    ],
+    "insight": {
+      "chartResponseMap": "totalVouchersDistributedCarboDelgado",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
+  "vouchersDistributedTodayCarboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_VOUCHERS_DISTRIBUTED_TODAY_CARBO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"vouchers distributed today\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "filterForCurrentDay": true,
+    "action": "",
+    "aggregationPaths": [
+      "vouchers distributed today"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "vouchersRedeemedTodayCarboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_VOUCHERS_REDEEMED_TODAY_CARBO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vouchers redeemed today\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "filterForCurrentDay": true,
+    "action": "",
+    "aggregationPaths": [
+      "Vouchers redeemed today"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "totalVouchersRedeemedCarboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_REDEEMED_CARBO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total vouchers redeemed\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "isCappedTillToday" : true,
+    "action": "",
+    "aggregationPaths": [
+      "Total vouchers redeemed"
+    ],
+    "insight": {
+      "chartResponseMap": "totalVouchersRedeemedCarboDelgado",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
   }
 }
