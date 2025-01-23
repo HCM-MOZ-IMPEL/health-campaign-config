@@ -38721,5 +38721,97 @@
     "hideInsights": false,
     "hideHeaderDenomination": true,
     "_comment": " "
+  },
+  "populationCoverageHeatMapCarboDelgado": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_CARBO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"total_count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "populationCoverageHeatMapNationalProvinceCarboDelgado",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Province",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Population target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Population target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "populationCoverageHeatMapNationalProvinceCarboDelgado": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_CARBO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"total_count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "District",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Population target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Population target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": false,
+    "hideHeaderDenomination": true,
+    "_comment": " "
   }
 }
