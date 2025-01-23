@@ -38362,5 +38362,58 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "todaysVistsCarboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_CARBO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"houses visited today\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "filterForCurrentDay": true,
+    "action": "",
+    "aggregationPaths": [
+      "houses visited today"
+    ],
+    "insight": {
+      "chartResponseMap": "todaysVistsCarboDelgado",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "day"
+    },
+    "_comment": " "
+  },
+  "totalVisitedCarboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED_CARBO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"total houses visited\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "total houses visited"
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
