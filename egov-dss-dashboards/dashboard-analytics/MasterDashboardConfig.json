@@ -2809,7 +2809,7 @@
                   "id": "householdsVisitedNumberBarchartByDistrictOverview",
                   "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT_OVERVIEW",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": []
                 }
@@ -4717,7 +4717,7 @@
                   "id": "householdsVisitedNumberBarchartByDistrictOverview",
                   "name": "DSS_HEALTH_HOUSEHOLDS_VISITED_COVERAGE_BAR_CHART_BY_DISTRICT_OVERVIEW",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": []
                 }
