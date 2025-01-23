@@ -33018,6 +33018,8 @@
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
+      "Total distribution count 3 11",
+      "Total distribution count 12 59",
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
@@ -33272,6 +33274,8 @@
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
+      "Total distribution count 3 11",
+      "Total distribution count 12 59",
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
@@ -33526,6 +33530,8 @@
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
+      "Total distribution count 3 11",
+      "Total distribution count 12 59",
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
@@ -33780,6 +33786,8 @@
       "Total Population covered",
       "Overall Population target",
       "Total distribution count",
+      "Total distribution count 3 11",
+      "Total distribution count 12 59",
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
@@ -34105,7 +34113,21 @@
         "dateRefField": "",
         "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}}]}},\"aggs\":{\"Individual Coverage Ratio\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total Population covered\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}}]}},\"aggs\":{\"Individual Coverage Ratio\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total Population covered\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}},{\"range\":{\"Data.age\":{\"lte\":11}}}]}},\"aggs\":{\"Individual Coverage Ratio\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total Population covered 3 11\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"testProjectTypeId\":\"Data.testProjectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\"]}},{\"range\":{\"Data.age\":{\"gte\":12}}}]}},\"aggs\":{\"Individual Coverage Ratio\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total Population covered 12 59\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -34201,16 +34223,6 @@
           "Households visited count"
         ],
         "newField": "Households visited",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "Households visited count",
-          "Overall Household target"
-        ],
-        "newField": "Target Achievement Household Visited",
         "_comments": ""
       },
       {
