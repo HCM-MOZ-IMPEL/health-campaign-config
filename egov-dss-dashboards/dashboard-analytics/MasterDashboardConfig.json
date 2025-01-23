@@ -7042,6 +7042,23 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 2252,
+              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "charts": [
+                {
+                  "id": "referralSummaryByDistrictsSMC",
+                  "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
