@@ -30756,7 +30756,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownLocality": {
+  "complaintsByTypeBreakdownLocalitySMC": {
     "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY",
     "queries": [
       {
