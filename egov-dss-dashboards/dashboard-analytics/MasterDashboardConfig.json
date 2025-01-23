@@ -6996,6 +6996,23 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 2252,
+              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "charts": [
+                {
+                  "id": "referralSummaryByDistrictsSMC",
+                  "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -7192,6 +7209,40 @@
                   "filter": "",
                   "tabName": "CHILDREN",
                   "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_REGISTRATION_ADMINISTRATION",
+          "vizArray": [
+            {
+              "id": 216,
+              "name": "DSS_HEALTH_DELIVERY_SUMMARY_BY_DISTRICT",
+              "label": "DSS_HEALTH_DELIVERY_SUMMARY_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "summaryByDistrictSMC",
+                  "name": "DSS_HEALTH_SUMMARY_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "summaryByDistrictDaySMC",
+                  "name": "DSS_HEALTH_SUMMARY_BY_DISTRICT_DAY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
                 }
               ]
             }
@@ -8117,6 +8168,53 @@
                 {
                   "id": "dataQualityRecordsSummaryDistrictSMC",
                   "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_REFERRAL_AND_SIDE_EFFECTS",
+          "vizArray": [
+            {
+              "id": 2152,
+              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "charts": [
+                {
+                  "id": "referralSummaryByDistrictsSMC",
+                  "name": "DSS_HEALTH_REFERRAL_SUMMARY_BY_DISTRICTS",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row":2,
+          "name": "DSS_HEALTH_REFERRAL_AND_SIDE_EFFECTS",
+          "vizArray": [
+            {
+              "id": 2152,
+              "name": "DSS_HEALTH_SUMMARY_OF_REFERRED_CHILDREN",
+              "label": "DSS_HEALTH_SUMMARY_OF_REFERRED_CHILDREN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "summaryOfReferredChildrenByDistrictsSMC",
+                  "name": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_DISTRICTS",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
