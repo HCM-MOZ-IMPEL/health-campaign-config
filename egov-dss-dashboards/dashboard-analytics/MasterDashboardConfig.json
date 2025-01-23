@@ -6914,6 +6914,30 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
+              "id": 271,
+              "name": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED",
+              "label": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalChildrenRefusedProvinceSMC",
+                  "name": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED_PROVINCE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
               "id": 204,
               "name": "DSS_HEALTH_TOTAL_CHILDREN_NOT_ADMINISTERED_BY_REASON_OVERVIEW",
               "label": "DSS_HEALTH_TOTAL_CHILDREN_NOT_ADMINISTERED_BY_REASON_OVERVIEW",
@@ -6952,7 +6976,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -6976,7 +7000,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -8562,6 +8586,30 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
+              "id": 371,
+              "name": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED",
+              "label": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalChildrenRefusedDistrictSMC",
+                  "name": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED_PROVINCE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
               "id": 304,
               "name": "DSS_HEALTH_TOTAL_CHILDREN_NOT_ADMINISTERED_BY_REASON_OVERVIEW",
               "label": "DSS_HEALTH_TOTAL_CHILDREN_NOT_ADMINISTERED_BY_REASON_OVERVIEW",
@@ -8600,7 +8648,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -8624,7 +8672,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -10009,48 +10057,6 @@
                   "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP",
                   "code": "",
                   "chartType": "heatmap",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_NATIONAL_HEALTH_REGISTRATION_DELIVERY",
-          "vizArray": [
-            {
-              "id": 271,
-              "name": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED",
-              "label": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "totalChildrenRefusedProvinceSMC",
-                  "name": "DSS_HEALTH_TOTAL_CHILDREN_REFUSED_PROVINCE",
-                  "code": "",
-                  "chartType": "v-bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 277,
-              "name": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_BY_REASON",
-              "label": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_BY_REASON",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "childrenNotAdministeredByReasonNationalSmc",
-                  "name": "DSS_HEALTH_CHILDREN_NOT_ADMINISTERED_BY_REASON_NATIONAL",
-                  "code": "",
-                  "chartType": "donut",
                   "filter": "",
                   "headers": []
                 }
