@@ -9667,6 +9667,34 @@
                   "tabName": "NUMBER"
                 }
               ]
+            },
+            {
+              "id": 3006,
+              "name": "DSS_HEALTH_ATTENDANCE_SUPERVISOR_SMC",
+              "label": "DSS_HEALTH_ATTENDANCE_SUPERVISOR_SMC",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "attendanceSupervisorsAPPercentSMC",
+                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "attendanceSupervisorAPSMC",
+                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
             }
           ]
         },
