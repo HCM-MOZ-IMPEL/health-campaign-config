@@ -30294,7 +30294,7 @@
         "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Community Supervisors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -30308,11 +30308,11 @@
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "attendanceSupervisorsAPPercentSMC",
     "documentType": "_doc",
     "action": "percentage",
     "aggregationPaths": [
-      "Community Distributors Marked Present",
+      "Community Supervisors Marked Present",
       "Total spray operators"
     ],
     "insight": {},
@@ -30331,17 +30331,17 @@
         "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Community Supervisors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "none",
+    "drillChart": "attendanceSupervisorsAPSMC",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Community Distributors Marked Present"
+      "Community Supervisors Marked Present"
     ],
     "filterKeys": [
       {
@@ -30556,7 +30556,14 @@
         "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"projectTypeId\":\"additionalDetails.projectTypeId.keyword\",\"province\":\"boundaryHierarchy.province.keyword\",\"district\":\"boundaryHierarchy.district.keyword\"}",
         "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Attendance Logs\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"Avg Distributors Marked Present\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"COMMUNITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Attendance Logs\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"Avg Distributors Marked Present\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"projectTypeId\":\"additionalDetails.projectTypeId.keyword\",\"province\":\"boundaryHierarchy.province.keyword\",\"district\":\"boundaryHierarchy.district.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Attendance Logs\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"Avg Supervisors Marked Present\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -30564,6 +30571,13 @@
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-staff-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Total distributors\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"SPAQ_MANAGER\",\"COMMUNITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Supervisors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Total supervisors\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -30611,7 +30625,17 @@
           "Avg Distributors Marked Present",
           "Total distributors"
         ],
-        "newField": "ATTENDANCE_PERCENT",
+        "newField": "COM_DIS_ATTENDANCE_PERCENT",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Avg Supervisors Marked Present",
+          "Total supervisors"
+        ],
+        "newField": "SUP_ATTENDANCE_PERCENT",
         "_comments": ""
       },
       {
@@ -30649,7 +30673,14 @@
         "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"projectTypeId\":\"additionalDetails.projectTypeId.keyword\",\"province\":\"boundaryHierarchy.province.keyword\",\"district\":\"boundaryHierarchy.district.keyword\"}",
         "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Attendance Logs\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"Avg Distributors Marked Present\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"COMMUNITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Attendance Logs\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"Avg Distributors Marked Present\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"projectTypeId\":\"additionalDetails.projectTypeId.keyword\",\"province\":\"boundaryHierarchy.province.keyword\",\"district\":\"boundaryHierarchy.district.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Attendance Logs\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"Avg Supervisors Marked Present\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -30657,6 +30688,13 @@
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-staff-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Total distributors\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"SPAQ_MANAGER\",\"COMMUNITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Total supervisors\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -30689,7 +30727,9 @@
       "S.N.",
       "Total Distributors Marked Present",
       "Avg Distributors Marked Present",
+      "Avg Supervisors Marked Present",
       "Total distributors",
+      "Total supervisors",
       "Total children administered Count",
       "Total children registered Count"
     ],
@@ -30705,6 +30745,16 @@
           "Total distributors"
         ],
         "newField": "ATTENDANCE_PERCENT",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Avg Supervisors Marked Present",
+          "Total supervisors"
+        ],
+        "newField": "SUP_ATTENDANCE_PERCENT",
         "_comments": ""
       },
       {
