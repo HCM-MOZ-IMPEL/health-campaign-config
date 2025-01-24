@@ -36319,7 +36319,7 @@
         "fields": [
           "Total Users Created"
         ],
-        "newField": "Total_WMs",
+        "newField": "Total_WMs_Smc",
         "_comments": ""
       },
       {
@@ -36328,7 +36328,7 @@
         "fields": [
           "Unique Users Synced"
         ],
-        "newField": "Total_WMs_Synced_At_Least_Once",
+        "newField": "Total_WMs_Synced_At_Least_Once_smc",
         "_comments": ""
       },
       {
@@ -36659,7 +36659,7 @@
         "fields": [
           "Target for range"
         ],
-        "newField": "Product Target To Receive",
+        "newField": "Product Target To Receive Smc",
         "_comments": ""
       },
       {
@@ -36668,7 +36668,7 @@
         "fields": [
           "Incoming"
         ],
-        "newField": "Incoming Stock",
+        "newField": "Incoming Stock Smc",
         "_comments": ""
       },
       {
@@ -36677,7 +36677,7 @@
         "fields": [
           "Outgoing"
         ],
-        "newField": "Outgoing Stock",
+        "newField": "Outgoing Stock Smc",
         "_comments": ""
       },
       {
@@ -36686,7 +36686,7 @@
         "fields": [
           "Returned"
         ],
-        "newField": "Returned Stock",
+        "newField": "Returned Stock Smc",
         "_comments": ""
       },
       {
@@ -36695,7 +36695,7 @@
         "fields": [
           "Total Stock"
         ],
-        "newField": "Stock Left",
+        "newField": "Stock Left Smc",
         "_comments": ""
       }
     ],
