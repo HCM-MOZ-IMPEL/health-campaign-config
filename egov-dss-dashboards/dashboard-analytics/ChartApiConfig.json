@@ -30462,14 +30462,14 @@
         "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"COMMUNITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Spray Operators Marked Present\":{\"terms\":{\"field\":\"userAddress.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}},{\"term\":{\"role.keyword\":{\"value\":\"COMMUNITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Spray Operators Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.userAddress.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -30505,7 +30505,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "none",
+    "drillChart": "attendanceSprayOperatorsAPSMC",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -30528,7 +30528,7 @@
         "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"role.keyword\":{\"value\":\"COMMUNITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Spray Operators Marked Present\":{\"terms\":{\"field\":\"userAddress.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"role.keyword\":{\"value\":\"COMMUNITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Spray Operators Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -30610,7 +30610,9 @@
       "S.N.",
       "Total Distributors Marked Present",
       "Avg Distributors Marked Present",
+      "Avg Supervisors Marked Present",
       "Total distributors",
+      "Total supervisors",
       "Total children administered Count",
       "Total children registered Count"
     ],
@@ -30744,7 +30746,7 @@
           "Avg Distributors Marked Present",
           "Total distributors"
         ],
-        "newField": "ATTENDANCE_PERCENT",
+        "newField": "COM_DIS_ATTENDANCE_PERCENT",
         "_comments": ""
       },
       {
