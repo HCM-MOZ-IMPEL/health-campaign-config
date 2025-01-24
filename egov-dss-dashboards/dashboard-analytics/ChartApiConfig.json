@@ -30423,7 +30423,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "attendanceLog.auditDetails.lastModifiedTime",
+        "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"projectTypeId\":\"additionalDetails.projectTypeId.keyword\",\"province\":\"boundaryHierarchy.province.keyword\",\"district\":\"boundaryHierarchy.district.keyword\"}",
         "indexName": "attendance-log-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Attendance Logs\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"Avg Distributors Marked Present\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
@@ -30516,7 +30516,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "attendanceLog.auditDetails.lastModifiedTime",
+        "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"projectTypeId\":\"additionalDetails.projectTypeId.keyword\",\"province\":\"boundaryHierarchy.province.keyword\",\"district\":\"boundaryHierarchy.district.keyword\"}",
         "indexName": "attendance-log-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Attendance Logs\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"Avg Distributors Marked Present\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
