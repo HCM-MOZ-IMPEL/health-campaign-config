@@ -6735,7 +6735,7 @@
             },
             {
               "id": 203,
-              "name": "DSS_HEALTH_CHILDREN_ADMINISTERED",
+              "name": "DSS_HEALTH_CHILDREN_ADMINISTERED_3_59",
               "label": "DSS_HEALTH_CHILDREN_ADMINISTERED",
               "vizType": "stacked-collection",
               "noUnit": false,
