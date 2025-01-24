@@ -33033,7 +33033,7 @@
     "drillChart": "registrationSummaryByMunicipalityBurundi",
     "documentType": "_doc",
     "action": "",
-    "plotLabel": "District",
+    "plotLabel": "Health District",
     "excludedColumns": [
       "Households visited count",
       "Closed household count",
@@ -35485,7 +35485,7 @@
     "drillChart": "distributionSummaryByMunicipalityBurundi",
     "documentType": "_doc",
     "action": "",
-    "plotLabel": "District",
+    "plotLabel": "Health District",
     "excludedColumns": [
       "Households visited count",
       "Closed household count",
