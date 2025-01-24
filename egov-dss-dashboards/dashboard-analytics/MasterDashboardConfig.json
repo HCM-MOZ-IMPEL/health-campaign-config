@@ -9329,7 +9329,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "warehouseDistributionLatLongPoints",
+                  "id": "warehouseDistributionLatLongPointsSMC",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "points",
@@ -9337,7 +9337,31 @@
                   "headers": []
                 },
                 {
-                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilities",
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardSMC",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesSMC",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardSMC",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardSMC",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "table",
