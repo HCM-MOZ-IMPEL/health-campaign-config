@@ -7637,7 +7637,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "warehouseDistributionLatLongPoints",
+                  "id": "warehouseDistributionLatLongPointsSMC",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "points",
@@ -7645,7 +7645,7 @@
                   "headers": []
                 },
                 {
-                  "id": "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoard",
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardSMC",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "table",
@@ -7653,7 +7653,7 @@
                   "headers": []
                 },
                 {
-                  "id": "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoard",
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesSMC",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "table",
@@ -7661,7 +7661,7 @@
                   "headers": []
                 },
                 {
-                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilities",
+                  "id": "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardSMC",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "table",
@@ -7669,15 +7669,7 @@
                   "headers": []
                 },
                 {
-                  "id": "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoard",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoard",
+                  "id": "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardSMC",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
                   "chartType": "table",
