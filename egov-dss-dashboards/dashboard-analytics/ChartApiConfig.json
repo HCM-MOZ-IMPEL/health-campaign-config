@@ -36518,7 +36518,7 @@
         "actionName": "PercentageComputedField",
         "fields": [
           "Total_WMs_Synced_At_Least_Once_smc",
-          "Total_WMs"
+          "Total_WMs_Smc"
         ],
         "newField": "User_Sync_Rate",
         "_comments": ""
@@ -36535,7 +36535,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}}}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
@@ -36588,7 +36588,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
@@ -36711,7 +36711,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"StockReceived\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"StockReceived Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Received Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockIssued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.reason\"}}}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"StockIssued Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Issued Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockReturned\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"StockReturned Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Returned Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"In Hand Stock Count\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}"
       }
@@ -36743,7 +36743,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"StockReceived\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"StockReceived Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Received Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockIssued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.reason\"}}}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"StockIssued Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Issued Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockReturned\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"StockReturned Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Returned Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"In Hand Stock Count\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}"
       }
