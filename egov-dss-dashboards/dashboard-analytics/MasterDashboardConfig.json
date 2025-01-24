@@ -8235,6 +8235,32 @@
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
+              "id": 603,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "niassa-administration-summary",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
               "id": 601,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
@@ -8257,7 +8283,7 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
@@ -8274,32 +8300,6 @@
                   "code": "",
                   "moduleName": "irs",
                   "pageName": "niassa-stock-summary",
-                  "chartType": "kibanaComponent",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_CUSTOM_KPIS",
-          "vizArray": [
-            {
-              "id": 603,
-              "name": "DSS_HEALTH_KIBANA_SCREEN",
-              "label": "DSS_HEALTH_KIBANA_SCREEN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "checklistCompletionRateOfDistrictSupervisor",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-                  "code": "",
-                  "moduleName": "irs",
-                  "pageName": "niassa-administration-summary",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -9875,6 +9875,32 @@
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
+              "id": 603,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "niassa-administration-summary",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
               "id": 601,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
@@ -9897,7 +9923,7 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
@@ -9914,32 +9940,6 @@
                   "code": "",
                   "moduleName": "irs",
                   "pageName": "niassa-stock-summary",
-                  "chartType": "kibanaComponent",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_CUSTOM_KPIS",
-          "vizArray": [
-            {
-              "id": 603,
-              "name": "DSS_HEALTH_KIBANA_SCREEN",
-              "label": "DSS_HEALTH_KIBANA_SCREEN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "checklistCompletionRateOfDistrictSupervisor",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-                  "code": "",
-                  "moduleName": "irs",
-                  "pageName": "niassa-administration-summary",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
