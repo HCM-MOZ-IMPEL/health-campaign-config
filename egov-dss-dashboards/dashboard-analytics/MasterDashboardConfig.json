@@ -10046,15 +10046,15 @@
           "vizArray": [
             {
               "id": 202,
-              "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP",
-              "label": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP",
+              "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP_SMC",
+              "label": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP_SMC",
               "vizType": "heatmap",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
                   "id": "administrationCoverageHeatMapSMC",
-                  "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP",
+                  "name": "DSS_HEALTH_ADMINISTRATION_COVERAGE_HEATMAP_SMC",
                   "code": "",
                   "chartType": "heatmap",
                   "filter": "",

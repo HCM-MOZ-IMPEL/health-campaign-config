@@ -28399,9 +28399,9 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\"}",
-        "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Household Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}},{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}},\"aggs\":{\"Children Total\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Total Spaq Used\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -28427,14 +28427,13 @@
     "excludedColumns": [
       "Total Count Children Administered Cumulative",
       "Total Count Household Registered Cumulative",
-      "Total Count Children Administered Today",
       "Overall Population Target",
-      "Overall Household Target",
       "Overall Children Target",
       "Quantity",
       "Total Population Covered",
       "End Date",
-      "Start Date"
+      "Start Date",
+      "Total Spaq Used"
     ],
     "hideInsights": true,
     "hideHeaderDenomination": true,
@@ -28459,12 +28458,21 @@
       },
       {
         "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Spaq Used"
+        ],
+        "newField": "Total Spaq Used Cumulative",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "Total Children Administered Cumulative",
           "Overall Children Target"
         ],
-        "newField": "Administration Coverage",
+        "newField": "Children Administration Coverage",
         "_comments": ""
       },
       {
