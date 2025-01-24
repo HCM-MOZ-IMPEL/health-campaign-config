@@ -14283,7 +14283,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -14593,7 +14593,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -14897,7 +14897,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -15201,7 +15201,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -15505,7 +15505,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -15824,7 +15824,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -16158,7 +16158,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -16495,7 +16495,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"registered children under 5\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered children u5 count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}},\"registered pregnant women\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"registered pregnant women count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
@@ -27918,7 +27918,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"houses registered today\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
@@ -28952,7 +28952,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
@@ -28981,7 +28981,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
@@ -29010,7 +29010,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
@@ -29039,7 +29039,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
@@ -29067,7 +29067,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
@@ -29096,7 +29096,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
@@ -29125,7 +29125,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
@@ -29154,7 +29154,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
@@ -29182,7 +29182,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"SPAQ_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\": 1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
@@ -29211,7 +29211,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"SPAQ_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\": 1000},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
@@ -29240,17 +29240,17 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.householdMember.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "household-member-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district\"}},{\"term\":{\"Data.householdMember.isHeadOfHousehold\":{\"value\":false}}}],\"must_not\":[{\"term\":{\"Data.isIneligible\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}],\"must_not\":[{\"terms\":{\"Data.doseIndex\":[\"03\",\"02\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Children Visited\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.doseIndex\":[\"03\",\"02\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Children Visited\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}},\"Negative\":{\"bucket_script\":{\"buckets_path\":{\"children\":\"Unique Children Visited\"},\"script\":\"-1 * params.children\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -29291,17 +29291,17 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.householdMember.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "household-member-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince\"}},{\"term\":{\"Data.householdMember.isHeadOfHousehold\":{\"value\":false}}}],\"must_not\":[{\"term\":{\"Data.isIneligible\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}],\"must_not\":[{\"terms\":{\"Data.doseIndex\":[\"03\",\"02\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Children Visited\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.doseIndex\":[\"03\",\"02\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Children Visited\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}},\"Negative\":{\"bucket_script\":{\"buckets_path\":{\"children\":\"Unique Children Visited\"},\"script\":\"-1 * params.children\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -29342,17 +29342,17 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.householdMember.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "household-member-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality\"}},{\"term\":{\"Data.householdMember.isHeadOfHousehold\":{\"value\":false}}}],\"must_not\":[{\"term\":{\"Data.isIneligible\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}],\"must_not\":[{\"terms\":{\"Data.doseIndex\":[\"03\",\"02\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Unique Children Visited\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.doseIndex\":[\"03\",\"02\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Unique Children Visited\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}},\"Negative\":{\"bucket_script\":{\"buckets_path\":{\"children\":\"Unique Children Visited\"},\"script\":\"-1 * params.children\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -29393,17 +29393,17 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.householdMember.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "household-member-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village\"}},{\"term\":{\"Data.householdMember.isHeadOfHousehold\":{\"value\":false}}}],\"must_not\":[{\"term\":{\"Data.isIneligible\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"ADMINISTRATION_FAILED\",\"BENEFICIARY_REFUSED\",\"CLOSED_HOUSEHOLD\"]}}],\"must_not\":[{\"terms\":{\"Data.doseIndex\":[\"03\",\"02\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Unique Children Visited\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.doseIndex\":[\"03\",\"02\"]}}]}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Unique Children Visited\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}},\"Negative\":{\"bucket_script\":{\"buckets_path\":{\"children\":\"Unique Children Visited\"},\"script\":\"-1 * params.children\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -30140,7 +30140,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.householdMember.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "household-member-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district\"}},{\"term\":{\"Data.householdMember.isHeadOfHousehold\":{\"value\":false}}}]}},\"aggs\":{\"Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
@@ -30178,7 +30178,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.householdMember.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "household-member-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district\"}},{\"term\":{\"Data.householdMember.isHeadOfHousehold\":{\"value\":false}}}]}},\"aggs\":{\"Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
@@ -30216,7 +30216,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.householdMember.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "household-member-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district\"}},{\"term\":{\"Data.householdMember.isHeadOfHousehold\":{\"value\":false}}}]}},\"aggs\":{\"Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
@@ -30254,7 +30254,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.lastModifiedTime",
+        "dateRefField": "Data.householdMember.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "household-member-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district\"}},{\"term\":{\"Data.householdMember.isHeadOfHousehold\":{\"value\":false}}}]}},\"aggs\":{\"Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
