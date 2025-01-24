@@ -8057,8 +8057,8 @@
           "vizArray": [
             {
               "id": 2103,
-              "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
-              "label": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_SMC",
+              "label": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_SMC",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -8081,8 +8081,8 @@
           "vizArray": [
             {
               "id": 2105,
-              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
-              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_SMC",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLEDSMC",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -8099,8 +8099,8 @@
             },
             {
               "id": 2107,
-              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
-              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_SMC",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_SMC",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,

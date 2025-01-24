@@ -29632,7 +29632,7 @@
         "fields": [
           "Household with more than 20 members"
         ],
-        "newField": "Household with more than 20 members count",
+        "newField": "Household with more than 20 members count smc",
         "_comments": ""
       },
       {
@@ -29641,7 +29641,7 @@
         "fields": [
           "WM Stock Entries Count"
         ],
-        "newField": "WM Stock Entries",
+        "newField": "WM Stock Entries smc",
         "_comments": ""
       },
       {
@@ -36335,7 +36335,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Total_WMs_Synced_At_Least_Once",
+          "Total_WMs_Synced_At_Least_Once_smc",
           "Total_WMs"
         ],
         "newField": "User_Sync_Rate",
