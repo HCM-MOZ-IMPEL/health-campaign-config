@@ -32534,7 +32534,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "checklistCompletionRateBySupervisorsBoundarySummaryLocalitySMC",
+    "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "showFooter": true,
