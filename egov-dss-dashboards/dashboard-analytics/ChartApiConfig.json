@@ -33830,7 +33830,7 @@
     },
     "_comment": " "
   },
-  "distributionTargetDistrctSPAQ2SMC": {
+  "distributionTargetDistrictSPAQ2SMC": {
     "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_TARGET_PROVINCE",
     "queries": [
       {
