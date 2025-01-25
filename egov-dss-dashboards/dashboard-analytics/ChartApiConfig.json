@@ -35563,7 +35563,7 @@
         "fields": [
           "Households visited count"
         ],
-        "newField": "Households visited",
+        "newField": "Households visited smc",
         "_comments": ""
       },
       {
