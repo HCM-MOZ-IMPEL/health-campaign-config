@@ -8366,7 +8366,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationTargetedProvince311SMC",
+                  "id": "overviewPopulationTargetedDistrict311SMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_TARGETED",
                   "code": "",
                   "chartType": "metric",
@@ -8374,7 +8374,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationCoverageAchievedProvince311SMC",
+                  "id": "overviewPopulationCoverageAchievedDistrict311SMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_ADMINISTERED_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
@@ -8408,7 +8408,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationTargetedProvince1259SMC",
+                  "id": "overviewPopulationTargetedDistrict1259SMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_TARGETED",
                   "code": "",
                   "chartType": "metric",
@@ -8416,7 +8416,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationCoverageAchievedProvince1259SMC",
+                  "id": "overviewPopulationCoverageAchievedDistrict1259SMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_ADMINISTERED_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
@@ -8450,7 +8450,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationTargetedProvinceSMC",
+                  "id": "overviewPopulationTargetedDistrictSMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_TARGETED",
                   "code": "",
                   "chartType": "metric",
@@ -8458,7 +8458,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationCoverageAchievedProvinceSMC",
+                  "id": "overviewPopulationCoverageAchievedDistrictSMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_ADMINISTERED_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
