@@ -33464,6 +33464,71 @@
     },
     "_comment": " "
   },
+  "distributionTargetDistrictSMC": {
+    "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_TARGET_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Bednets Target\":{\"filters\":{\"filters\":{\"distributions\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Drug Target by Range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target\"},\"script\":\"(params.target) * 365\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "postAggregationTheory": "repsonseToDifferenceOfDates",
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Drug Target by Range"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "distributionCoverageDistrictSMC": {
+    "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"Drug Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Drug Distributions Coverage\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}},\"aggs\":{\"overallQuantity\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "isCappedTillToday": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Total Drug Distributions Coverage",
+      "Drug Distribution Target"
+    ],
+    "insight": {
+      "chartResponseMap": "distributionCoverageProvinceSMC",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
   "distributionsByRangeSPAQ1SMC": {
     "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTIONS_DATE_RANGE",
     "queries": [
@@ -33582,6 +33647,71 @@
     },
     "_comment": " "
   },
+  "distributionTargetDistrictSPAQ1SMC": {
+    "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_TARGET_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Bednets Target\":{\"filters\":{\"filters\":{\"distributions\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPAQ1\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Drug Target by Range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target\"},\"script\":\"(params.target) * 365\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "postAggregationTheory": "repsonseToDifferenceOfDates",
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Drug Target by Range"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "distributionCoverageDistrictSPAQ1SMC": {
+    "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"Drug Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPAQ1\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Drug Distributions Coverage\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.productName.keyword\":{\"value\":\"SPAQ 1 (3 a 11 meses)\"}}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}},\"aggs\":{\"overallQuantity\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "isCappedTillToday": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Total Drug Distributions Coverage",
+      "Drug Distribution Target"
+    ],
+    "insight": {
+      "chartResponseMap": "distributionCoverageProvinceSMC",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
   "distributionsByRangeSPAQ2SMC": {
     "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTIONS_DATE_RANGE",
     "queries": [
@@ -33670,6 +33800,71 @@
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"aggs\":{\"Drug Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPAQ2\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Drug Distributions Coverage\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.productName.keyword\":{\"value\":\"SPAQ 2 (12 a 59 meses)\"}}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}},\"aggs\":{\"overallQuantity\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "isCappedTillToday": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Total Drug Distributions Coverage",
+      "Drug Distribution Target"
+    ],
+    "insight": {
+      "chartResponseMap": "distributionCoverageProvinceSMC",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": " "
+  },
+  "distributionTargetDistrctSPAQ2SMC": {
+    "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_TARGET_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Bednets Target\":{\"filters\":{\"filters\":{\"distributions\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPAQ2\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Drug Target by Range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target\"},\"script\":\"(params.target) * 365\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "postAggregationTheory": "repsonseToDifferenceOfDates",
+    "isCappedByCampaignPeriod": [
+      "Overall Target"
+    ],
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Drug Target by Range"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "distributionCoverageDistrictSPAQ2SMC": {
+    "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"aggs\":{\"Drug Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPAQ2\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
       },
       {
         "module": "COMMON",

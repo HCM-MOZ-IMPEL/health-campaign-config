@@ -8498,7 +8498,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionTargetProvinceSPAQ1SMC",
+                  "id": "distributionTargetDistrictSPAQ1SMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_TARGET",
                   "code": "",
                   "chartType": "metric",
@@ -8506,7 +8506,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionCoverageProvinceSPAQ1SMC",
+                  "id": "distributionCoverageDistrictSPAQ1SMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_COVERAGE",
                   "code": "",
                   "chartType": "metric",
@@ -8540,7 +8540,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionTargetProvinceSPAQ2SMC",
+                  "id": "distributionTargetDistrictSPAQ2SMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_TARGET",
                   "code": "",
                   "chartType": "metric",
@@ -8548,7 +8548,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionCoverageProvinceSPAQ2SMC",
+                  "id": "distributionCoverageDistrictSPAQ2SMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_COVERAGE",
                   "code": "",
                   "chartType": "metric",
@@ -8582,7 +8582,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionTargetProvinceSMC",
+                  "id": "distributionTargetDistrictSMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_TARGET",
                   "code": "",
                   "chartType": "metric",
@@ -8590,7 +8590,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionCoverageProvinceSMC",
+                  "id": "distributionCoverageDistrictSMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_COVERAGE",
                   "code": "",
                   "chartType": "metric",
