@@ -3258,7 +3258,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "summaryByAdministrativeProvince",
+                  "id": "summaryByDistrictCopy",
                   "name": "DSS_HEALTH_SUMMARY_BY_ADMINISTRATIVE_PROVINCE",
                   "code": "",
                   "chartType": "table",
@@ -3267,7 +3267,7 @@
                   "tabName": "BOUNDARY"
                 },
                 {
-                  "id": "summaryByAdministrativeProvinceDay",
+                  "id": "summaryByDistrictDay",
                   "name": "DSS_HEALTH_SUMMARY_BY_ADMINISTRATIVE_PROVINCE",
                   "code": "",
                   "chartType": "table",
