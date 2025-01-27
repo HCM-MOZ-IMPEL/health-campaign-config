@@ -11176,6 +11176,254 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6027,
+              "name": "DSS_HEALTH_REGISTRATION_USER_SYNC",
+              "label": "DSS_HEALTH_REGISTRATION_USER_SYNC",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrarSyncSummaryProvinceCarboDelgado",
+                  "name": "DSS_HEALTH_REGISTRAR_SYNC_SUMMARY_PROVINCE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6028,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERED",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesVisitedBarChartDistrictPercentCarboDelgado",
+                  "name": "DSS_HEALTH_HOUSES_VISITED_DISTRICT_PERCENT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "housesVisitedBarChartDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_HOUSES_VISITED_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 6029,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoveredBarChartDistrictPercentCarboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_PERCENT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "populationCoveredBarChartDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6030,
+              "name": "DSS_HEALTH_NOT_REGISTERED_HOUSEHOLDS",
+              "label": "DSS_HEALTH_NOT_REGISTERED_HOUSEHOLDS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "notRegisteredHouseholdsDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_NOT_REGISTERED_HOUSEHOLD_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6031,
+              "name": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "label": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communitiesCoveredNotCoveredCarboDelgado",
+                  "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "communities-covered-and-not-covered",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6032,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageHeatMapProvinceCarboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "HOUSEHOLD"
+                },
+                {
+                  "id": "populationCoverageHeatMapProvinceCarboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "POPULATION"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6033,
+              "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
+              "label": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "actualVsPlannedHouseholdLineGraphProvinceCarboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_PROVINCE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Household",
+                  "headers": []
+                },
+                {
+                  "id": "actualVsPlannedPopulationLineGraphProvinceCarboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Population",
+                  "headers": []
+                },
+                {
+                  "id": "actualVsPlannedBednetsLineGraphProvinceCarboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_PROVINCE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Bednets",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6034,
+              "name": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "label": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationSummaryByDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_RESGISTRATION_SUMMARY_BY_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "registrationSummaryByDistrictDayCarboDelgado",
+                  "name": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -11480,6 +11728,254 @@
                   "chartType": "bar",
                   "filter": "",
                   "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6035,
+              "name": "DSS_HEALTH_REGISTRATION_USER_SYNC",
+              "label": "DSS_HEALTH_REGISTRATION_USER_SYNC",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrarSyncSummaryDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_REGISTRAR_SYNC_SUMMARY_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6036,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERED",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesVisitedBarChartLocalityPercentCarboDelgado",
+                  "name": "DSS_HEALTH_HOUSES_VISITED_LOCALITY_PERCENT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "housesVisitedBarChartLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_HOUSES_VISITED_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 6037,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoveredBarChartLocalityPercentCarboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_LOCALITY_PERCENT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "populationCoveredBarChartLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6038,
+              "name": "DSS_HEALTH_NOT_REGISTERED_HOUSEHOLDS",
+              "label": "DSS_HEALTH_NOT_REGISTERED_HOUSEHOLDS",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "notRegisteredHouseholdsLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_NOT_REGISTERED_HOUSEHOLD_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6039,
+              "name": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "label": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communitiesCoveredNotCoveredCarboDelgado",
+                  "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
+                  "code": "",
+                  "moduleName": "burundi-bednet",
+                  "pageName": "communities-covered-and-not-covered",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6040,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageHeatMapDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "HOUSEHOLD"
+                },
+                {
+                  "id": "populationCoverageHeatMapDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "POPULATION"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6041,
+              "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
+              "label": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "actualVsPlannedHouseholdLineGraphDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Household",
+                  "headers": []
+                },
+                {
+                  "id": "actualVsPlannedPopulationLineGraphDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Population",
+                  "headers": []
+                },
+                {
+                  "id": "actualVsPlannedBednetsLineGraphDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Bednets",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6042,
+              "name": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "label": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationSummaryByLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_RESGISTRATION_SUMMARY_BY_Locality_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "registrationSummaryByLocalityDayCarboDelgado",
+                  "name": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
                 }
               ]
             }
