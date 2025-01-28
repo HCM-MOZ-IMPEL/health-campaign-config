@@ -11304,7 +11304,7 @@
                   "id": "communitiesCoveredNotCoveredCarboDelgado",
                   "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
                   "code": "",
-                  "moduleName": "burundi-bednet",
+                  "moduleName": "carboDelgado-bednet",
                   "pageName": "communities-covered-and-not-covered",
                   "chartType": "kibanaComponent",
                   "filter": "",
@@ -11895,8 +11895,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "householdsCoverageBarchartByMunicipalityCarboDelgado",
-                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_Municipality_CARBO_DELGADO",
+                  "id": "householdsCoverageBarchartByLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_LOCALITY_CARBO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -12075,7 +12075,7 @@
                   "id": "communitiesCoveredNotCoveredCarboDelgado",
                   "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
                   "code": "",
-                  "moduleName": "burundi-bednet",
+                  "moduleName": "carboDelgado-bednet",
                   "pageName": "communities-covered-and-not-covered",
                   "chartType": "kibanaComponent",
                   "filter": "",
