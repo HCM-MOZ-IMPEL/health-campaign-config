@@ -38362,5 +38362,203 @@
     ],
     "insight": {},
     "_comment": " "
+  },
+  "complaintsByStatusBreakdownProvincePercentBurundi": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_PERCENT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"selectedStack\": \"Data.service.applicationStatus.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by HealthDistricts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"PENDING_ASSIGNMENT\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by HealthDistricts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"RESOLVED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by HealthDistricts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"REJECTED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "plotLabel": "Complaints by Status",
+    "aggregationPaths": [
+      "PENDING_ASSIGNMENT",
+      "RESOLVED",
+      "REJECTED",
+      "Total Complaints"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "PENDING_ASSIGNMENT",
+          "Total Complaints"
+        ],
+        "newField": "PENDING_ASSIGNMENT"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "RESOLVED",
+          "Total Complaints"
+        ],
+        "newField": "RESOLVED"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "REJECTED",
+          "Total Complaints"
+        ],
+        "newField": "REJECTED"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
+  },
+  "complaintsByTypeBreakdownProvincialPercentBurundi": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_PERCENT_BURUNDI",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"selectedStack\": \"Data.service.serviceCode.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Other\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"Other\"}}]}},\"aggs\":{\"Other Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"PerformanceIssue\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"PerformanceIssue\"}}]}},\"aggs\":{\"PerformanceIssue Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SecurityIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SecurityIssues\"}}]}},\"aggs\":{\"SecurityIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"DataIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"DataIssues\"}}]}},\"aggs\":{\"DataIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"TechnicalIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"TechnicalIssues\"}}]}},\"aggs\":{\"TechnicalIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"UserAccountIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"UserAccountIssues\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SyncNotWorking\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SyncNotWorking\"}}]}},\"aggs\":{\"SyncNotWorking Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"NotEnoughStock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"NotEnoughStock\"}}]}},\"aggs\":{\"NotEnoughStock Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"LackOfInternet\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"LackOfInternet\"}}]}},\"aggs\":{\"LackOfInternet Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"healthDistrict\": \"Data.boundaryHierarchy.healthDistrict.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthDistrict.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "filterKeys": [
+      {
+        "key": "healthDistrict"
+      }
+    ],
+    "plotLabel": "Complaints By Type and Boundary",
+    "aggregationPaths": [
+      "Other",
+      "PerformanceIssue",
+      "SecurityIssues",
+      "DataIssues",
+      "TechnicalIssues",
+      "UserAccountIssues",
+      "NotEnoughStock",
+      "SyncNotWorking",
+      "LackOfInternet",
+      "Total Complaints"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Other",
+          "Total Complaints"
+        ],
+        "newField": "Other"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "PerformanceIssue",
+          "Total Complaints"
+        ],
+        "newField": "PerformanceIssue"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "SecurityIssues",
+          "Total Complaints"
+        ],
+        "newField": "SecurityIssues"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "DataIssues",
+          "Total Complaints"
+        ],
+        "newField": "DataIssues"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "TechnicalIssues",
+          "Total Complaints"
+        ],
+        "newField": "TechnicalIssues"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "UserAccountIssues",
+          "Total Complaints"
+        ],
+        "newField": "UserAccountIssues"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "NotEnoughStock",
+          "Total Complaints"
+        ],
+        "newField": "NotEnoughStock"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "SyncNotWorking",
+          "Total Complaints"
+        ],
+        "newField": "SyncNotWorking"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "LackOfInternet",
+          "Total Complaints"
+        ],
+        "newField": "LackOfInternet"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "insight": {},
+    "_comment": " "
   }
 }
