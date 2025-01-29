@@ -38386,13 +38386,14 @@
     "valueType": "percentage",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "percentage",
+    "action": "",
+    "computeMultiPaths": true,
     "filterKeys": [
       {
         "key": "healthDistrict"
       }
     ],
-    "plotLabel": "Complaints by Status",
+    "plotLabel": "none",
     "aggregationPaths": [
       "PENDING_ASSIGNMENT",
       "RESOLVED",
@@ -38455,13 +38456,14 @@
     "valueType": "percentage",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "percentage",
+    "action": "",
+    "computeMultiPaths": true,
     "filterKeys": [
       {
         "key": "healthDistrict"
       }
     ],
-    "plotLabel": "Complaints By Type and Boundary",
+    "plotLabel": "none",
     "aggregationPaths": [
       "Other",
       "PerformanceIssue",
