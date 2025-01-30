@@ -12198,6 +12198,100 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6100,
+              "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageBednetsDistributedDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6101,
+              "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART",
+              "label": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationAndDistributionBarChartDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6102,
+              "name": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationTeamPerformanceSummaryTableDistrictCarboDelgado",
+                  "name": "DASHBOARD_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+                  "code": "",
+                  "moduleName": "carboDelgado-bednet",
+                  "pageName": "registration-team-performance-district",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6103,
+              "name": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionTeamPerformanceSummaryTableDistrictCarboDelgado",
+                  "name": "DASHBOARD_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
+                  "code": "",
+                  "moduleName": "carboDelgado-bednet",
+                  "pageName": "distribution-team-performance-district",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -13475,6 +13569,100 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6104,
+              "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageBednetsDistributedLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6105,
+              "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART",
+              "label": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationAndDistributionBarChartLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION_BAR_CHART_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6106,
+              "name": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationTeamPerformanceSummaryTableLocalityCarboDelgado",
+                  "name": "DASHBOARD_REGISTRATION_TEAM_PERFORMANCE_SUMMARY_TABLE_LOCALITY",
+                  "code": "",
+                  "moduleName": "carboDelgado-bednet",
+                  "pageName": "registration-team-performance-locality",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6107,
+              "name": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_LOCALITY",
+              "label": "DSS_HEALTH_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_LOCALITY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionTeamPerformanceSummaryTableLocalityCarboDelgado",
+                  "name": "DASHBOARD_DISTRIBUTION_TEAM_PERFORMANCE_SUMMARY_TABLE_LOCALITY",
+                  "code": "",
+                  "moduleName": "carboDelgado-bednet",
+                  "pageName": "distribution-team-performance-locality",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
