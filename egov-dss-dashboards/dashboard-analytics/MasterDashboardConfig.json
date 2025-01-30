@@ -7881,6 +7881,15 @@
               "isCollapsible": false,
               "charts": [
                 {
+                  "id": "complaintsByStatusBreakdownProvincePercentBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
                   "id": "complaintsByStatusBreakdownProvinceBurundi",
                   "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_BURUNDI",
                   "code": "",
@@ -7898,6 +7907,15 @@
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
+                {
+                  "id": "complaintsByTypeBreakdownProvincialPercentBurundi",
+                  "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_PERCENT_BURUNDI",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
                 {
                   "id": "complaintsByTypeBreakdownProvincialBurundi",
                   "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_BURUNDI",
