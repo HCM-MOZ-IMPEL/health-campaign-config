@@ -11861,6 +11861,201 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6073,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseManagerUserSyncCarboDelgado",
+                  "name": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6074,
+              "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "daysInventoryStockLastsProvinceCarboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6075,
+              "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryStockInHandProvinceCarboDelgado",
+                  "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6076,
+              "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryTheoreticalVsManualStockDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6077,
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "stockTransactionsBreakdownProvincialCarboDelgado",
+                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6078,
+              "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+              "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+              "vizType": "latlong",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseDistributionLatLongPointsCarboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "points",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardCarboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardCarboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesCarboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardCarboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardCarboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6079,
+              "name": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "label": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "InventorySummaryByDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -12828,6 +13023,170 @@
                 {
                   "id": "openComplaintsSummaryByDistrictCarboDelgado",
                   "name": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6080,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseManagerUserSyncCarboDelgado",
+                  "name": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6081,
+              "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "daysInventoryStockLastsDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6082,
+              "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryStockInHandDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6083,
+              "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryTheoreticalVsManualStockLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6084,
+              "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "stockTransactionsBreakdownDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6085,
+              "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+              "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+              "vizType": "latlong",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseDistributionLatLongPointsDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "points",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6086,
+              "name": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "label": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "InventorySummaryByLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY_CARBO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
