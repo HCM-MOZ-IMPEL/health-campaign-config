@@ -12292,6 +12292,172 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6108,
+              "name": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "label": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesWithMoreThanTwentyMembersByDistrictCarboDelgado",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6109,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "locationNotEnabledByDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6110,
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "entriesDoneByWMsDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6111,
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "incompleteRecordsByDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6112,
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "suspectedFraudsByDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6113,
+              "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW",
+              "label": "DSS_HEALTH_ATTENDENCE_OVERVIEW",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "attendenceOverviewPercentCarboDelgado",
+                  "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW_PERCENT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "attendenceOverviewCarboDelgado",
+                  "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6114,
+              "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "label": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dataQualitySummaryDistrictCarboDelgado",
+                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -13661,6 +13827,172 @@
                   "moduleName": "carboDelgado-bednet",
                   "pageName": "distribution-team-performance-locality",
                   "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6115,
+              "name": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "label": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesWithMoreThanTwentyMembersByLocalityCarboDelgado",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6116,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "locationNotEnabledByLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6117,
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "entriesDoneByWMsLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_LOCALITY",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6118,
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "incompleteRecordsByLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6119,
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "suspectedFraudsByLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6120,
+              "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW",
+              "label": "DSS_HEALTH_ATTENDENCE_OVERVIEW",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "attendenceOverviewPercentCarboDelgado",
+                  "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW_PERCENT_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "attendenceOverviewCarboDelgado",
+                  "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6121,
+              "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "label": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dataQualitySummaryLocalityCarboDelgado",
+                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY_CARBO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
                   "filter": "",
                   "headers": []
                 }
