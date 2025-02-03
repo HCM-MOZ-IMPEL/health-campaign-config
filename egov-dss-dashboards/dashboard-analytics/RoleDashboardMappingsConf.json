@@ -121,6 +121,18 @@
         {
           "name": "District Health Dashboard",
           "id": "district-health-dashboard-burundi"
+        },
+        {
+          "name": "National Health Dashboard",
+          "id": "national-health-dashboard-carbo-delgado"
+        },
+        {
+          "name": "Provincial Health Dashboard",
+          "id": "provincial-health-dashboard-carbo-delgado"
+        },
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-carbo-delgado"
         }
       ]
     },
@@ -138,6 +150,14 @@
         {
           "name": "District Health Dashboard",
           "id": "district-health-dashboard-burundi"
+        },
+        {
+          "name": "Provincial Health Dashboard",
+          "id": "provincial-health-dashboard-carbo-delgado"
+        },
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-carbo-delgado"
         }
       ]
     },
@@ -151,6 +171,10 @@
         {
           "name": "District Health Dashboard",
           "id": "district-health-dashboard-burundi"
+        },
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-carbo-delgado"
         }
       ]
     },
