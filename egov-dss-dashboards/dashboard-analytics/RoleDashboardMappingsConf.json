@@ -204,6 +204,57 @@
           "id": "district-health-dashboard-dbd45c31-de9e-4e62-a9b6-abb818928fd2"
         }
       ]
+    },
+    {
+      "_comment": "This role is for national level supervisor who can access National health dashboards",
+      "roleId": 20,
+      "roleName": "NationalSupervisor",
+      "isSuper": "",
+      "orgId": "",
+      "dashboards": [
+        {
+          "name": "National Health Dashboard",
+          "id": "national-health-dashboard-carbo-delgado"
+        },
+        {
+          "name": "Provincial Health Dashboard",
+          "id": "provincial-health-dashboard-carbo-delgado"
+        },
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-carbo-delgado"
+        }
+      ]
+    },
+    {
+      "_comment": "This role is for provincial level supervisor who can access Provincial health dashboards",
+      "roleId": 21,
+      "roleName": "ProvincialSupervisor",
+      "isSuper": "",
+      "orgId": "",
+      "dashboards": [
+        {
+          "name": "Provincial Health Dashboard",
+          "id": "provincial-health-dashboard-carbo-delgado"
+        },
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-carbo-delgado"
+        }
+      ]
+    },
+    {
+      "_comment": "This role is for district level supervisor who can access District health dashboards",
+      "roleId": 22,
+      "roleName": "DistrictSupervisor",
+      "isSuper": "",
+      "orgId": "",
+      "dashboards": [
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-carbo-delgado"
+        }
+      ]
     }
   ]
 }
