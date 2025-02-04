@@ -24248,7 +24248,8 @@
       "Outgoing",
       "Returned",
       "Total Stock",
-      "Days To Last"
+      "Days To Last",
+      "Returned Stock"
     ],
     "computedFields": [
       {
@@ -24264,7 +24265,8 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Incoming"
+          "Incoming",
+          "Returned"
         ],
         "newField": "Incoming Stock",
         "_comments": ""
@@ -24385,7 +24387,8 @@
       "Outgoing",
       "Returned",
       "Total Stock",
-      "Days To Last"
+      "Days To Last",
+      "Returned Stock"
     ],
     "computedFields": [
       {
@@ -24401,7 +24404,8 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Incoming"
+          "Incoming",
+          "Returned"
         ],
         "newField": "Incoming Stock",
         "_comments": ""
