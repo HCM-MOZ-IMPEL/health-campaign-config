@@ -14330,7 +14330,8 @@
       "Households non delivery funeral",
       "Households non delivery sick",
       "Households non delivery other reason",
-      "Houses visited coverage"
+      "Houses visited coverage",
+      "Household required secondary spraying"
     ],
     "computedFields": [
       {
@@ -15867,7 +15868,8 @@
       "Total Population covered",
       "Overall Population target",
       "Houses visited coverage",
-      "Households not sprayed"
+      "Households not sprayed",
+      "Household required secondary spraying"
     ],
     "computedFields": [
       {
@@ -16204,7 +16206,8 @@
       "Cumulative Total Population covered",
       "Overall Population target",
       "Houses visited coverage",
-      "Households not sprayed"
+      "Households not sprayed",
+      "Household required secondary spraying"
     ],
     "computedFields": [
       {
