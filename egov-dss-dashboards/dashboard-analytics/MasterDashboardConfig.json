@@ -3536,7 +3536,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "warehouseManagerUserSync",
+                  "id": "warehouseManagerUserSyncIRS",
                   "name": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE",
                   "code": "",
                   "chartType": "table",
