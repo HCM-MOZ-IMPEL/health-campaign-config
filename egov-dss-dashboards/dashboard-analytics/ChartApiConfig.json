@@ -38563,15 +38563,15 @@
     "insight": {},
     "_comment": " "
   },
-  "todaysVistsCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_CARBO_DELGADO",
+"todaysVistsCaboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"houses visited today\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Todays visits\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -38581,10 +38581,10 @@
     "filterForCurrentDay": true,
     "action": "",
     "aggregationPaths": [
-      "houses visited today"
+      "Todays visits"
     ],
     "insight": {
-      "chartResponseMap": "todaysVistsCarboDelgado",
+      "chartResponseMap": "todaysVistsCaboDelgado",
       "action": "differenceOfNumbers",
       "upwardIndicator": "positive",
       "downwardIndicator": "negative",
@@ -38594,15 +38594,15 @@
     },
     "_comment": " "
   },
-  "totalVisitedCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED_CARBO_DELGADO",
+  "totalVisitedCaboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"total houses visited\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}, \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total visits\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -38611,20 +38611,20 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "total houses visited"
+      "Total visits"
     ],
     "insight": {},
     "_comment": " "
   },
-  "populationCoveredTodayCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY_CARBO_DELGADO",
+  "populationCoveredTodayCaboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population Covered Today\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Household\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}}}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Population Covered Today\":{\"bucket_script\":{\"buckets_path\":{\"sum\":\"SUM\"},\"script\":\"(params.sum)*1.8\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -38637,7 +38637,7 @@
       "Population Covered Today"
     ],
     "insight": {
-      "chartResponseMap": "populationCoveredTodayCarboDelgado",
+      "chartResponseMap": "populationCoveredTodayCaboDelgado",
       "action": "differenceOfNumbers",
       "upwardIndicator": "positive",
       "downwardIndicator": "negative",
@@ -38647,15 +38647,15 @@
     },
     "_comment": " "
   },
-  "totalPopulationCoveredCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED_CARBO_DELGADO",
+  "totalPopulationCoveredCaboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population Covered\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}"
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Household\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}}}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Total Population Covered\":{\"bucket_script\":{\"buckets_path\":{\"sum\":\"SUM\"},\"script\":\"(params.sum)*1.8\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -38669,8 +38669,8 @@
     "insight": {},
     "_comment": " "
   },
-  "todayDistributionsCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY_CARBO_DELGADO",
+  "todayDistributionsCaboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -38690,7 +38690,7 @@
       "Today Distributions"
     ],
     "insight": {
-      "chartResponseMap": "todayDistributionsCarboDelgado",
+      "chartResponseMap": "todayDistributionsCaboDelgado",
       "action": "differenceOfNumbers",
       "upwardIndicator": "positive",
       "downwardIndicator": "negative",
@@ -38700,8 +38700,8 @@
     },
     "_comment": " "
   },
-  "totalDistributionsCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY_CARBO_DELGADO",
+  "totalDistributionsCaboDelgado": {
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -38722,116 +38722,8 @@
     "insight": {},
     "_comment": " "
   },
-  "totalVouchersDistributedCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_CARBO_DELGADO",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"total vouchers distributed\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
-      }
-    ],
-    "chartType": "metric",
-    "valueType": "number",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "isCappedTillToday" : true,
-    "action": "",
-    "aggregationPaths": [
-      "total vouchers distributed"
-    ],
-    "insight": {
-      "chartResponseMap": "totalVouchersDistributedCarboDelgado",
-      "action": "differenceOfNumbers",
-      "upwardIndicator": "positive",
-      "downwardIndicator": "negative",
-      "textMessage": "$indicator$value% than last $insightInterval",
-      "colorCode": "#228B22",
-      "insightInterval": "dateRange"
-    },
-    "_comment": " "
-  },
-  "vouchersDistributedTodayCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_VOUCHERS_DISTRIBUTED_TODAY_CARBO_DELGADO",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"vouchers distributed today\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
-      }
-    ],
-    "chartType": "metric",
-    "valueType": "number",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "filterForCurrentDay": true,
-    "action": "",
-    "aggregationPaths": [
-      "vouchers distributed today"
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "vouchersRedeemedTodayCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_VOUCHERS_REDEEMED_TODAY_CARBO_DELGADO",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vouchers redeemed today\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
-      }
-    ],
-    "chartType": "metric",
-    "valueType": "number",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "filterForCurrentDay": true,
-    "action": "",
-    "aggregationPaths": [
-      "Vouchers redeemed today"
-    ],
-    "insight": {},
-    "_comment": " "
-  },
-  "totalVouchersRedeemedCarboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_REDEEMED_CARBO_DELGADO",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total vouchers redeemed\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"count\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
-      }
-    ],
-    "chartType": "metric",
-    "valueType": "number",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "isCappedTillToday" : true,
-    "action": "",
-    "aggregationPaths": [
-      "Total vouchers redeemed"
-    ],
-    "insight": {
-      "chartResponseMap": "totalVouchersRedeemedCarboDelgado",
-      "action": "differenceOfNumbers",
-      "upwardIndicator": "positive",
-      "downwardIndicator": "negative",
-      "textMessage": "$indicator$value% than last $insightInterval",
-      "colorCode": "#228B22",
-      "insightInterval": "dateRange"
-    },
-    "_comment": " "
-  },
-  "householdsCoverageHeatMapCarboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_CARBO_DELGADO",
+  "householdsCoverageHeatMapCaboDelgado": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -38843,15 +38735,15 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Households visited\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.province.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"total_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.province.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"total_count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "householdsCoverageHeatMapNationalProvinceCarboDelgado",
+    "drillChart": "householdsCoverageHeatMapNationalProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Province",
@@ -38876,22 +38768,22 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "householdsCoverageHeatMapNationalProvinceCarboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE_CARBO_DELGADO",
+  "householdsCoverageHeatMapNationalProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Household Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Households visited\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"total_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"total_count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -38922,28 +38814,28 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "populationCoverageHeatMapCarboDelgado": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_CARBO_DELGADO",
+  "populationCoverageHeatMapCaboDelgado": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"total_count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Quantity\":{\"sum\":{\"field\":\"Data.quantity\"}},\"total_count\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Quantity\"},\"script\":\"params.target*1.8\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "populationCoverageHeatMapNationalProvinceCarboDelgado",
+    "drillChart": "populationCoverageHeatMapNationalProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Province",
@@ -38968,22 +38860,22 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "populationCoverageHeatMapNationalProvinceCarboDelgado": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_CARBO_DELGADO",
+  "populationCoverageHeatMapNationalProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"total_count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Total Population covered\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Quantity\":{\"sum\":{\"field\":\"Data.quantity\"}},\"total_count\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Quantity\"},\"script\":\"params.target*1.8\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -39014,15 +38906,29 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "coverageByProvinceCarboDelgado" : {
-    "chartName": "DSS_COVERAGE_BY_PROVINCE_CARBO_DELGADO",
-    "queries" : [
+  "coverageByProvinceCaboDelgado": {
+    "chartName": "DSS_COVERAGE_BY_PROVINCE_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"aggs\":{\"TodaysTotalvisits\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Household Total Today\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"min_doc_count\":0},\"aggs\":{\"Total Count Households Visited Today\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total household visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":1000},\"aggs\":{\"Total household visited count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}},\"Total population covered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":1000},\"aggs\":{\"Total population covered count\":{\"sum\":{\"field\":\"Data.household.memberCount\"}}}}}}"
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Total Count Households Visited Cumulative\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Population Total\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Quantity\":{\"sum\":{\"field\":\"Data.quantity\"}},\"Total Population Covered\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Quantity\"},\"script\":\"params.target*1.8\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -39036,14 +38942,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery" : "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Project Start and End Dates\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Start Date\":{\"min\":{\"field\":\"Data.startDate\"}},\"End Date\":{\"max\":{\"field\":\"Data.endDate\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Project Start and End Dates\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Start Date\":{\"min\":{\"field\":\"Data.startDate\"}},\"End Date\":{\"max\":{\"field\":\"Data.endDate\"}}}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -39053,12 +38959,14 @@
     "action": "",
     "plotLabel": "Provinces",
     "excludedColumns": [
-      "Total household visited count",
-      "Total population covered count",
-      "End Date",
-      "Start Date",
+      "Total Count Households Visited Cumulative",
+      "Total Count Households Visited Today",
       "Overall Population Target",
-      "Overall Household Target"
+      "Overall Household Target",
+      "Quantity",
+      "Total Population Covered",
+      "End Date",
+      "Start Date"
     ],
     "hideInsights": true,
     "hideHeaderDenomination": true,
@@ -39067,16 +38975,25 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Total household visited count"
+          "Total Count Households Visited Today"
         ],
-        "newField": "Total households visited",
+        "newField": "Total Households Visited Today",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Count Households Visited Cumulative"
+        ],
+        "newField": "Total Households Visited Cumulative",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Total household visited count",
+          "Total Households Visited Cumulative",
           "Overall Household Target"
         ],
         "newField": "Household Coverage",
@@ -39086,7 +39003,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Total population covered count",
+          "Total Population Covered",
           "Overall Population Target"
         ],
         "newField": "Population Coverage",
