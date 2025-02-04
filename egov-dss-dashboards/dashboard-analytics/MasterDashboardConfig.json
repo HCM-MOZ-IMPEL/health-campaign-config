@@ -2822,24 +2822,6 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 2008,
-              "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
-              "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "daysInventoryStockLastsProvince",
-                  "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
               "id": 2009,
               "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
@@ -3569,24 +3551,6 @@
           "row": 2,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
-            {
-              "id": 2401,
-              "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
-              "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "daysInventoryStockLastsProvince",
-                  "name": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
             {
               "id": 2402,
               "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
