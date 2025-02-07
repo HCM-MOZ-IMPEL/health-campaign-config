@@ -3240,7 +3240,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "summaryByDistrictCopy",
+                  "id": "summaryByDistrict",
                   "name": "DSS_HEALTH_SUMMARY_BY_ADMINISTRATIVE_PROVINCE",
                   "code": "",
                   "chartType": "table",
