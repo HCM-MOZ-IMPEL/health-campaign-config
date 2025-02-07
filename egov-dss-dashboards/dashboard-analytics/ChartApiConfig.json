@@ -13507,14 +13507,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Households Visited\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Households Visited\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for(shardList in states) {if(shardList != null) { for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;uniqueValueMap.put(key, key);}}}}return count;\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Sprayed\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Households Sprayed\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) { for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -13528,14 +13528,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS2\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Negative Household that had secondary spray\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\": { \"params\": { \"fieldName\": \"Data.householdId.keyword\", \"statusField\": \"Data.administrationStatus.keyword\" }, \"init_script\": \"state.successList = [];state.notSuccessList = [];\" , \"map_script\": \"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\", \"combine_script\": \"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\", \"reduce_script\": \"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); return successSet.size() * -1;\" }}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"Total number of Houses Required Secondary Spraying\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); int intersectionSize = successSet.size(); int notSuccessSetSize = notSuccessSet.size(); return notSuccessSetSize - intersectionSize;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"Total no. of Houses Required Secondary Spraying\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); int intersectionSize = successSet.size(); int notSuccessSetSize = notSuccessSet.size(); return notSuccessSetSize - intersectionSize;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13548,20 +13541,8 @@
     "aggregationPaths": [
       "Households Visited",
       "Households Sprayed",
-      "Total number of Houses Required Secondary Spraying",
+      "Total no. of Houses Required Secondary Spraying",
       "Household that had secondary spray"
-    ],
-    "computeMultiPaths": true,
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Total number of Houses Required Secondary Spraying"
-        ],
-        "newField": "Total no. of Houses Required Secondary Spraying",
-        "_comments": ""
-      }
     ],
     "insight": {},
     "_comment": " "
@@ -13574,14 +13555,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Households Visited\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Households Visited\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0; for(shardList in states) {if(shardList != null) { for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;uniqueValueMap.put(key, key); }}}} return count;\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.deliveredTo.keyword\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Households Sprayed\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Households Sprayed\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -13595,14 +13576,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS2\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Negative Household that had secondary spray\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"scripted_metric\": { \"params\": { \"fieldName\": \"Data.householdId.keyword\", \"statusField\": \"Data.administrationStatus.keyword\" }, \"init_script\": \"state.successList = [];state.notSuccessList = [];\" , \"map_script\": \"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\", \"combine_script\": \"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\", \"reduce_script\": \"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); return successSet.size() * -1;\" }}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"Total number of Houses Required Secondary Spraying\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); int intersectionSize = successSet.size(); int notSuccessSetSize = notSuccessSet.size(); return notSuccessSetSize - intersectionSize;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"Total no. of Houses Required Secondary Spraying\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); int intersectionSize = successSet.size(); int notSuccessSetSize = notSuccessSet.size(); return notSuccessSetSize - intersectionSize;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13615,20 +13589,8 @@
     "aggregationPaths": [
       "Households Visited",
       "Households Sprayed",
-      "Total number of Houses Required Secondary Spraying",
+      "Total no. of Houses Required Secondary Spraying",
       "Household that had secondary spray"
-    ],
-    "computeMultiPaths": true,
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "SumComputedField",
-        "fields": [
-          "Total number of Houses Required Secondary Spraying"
-        ],
-        "newField": "Total no. of Houses Required Secondary Spraying",
-        "_comments": ""
-      }
     ],
     "insight": {},
     "_comment": " "
@@ -15474,7 +15436,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"exists\": {\n                \"field\": \"Data.householdId.keyword\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"Data.additionalDetails.reasonOfRefusal.keyword\": {\n                  \"value\": \"INCOMPATIBLE\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Household Total\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Households visited count\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.householdId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.householdId.keyword\"}}],\"must_not\":[{\"term\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":{\"value\":\"INCOMPATIBLE\"}}}]}},\"aggs\":{\"Household Total\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households visited count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) { for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -15503,6 +15465,13 @@
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Unique Household required secondary spraying count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); int intersectionSize = successSet.size(); int notSuccessSetSize = notSuccessSet.size(); return notSuccessSetSize - intersectionSize;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households that had secondary spray\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); return successSet.size();\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -15555,9 +15524,19 @@
       "Households non delivery sick",
       "Households non delivery other reason",
       "Houses visited coverage",
-      "Households not sprayed"
+      "Households not sprayed",
+      "Households that had secondary spray"
     ],
     "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Household target"
+        ],
+        "newField": "Household Target IRS",
+        "_comments": ""
+      },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
@@ -15604,6 +15583,24 @@
           "negative houses sprayed count"
         ],
         "newField": "Households not sprayed",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Households that had secondary spray"
+        ],
+        "newField": "Households that had secondary spray success",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Unique Household required secondary spraying count"
+        ],
+        "newField": "Household required secondary spraying",
         "_comments": ""
       },
       {
@@ -15658,15 +15655,6 @@
           "Household other reason non delivery count"
         ],
         "newField": "Households non delivery other reason",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Unique Household required secondary spraying count"
-        ],
-        "newField": "Household required secondary spraying",
         "_comments": ""
       },
       {
@@ -15825,6 +15813,13 @@
       },
       {
         "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households that had secondary spray\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); return successSet.size();\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
@@ -15869,9 +15864,18 @@
       "Overall Population target",
       "Houses visited coverage",
       "Households not sprayed",
-      "Household required secondary spraying"
+      "Households that had secondary spray"
     ],
     "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Household target"
+        ],
+        "newField": "Household Target IRS",
+        "_comments": ""
+      },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
@@ -15918,6 +15922,24 @@
           "negative houses sprayed count"
         ],
         "newField": "Households not sprayed",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Households that had secondary spray"
+        ],
+        "newField": "Households that had secondary spray success",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Unique Household required secondary spraying count"
+        ],
+        "newField": "Household required secondary spraying",
         "_comments": ""
       },
       {
@@ -15972,15 +15994,6 @@
           "Household other reason non delivery count"
         ],
         "newField": "Households non delivery other reason",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Unique Household required secondary spraying count"
-        ],
-        "newField": "Household required secondary spraying",
         "_comments": ""
       },
       {
@@ -16160,6 +16173,13 @@
       },
       {
         "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households that had secondary spray\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); return successSet.size();\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
@@ -16207,9 +16227,18 @@
       "Overall Population target",
       "Houses visited coverage",
       "Households not sprayed",
-      "Household required secondary spraying"
+      "Households that had secondary spray"
     ],
     "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Household target"
+        ],
+        "newField": "Household Target IRS",
+        "_comments": ""
+      },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
@@ -16256,6 +16285,24 @@
           "negative houses sprayed count"
         ],
         "newField": "Households not sprayed",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Households that had secondary spray"
+        ],
+        "newField": "Households that had secondary spray success",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Unique Household required secondary spraying count"
+        ],
+        "newField": "Household required secondary spraying",
         "_comments": ""
       },
       {
@@ -16310,15 +16357,6 @@
           "Household other reason non delivery count"
         ],
         "newField": "Households non delivery other reason",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Unique Household required secondary spraying count"
-        ],
-        "newField": "Household required secondary spraying",
         "_comments": ""
       },
       {
@@ -16498,6 +16536,13 @@
       },
       {
         "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household required secondary spraying\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.additionalDetails.reasonOfRefusal.keyword\":[\"INCOMPATIBLE\"]}}]}},\"aggs\":{\"household count\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.village.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Households that had secondary spray\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\",\"statusField\":\"Data.administrationStatus.keyword\"},\"init_script\":\"state.successList = [];state.notSuccessList = [];\",\"map_script\":\"if (doc[params.fieldName].size() > 0) {def householdId = doc[params.fieldName].value;if (doc[params.statusField].size() > 0 && doc[params.statusField].value == 'ADMINISTRATION_SUCCESS') {state.successList.add(householdId);} else {state.notSuccessList.add(householdId);}}\",\"combine_script\":\"Map combinedState = new HashMap(); combinedState.successList = state.successList; combinedState.notSuccessList = state.notSuccessList; return combinedState;\",\"reduce_script\":\"Set successSet = new HashSet(); Set notSuccessSet = new HashSet(); for (state in states) { if (state.successList != null) { successSet.addAll(state.successList); } if (state.notSuccessList != null) { notSuccessSet.addAll(state.notSuccessList); } } successSet.retainAll(notSuccessSet); return successSet.size();\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
@@ -16538,9 +16583,19 @@
       "Cumulative Total Population covered",
       "Overall Population target",
       "Houses visited coverage",
-      "Households not sprayed"
+      "Households not sprayed",
+      "Households that had secondary spray"
     ],
     "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Overall Household target"
+        ],
+        "newField": "Household Target IRS",
+        "_comments": ""
+      },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
@@ -16587,6 +16642,24 @@
           "negative houses sprayed count"
         ],
         "newField": "Households not sprayed",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Households that had secondary spray"
+        ],
+        "newField": "Households that had secondary spray success",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Unique Household required secondary spraying count"
+        ],
+        "newField": "Household required secondary spraying",
         "_comments": ""
       },
       {
@@ -16641,15 +16714,6 @@
           "Household other reason non delivery count"
         ],
         "newField": "Households non delivery other reason",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Unique Household required secondary spraying count"
-        ],
-        "newField": "Household required secondary spraying",
         "_comments": ""
       },
       {
