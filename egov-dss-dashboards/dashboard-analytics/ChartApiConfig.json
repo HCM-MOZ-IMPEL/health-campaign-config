@@ -24330,8 +24330,7 @@
       "Outgoing",
       "Returned",
       "Total Stock",
-      "Days To Last",
-      "Returned Stock IRS"
+      "Days To Last"
     ],
     "computedFields": [
       {
@@ -24469,8 +24468,7 @@
       "Outgoing",
       "Returned",
       "Total Stock",
-      "Days To Last",
-      "Returned Stock"
+      "Days To Last"
     ],
     "computedFields": [
       {
@@ -24489,7 +24487,7 @@
           "Incoming",
           "Returned"
         ],
-        "newField": "Incoming Stock",
+        "newField": "Incoming Stock IRS",
         "_comments": ""
       },
       {
@@ -24498,7 +24496,7 @@
         "fields": [
           "Outgoing"
         ],
-        "newField": "Outgoing Stock",
+        "newField": "Outgoing Stock IRS",
         "_comments": ""
       },
       {
@@ -24507,7 +24505,7 @@
         "fields": [
           "Returned"
         ],
-        "newField": "Returned Stock",
+        "newField": "Returned Stock IRS",
         "_comments": ""
       },
       {
