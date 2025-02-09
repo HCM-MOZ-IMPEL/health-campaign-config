@@ -44389,8 +44389,8 @@
     "_comment": " "
   },
   
-  "warehouseManagerUserSyncCarboDelgado": {
-    "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_CARBO_DELGADO",
+  "warehouseManagerUserSyncCaboDelgado": {
+    "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44456,8 +44456,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "inventoryStockInHandProvinceCarboDelgado": {
-    "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_CARBO_DELGADO",
+  "inventoryStockInHandProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44509,8 +44509,8 @@
     "insight": {},
     "_comment": " "
   },
-  "inventoryStockInHandDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_DISTRICT_CARBO_DELGADO",
+  "inventoryStockInHandDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44562,8 +44562,8 @@
     "insight": {},
     "_comment": " "
   },
-  "inventoryTheoreticalVsManualStockDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT_CARBO_DELGADO",
+  "inventoryTheoreticalVsManualStockDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44599,8 +44599,8 @@
     "insight": {},
     "_comment": " "
   },
-  "inventoryTheoreticalVsManualStockLocalityCarboDelgado": {
-    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_LOCALITY_CARBO_DELGADO",
+  "inventoryTheoreticalVsManualStockLocalityCaboDelgado": {
+    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44636,8 +44636,8 @@
     "insight": {},
     "_comment": " "
   },
-  "stockTransactionsBreakdownProvincialCarboDelgado": {
-    "chartName": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_CARBO_DELGADO",
+  "stockTransactionsBreakdownProvincialCaboDelgado": {
+    "chartName": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44668,8 +44668,8 @@
     "insight": {},
     "_comment": " "
   },
-  "stockTransactionsBreakdownDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT_CARBO_DELGADO",
+  "stockTransactionsBreakdownDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44700,8 +44700,8 @@
     "insight": {},
     "_comment": " "
   },
-  "warehouseDistributionLatLongPointsCarboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+  "warehouseDistributionLatLongPointsCaboDelgado": {
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44748,8 +44748,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongPointsDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+  "warehouseDistributionLatLongPointsDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44803,8 +44803,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardCarboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+  "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardCaboDelgado": {
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44839,8 +44839,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardCarboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+  "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardCaboDelgado": {
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44874,8 +44874,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesCarboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+  "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesCaboDelgado": {
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44910,8 +44910,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+  "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44946,8 +44946,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardCarboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+  "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardCaboDelgado": {
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45003,8 +45003,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardCarboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CARBO_DELGADO",
+  "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardCaboDelgado": {
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45030,8 +45030,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "InventorySummaryByDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT_CARBO_DELGADO",
+  "InventorySummaryByDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45071,7 +45071,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "InventorySummaryByLocalityCarboDelgado",
+    "drillChart": "InventorySummaryByLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Inventory summary By District",
@@ -45156,9 +45156,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "InventorySummaryByLocalityCarboDelgado": {
+  "InventorySummaryByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45283,6 +45283,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
+
   "supervisorUserSyncCarboDelgado": {
     "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_CARBO_DELGADO",
     "queries": [
