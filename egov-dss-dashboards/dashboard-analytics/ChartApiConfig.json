@@ -38563,7 +38563,8 @@
     "insight": {},
     "_comment": " "
   },
-"todaysVistsCaboDelgado": {
+  
+  "todaysVistsCaboDelgado": {
     "chartName": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_CABO_DELGADO",
     "queries": [
       {
@@ -39741,7 +39742,7 @@
     "chartType": "pie",
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "totalHouseholdsNotDeliveredDrilldownProvinceCarboDelgado",
+    "drillChart": "totalHouseholdsNotDeliveredDrilldownProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [

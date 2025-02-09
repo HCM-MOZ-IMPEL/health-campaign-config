@@ -10679,8 +10679,8 @@
       ]
     },
     {
-      "name": "DSS_HEALTH_NATIONAL_DASHBOARD_CARBO_DELGADO_HEADING",
-      "id": "national-health-dashboard-carbo-delgado",
+      "name": "DSS_HEALTH_NATIONAL_DASHBOARD_CABO_DELGADO_HEADING",
+      "id": "national-health-dashboard-cabo-delgado",
       "isActive": "",
       "style": "linear",
       "visualizations": [
@@ -10697,16 +10697,16 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "todaysVistsCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_CARBO_DELGADO",
+                  "id": "todaysVistsCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_CABO_DELGADO",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "totalVisitedCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED_CARBO_DELGADO",
+                  "id": "totalVisitedCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED_CABO_DELGADO",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -10723,16 +10723,16 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "populationCoveredTodayCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY_CARBO_DELGADO",
+                  "id": "populationCoveredTodayCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY_CABO_DELGADO",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "totalPopulationCoveredCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED_CARBO_DELGADO",
+                  "id": "totalPopulationCoveredCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED_CABO_DELGADO",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -10749,16 +10749,16 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "todayDistributionsCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY_CARBO_DELGADO",
+                  "id": "todayDistributionsCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY_CABO_DELGADO",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "totalDistributionsCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY_CARBO_DELGADO",
+                  "id": "totalDistributionsCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY_CABO_DELGADO",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -10770,54 +10770,6 @@
         },
         {
           "row": 2,
-          "name": "DSS_NATIONAL_HEALTH",
-          "vizArray": [
-            {
-              "id": 6003,
-              "name": "DSS_HEALTH_NATIONAL_VOUCHERS_SCANNED",
-              "label": "DSS_HEALTH_NATIONAL_VOUCHERS_SCANNED",
-              "vizType": "stacked-collection",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "vouchersDistributedTodayCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_CARBO_DELGADO",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "totalVouchersDistributedCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_CARBO_DELGADO",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "vouchersRedeemedTodayCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_VOUCHERS_REDEEMED_TODAY_CARBO_DELGADO",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "totalVouchersRedeemedCarboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_REDEEMED_CARBO_DELGADO",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
             {
@@ -10829,8 +10781,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "householdsCoverageHeatMapCarboDelgado",
-                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_CARBO_DELGADO",
+                  "id": "householdsCoverageHeatMapCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_CABO_DELGADO",
                   "code": "",
                   "chartType": "heatmap",
                   "filter": "",
@@ -10847,8 +10799,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "populationCoverageHeatMapCarboDelgado",
-                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_CARBO_DELGADO",
+                  "id": "populationCoverageHeatMapCaboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_CABO_DELGADO",
                   "code": "",
                   "chartType": "heatmap",
                   "filter": "",
@@ -10859,7 +10811,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 3,
           "name": "DSS_COVERAGE_BY_PROVINCE",
           "vizArray": [
             {
@@ -10870,14 +10822,14 @@
               "noUnit": true,
               "isCollapsible": false,
               "ref": {
-                "url": "provincial-health-dashboard-carbo-delgado",
+                "url": "provincial-health-dashboard-cabo-delgado",
                 "logoUrl": "",
                 "type": "internal"
               },
               "charts": [
                 {
-                  "id": "coverageByProvinceCarboDelgado",
-                  "name": "DSS_COVERAGE_BY_PROVINCE_CARBO_DELGADO",
+                  "id": "coverageByProvinceCaboDelgado",
+                  "name": "DSS_COVERAGE_BY_PROVINCE_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -10890,8 +10842,8 @@
       ]
     },
     {
-      "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_CARBO_DELGADO_HEADING",
-      "id": "provincial-health-dashboard-carbo-delgado",
+      "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_CABO_DELGADO_HEADING",
+      "id": "provincial-health-dashboard-cabo-delgado",
       "isActive": "",
       "style": "linear",
       "hideFilterFields": [
@@ -12248,8 +12200,8 @@
       ]
     },
     {
-      "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_CARBO_DELGADO_HEADING",
-      "id": "district-health-dashboard-carbo-delgado",
+      "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_CABO_DELGADO_HEADING",
+      "id": "district-health-dashboard-cabo-delgado",
       "isActive": "",
       "hideFilterFields": [
         "DDR",
