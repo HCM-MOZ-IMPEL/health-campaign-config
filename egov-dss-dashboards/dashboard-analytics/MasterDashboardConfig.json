@@ -11898,8 +11898,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "supervisorUserSyncCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_CARBO_DELGADO",
+                  "id": "supervisorUserSyncCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -11922,8 +11922,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfNationalSupervisorCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CARBO_DELGADO",
+                  "id": "checklistCompletionRateOfNationalSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -11940,8 +11940,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "userDataSyncRateCarboDelgado",
-                  "name": "DSS_HEALTH_USER_DATA_SYNC_RATE_CARBO_DELGADO",
+                  "id": "userDataSyncRateCaboDelgado",
+                  "name": "DSS_HEALTH_USER_DATA_SYNC_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -11964,8 +11964,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfProvincialSupervisorCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CARBO_DELGADO",
+                  "id": "checklistCompletionRateOfProvincialSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -11982,8 +11982,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfDistrictSupervisorCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CARBO_DELGADO",
+                  "id": "checklistCompletionRateOfDistrictSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -12006,8 +12006,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryDistrictCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_DISTRICT_CARBO_DELGADO",
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_DISTRICT_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -12015,8 +12015,8 @@
                   "tabName": "BOUNDARY"
                 },
                 {
-                  "id": "checklistCompletionRateBySupervisorsDaySummaryCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_CARBO_DELGADO",
+                  "id": "checklistCompletionRateBySupervisorsDaySummaryCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -13267,8 +13267,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "supervisorUserSyncCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_CARBO_DELGADO",
+                  "id": "supervisorUserSyncCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -13291,8 +13291,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfNationalSupervisorCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CARBO_DELGADO",
+                  "id": "checklistCompletionRateOfNationalSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13309,8 +13309,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "userDataSyncRateCarboDelgado",
-                  "name": "DSS_HEALTH_USER_DATA_SYNC_RATE_CARBO_DELGADO",
+                  "id": "userDataSyncRateCaboDelgado",
+                  "name": "DSS_HEALTH_USER_DATA_SYNC_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13333,8 +13333,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfProvincialSupervisorCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CARBO_DELGADO",
+                  "id": "checklistCompletionRateOfProvincialSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13351,8 +13351,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfDistrictSupervisorCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CARBO_DELGADO",
+                  "id": "checklistCompletionRateOfDistrictSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13375,8 +13375,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryLocalityCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_LOCALITY_CARBO_DELGADO",
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_LOCALITY_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -13384,8 +13384,8 @@
                   "tabName": "BOUNDARY"
                 },
                 {
-                  "id": "checklistCompletionRateBySupervisorsDaySummaryCarboDelgado",
-                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_CARBO_DELGADO",
+                  "id": "checklistCompletionRateBySupervisorsDaySummaryCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
