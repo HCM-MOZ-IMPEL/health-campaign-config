@@ -42335,12 +42335,12 @@
     "_comment": " "
   },
 
-  "complaintsByDistrictTotalCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL_CARBO_DELGADO",
+  "complaintsByDistrictTotalCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.service.auditDetails.lastModifi edTime",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints\":{\"terms\":{\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
@@ -42350,7 +42350,7 @@
     "isCumulative": false,
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "complaintsByLocalityTotalCarboDelgado",
+    "drillChart": "complaintsByLocalityTotalCaboDelgado",
     "filterKeys": [
       {
         "key": "district"
@@ -42364,9 +42364,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByLocalityTotalCarboDelgado": {
+  "complaintsByLocalityTotalCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY_TOTAL_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY_TOTAL_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42380,7 +42380,7 @@
     "isCumulative": false,
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "complaintsByAdministrativeProvinceTotalCarboDelgado",
+    "drillChart": "complaintsByAdministrativeProvinceTotalCaboDelgado",
     "filterKeys": [
       {
         "key": "locality"
@@ -42394,9 +42394,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByAdministrativeProvinceTotalCarboDelgado": {
+  "complaintsByAdministrativeProvinceTotalCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_ADMINISTRATIVE_PROVINCE_TOTAL_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_ADMINISTRATIVE_PROVINCE_TOTAL_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42410,7 +42410,7 @@
     "isCumulative": false,
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "complaintsByVillageTotalCarboDelgado",
+    "drillChart": "complaintsByVillageTotalCaboDelgado",
     "filterKeys": [
       {
         "key": "administrativeProvince"
@@ -42424,9 +42424,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByVillageTotalCarboDelgado": {
+  "complaintsByVillageTotalCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE_TOTAL_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE_TOTAL_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42454,8 +42454,8 @@
     "insight": {},
     "_comment": " "
   },
-  "totalComplaintsRegisteredByTypeCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE_CARBO_DELGADO",
+  "totalComplaintsRegisteredByTypeCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42468,7 +42468,7 @@
     "chartType": "pie",
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "totalComplaintsRegisteredByStatusDrilldownCarboDelgado",
+    "drillChart": "totalComplaintsRegisteredByStatusDrilldownCaboDelgado",
     "filterKeys": [
       {
         "key": "serviceCode"
@@ -42482,9 +42482,9 @@
     "insight": {},
     "_comment": " "
   },
-  "totalComplaintsRegisteredByStatusDrilldownCarboDelgado": {
+  "totalComplaintsRegisteredByStatusDrilldownCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_STATUS_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_STATUS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42507,8 +42507,8 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusBreakdownProvincePercentCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_PERCENT_CARBO_DELGADO",
+  "complaintsByStatusBreakdownProvincePercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42528,7 +42528,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "complaintsByStatusBreakdownDistrictPercentCarboDelgado",
+    "drillChart": "complaintsByStatusBreakdownDistrictPercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
@@ -42578,8 +42578,8 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByStatusBreakdownDistrictPercentCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT_PERCENT_CARBO_DELGADO",
+  "complaintsByStatusBreakdownDistrictPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42599,7 +42599,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "complaintsByStatusBreakdownLocalityPercentCarboDelgado",
+    "drillChart": "complaintsByStatusBreakdownLocalityPercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
@@ -42649,8 +42649,8 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByStatusBreakdownLocalityPercentCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY_PERCENT_CARBO_DELGADO",
+  "complaintsByStatusBreakdownLocalityPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42670,7 +42670,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "complaintsByStatusBreakdownAdministrativeProvincePercentCarboDelgado",
+    "drillChart": "complaintsByStatusBreakdownAdministrativeProvincePercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
@@ -42720,8 +42720,8 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByStatusBreakdownAdministrativeProvincePercentCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_ADMINISTRATIVE_PROVINCE_PERCENT_CARBO_DELGADO",
+  "complaintsByStatusBreakdownAdministrativeProvincePercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42790,8 +42790,8 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusBreakdownProvinceCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_CARBO_DELGADO",
+  "complaintsByStatusBreakdownProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42805,7 +42805,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "complaintsByStatusBreakdownDistrictCarboDelgado",
+    "drillChart": "complaintsByStatusBreakdownDistrictCaboDelgado",
     "filterKeys": [
       {
         "key": "district"
@@ -42821,9 +42821,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusBreakdownDistrictCarboDelgado": {
+  "complaintsByStatusBreakdownDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42837,7 +42837,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "complaintsByStatusBreakdownLocalityCarboDelgado",
+    "drillChart": "complaintsByStatusBreakdownLocalityCaboDelgado",
     "filterKeys": [
       {
         "key": "locality"
@@ -42853,9 +42853,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusBreakdownLocalityCarboDelgado": {
+  "complaintsByStatusBreakdownLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42869,7 +42869,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "complaintsByStatusBreakdownAdministrativeProvinceCarboDelgado",
+    "drillChart": "complaintsByStatusBreakdownAdministrativeProvinceCaboDelgado",
     "filterKeys": [
       {
         "key": "administrativeProvince"
@@ -42885,9 +42885,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusBreakdownAdministrativeProvinceCarboDelgado": {
+  "complaintsByStatusBreakdownAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42917,8 +42917,8 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownProvincialPercentCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_PERCENT_CARBO_DELGADO",
+  "complaintsByTypeBreakdownProvincialPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42938,7 +42938,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "complaintsByTypeBreakdownDistrictPercentCarboDelgado",
+    "drillChart": "complaintsByTypeBreakdownDistrictPercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
@@ -43048,8 +43048,8 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownDistrictPercentCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_PERCENT_CARBO_DELGADO",
+  "complaintsByTypeBreakdownDistrictPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43069,7 +43069,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "complaintsByTypeBreakdownLocalityPercentCarboDelgado",
+    "drillChart": "complaintsByTypeBreakdownLocalityPercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
@@ -43179,8 +43179,8 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownLocalityPercentCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY_PERCENT_CARBO_DELGADO",
+  "complaintsByTypeBreakdownLocalityPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43200,7 +43200,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "complaintsByTypeBreakdownAdministrativeProvincePercentCarboDelgado",
+    "drillChart": "complaintsByTypeBreakdownAdministrativeProvincePercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
@@ -43310,8 +43310,8 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownAdministrativeProvincePercentCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_ADMINISTRATIVE_PROVINCE_PERCENT_CARBO_DELGADO",
+  "complaintsByTypeBreakdownAdministrativeProvincePercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43440,8 +43440,8 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownProvincialCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_CARBO_DELGADO",
+  "complaintsByTypeBreakdownProvincialCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43455,7 +43455,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "complaintsByTypeBreakdownDistrictCarboDelgado",
+    "drillChart": "complaintsByTypeBreakdownDistrictCaboDelgado",
     "filterKeys": [
       {
         "key": "district"
@@ -43477,9 +43477,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownDistrictCarboDelgado": {
+  "complaintsByTypeBreakdownDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43493,7 +43493,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "complaintsByTypeBreakdownLocalityCarboDelgado",
+    "drillChart": "complaintsByTypeBreakdownLocalityCaboDelgado",
     "filterKeys": [
       {
         "key": "locality"
@@ -43515,9 +43515,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownLocalityCarboDelgado": {
+  "complaintsByTypeBreakdownLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43531,7 +43531,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "complaintsByTypeBreakdownAdministrativeProvinceCarboDelgado",
+    "drillChart": "complaintsByTypeBreakdownAdministrativeProvinceCaboDelgado",
     "filterKeys": [
       {
         "key": "administrativeProvince"
@@ -43553,9 +43553,9 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownAdministrativeProvinceCarboDelgado": {
+  "complaintsByTypeBreakdownAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43591,8 +43591,8 @@
     "insight": {},
     "_comment": " "
   },
-  "ComplaintsShareByDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_CARBO_DELGADO",
+  "ComplaintsShareByDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43613,7 +43613,7 @@
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
-    "drillChart": "ComplaintsShareByLocalityCarboDelgado",
+    "drillChart": "ComplaintsShareByLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "divisionbyconstant",
     "aggregationPaths": [
@@ -43628,9 +43628,9 @@
     "insight": {},
     "_comment": " "
   },
-  "ComplaintsShareByLocalityCarboDelgado": {
+  "ComplaintsShareByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43651,7 +43651,7 @@
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
-    "drillChart": "ComplaintsShareByAdministrativeProvinceCarboDelgado",
+    "drillChart": "ComplaintsShareByAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "divisionbyconstant",
     "aggregationPaths": [
@@ -43666,9 +43666,9 @@
     "insight": {},
     "_comment": " "
   },
-  "ComplaintsShareByAdministrativeProvinceCarboDelgado": {
+  "ComplaintsShareByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43689,7 +43689,7 @@
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
-    "drillChart": "ComplaintsShareByVillageCarboDelgado",
+    "drillChart": "ComplaintsShareByVillageCaboDelgado",
     "documentType": "_doc",
     "action": "divisionbyconstant",
     "aggregationPaths": [
@@ -43704,9 +43704,9 @@
     "insight": {},
     "_comment": " "
   },
-  "ComplaintsShareByVillageCarboDelgado": {
+  "ComplaintsShareByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43742,8 +43742,8 @@
     "insight": {},
     "_comment": " "
   },
-  "averageResolutionTimeProvinceCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_AVVERAGE_RESOLUTION_TIME_PROVINCE_CARBO_DELGADO",
+  "averageResolutionTimeProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVVERAGE_RESOLUTION_TIME_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43756,7 +43756,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageResolutionTimeDistrictCarboDelgado",
+    "drillChart": "averageResolutionTimeDistrictCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -43770,9 +43770,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageResolutionTimeDistrictCarboDelgado": {
+  "averageResolutionTimeDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43785,7 +43785,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageResolutionTimeLocalityCarboDelgado",
+    "drillChart": "averageResolutionTimeLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -43799,9 +43799,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageResolutionTimeLocalityCarboDelgado": {
+  "averageResolutionTimeLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43814,7 +43814,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageResolutionTimeAdministrativeProvinceCarboDelgado",
+    "drillChart": "averageResolutionTimeAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -43828,9 +43828,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageResolutionTimeAdministrativeProvinceCarboDelgado": {
+  "averageResolutionTimeAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43857,8 +43857,8 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusSummaryProvinceCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE_CARBO_DELGADO",
+  "complaintsByStatusSummaryProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43876,7 +43876,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "complaintsByStatusSummaryDistrictCarboDelgado",
+    "drillChart": "complaintsByStatusSummaryDistrictCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "District",
@@ -43932,9 +43932,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "complaintsByStatusSummaryDistrictCarboDelgado": {
+  "complaintsByStatusSummaryDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43952,7 +43952,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "complaintsByStatusSummaryLocalityCarboDelgado",
+    "drillChart": "complaintsByStatusSummaryLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "showFooter": true,
@@ -44008,9 +44008,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "complaintsByStatusSummaryLocalityCarboDelgado": {
+  "complaintsByStatusSummaryLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44028,7 +44028,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "complaintsByStatusSummaryAdministrativeProvinceCarboDelgado",
+    "drillChart": "complaintsByStatusSummaryAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "showFooter": true,
@@ -44084,9 +44084,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "complaintsByStatusSummaryAdministrativeProvinceCarboDelgado": {
+  "complaintsByStatusSummaryAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44160,8 +44160,8 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "complaintsByStatusSummaryDayCarboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY_CARBO_DELGADO",
+  "complaintsByStatusSummaryDayCaboDelgado": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44229,8 +44229,8 @@
     "insight": {},
     "_comment": " "
   },
-  "openComplaintsSummaryByDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT_CARBO_DELGADO",
+  "openComplaintsSummaryByDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44248,7 +44248,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "openComplaintsSummaryByLocalityCarboDelgado",
+    "drillChart": "openComplaintsSummaryByLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "showFooter": true,
@@ -44268,9 +44268,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "openComplaintsSummaryByLocalityCarboDelgado": {
+  "openComplaintsSummaryByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44288,7 +44288,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "openComplaintsSummaryByAdministrativeProvinceCarboDelgado",
+    "drillChart": "openComplaintsSummaryByAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "showFooter": true,
@@ -44308,9 +44308,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "openComplaintsSummaryByAdministrativeProvinceCarboDelgado": {
+  "openComplaintsSummaryByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44328,7 +44328,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "openComplaintsSummaryByVillageCarboDelgado",
+    "drillChart": "openComplaintsSummaryByVillageCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "showFooter": true,
@@ -44348,9 +44348,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "openComplaintsSummaryByVillageCarboDelgado": {
+  "openComplaintsSummaryByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_VILLAGE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_VILLAGE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -44388,6 +44388,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
+  
   "warehouseManagerUserSyncCarboDelgado": {
     "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_CARBO_DELGADO",
     "queries": [
