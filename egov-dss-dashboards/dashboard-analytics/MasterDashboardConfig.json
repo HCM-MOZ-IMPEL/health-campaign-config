@@ -11193,7 +11193,7 @@
         },
         {
           "row": 3,
-          "name": "DSS_HEALTH_DISTRIBUTION",
+          "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
               "id": 6030,
@@ -11255,7 +11255,7 @@
         },
         {
           "row": 4,
-          "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
+          "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
               "id": 6032,
@@ -11409,6 +11409,58 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6049,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "successfulRegistrationDistribution",
+                  "name": "DASHBOARD_SUCCESSFUL_REGISTRATION_DISTRIBUTION",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "successful-registration-distribution-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6050,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "closedHouseholdMap",
+                  "name": "DASHBOARD_CLOSED_HOUSEHOLD",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "closed-household-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
@@ -12507,7 +12559,7 @@
         },
         {
           "row": 3,
-          "name": "DSS_HEALTH_DISTRIBUTION",
+          "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
               "id": 6040,
@@ -12569,7 +12621,7 @@
         },
         {
           "row": 4,
-          "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
+          "name": "DSS_HEALTH_REGISTRATION",
           "vizArray": [
             {
               "id": 6042,
@@ -12723,6 +12775,58 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6047,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "successfulRegistrationDistribution",
+                  "name": "DASHBOARD_SUCCESSFUL_REGISTRATION_DISTRIBUTION",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "successful-registration-distribution-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6048,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "closedHouseholdMap",
+                  "name": "DASHBOARD_CLOSED_HOUSEHOLD",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "closed-household-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
