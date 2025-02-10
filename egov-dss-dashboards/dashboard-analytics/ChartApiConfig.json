@@ -45810,8 +45810,8 @@
     "_comment": " "
   },
 
-  "averageBednetsDistributedDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_DISTRICT_CARBO_DELGADO",
+  "averageBednetsDistributedDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45831,7 +45831,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageBednetsDistributedLocalityCarboDelgado",
+    "drillChart": "averageBednetsDistributedLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "division",
     "aggregationPaths": [
@@ -45846,9 +45846,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageBednetsDistributedLocalityCarboDelgado": {
+  "averageBednetsDistributedLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45868,7 +45868,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageBednetsDistributedAdministrativeProvinceCarboDelgado",
+    "drillChart": "averageBednetsDistributedAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "division",
     "aggregationPaths": [
@@ -45883,9 +45883,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageBednetsDistributedAdministrativeProvinceCarboDelgado": {
+  "averageBednetsDistributedAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45905,7 +45905,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageBednetsDistributedVillageCarboDelgado",
+    "drillChart": "averageBednetsDistributedVillageCaboDelgado",
     "documentType": "_doc",
     "action": "division",
     "aggregationPaths": [
@@ -45920,9 +45920,9 @@
     "insight": {},
     "_comment": " "
   },
-  "averageBednetsDistributedVillageCarboDelgado": {
+  "averageBednetsDistributedVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_VILLAGE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_VILLAGE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45957,6 +45957,7 @@
     "insight": {},
     "_comment": " "
   },
+  
   "housesWithMoreThanTwentyMembersByDistrictCarboDelgado": {
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_CARBO_DELGADO",
     "queries": [
