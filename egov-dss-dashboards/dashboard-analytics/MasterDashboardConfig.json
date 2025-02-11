@@ -9978,6 +9978,2888 @@
           ]
         }
       ]
+    },
+    {
+      "name": "DSS_HEALTH_NATIONAL_DASHBOARD_CABO_DELGADO_HEADING",
+      "id": "national-health-dashboard-cabo-delgado",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 1,
+          "name": "DSS_NATIONAL_HEALTH",
+          "vizArray": [
+            {
+              "id": 6000,
+              "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED",
+              "label": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "todaysVistsCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVisitedCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6001,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoveredTodayCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalPopulationCoveredCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6002,
+              "name": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "todayDistributionsCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalDistributionsCaboDelgado",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_COVERAGE_BY_PROVINCE",
+          "vizArray": [
+            {
+              "id": 6004,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
+              "vizType": "heatmap",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageHeatMapCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6005,
+              "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
+              "label": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
+              "vizType": "heatmap",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoverageHeatMapCaboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_COVERAGE_BY_PROVINCE",
+          "vizArray": [
+            {
+              "id": 6006,
+              "name": "DSS_COVERAGE_BY_PROVINCE",
+              "label": "DSS_COVERAGE_BY_PROVINCE",
+              "vizType": "stacked-table",
+              "noUnit": true,
+              "isCollapsible": false,
+              "ref": {
+                "url": "provincial-health-dashboard-cabo-delgado",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "charts": [
+                {
+                  "id": "coverageByProvinceCaboDelgado",
+                  "name": "DSS_COVERAGE_BY_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_CABO_DELGADO_HEADING",
+      "id": "provincial-health-dashboard-cabo-delgado",
+      "isActive": "",
+      "style": "linear",
+      "hideFilterFields": [
+        "DDR",
+        "Ulb",
+        "Denomination",
+        "ModuleFilter"
+      ],
+      "visualizations": [
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6007,
+              "name": "DSS_HEALTH_OVERVIEW_TARGET",
+              "label": "DSS_HEALTH_OVERVIEW_TARGET",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewTotalTargetProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_TARGET_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6009,
+              "name": "DSS_HEALTH_HOUSEHOLDS",
+              "label": "DSS_HEALTH_HOUSEHOLDS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdVisitsWithinDateRangeCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_HOUSEHOLDS_VISITED_OVER_DATERANGE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVisitsCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLD_VISITS_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "householdVisitsTargetProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_VISITS_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalHouseholdCoverageProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6010,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "stacked-collection",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewPopulationCoveredCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERED_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewTotalPopulationCoveredCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_POPULATION_COVERED_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewPopulationTargetedProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewPopulationCoverageAchievedProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6011,
+              "name": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionsByRangeCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_DISTRIBUTIONS_DATE_RANGE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalDistributionsTillTodayCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_DISTRIBUTED_TILL_TODAY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "distributionTargetProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_TARGET_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "distributionCoverageProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_COVERAGE_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6012,
+              "name": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED",
+              "label": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalHouseholdsNotDeliveredProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLDS_NOT_DELIVERED_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6013,
+              "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
+              "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalComplaintsRegisteredCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BREAKDOWN_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6014,
+              "name": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageBarchartByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6016,
+              "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6027,
+              "name": "DSS_HEALTH_REGISTRATION_USER_SYNC",
+              "label": "DSS_HEALTH_REGISTRATION_USER_SYNC",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrarSyncSummaryProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_REGISTRAR_SYNC_SUMMARY_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6028,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERED",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesVisitedBarChartDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSES_VISITED_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "housesVisitedBarChartDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSES_VISITED_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 6029,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoveredBarChartDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "populationCoveredBarChartDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6030,
+              "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE",
+              "label": "DSS_HEALTH_DISTRIBUTION_COVERAGE",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageByDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "distributionCoverageByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 6031,
+              "name": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bednetsDistributionCoverageDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "bednetsDistributionCoverageDistrictCaboDelgado",
+                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6032,
+              "name": "DSS_HEALTH_R_D_HOUSEHOLD_NOT_DELIVERED",
+              "label": "DSS_HEALTH_R_D_HOUSEHOLD_NOT_DELIVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalHouseholdsNotDeliveredChartDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6033,
+              "name": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "label": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communitiesCoveredNotCoveredCaboDelgado",
+                  "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
+                  "code": "",
+                  "moduleName": "CaboDelgado-bednet",
+                  "pageName": "communities-covered-and-not-covered",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6034,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageHeatMapProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "HOUSEHOLD"
+                },
+                {
+                  "id": "populationCoverageHeatMapProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "POPULATION"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6035,
+              "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
+              "label": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "actualVsPlannedHouseholdLineGraphProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Household",
+                  "headers": []
+                },
+                {
+                  "id": "actualVsPlannedPopulationLineGraphProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Population",
+                  "headers": []
+                },
+                {
+                  "id": "actualVsPlannedBednetsLineGraphProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Bednets",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6036,
+              "name": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "label": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationSummaryByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_RESGISTRATION_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "registrationSummaryByDistrictDayCaboDelgado",
+                  "name": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6049,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "successfulRegistrationDistribution",
+                  "name": "DASHBOARD_SUCCESSFUL_REGISTRATION_DISTRIBUTION",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "successful-registration-distribution-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6050,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "closedHouseholdMap",
+                  "name": "DASHBOARD_CLOSED_HOUSEHOLD",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "closed-household-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6057,
+              "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByDistrictTotalCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6058,
+              "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
+              "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalComplaintsRegisteredByTypeCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6059,
+              "name": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_PROVINCIAL",
+              "label": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_PROVINCIAL",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByStatusBreakdownProvincePercentCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "complaintsByStatusBreakdownProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 6060,
+              "name": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_PROVINCIAL",
+              "label": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_PROVINCIAL",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByTypeBreakdownProvincialPercentCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "complaintsByTypeBreakdownProvincialCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6061,
+              "name": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
+              "label": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "ComplaintsShareByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6062,
+              "name": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_PROVINCE",
+              "label": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_PROVINCE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageResolutionTimeProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_AVVERAGE_RESOLUTION_TIME_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6063,
+              "name": "DSS_HEALTH_COMPLAINTS_SUMMARY",
+              "label": "DSS_HEALTH_COMPLAINTS_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByStatusSummaryProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "complaintsByStatusSummaryDayCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6064,
+              "name": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
+              "label": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "openComplaintsSummaryByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6073,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseManagerUserSyncCaboDelgado",
+                  "name": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6075,
+              "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryStockInHandProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6076,
+              "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryTheoreticalVsManualStockDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6077,
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "stockTransactionsBreakdownProvincialCaboDelgado",
+                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6078,
+              "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+              "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+              "vizType": "latlong",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseDistributionLatLongPointsCaboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "points",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardCaboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardCaboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesCaboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardCaboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardCaboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6079,
+              "name": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "label": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "InventorySummaryByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 6087,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "supervisorUserSyncCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 6088,
+              "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfNationalSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6089,
+              "name": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+              "label": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userDataSyncRateCaboDelgado",
+                  "name": "DSS_HEALTH_USER_DATA_SYNC_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 6090,
+              "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfProvincialSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6091,
+              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 6092,
+              "name": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "label": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "checklistCompletionRateBySupervisorsDaySummaryCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6100,
+              "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageBednetsDistributedDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6102,
+              "name": "DSS_HEALTH_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "teamPerformanceSummaryTableDistrictCaboDelgado",
+                  "name": "DASHBOARD_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "moduleName": "caboDelgado-bednet",
+                  "pageName": "team-performance-district",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6108,
+              "name": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "label": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesWithMoreThanTwentyMembersByDistrictCaboDelgado",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6109,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+              {
+                  "id": "locationNotEnabledByDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "locationNotEnabledByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6110,
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "entriesDoneByWMsDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6111,
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "incompleteRecordsByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6112,
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "suspectedFraudsByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6113,
+              "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW",
+              "label": "DSS_HEALTH_ATTENDENCE_OVERVIEW",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "attendanceSprayOperatorsDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "attendanceSprayOperatorsDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6114,
+              "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "label": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dataQualitySummaryDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_CABO_DELGADO_HEADING",
+      "id": "district-health-dashboard-cabo-delgado",
+      "isActive": "",
+      "hideFilterFields": [
+        "DDR",
+        "Ulb",
+        "Denomination",
+        "ModuleFilter"
+      ],
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6017,
+              "name": "DSS_HEALTH_OVERVIEW_TARGET",
+              "label": "DSS_HEALTH_OVERVIEW_TARGET",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewTotalTargetDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_TARGET_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6019,
+              "name": "DSS_HEALTH_HOUSEHOLDS",
+              "label": "DSS_HEALTH_HOUSEHOLDS",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdVisitsWithinDateRangeCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_HOUSEHOLDS_VISITED_OVER_DATERANGE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalVisitsCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLD_VISITS_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "householdVisitsTargetDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_VISITS_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalHouseholdCoverageDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6020,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "stacked-collection",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewPopulationCoveredCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERED_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewTotalPopulationCoveredCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_POPULATION_COVERED_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewPopulationTargetedDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "overviewPopulationCoverageAchievedDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6021,
+              "name": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionsByRangeCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_DISTRIBUTIONS_DATE_RANGE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalDistributionsTillTodayCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_DISTRIBUTED_TILL_TODAY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "distributionTargetDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_TARGET_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "distributionCoverageDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_COVERAGE_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6022,
+              "name": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED",
+              "label": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalHouseholdsNotDeliveredDrilldownProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLDS_NOT_DELIVERED_DRILLDOWN_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6023,
+              "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
+              "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalComplaintsRegisteredCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BREAKDOWN_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6024,
+              "name": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "label": "DSS_HEALTH_HOUSEHOLD_COVERAGE_RANKING",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageBarchartByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 6026,
+              "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6037,
+              "name": "DSS_HEALTH_REGISTRATION_USER_SYNC",
+              "label": "DSS_HEALTH_REGISTRATION_USER_SYNC",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrarSyncSummaryDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_REGISTRAR_SYNC_SUMMARY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6038,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERED",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesVisitedBarChartLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSES_VISITED_LOCALITY_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "housesVisitedBarChartLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSES_VISITED_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 6039,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoveredBarChartLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_LOCALITY_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "populationCoveredBarChartLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERED_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6040,
+              "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE",
+              "label": "DSS_HEALTH_DISTRIBUTION_COVERAGE",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributionCoverageByLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_LOCALITY_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "distributionCoverageByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 6041,
+              "name": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bednetsDistributionCoverageLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_LOCALITY_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "bednetsDistributionCoverageLocalityCaboDelgado",
+                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6042,
+              "name": "DSS_HEALTH_R_D_HOUSEHOLD_NOT_DELIVERED",
+              "label": "DSS_HEALTH_R_D_HOUSEHOLD_NOT_DELIVERED",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalHouseholdsNotDeliveredChartLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6043,
+              "name": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "label": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communitiesCoveredNotCoveredCaboDelgado",
+                  "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
+                  "code": "",
+                  "moduleName": "CaboDelgado-bednet",
+                  "pageName": "communities-covered-and-not-covered",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6044,
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsCoverageHeatMapProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "HOUSEHOLD"
+                },
+                {
+                  "id": "populationCoverageHeatMapDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "POPULATION"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6045,
+              "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
+              "label": "DSS_HEALTH_ACTUAL_VS_PLANNED_LINE_GRAPH",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "actualVsPlannedHouseholdLineGraphDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Household",
+                  "headers": []
+                },
+                {
+                  "id": "actualVsPlannedPopulationLineGraphDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Population",
+                  "headers": []
+                },
+                {
+                  "id": "actualVsPlannedBednetsLineGraphDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "tabName": "Bednets",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_HEALTH_REGISTRATION",
+          "vizArray": [
+            {
+              "id": 6046,
+              "name": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "label": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "registrationSummaryByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_RESGISTRATION_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "registrationSummaryByDistrictDayCaboDelgado",
+                  "name": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6047,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "successfulRegistrationDistribution",
+                  "name": "DASHBOARD_SUCCESSFUL_REGISTRATION_DISTRIBUTION",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "successful-registration-distribution-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6048,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "closedHouseholdMap",
+                  "name": "DASHBOARD_CLOSED_HOUSEHOLD",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "closed-household-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6065,
+              "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByDistrictTotalCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6066,
+              "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
+              "label": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalComplaintsRegisteredByTypeCaboDelgado",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BY_TYPE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6067,
+              "name": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_BREAKDOWN_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByStatusBreakdownDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_District_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "complaintsByStatusBreakdownDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_District_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 6068,
+              "name": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_BY_TYPE_BREAKDOWN_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByTypeBreakdownDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "complaintsByTypeBreakdownDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6069,
+              "name": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
+              "label": "DSS_HEALTH_COMPLAINTS_COMPLAINTS_BY_BOUNDARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "ComplaintsShareByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6070,
+              "name": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_DISTRICT",
+              "label": "DSS_HEALTH_COMPLAINTS_AVG_TIME_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageResolutionTimeDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6071,
+              "name": "DSS_HEALTH_COMPLAINTS_SUMMARY",
+              "label": "DSS_HEALTH_COMPLAINTS_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByStatusSummaryDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "complaintsByStatusSummaryDayCaboDelgado",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_COMPLAINTS",
+          "vizArray": [
+            {
+              "id": 6072,
+              "name": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
+              "label": "DSS_HEALTH_COMPLAINTS_OPEN_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "openComplaintsSummaryByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6080,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseManagerUserSyncCaboDelgado",
+                  "name": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6082,
+              "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryStockInHandDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6083,
+              "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "inventoryTheoreticalVsManualStockLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6084,
+              "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "stockTransactionsBreakdownDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6085,
+              "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+              "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+              "vizType": "latlong",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseDistributionLatLongPointsDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "points",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
+              "id": 6086,
+              "name": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "label": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "InventorySummaryByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 6093,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "supervisorUserSyncCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 6094,
+              "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfNationalSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6095,
+              "name": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+              "label": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userDataSyncRateCaboDelgado",
+                  "name": "DSS_HEALTH_USER_DATA_SYNC_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 6096,
+              "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfProvincialSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6097,
+              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisorCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 6098,
+              "name": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "label": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "checklistCompletionRateBySupervisorsDaySummaryCaboDelgado",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6104,
+              "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageBednetsDistributedLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 6106,
+              "name": "DSS_HEALTH_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "label": "DSS_HEALTH_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "teamPerformanceSummaryTableLocalityCaboDelgado",
+                  "name": "DASHBOARD_TEAM_PERFORMANCE_SUMMARY_TABLE_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "moduleName": "caboDelgado-bednet",
+                  "pageName": "team-performance-locality",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6115,
+              "name": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "label": "DSS_HEALTH_HOUSEHOLDS_WITH_MORE_THAN_TWENTY_MEMBERS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "housesWithMoreThanTwentyMembersByLocalityCaboDelgado",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6116,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+              {
+                  "id": "locationNotEnabledByLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "locationNotEnabledByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6117,
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "entriesDoneByWMsLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_LOCALITY",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6118,
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "incompleteRecordsByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 6119,
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "suspectedFraudsByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6120,
+              "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW",
+              "label": "DSS_HEALTH_ATTENDENCE_OVERVIEW",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "attendanceSprayOperatorsLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "attendanceSprayOperatorsLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 6121,
+              "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "label": "DSS_HEALTH_DATA_QUALITY_SUMMARY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "dataQualitySummaryLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
