@@ -45958,8 +45958,8 @@
     "_comment": " "
   },
   
-  "housesWithMoreThanTwentyMembersByDistrictCarboDelgado": {
-    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_CARBO_DELGADO",
+  "housesWithMoreThanTwentyMembersByDistrictCaboDelgado": {
+    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -45972,7 +45972,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "housesWithMoreThanTwentyMembersByLocalityCarboDelgado",
+    "drillChart": "housesWithMoreThanTwentyMembersByLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -45986,8 +45986,8 @@
     "insight": {},
     "_comment": " "
   },
-  "housesWithMoreThanTwentyMembersByLocalityCarboDelgado": {
-    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY_CARBO_DELGADO",
+  "housesWithMoreThanTwentyMembersByLocalityCaboDelgado": {
+    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46000,7 +46000,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "housesWithMoreThanTwentyMembersByAdministrativeProvinceCarboDelgado",
+    "drillChart": "housesWithMoreThanTwentyMembersByAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -46014,8 +46014,8 @@
     "insight": {},
     "_comment": " "
   },
-  "housesWithMoreThanTwentyMembersByAdministrativeProvinceCarboDelgado": {
-    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+  "housesWithMoreThanTwentyMembersByAdministrativeProvinceCaboDelgado": {
+    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46028,7 +46028,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "housesWithMoreThanTwentyMembersByVillageCarboDelgado",
+    "drillChart": "housesWithMoreThanTwentyMembersByVillageCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -46042,8 +46042,8 @@
     "insight": {},
     "_comment": " "
   },
-  "housesWithMoreThanTwentyMembersByVillageCarboDelgado": {
-    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_VILLAGE_CARBO_DELGADO",
+  "housesWithMoreThanTwentyMembersByVillageCaboDelgado": {
+    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_VILLAGE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46070,8 +46070,44 @@
     "insight": {},
     "_comment": " "
   },
-  "locationNotEnabledByDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_CARBO_DELGADO",
+  "locationNotEnabledByDistrictPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_PERCENT_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location Not Enabled\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Location Not Captured\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Location Not Enabled",
+      "Total Location Not Captured"
+    ],
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "locationNotEnabledByDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46084,7 +46120,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "locationNotEnabledByLocalityBurunndi",
+    "drillChart": "locationNotEnabledByLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -46098,8 +46134,8 @@
     "insight": {},
     "_comment": " "
   },
-  "locationNotEnabledByLocalityCarboDelgado": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_CARBO_DELGADO",
+  "locationNotEnabledByLocalityCaboDelgado": {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46112,7 +46148,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "locationNotEnabledByAdministrativeProvinceBurunndi",
+    "drillChart": "locationNotEnabledByAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -46126,8 +46162,8 @@
     "insight": {},
     "_comment": " "
   },
-  "locationNotEnabledByAdministrativeProvinceBurunndi": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+  "locationNotEnabledByAdministrativeProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46140,7 +46176,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "locationNotEnabledByVillageBurunndi",
+    "drillChart": "locationNotEnabledByVillageCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -46154,8 +46190,8 @@
     "insight": {},
     "_comment": " "
   },
-  "locationNotEnabledByVillageBurunndi": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_VILLAGE_CARBO_DELGADO",
+  "locationNotEnabledByVillageCaboDelgado": {
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_VILLAGE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46182,7 +46218,7 @@
     "insight": {},
     "_comment": " "
   },
-  "entriesDoneByWMsDistrictCarboDelgado": {
+  "entriesDoneByWMsDistrictCaboDelgado": {
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT",
     "queries": [
       {
@@ -46196,7 +46232,7 @@
     "plotLabel": "none",
     "chartType": "line",
     "valueType": "number",
-    "drillChart": "entriesDoneByWMsLocalityCarboDelgado",
+    "drillChart": "entriesDoneByWMsLocalityCaboDelgado",
     "isCumulative": false,
     "documentType": "_doc",
     "action": "",
@@ -46211,7 +46247,7 @@
       }
     ]
   },
-  "entriesDoneByWMsLocalityCarboDelgado": {
+  "entriesDoneByWMsLocalityCaboDelgado": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_LOCALITY",
     "queries": [
@@ -46226,7 +46262,7 @@
     "plotLabel": "none",
     "chartType": "line",
     "valueType": "number",
-    "drillChart": "entriesDoneByWMsAdministrativeProvinceCarboDelgado",
+    "drillChart": "entriesDoneByWMsAdministrativeProvinceCaboDelgado",
     "isCumulative": false,
     "documentType": "_doc",
     "action": "",
@@ -46241,7 +46277,7 @@
       }
     ]
   },
-  "entriesDoneByWMsAdministrativeProvinceCarboDelgado": {
+  "entriesDoneByWMsAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_ADMINISTRATIVE_PROVINCE",
     "queries": [
@@ -46256,7 +46292,7 @@
     "plotLabel": "none",
     "chartType": "line",
     "valueType": "number",
-    "drillChart": "entriesDoneByWMsVillageCarboDelgado",
+    "drillChart": "entriesDoneByWMsVillageCaboDelgado",
     "isCumulative": false,
     "documentType": "_doc",
     "action": "",
@@ -46271,7 +46307,7 @@
       }
     ]
   },
-  "entriesDoneByWMsVillageCarboDelgado": {
+  "entriesDoneByWMsVillageCaboDelgado": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_VILLAGE",
     "queries": [
@@ -46301,8 +46337,8 @@
       }
     ]
   },
-  "incompleteRecordsByDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CARBO_DELGADO",
+  "incompleteRecordsByDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46322,7 +46358,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "incompleteRecordsByLocalityCarboDelgado",
+    "drillChart": "incompleteRecordsByLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "filterKeys": [
@@ -46352,9 +46388,9 @@
     "insight": {},
     "_comment": " "
   },
-  "incompleteRecordsByLocalityCarboDelgado": {
+  "incompleteRecordsByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46374,7 +46410,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "incompleteRecordsByAdministrativeProvinceCarboDelgado",
+    "drillChart": "incompleteRecordsByAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "filterKeys": [
@@ -46404,9 +46440,9 @@
     "insight": {},
     "_comment": " "
   },
-  "incompleteRecordsByAdministrativeProvinceCarboDelgado": {
+  "incompleteRecordsByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46426,7 +46462,7 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "incompleteRecordsByVillageCarboDelgado",
+    "drillChart": "incompleteRecordsByVillageCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "filterKeys": [
@@ -46456,9 +46492,9 @@
     "insight": {},
     "_comment": " "
   },
-  "incompleteRecordsByVillageCarboDelgado": {
+  "incompleteRecordsByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46508,21 +46544,21 @@
     "insight": {},
     "_comment": " "
   },
-  "suspectedFraudsByDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CARBO_DELGADO",
+  "suspectedFraudsByDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered>3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "suspectedFraudsByLocalityCarboDelgado",
+    "drillChart": "suspectedFraudsByLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -46536,22 +46572,22 @@
     "insight": {},
     "_comment": " "
   },
-  "suspectedFraudsByLocalityCarboDelgado": {
+  "suspectedFraudsByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "suspectedFraudsByAdministrativeProvinceCarboDelgado",
+    "drillChart": "suspectedFraudsByAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -46565,22 +46601,22 @@
     "insight": {},
     "_comment": " "
   },
-  "suspectedFraudsByAdministrativeProvinceCarboDelgado": {
+  "suspectedFraudsByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "suspectedFraudsByVillageCarboDelgado",
+    "drillChart": "suspectedFraudsByVillageCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -46594,16 +46630,16 @@
     "insight": {},
     "_comment": " "
   },
-  "suspectedFraudsByVillageCarboDelgado": {
+  "suspectedFraudsByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered>3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -46623,8 +46659,268 @@
     "insight": {},
     "_comment": " "
   },
-  "dataQualitySummaryDistrictCarboDelgado": {
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_CARBO_DELGADO",
+  "attendanceSprayOperatorsDistrictPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_PERCENT_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "attendanceSprayOperatorsLocalityPercentCaboDelgado",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Community Distributors Marked Present",
+      "Total spray operators"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ]
+  },
+  "attendanceSprayOperatorsLocalityPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_PERCENT_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.locality.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "attendanceSprayOperatorsAdministrativeProvincePercentCaboDelgado",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Community Distributors Marked Present",
+      "Total spray operators"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "locality"
+      }
+    ]
+  },
+  "attendanceSprayOperatorsAdministrativeProvincePercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "attendanceSprayOperatorsVillagePercentCaboDelgado",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Community Distributors Marked Present",
+      "Total spray operators"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ]
+  },
+  "attendanceSprayOperatorsVillagePercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_VILLAGE_PERCENT_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.village.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Community Distributors Marked Present",
+      "Total spray operators"
+    ],
+    "insight": {},
+    "_comment": " ",
+    "filterKeys": [
+      {
+        "key": "village"
+      }
+    ]
+  },
+  "attendanceSprayOperatorsDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "attendanceSprayOperatorsLocalityCaboDelgado",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Community Distributors Marked Present"
+    ],
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "attendanceSprayOperatorsLocalityCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.locality.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "attendanceSprayOperatorsAdministrativeProvinceCaboDelgado",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Community Distributors Marked Present"
+    ],
+    "filterKeys": [
+      {
+        "key": "locality"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "attendanceSprayOperatorsAdministrativeProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "attendanceSprayOperatorsVillageCaboDelgado",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Community Distributors Marked Present"
+    ],
+    "filterKeys": [
+      {
+        "key": "administrativeProvince"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "attendanceSprayOperatorsVillageCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_VILLAGE_CABO_DELGADO",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "attendanceLog.time",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "attendance-log-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.village.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Community Distributors Marked Present"
+    ],
+    "filterKeys": [
+      {
+        "key": "village"
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "dataQualitySummaryDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46652,7 +46948,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "filterKeys": [
@@ -46663,7 +46959,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "dataQualitySummaryLocalityCarboDelgado",
+    "drillChart": "dataQualitySummaryLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "districts",
@@ -46671,7 +46967,7 @@
       "Household with more than 20 members count",
       "Location not enabled count",
       "WHM Stock Entries count",
-      "total_users_registered_more_than_15",
+      "total_users_registered_more_than_3",
       "Total Houses Registered count",
       "negative_households_visited_count"
     ],
@@ -46697,7 +46993,7 @@
         "fields": [
           "Location not enabled count"
         ],
-        "newField": "Location not enabled",
+        "newField": "Location Not Enabled Count",
         "_comments": ""
       },
       {
@@ -46706,7 +47002,7 @@
         "fields": [
           "WHM Stock Entries count"
         ],
-        "newField": "WHM Stock Entries",
+        "newField": "WHM Stock Entries Count",
         "_comments": ""
       },
       {
@@ -46716,16 +47012,16 @@
           "Total Houses Registered count",
           "negative_households_visited_count"
         ],
-        "newField": "Households not sprayed",
+        "newField": "Households Not Sprayed Count",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "total_users_registered_more_than_15"
+          "total_users_registered_more_than_3"
         ],
-        "newField": "Suspected Frauds",
+        "newField": "Suspected Frauds Count",
         "_comments": ""
       }
     ],
@@ -46733,9 +47029,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualitySummaryLocalityCarboDelgado": {
+  "dataQualitySummaryLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46763,7 +47059,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "filterKeys": [
@@ -46774,7 +47070,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "dataQualitySummaryAdministrativeProvinceCarboDelgado",
+    "drillChart": "dataQualitySummaryAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "locality",
@@ -46782,7 +47078,7 @@
       "Household with more than 20 members count",
       "Location not enabled count",
       "WHM Stock Entries count",
-      "total_users_registered_more_than_15",
+      "total_users_registered_more_than_3",
       "Total Houses Registered count",
       "negative_households_visited_count"
     ],
@@ -46799,7 +47095,7 @@
         "fields": [
           "Household with more than 20 members count"
         ],
-        "newField": "Household With More Than 20 Members Count",
+        "newField": "Household with more than 20 members",
         "_comments": ""
       },
       {
@@ -46834,7 +47130,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "total_users_registered_more_than_15"
+          "total_users_registered_more_than_3"
         ],
         "newField": "Suspected Frauds Count",
         "_comments": ""
@@ -46844,9 +47140,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualitySummaryAdministrativeProvinceCarboDelgado": {
+  "dataQualitySummaryAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_ADMINISTRATIVE_PROVINCE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46874,7 +47170,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "filterKeys": [
@@ -46885,7 +47181,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "dataQualitySummaryVillageCarboDelgado",
+    "drillChart": "dataQualitySummaryVillageCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "administrativeProvince",
@@ -46893,7 +47189,7 @@
       "Household with more than 20 members count",
       "Location not enabled count",
       "WHM Stock Entries count",
-      "total_users_registered_more_than_15",
+      "total_users_registered_more_than_3",
       "Total Houses Registered count",
       "negative_households_visited_count"
     ],
@@ -46945,7 +47241,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "total_users_registered_more_than_15"
+          "total_users_registered_more_than_3"
         ],
         "newField": "Suspected Frauds Count",
         "_comments": ""
@@ -46955,9 +47251,9 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualitySummaryVillageCarboDelgado": {
+  "dataQualitySummaryVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_VILLAGE_CARBO_DELGADO",
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_VILLAGE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -46985,7 +47281,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_15\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 15\"}}}},\"number_of_users_registered_more_than_15\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_15\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_15\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "filterKeys": [
@@ -47004,7 +47300,7 @@
       "Household with more than 20 members count",
       "Location not enabled count",
       "WHM Stock Entries count",
-      "total_users_registered_more_than_15",
+      "total_users_registered_more_than_3",
       "Total Houses Registered count",
       "negative_households_visited_count"
     ],
@@ -47056,7 +47352,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "total_users_registered_more_than_15"
+          "total_users_registered_more_than_3"
         ],
         "newField": "Suspected Frauds Count",
         "_comments": ""

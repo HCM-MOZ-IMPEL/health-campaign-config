@@ -12052,8 +12052,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "housesWithMoreThanTwentyMembersByDistrictCarboDelgado",
-                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_CARBO_DELGADO",
+                  "id": "housesWithMoreThanTwentyMembersByDistrictCaboDelgado",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -12075,9 +12075,18 @@
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
+              {
+                  "id": "locationNotEnabledByDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
                 {
-                  "id": "locationNotEnabledByDistrictCarboDelgado",
-                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_CARBO_DELGADO",
+                  "id": "locationNotEnabledByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -12094,7 +12103,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "entriesDoneByWMsDistrictCarboDelgado",
+                  "id": "entriesDoneByWMsDistrictCaboDelgado",
                   "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -12118,8 +12127,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "incompleteRecordsByDistrictCarboDelgado",
-                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CARBO_DELGADO",
+                  "id": "incompleteRecordsByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -12136,8 +12145,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "suspectedFraudsByDistrictCarboDelgado",
-                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CARBO_DELGADO",
+                  "id": "suspectedFraudsByDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -12160,8 +12169,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "attendenceOverviewPercentCarboDelgado",
-                  "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW_PERCENT_CARBO_DELGADO",
+                  "id": "attendanceSprayOperatorsDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_PERCENT_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -12169,8 +12178,8 @@
                   "tabName": "PERCENT"
                 },
                 {
-                  "id": "attendenceOverviewCarboDelgado",
-                  "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW_CARBO_DELGADO",
+                  "id": "attendanceSprayOperatorsDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -12194,8 +12203,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "dataQualitySummaryDistrictCarboDelgado",
-                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_CARBO_DELGADO",
+                  "id": "dataQualitySummaryDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -13387,8 +13396,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "housesWithMoreThanTwentyMembersByLocalityCarboDelgado",
-                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY_CARBO_DELGADO",
+                  "id": "housesWithMoreThanTwentyMembersByLocalityCaboDelgado",
+                  "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13410,9 +13419,18 @@
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
+              {
+                  "id": "locationNotEnabledByLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
                 {
-                  "id": "locationNotEnabledByLocalityCarboDelgado",
-                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_CARBO_DELGADO",
+                  "id": "locationNotEnabledByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13429,7 +13447,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "entriesDoneByWMsLocalityCarboDelgado",
+                  "id": "entriesDoneByWMsLocalityCaboDelgado",
                   "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_LOCALITY",
                   "code": "",
                   "chartType": "bar",
@@ -13453,8 +13471,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "incompleteRecordsByLocalityCarboDelgado",
-                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CARBO_DELGADO",
+                  "id": "incompleteRecordsByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13471,8 +13489,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "suspectedFraudsByLocalityCarboDelgado",
-                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CARBO_DELGADO",
+                  "id": "suspectedFraudsByLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13495,8 +13513,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "attendenceOverviewPercentCarboDelgado",
-                  "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW_PERCENT_CARBO_DELGADO",
+                  "id": "attendanceSprayOperatorsLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_PERCENT_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13504,8 +13522,8 @@
                   "tabName": "PERCENT"
                 },
                 {
-                  "id": "attendenceOverviewCarboDelgado",
-                  "name": "DSS_HEALTH_ATTENDENCE_OVERVIEW_CARBO_DELGADO",
+                  "id": "attendanceSprayOperatorsLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -13529,8 +13547,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "dataQualitySummaryLocalityCarboDelgado",
-                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY_CARBO_DELGADO",
+                  "id": "dataQualitySummaryLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY_CABO_DELGADO",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
