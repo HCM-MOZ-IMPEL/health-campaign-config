@@ -24346,8 +24346,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Incoming",
-          "Returned"
+          "Incoming"
         ],
         "newField": "Incoming Stock IRS",
         "_comments": ""
@@ -24484,8 +24483,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Incoming",
-          "Returned"
+          "Incoming"
         ],
         "newField": "Incoming Stock IRS",
         "_comments": ""
