@@ -6728,7 +6728,7 @@
               "charts": [
                 {
                   "id": "vouchersDistributedTodayBurundi",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_VOUCHERS_DISTRIBUTED_BURUNDI",
+                  "name": "DSS_HEALTH_NATIONAL_VOUCHERS_DISTRIBUTED_TODAY_BURUNDI",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
