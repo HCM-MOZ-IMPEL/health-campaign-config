@@ -11971,6 +11971,36 @@
     "insight": {},
     "_comment": " "
   },
+  "dateRangeOverviewPopulationCoverageAchievedDistrict": {
+    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_OVER_DATERANGE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Covered till Today\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.dateEpoch",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "irs-custom-date-targets",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "percentage",
+    "aggregationPaths": [
+      "Population Covered till Today",
+      "Overall Population Target"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
   "overviewPopulationCoverageAchievedDistrict": {
     "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_DISTRICT",
     "queries": [
