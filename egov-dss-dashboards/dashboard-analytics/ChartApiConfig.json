@@ -493,6 +493,198 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
+  "mdHouseholdDeliveredCabo": {
+    "chartName": "DSS_TOTAL_HOUSEHOLD_SPRAYED",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filters\": {\n        \"filters\": {\n          \"ADMIN_SUCCESS\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"totalDeliveredHouseholds\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "action": "",
+    "isRoundOff": false,
+    "aggregationPaths": [
+      "totalDeliveredHouseholds"
+    ],
+    "drillChart": "none",
+    "insight": {
+      "chartResponseMap": "mdHouseholdDeliveredCabo",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "day",
+      "isRoundOff": true
+    },
+    "_comment": ""
+  },
+  "mdBednetDeliveredCabo": {
+    "chartName": "DSS_TOTAL_BOTTLES_USED",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"totalBednetsDelivered\":{\"sum\":{\"field\":\"Data.quantity\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "action": "",
+    "isRoundOff": false,
+    "aggregationPaths": [
+      "totalBednetsDelivered"
+    ],
+    "drillChart": "none",
+    "insight": {
+      "chartResponseMap": "mdBednetDeliveredCabo",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "day",
+      "isRoundOff": true
+    },
+    "_comment": ""
+  },
+  "mdDeliveryCoverageCabo": {
+    "chartName": "DSS_PERCENT_TARGET_ACHIEVEMENT_TODAY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filters\": {\n        \"filters\": {\n          \"ADMIN_SUCCESS\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"totalHouseholdsDelivered\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"projectId\": \"Data.projectId.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"targetPerDay\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "percentage",
+    "action": "percentage",
+    "drillChart": "none",
+    "aggregationPaths": [
+      "totalHouseholdsDelivered",
+      "targetPerDay"
+    ],
+    "insight": {
+      "chartResponseMap": "mdDeliveryCoverageCabo",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
+    },
+    "_comment": ""
+  },
+  "mdRegistrationDeliverySummaryTableCabo": {
+    "chartName": "DSS_HEALTH_IRS_COVERAGE_BY_USER",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"NAME\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"User Name\": {\n          \"terms\": {\n            \"field\": \"Data.userName.keyword\"\n          },\n          \"aggs\": {\n            \"Households delivered\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            },\n            \"NegativeHouseholdsSprayed\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"count\": \"Households sprayed\"\n                },\n                \"script\": \"params.count*-1\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Bednets delivered today\":{\"sum\":{\"field\":\"Data.quantity\"}},\"NegativeBottlesUsedToday\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"Bednets delivered today\"},\"script\":\"params.count*-1\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"households delivered today copy\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"householdsDeliveredCoverage\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"households delivered today copy\"},\"script\":\"params.count / 50\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"uuid\": \"Data.syncedUserId.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"size\":2000,\"field\":\"Data.syncedUserName.keyword\"},\"aggs\":{\"Lastsyncedtime\":{\"max\":{\"field\":\"Data.syncedTimeStamp\"}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "User Name",
+    "excludedColumns": [
+      "NegativeHouseholdsSprayed",
+      "NegativeBottlesUsedToday",
+      "Stock count per user",
+      "Households delivered",
+      "Households sprayed",
+      "Bednets delivered today",
+      "households delivered today copy",
+      "Lastsyncedtime"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Households delivered"
+        ],
+        "newField": "Households Delivered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Bednets delivered today"
+        ],
+        "newField": "Bednets Delivered Today",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "householdsDeliveredCoverage"
+        ],
+        "newField": "Household Delivery Coverage",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Lastsyncedtime"
+        ],
+        "newField": "Last synced time",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
   "totalHouseholdSprayed": {
     "chartName": "DSS_TOTAL_HOUSEHOLD_SPRAYED",
     "queries": [
