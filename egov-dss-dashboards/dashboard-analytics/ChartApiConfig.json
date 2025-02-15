@@ -198,7 +198,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filters\":{\"filters\":{\"ADMIN_SUCCESS\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}}}},\"aggs\":{\"totalChildrenAdministered\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filters\":{\"filters\":{\"ADMIN_SUCCESS\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}}}},\"aggs\":{\"totalChildrenAdministered\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -229,7 +229,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filters\":{\"filters\":{\"ADMIN_SUCCESS\":{\"bool\":{\"must\":[]}}}},\"aggs\":{\"totalSpaqUsed\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filters\":{\"filters\":{\"ADMIN_SUCCESS\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}}}},\"aggs\":{\"totalSpaqUsed\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -260,7 +260,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filters\":{\"filters\":{\"ADMIN_SUCCESS\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}}}},\"aggs\":{\"totalChildrenAdministered\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filters\":{\"filters\":{\"ADMIN_SUCCESS\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}}}},\"aggs\":{\"totalChildrenAdministered\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -304,28 +304,28 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"range\":{\"Data.age\":{\"lte\":11}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Children Administered 3 to 11\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"range\":{\"Data.age\":{\"lte\":11}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Children Administered 3 to 11\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"range\":{\"Data.age\":{\"gte\":12}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Children Administered 12 to 59\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"range\":{\"Data.age\":{\"gte\":12}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Children Administered 12 to 59\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"term\":{\"Data.productName.keyword\":{\"value\":\"SPAQ 2 (12 a 59 meses)\"}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"SPAQ2 used\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"term\":{\"Data.productName.keyword\":{\"value\":\"SPAQ 2 (12 a 59 meses)\"}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"SPAQ2 used\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"term\":{\"Data.productName.keyword\":{\"value\":\"SPAQ 1 (3 a <12 meses)\"}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"SPAQ1 used\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"INDIVIDUAL\"}}},{\"term\":{\"Data.productName.keyword\":{\"value\":\"SPAQ 1 (3 a <12 meses)\"}}}]}},\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"SPAQ1 used\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
