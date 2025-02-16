@@ -10594,7 +10594,7 @@
                   "id": "communitiesCoveredNotCoveredCaboDelgado",
                   "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
                   "code": "",
-                  "moduleName": "CaboDelgado-bednet",
+                  "moduleName": "cabo-delgado-bednet",
                   "pageName": "communities-covered-and-not-covered",
                   "chartType": "kibanaComponent",
                   "filter": "",
@@ -10759,6 +10759,32 @@
                   "code": "",
                   "moduleName": "cabo-delgado-bednet",
                   "pageName": "closed-household-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6051,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "usersChecklistMap",
+                  "name": "DASHBOARD_USERS_CHECKLIST",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "users-checklist-map",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -11330,7 +11356,7 @@
                   "id": "teamPerformanceSummaryTableDistrictCaboDelgado",
                   "name": "DASHBOARD_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT_CABO_DELGADO",
                   "code": "",
-                  "moduleName": "caboDelgado-bednet",
+                  "moduleName": "cabo-delgado-bednet",
                   "pageName": "team-performance-district",
                   "chartType": "kibanaComponent",
                   "filter": "",
@@ -11969,7 +11995,7 @@
                   "id": "communitiesCoveredNotCoveredCaboDelgado",
                   "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
                   "code": "",
-                  "moduleName": "CaboDelgado-bednet",
+                  "moduleName": "cabo-delgado-bednet",
                   "pageName": "communities-covered-and-not-covered",
                   "chartType": "kibanaComponent",
                   "filter": "",
@@ -12134,6 +12160,32 @@
                   "code": "",
                   "moduleName": "cabo-delgado-bednet",
                   "pageName": "closed-household-map",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 6081,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "usersChecklistMap",
+                  "name": "DASHBOARD_USERS_CHECKLIST",
+                  "code": "",
+                  "moduleName": "cabo-delgado-bednet",
+                  "pageName": "users-checklist-map",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -12674,7 +12726,7 @@
                   "id": "teamPerformanceSummaryTableLocalityCaboDelgado",
                   "name": "DASHBOARD_TEAM_PERFORMANCE_SUMMARY_TABLE_LOCALITY_CABO_DELGADO",
                   "code": "",
-                  "moduleName": "caboDelgado-bednet",
+                  "moduleName": "cabo-delgado-bednet",
                   "pageName": "team-performance-locality",
                   "chartType": "kibanaComponent",
                   "filter": "",
