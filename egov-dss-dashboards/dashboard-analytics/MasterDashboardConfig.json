@@ -8340,7 +8340,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationTargetedDistrict311SMC",
+                  "id": "overviewPopulationTargetedProvince311SMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_TARGETED",
                   "code": "",
                   "chartType": "metric",
@@ -8348,7 +8348,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationCoverageAchievedDistrict311SMC",
+                  "id": "overviewPopulationCoverageAchievedProvince311SMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_ADMINISTERED_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
@@ -8382,7 +8382,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationTargetedDistrict1259SMC",
+                  "id": "overviewPopulationTargetedProvince1259SMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_TARGETED",
                   "code": "",
                   "chartType": "metric",
@@ -8390,7 +8390,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationCoverageAchievedDistrict1259SMC",
+                  "id": "overviewPopulationCoverageAchievedProvince1259SMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_ADMINISTERED_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
@@ -8424,7 +8424,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationTargetedDistrictSMC",
+                  "id": "overviewPopulationTargetedProvinceSMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_TARGETED",
                   "code": "",
                   "chartType": "metric",
@@ -8432,7 +8432,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationCoverageAchievedDistrictSMC",
+                  "id": "overviewPopulationCoverageAchievedProvinceSMC",
                   "name": "DSS_HEALTH_OVERVIEW_CHILDREN_ADMINISTERED_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
@@ -8472,7 +8472,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionTargetDistrictSPAQ1SMC",
+                  "id": "distributionTargetProvinceSPAQ1SMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_TARGET",
                   "code": "",
                   "chartType": "metric",
@@ -8480,7 +8480,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionCoverageDistrictSPAQ1SMC",
+                  "id": "distributionCoverageProvinceSPAQ1SMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_COVERAGE",
                   "code": "",
                   "chartType": "metric",
@@ -8514,7 +8514,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionTargetDistrictSPAQ2SMC",
+                  "id": "distributionTargetProvinceSPAQ2SMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_TARGET",
                   "code": "",
                   "chartType": "metric",
@@ -8522,7 +8522,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionCoverageDistrictSPAQ2SMC",
+                  "id": "distributionCoverageProvinceSPAQ2SMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_COVERAGE",
                   "code": "",
                   "chartType": "metric",
@@ -8556,7 +8556,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionTargetDistrictSMC",
+                  "id": "distributionTargetProvinceSMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_TARGET",
                   "code": "",
                   "chartType": "metric",
@@ -8564,7 +8564,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionCoverageDistrictSMC",
+                  "id": "distributionCoverageProvinceSMC",
                   "name": "DSS_HEALTH_OVERVIEW_DRUG_DISTRIBUTION_COVERAGE",
                   "code": "",
                   "chartType": "metric",
