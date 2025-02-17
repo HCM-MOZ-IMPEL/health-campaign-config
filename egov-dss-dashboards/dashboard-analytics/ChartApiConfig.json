@@ -35229,14 +35229,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Overall target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Overall target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"Household TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Distribution Target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Distribution Target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"Distribution TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -35251,8 +35251,8 @@
       "S.N.",
       "TOTAL TARGET",
       "Overall Population Target",
-      "Overall target",
-      "Distribution Target"
+      "Household TargetValue",
+      "Distribution TargetValue"
     ],
     "computedFields": [
       {
@@ -35268,7 +35268,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Overall target"
+          "Household TargetValue"
         ],
         "newField": "Total_Target_Households",
         "_comments": ""
@@ -35277,7 +35277,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Distribution Target"
+          "Distribution TargetValue"
         ],
         "newField": "Total_Target_Bednets",
         "_comments": ""
@@ -35303,14 +35303,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Overall target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Overall target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Household TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Distribution Target\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Distribution TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -35325,8 +35325,8 @@
       "S.N.",
       "TOTAL TARGET",
       "Overall Population Target",
-      "Overall target",
-      "Distribution Target"
+      "Household TargetValue",
+      "Distribution TargetValue"
     ],
     "computedFields": [
       {
@@ -35342,7 +35342,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Overall target"
+          "Household TargetValue"
         ],
         "newField": "Total_Target_Households",
         "_comments": ""
@@ -35351,7 +35351,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Distribution Target"
+          "Distribution TargetValue"
         ],
         "newField": "Total_Target_Bednets",
         "_comments": ""
@@ -36245,14 +36245,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Total Registrars\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Total Users\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "user-sync-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Registrars Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -36265,34 +36265,34 @@
     "excludedColumns": [
       "S.N.",
       "DATA SYNC",
-      "Total Registrars",
-      "Unique Registrars Synced"
+      "Total Users",
+      "Unique Users Synced"
     ],
     "computedFields": [
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Total Registrars"
+          "Total Users"
         ],
-        "newField": "Total_Registrars",
+        "newField": "Total_Users",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Unique Registrars Synced"
+          "Unique Users Synced"
         ],
-        "newField": "Unique_Registrars_Synced",
+        "newField": "Unique_Users_Synced",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Unique_Registrars_Synced",
-          "Total_Registrars"
+          "Unique_Users_Synced",
+          "Total_Users"
         ],
         "newField": "User_Sync_Rate",
         "_comments": ""
@@ -36311,14 +36311,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Total Registrars\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Total Users\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "user-sync-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Registrars Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -36331,34 +36331,34 @@
     "excludedColumns": [
       "S.N.",
       "DATA SYNC",
-      "Total Registrars",
-      "Unique Registrars Synced"
+      "Total Users",
+      "Unique Users Synced"
     ],
     "computedFields": [
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Total Registrars"
+          "Total Users"
         ],
-        "newField": "Total_Registrars",
+        "newField": "Total_Users",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Unique Registrars Synced"
+          "Unique Users Synced"
         ],
-        "newField": "Unique_Registrars_Synced",
+        "newField": "Unique_Users_Synced",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Unique_Registrars_Synced",
-          "Total_Registrars"
+          "Unique_Users_Synced",
+          "Total_Users"
         ],
         "newField": "User_Sync_Rate",
         "_comments": ""
