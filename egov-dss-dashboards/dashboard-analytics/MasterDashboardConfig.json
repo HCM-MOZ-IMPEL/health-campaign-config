@@ -11497,22 +11497,22 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "attendanceSprayOperatorsDistrictPercentCaboDelgado",
-                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_PERCENT_CABO_DELGADO",
+                  "id": "attendanceDistributorsDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_DISTRICT_CABO_DELGADO",
                   "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
-                  "id": "attendanceSprayOperatorsDistrictCaboDelgado",
-                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_CABO_DELGADO",
-                  "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": [],
                   "tabName": "NUMBER"
+                },
+                {
+                  "id": "attendanceDistributorsDistrictPercentCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_DISTRICT_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
                 }
               ]
             }
@@ -12867,22 +12867,22 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "attendanceSprayOperatorsLocalityPercentCaboDelgado",
-                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_PERCENT_CABO_DELGADO",
+                  "id": "attendanceDistributorsLocalityCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY_CABO_DELGADO",
                   "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
-                  "id": "attendanceSprayOperatorsLocalityCaboDelgado",
-                  "name": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_CABO_DELGADO",
-                  "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": [],
                   "tabName": "NUMBER"
+                },
+                {
+                  "id": "attendanceDistributorsLocalityPercentCaboDelgado",
+                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY_PERCENT_CABO_DELGADO",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
                 }
               ]
             }

@@ -42819,7 +42819,7 @@
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered>3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\",\"min_doc_count\":1},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered>3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -42848,7 +42848,7 @@
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\",\"min_doc_count\":1},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -42877,7 +42877,7 @@
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\",\"min_doc_count\":1},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -42906,7 +42906,7 @@
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered>3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\",\"min_doc_count\":1},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered>3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -42926,8 +42926,8 @@
     "insight": {},
     "_comment": " "
   },
-  "attendanceSprayOperatorsDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_PERCENT_CABO_DELGADO",
+  "attendanceDistributorsDistrictPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_DISTRICT_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42941,19 +42941,51 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
-    "drillChart": "attendanceSprayOperatorsLocalityPercentCaboDelgado",
+    "drillChart": "attendanceDistributorsLocalityPercentCaboDelgado",
     "documentType": "_doc",
-    "action": "percentage",
+    "action": "",
     "aggregationPaths": [
       "Community Distributors Marked Present",
-      "Total spray operators"
+      "Total distributors",
+      "OneOrMoreThanOneEntries"
+    ],
+    "computeMultiPaths": true,
+    "sort": "sortKeyAsc",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Community Distributors Marked Present",
+          "Total distributors"
+        ],
+        "newField": "Attendance percent from Phone",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "OneOrMoreThanOneEntries",
+          "Total distributors"
+        ],
+        "newField": "CDDs with more than one entry percent",
+        "_comments": ""
+      }
     ],
     "insight": {},
     "_comment": " ",
@@ -42963,8 +42995,8 @@
       }
     ]
   },
-  "attendanceSprayOperatorsLocalityPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_PERCENT_CABO_DELGADO",
+  "attendanceDistributorsLocalityPercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -42978,19 +43010,51 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
-    "drillChart": "attendanceSprayOperatorsAdministrativeProvincePercentCaboDelgado",
+    "drillChart": "attendanceDistributorsAdministrativeProvincePercentCaboDelgado",
     "documentType": "_doc",
-    "action": "percentage",
+    "action": "",
     "aggregationPaths": [
       "Community Distributors Marked Present",
-      "Total spray operators"
+      "Total distributors",
+      "OneOrMoreThanOneEntries"
+    ],
+    "computeMultiPaths": true,
+    "sort": "sortKeyAsc",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Community Distributors Marked Present",
+          "Total distributors"
+        ],
+        "newField": "Attendance percent from Phone",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "OneOrMoreThanOneEntries",
+          "Total distributors"
+        ],
+        "newField": "CDDs with more than one entry percent",
+        "_comments": ""
+      }
     ],
     "insight": {},
     "_comment": " ",
@@ -43000,8 +43064,8 @@
       }
     ]
   },
-  "attendanceSprayOperatorsAdministrativeProvincePercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+  "attendanceDistributorsAdministrativeProvincePercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43013,21 +43077,53 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
-    "drillChart": "attendanceSprayOperatorsVillagePercentCaboDelgado",
+    "drillChart": "attendanceDistributorsVillagePercentCaboDelgado",
     "documentType": "_doc",
-    "action": "percentage",
+    "action": "",
     "aggregationPaths": [
       "Community Distributors Marked Present",
-      "Total spray operators"
+      "Total distributors",
+      "OneOrMoreThanOneEntries"
+    ],
+    "computeMultiPaths": true,
+    "sort": "sortKeyAsc",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Community Distributors Marked Present",
+          "Total distributors"
+        ],
+        "newField": "Attendance percent from Phone",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "OneOrMoreThanOneEntries",
+          "Total distributors"
+        ],
+        "newField": "CDDs with more than one entry percent",
+        "_comments": ""
+      }
     ],
     "insight": {},
     "_comment": " ",
@@ -43037,8 +43133,8 @@
       }
     ]
   },
-  "attendanceSprayOperatorsVillagePercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_VILLAGE_PERCENT_CABO_DELGADO",
+  "attendanceDistributorsVillagePercentCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_VILLAGE_PERCENT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43050,9 +43146,16 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total spray operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -43061,10 +43164,35 @@
     "plotLabel": "none",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "percentage",
+    "action": "",
     "aggregationPaths": [
       "Community Distributors Marked Present",
-      "Total spray operators"
+      "Total distributors",
+      "OneOrMoreThanOneEntries"
+    ],
+    "computeMultiPaths": true,
+    "sort": "sortKeyAsc",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Community Distributors Marked Present",
+          "Total distributors"
+        ],
+        "newField": "Attendance percent from Phone",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "OneOrMoreThanOneEntries",
+          "Total distributors"
+        ],
+        "newField": "CDDs with more than one entry percent",
+        "_comments": ""
+      }
     ],
     "insight": {},
     "_comment": " ",
@@ -43074,8 +43202,8 @@
       }
     ]
   },
-  "attendanceSprayOperatorsDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_CABO_DELGADO",
+  "attendanceDistributorsDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_DISTRICT_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43083,27 +43211,58 @@
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
-    "valueType": "number",
-    "drillChart": "attendanceSprayOperatorsLocalityCaboDelgado",
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "attendanceDistributorsLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Community Distributors Marked Present"
+      "Community Distributors Marked Present",
+      "OneOrMoreThanOneEntries"
     ],
+    "computeMultiPaths": true,
+    "sort": "sortKeyAsc",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Community Distributors Marked Present"
+        ],
+        "newField": "Attendance from Phone",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "OneOrMoreThanOneEntries"
+        ],
+        "newField": "CDDs with more than one entry",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "_comment": " ",
     "filterKeys": [
       {
         "key": "district"
       }
-    ],
-    "insight": {},
-    "_comment": " "
+    ]
   },
-  "attendanceSprayOperatorsLocalityCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_CABO_DELGADO",
+  "attendanceDistributorsLocalityCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43111,27 +43270,58 @@
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.locality.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
-    "valueType": "number",
-    "drillChart": "attendanceSprayOperatorsAdministrativeProvinceCaboDelgado",
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "attendanceDistributorsAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Community Distributors Marked Present"
+      "Community Distributors Marked Present",
+      "OneOrMoreThanOneEntries"
     ],
+    "computeMultiPaths": true,
+    "sort": "sortKeyAsc",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Community Distributors Marked Present"
+        ],
+        "newField": "Attendance from Phone",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "OneOrMoreThanOneEntries"
+        ],
+        "newField": "CDDs with more than one entry",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "_comment": " ",
     "filterKeys": [
       {
         "key": "locality"
       }
-    ],
-    "insight": {},
-    "_comment": " "
+    ]
   },
-  "attendanceSprayOperatorsAdministrativeProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+  "attendanceDistributorsAdministrativeProvinceCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
@@ -43139,52 +43329,114 @@
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"locality\": \"boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",, \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
-    "valueType": "number",
-    "drillChart": "attendanceSprayOperatorsVillageCaboDelgado",
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "attendanceDistributorsVillageCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Community Distributors Marked Present"
+      "Community Distributors Marked Present",
+      "OneOrMoreThanOneEntries"
     ],
+    "computeMultiPaths": true,
+    "sort": "sortKeyAsc",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Community Distributors Marked Present"
+        ],
+        "newField": "Attendance from Phone",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "OneOrMoreThanOneEntries"
+        ],
+        "newField": "CDDs with more than one entry",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "_comment": " ",
     "filterKeys": [
       {
         "key": "administrativeProvince"
       }
-    ],
-    "insight": {},
-    "_comment": " "
+    ]
   },
-  "attendanceSprayOperatorsVillageCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_VILLAGE_CABO_DELGADO",
+  "attendanceDistributorsVillageCaboDelgado": {
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_VILLAGE_CABO_DELGADO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "attendanceLog.time",
-        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"locality\": \"boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\",, \"locality\": \"boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.village.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.auditDetails.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\",, \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
-    "valueType": "number",
+    "valueType": "percentage",
+    "plotLabel": "none",
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Community Distributors Marked Present"
+      "Community Distributors Marked Present",
+      "OneOrMoreThanOneEntries"
     ],
+    "computeMultiPaths": true,
+    "sort": "sortKeyAsc",
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Community Distributors Marked Present"
+        ],
+        "newField": "Attendance from Phone",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "OneOrMoreThanOneEntries"
+        ],
+        "newField": "CDDs with more than one entry",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "_comment": " ",
     "filterKeys": [
       {
         "key": "village"
       }
-    ],
-    "insight": {},
-    "_comment": " "
+    ]
   },
   "dataQualitySummaryDistrictCaboDelgado": {
     "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_CABO_DELGADO",
