@@ -35157,15 +35157,6 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Total Count Households Visited Today"
-        ],
-        "newField": "Total Households Visited Today",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
           "Total Count Households Visited Cumulative"
         ],
         "newField": "Total Households Visited Cumulative",
@@ -43231,7 +43222,7 @@
       "Community Distributors Marked Present",
       "OneOrMoreThanOneEntries"
     ],
-    "computeMultiPaths": true,
+    "computeMultiPaths": false,
     "sort": "sortKeyAsc",
     "computedFields": [
       {
@@ -43290,7 +43281,7 @@
       "Community Distributors Marked Present",
       "OneOrMoreThanOneEntries"
     ],
-    "computeMultiPaths": true,
+    "computeMultiPaths": false,
     "sort": "sortKeyAsc",
     "computedFields": [
       {
@@ -43349,7 +43340,7 @@
       "Community Distributors Marked Present",
       "OneOrMoreThanOneEntries"
     ],
-    "computeMultiPaths": true,
+    "computeMultiPaths": false,
     "sort": "sortKeyAsc",
     "computedFields": [
       {
@@ -43408,7 +43399,7 @@
       "Community Distributors Marked Present",
       "OneOrMoreThanOneEntries"
     ],
-    "computeMultiPaths": true,
+    "computeMultiPaths": false,
     "sort": "sortKeyAsc",
     "computedFields": [
       {
