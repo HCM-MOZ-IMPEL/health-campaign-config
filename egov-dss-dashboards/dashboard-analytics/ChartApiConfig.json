@@ -33141,7 +33141,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.dateEpoch",
+        "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "smc-niassa-facility-targets",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"3-11MONTH\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
@@ -33255,7 +33255,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.dateEpoch",
+        "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "smc-niassa-facility-targets",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"12-59MONTH\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
@@ -33369,7 +33369,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.dateEpoch",
+        "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "smc-niassa-facility-targets",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
@@ -33477,7 +33477,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.dateEpoch",
+        "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "smc-niassa-facility-targets",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Drug Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
@@ -33592,7 +33592,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.dateEpoch",
+        "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "smc-niassa-facility-targets",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Drug Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPAQ1\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
@@ -33707,7 +33707,7 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.dateEpoch",
+        "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "smc-niassa-facility-targets",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Drug Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPAQ2\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
