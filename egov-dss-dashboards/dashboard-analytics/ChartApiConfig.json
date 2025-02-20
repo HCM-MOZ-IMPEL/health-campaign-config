@@ -35117,14 +35117,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Household Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Household Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Overall Household Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
