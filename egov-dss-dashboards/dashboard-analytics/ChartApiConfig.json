@@ -614,7 +614,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"households delivered today copy\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"householdsDeliveredCoverage\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"households delivered today copy\"},\"script\":\"params.count / 60\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"households delivered today copy\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"householdsDeliveredCoverage\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"households delivered today copy\"},\"script\":\"params.count * 100 / 60\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -635,7 +635,8 @@
       "NegativeHouseholdsSprayed",
       "NegativeBottlesUsedToday",
       "Stock count per user",
-      "Households delivered",
+      "Householdsdelivered",
+      "householdsDeliveredCoverage"
       "Bednets delivered today",
       "households delivered today copy",
       "Lastsyncedtime"
@@ -645,7 +646,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Households delivered"
+          "Householdsdelivered"
         ],
         "newField": "Households Delivered Cabo",
         "_comments": ""
