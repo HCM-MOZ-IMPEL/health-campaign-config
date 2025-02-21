@@ -494,7 +494,7 @@
     "_comment": " "
   },
   "mdHouseholdDeliveredCabo": {
-    "chartName": "DSS_TOTAL_HOUSEHOLD_SPRAYED",
+    "chartName": "DSS_TOTAL_HOUSEHOLDS_DELIVERED_CABO",
     "queries": [
       {
         "module": "COMMON",
@@ -525,7 +525,7 @@
     "_comment": ""
   },
   "mdBednetDeliveredCabo": {
-    "chartName": "DSS_TOTAL_BOTTLES_USED",
+    "chartName": "DSS_TOTAL_BEDNETS_DELIVERED_CABO",
     "queries": [
       {
         "module": "COMMON",
@@ -593,7 +593,7 @@
     "_comment": ""
   },
   "mdRegistrationDeliverySummaryTableCabo": {
-    "chartName": "DSS_HEALTH_IRS_COVERAGE_BY_USER",
+    "chartName": "DSS_HEALTH_CABO_COVERAGE_BY_USER",
     "queries": [
       {
         "module": "COMMON",
@@ -614,7 +614,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"households delivered today copy\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"householdsDeliveredCoverage\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"households delivered today copy\"},\"script\":\"params.count / 50\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"households delivered today copy\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"householdsDeliveredCoverage\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"households delivered today copy\"},\"script\":\"params.count / 60\"}}}}}}"
       },
       {
         "module": "COMMON",
