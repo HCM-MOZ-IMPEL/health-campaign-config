@@ -499,9 +499,9 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filters\": {\n        \"filters\": {\n          \"ADMIN_SUCCESS\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"totalDeliveredHouseholds\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filters\": {\n        \"filters\": {\n          \"ADMIN_SUCCESS\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"totalDeliveredHouseholdsCabo\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "metric",
@@ -509,7 +509,7 @@
     "action": "",
     "isRoundOff": false,
     "aggregationPaths": [
-      "totalDeliveredHouseholds"
+      "totalDeliveredHouseholdsCabo"
     ],
     "drillChart": "none",
     "insight": {
@@ -530,9 +530,9 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"totalBednetsDelivered\":{\"sum\":{\"field\":\"Data.quantity\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"totalBednetsDeliveredCabo\":{\"sum\":{\"field\":\"Data.quantity\"}}}}"
       }
     ],
     "chartType": "metric",
@@ -540,7 +540,7 @@
     "action": "",
     "isRoundOff": false,
     "aggregationPaths": [
-      "totalBednetsDelivered"
+      "totalBednetsDeliveredCabo"
     ],
     "drillChart": "none",
     "insight": {
@@ -561,14 +561,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filters\": {\n        \"filters\": {\n          \"ADMIN_SUCCESS\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"totalHouseholdsDelivered\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectId\": \"Data.projectId.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "requestQueryMap": "{\"projectId\": \"Data.projectId.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"targetPerDay\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}"
       }
@@ -598,28 +598,28 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"NAME\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"User Name\": {\n          \"terms\": {\n            \"field\": \"Data.userName.keyword\"\n          },\n          \"aggs\": {\n            \"Households delivered\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            },\n            \"NegativeHouseholdsSprayed\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"count\": \"Households sprayed\"\n                },\n                \"script\": \"params.count*-1\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Bednets delivered today\":{\"sum\":{\"field\":\"Data.quantity\"}},\"NegativeBottlesUsedToday\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"Bednets delivered today\"},\"script\":\"params.count*-1\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"testProjectTypeId\": \"Data.testProjectTypeId.keyword\"}",
+        "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"households delivered today copy\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"householdsDeliveredCoverage\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"households delivered today copy\"},\"script\":\"params.count / 50\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"uuid\": \"Data.syncedUserId.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.testProjectTypeId.keyword\"}",
+        "requestQueryMap": "{\"uuid\": \"Data.syncedUserId.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "user-sync-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"size\":2000,\"field\":\"Data.syncedUserName.keyword\"},\"aggs\":{\"Lastsyncedtime\":{\"max\":{\"field\":\"Data.syncedTimeStamp\"}}}}}}"
       }
@@ -647,7 +647,7 @@
         "fields": [
           "Households delivered"
         ],
-        "newField": "Households Delivered",
+        "newField": "Households Delivered Cabo",
         "_comments": ""
       },
       {
@@ -656,7 +656,7 @@
         "fields": [
           "Bednets delivered today"
         ],
-        "newField": "Bednets Delivered Today",
+        "newField": "Bednets Delivered Today Cabo",
         "_comments": ""
       },
       {
@@ -665,7 +665,7 @@
         "fields": [
           "householdsDeliveredCoverage"
         ],
-        "newField": "Household Delivery Coverage",
+        "newField": "Household Delivery Coverage Cabo",
         "_comments": ""
       },
       {
