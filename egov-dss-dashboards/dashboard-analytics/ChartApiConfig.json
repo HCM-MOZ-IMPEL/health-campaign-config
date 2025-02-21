@@ -1,13 +1,13 @@
 {
-"mdHouseholdDeliveredCabo": {
-    "chartName": "DSS_TOTAL_HOUSEHOLD_SPRAYED",
+  "mdHouseholdDeliveredCabo": {
+    "chartName": "DSS_TOTAL_HOUSEHOLDS_DELIVERED_CABO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filters\": {\n        \"filters\": {\n          \"ADMIN_SUCCESS\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"totalDeliveredHouseholds\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"FILTER\": {\n      \"filters\": {\n        \"filters\": {\n          \"ADMIN_SUCCESS\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"totalDeliveredHouseholdsCabo\": {\n          \"value_count\": {\n            \"field\": \"Data.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "metric",
@@ -15,7 +15,7 @@
     "action": "",
     "isRoundOff": false,
     "aggregationPaths": [
-      "totalDeliveredHouseholds"
+      "totalDeliveredHouseholdsCabo"
     ],
     "drillChart": "none",
     "insight": {
@@ -31,14 +31,14 @@
     "_comment": ""
   },
   "mdBednetDeliveredCabo": {
-    "chartName": "DSS_TOTAL_BOTTLES_USED",
+    "chartName": "DSS_TOTAL_BEDNETS_DELIVERED_CABO",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"totalBednetsDelivered\":{\"sum\":{\"field\":\"Data.quantity\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"totalBednetsDeliveredCabo\":{\"sum\":{\"field\":\"Data.quantity\"}}}}"
       }
     ],
     "chartType": "metric",
@@ -46,7 +46,7 @@
     "action": "",
     "isRoundOff": false,
     "aggregationPaths": [
-      "totalBednetsDelivered"
+      "totalBednetsDeliveredCabo"
     ],
     "drillChart": "none",
     "insight": {
@@ -99,14 +99,14 @@
     "_comment": ""
   },
   "mdRegistrationDeliverySummaryTableCabo": {
-    "chartName": "DSS_HEALTH_IRS_COVERAGE_BY_USER",
+    "chartName": "DSS_HEALTH_CABO_COVERAGE_BY_USER",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"size\": 0,\n  \"aggs\": {\n    \"NAME\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.administrationStatus.keyword\": \"ADMINISTRATION_SUCCESS\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"User Name\": {\n          \"terms\": {\n            \"field\": \"Data.userName.keyword\"\n          },\n          \"aggs\": {\n            \"Households delivered\": {\n              \"value_count\": {\n                \"field\": \"Data.id.keyword\"\n              }\n            },\n            \"NegativeHouseholdsSprayed\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"count\": \"Households sprayed\"\n                },\n                \"script\": \"params.count*-1\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"UserName\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"Householdsdelivered\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -120,7 +120,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"uuid\": \"Data.createdBy.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"households delivered today copy\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"householdsDeliveredCoverage\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"households delivered today copy\"},\"script\":\"params.count / 50\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"User Name\":{\"terms\":{\"field\":\"Data.userName.keyword\"},\"aggs\":{\"households delivered today copy\":{\"value_count\":{\"field\":\"Data.id.keyword\"}},\"householdsDeliveredCoverage\":{\"bucket_script\":{\"buckets_path\":{\"count\":\"households delivered today copy\"},\"script\":\"params.count * 100 / 60\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -141,7 +141,8 @@
       "NegativeHouseholdsSprayed",
       "NegativeBottlesUsedToday",
       "Stock count per user",
-      "Households delivered",
+      "Householdsdelivered",
+      "householdsDeliveredCoverage",
       "Bednets delivered today",
       "households delivered today copy",
       "Lastsyncedtime"
@@ -151,9 +152,9 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Households delivered"
+          "Householdsdelivered"
         ],
-        "newField": "Households Delivered",
+        "newField": "Households Delivered Cabo",
         "_comments": ""
       },
       {
@@ -162,7 +163,7 @@
         "fields": [
           "Bednets delivered today"
         ],
-        "newField": "Bednets Delivered Today",
+        "newField": "Bednets Delivered Today Cabo",
         "_comments": ""
       },
       {
@@ -171,7 +172,7 @@
         "fields": [
           "householdsDeliveredCoverage"
         ],
-        "newField": "Household Delivery Coverage",
+        "newField": "Household Delivery Coverage Cabo",
         "_comments": ""
       },
       {
@@ -27752,15 +27753,15 @@
     "insight": {},
     "_comment": " "
   },
-  "financialSummaryReport" : {
-    "chartName" : "DSS_HEALTH_FINANCIAL_SUMMARY_REPORT",
-    "queries" : [
+  "financialSummaryReport": {
+    "chartName": "DSS_HEALTH_FINANCIAL_SUMMARY_REPORT",
+    "queries": [
       {
-        "module" : "COMMON",
+        "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "finance-checklist-index-v1",
-        "aggrQuery" : "{\"size\":0,\"aggs\":{\"date_histogram\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd MMM yyyy\"},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"CC1\",\"CC3\",\"CC5\",\"CC6\",\"CC7\",\"CC8\",\"CC10\",\"CC12\",\"CC14\",\"CC21\",\"CC22\",\"CC23\",\"CC24\",\"CC25\",\"CC26\",\"CC28\",\"CC29\",\"CC31\",\"CC32\",\"CC33\"]}},\"aggs\":{\"Amount sum\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"date_histogram\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"min_doc_count\":1,\"format\":\"dd MMM yyyy\"},\"aggs\":{\"nested_Agg\":{\"nested\":{\"path\":\"Data.attributes\"},\"aggs\":{\"filtered_attributes\":{\"filter\":{\"terms\":{\"Data.attributes.attributeCode.keyword\":[\"CC1\",\"CC3\",\"CC5\",\"CC6\",\"CC7\",\"CC8\",\"CC10\",\"CC12\",\"CC14\",\"CC21\",\"CC22\",\"CC23\",\"CC24\",\"CC25\",\"CC26\",\"CC28\",\"CC29\",\"CC31\",\"CC32\",\"CC33\"]}},\"aggs\":{\"Amount sum\":{\"terms\":{\"field\":\"Data.attributes.attributeCode.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.attributes.value.value\"}}}}}}}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -27954,7 +27955,6 @@
     "insight": {},
     "_comment": "CENSUS chart for uploaded target population in the age group 12 to 59 across all records"
   },
-
   "microplanSumTotalTargetPopulation": {
     "chartName": "MICROPLAN_DSS_TOTAL_TARGET_POPULATION",
     "queries": [
@@ -34127,31 +34127,31 @@
       {
         "postAggregationTheory": "",
         "actionName": "StackPercentageComputedField",
-        "fields" : [
+        "fields": [
           "Total children administered 3 11",
           "Children Targeted 3 11"
         ],
-        "newField" : "3 to 11 coverage",
+        "newField": "3 to 11 coverage",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "StackPercentageComputedField",
-        "fields" : [
+        "fields": [
           "Total children administered 12 59",
           "Children Targeted 12 59"
         ],
-        "newField" : "12 to 59 coverage",
+        "newField": "12 to 59 coverage",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "StackPercentageComputedField",
-        "fields" : [
+        "fields": [
           "Total children administered",
           "Children Targeted Total"
         ],
-        "newField" : "3 to 11 coverage",
+        "newField": "3 to 11 coverage",
         "_comments": ""
       }
     ],
