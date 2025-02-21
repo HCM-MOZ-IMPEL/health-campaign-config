@@ -28225,7 +28225,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"houses registered today\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
       }
@@ -28256,7 +28256,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"houses registered total\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
       }
@@ -28636,7 +28636,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Household Total\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Total Count Household Registered Cumulative\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
       },
