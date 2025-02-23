@@ -39171,7 +39171,7 @@
           "Other",
           "Total Complaints"
         ],
-        "newField": "Other"
+        "newField": "Other Count"
       },
       {
         "postAggregationTheory": "",
@@ -39180,7 +39180,7 @@
           "PerformanceIssue",
           "Total Complaints"
         ],
-        "newField": "PerformanceIssue"
+        "newField": "PerformanceIssue Count"
       },
       {
         "postAggregationTheory": "",
@@ -39189,7 +39189,7 @@
           "SecurityIssues",
           "Total Complaints"
         ],
-        "newField": "SecurityIssues"
+        "newField": "SecurityIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39198,7 +39198,7 @@
           "DataIssues",
           "Total Complaints"
         ],
-        "newField": "DataIssues"
+        "newField": "DataIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39207,7 +39207,7 @@
           "TechnicalIssues",
           "Total Complaints"
         ],
-        "newField": "TechnicalIssues"
+        "newField": "TechnicalIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39216,7 +39216,7 @@
           "UserAccountIssues",
           "Total Complaints"
         ],
-        "newField": "UserAccountIssues"
+        "newField": "UserAccountIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39225,7 +39225,7 @@
           "NotEnoughStock",
           "Total Complaints"
         ],
-        "newField": "NotEnoughStock"
+        "newField": "NotEnoughStock Count"
       },
       {
         "postAggregationTheory": "",
@@ -39234,7 +39234,7 @@
           "SyncNotWorking",
           "Total Complaints"
         ],
-        "newField": "SyncNotWorking"
+        "newField": "SyncNotWorking Count"
       },
       {
         "postAggregationTheory": "",
@@ -39243,7 +39243,7 @@
           "LackOfInternet",
           "Total Complaints"
         ],
-        "newField": "LackOfInternet"
+        "newField": "LackOfInternet Count"
       }
     ],
     "sort": "sortKeyAsc",
@@ -39257,14 +39257,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"selectedStack\": \"Data.service.serviceCode.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"selectedStack\": \"Data.service.serviceCode.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Other\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"Other\"}}]}},\"aggs\":{\"Other Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"PerformanceIssue\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"PerformanceIssue\"}}]}},\"aggs\":{\"PerformanceIssue Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SecurityIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SecurityIssues\"}}]}},\"aggs\":{\"SecurityIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"DataIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"DataIssues\"}}]}},\"aggs\":{\"DataIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"TechnicalIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"TechnicalIssues\"}}]}},\"aggs\":{\"TechnicalIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"UserAccountIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"UserAccountIssues\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SyncNotWorking\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SyncNotWorking\"}}]}},\"aggs\":{\"SyncNotWorking Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"NotEnoughStock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"NotEnoughStock\"}}]}},\"aggs\":{\"NotEnoughStock Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"LackOfInternet\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"LackOfInternet\"}}]}},\"aggs\":{\"LackOfInternet Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
       }
@@ -39302,7 +39302,7 @@
           "Other",
           "Total Complaints"
         ],
-        "newField": "Other"
+        "newField": "Other Count"
       },
       {
         "postAggregationTheory": "",
@@ -39311,7 +39311,7 @@
           "PerformanceIssue",
           "Total Complaints"
         ],
-        "newField": "PerformanceIssue"
+        "newField": "PerformanceIssue Count"
       },
       {
         "postAggregationTheory": "",
@@ -39320,7 +39320,7 @@
           "SecurityIssues",
           "Total Complaints"
         ],
-        "newField": "SecurityIssues"
+        "newField": "SecurityIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39329,7 +39329,7 @@
           "DataIssues",
           "Total Complaints"
         ],
-        "newField": "DataIssues"
+        "newField": "DataIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39338,7 +39338,7 @@
           "TechnicalIssues",
           "Total Complaints"
         ],
-        "newField": "TechnicalIssues"
+        "newField": "TechnicalIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39347,7 +39347,7 @@
           "UserAccountIssues",
           "Total Complaints"
         ],
-        "newField": "UserAccountIssues"
+        "newField": "UserAccountIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39356,7 +39356,7 @@
           "NotEnoughStock",
           "Total Complaints"
         ],
-        "newField": "NotEnoughStock"
+        "newField": "NotEnoughStock Count"
       },
       {
         "postAggregationTheory": "",
@@ -39365,7 +39365,7 @@
           "SyncNotWorking",
           "Total Complaints"
         ],
-        "newField": "SyncNotWorking"
+        "newField": "SyncNotWorking Count"
       },
       {
         "postAggregationTheory": "",
@@ -39374,7 +39374,7 @@
           "LackOfInternet",
           "Total Complaints"
         ],
-        "newField": "LackOfInternet"
+        "newField": "LackOfInternet Count"
       }
     ],
     "sort": "sortKeyAsc",
@@ -39433,7 +39433,7 @@
           "Other",
           "Total Complaints"
         ],
-        "newField": "Other"
+        "newField": "Other Count"
       },
       {
         "postAggregationTheory": "",
@@ -39442,7 +39442,7 @@
           "PerformanceIssue",
           "Total Complaints"
         ],
-        "newField": "PerformanceIssue"
+        "newField": "PerformanceIssue Count"
       },
       {
         "postAggregationTheory": "",
@@ -39451,7 +39451,7 @@
           "SecurityIssues",
           "Total Complaints"
         ],
-        "newField": "SecurityIssues"
+        "newField": "SecurityIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39460,7 +39460,7 @@
           "DataIssues",
           "Total Complaints"
         ],
-        "newField": "DataIssues"
+        "newField": "DataIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39469,7 +39469,7 @@
           "TechnicalIssues",
           "Total Complaints"
         ],
-        "newField": "TechnicalIssues"
+        "newField": "TechnicalIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39478,7 +39478,7 @@
           "UserAccountIssues",
           "Total Complaints"
         ],
-        "newField": "UserAccountIssues"
+        "newField": "UserAccountIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39487,7 +39487,7 @@
           "NotEnoughStock",
           "Total Complaints"
         ],
-        "newField": "NotEnoughStock"
+        "newField": "NotEnoughStock Count"
       },
       {
         "postAggregationTheory": "",
@@ -39496,7 +39496,7 @@
           "SyncNotWorking",
           "Total Complaints"
         ],
-        "newField": "SyncNotWorking"
+        "newField": "SyncNotWorking Count"
       },
       {
         "postAggregationTheory": "",
@@ -39505,7 +39505,7 @@
           "LackOfInternet",
           "Total Complaints"
         ],
-        "newField": "LackOfInternet"
+        "newField": "LackOfInternet Count"
       }
     ],
     "sort": "sortKeyAsc",
@@ -39564,7 +39564,7 @@
           "Other",
           "Total Complaints"
         ],
-        "newField": "Other"
+        "newField": "Other Count"
       },
       {
         "postAggregationTheory": "",
@@ -39573,7 +39573,7 @@
           "PerformanceIssue",
           "Total Complaints"
         ],
-        "newField": "PerformanceIssue"
+        "newField": "PerformanceIssue Count"
       },
       {
         "postAggregationTheory": "",
@@ -39582,7 +39582,7 @@
           "SecurityIssues",
           "Total Complaints"
         ],
-        "newField": "SecurityIssues"
+        "newField": "SecurityIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39591,7 +39591,7 @@
           "DataIssues",
           "Total Complaints"
         ],
-        "newField": "DataIssues"
+        "newField": "DataIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39600,7 +39600,7 @@
           "TechnicalIssues",
           "Total Complaints"
         ],
-        "newField": "TechnicalIssues"
+        "newField": "TechnicalIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39609,7 +39609,7 @@
           "UserAccountIssues",
           "Total Complaints"
         ],
-        "newField": "UserAccountIssues"
+        "newField": "UserAccountIssues Count"
       },
       {
         "postAggregationTheory": "",
@@ -39618,7 +39618,7 @@
           "NotEnoughStock",
           "Total Complaints"
         ],
-        "newField": "NotEnoughStock"
+        "newField": "NotEnoughStock Count"
       },
       {
         "postAggregationTheory": "",
@@ -39627,7 +39627,7 @@
           "SyncNotWorking",
           "Total Complaints"
         ],
-        "newField": "SyncNotWorking"
+        "newField": "SyncNotWorking Count"
       },
       {
         "postAggregationTheory": "",
@@ -39636,7 +39636,7 @@
           "LackOfInternet",
           "Total Complaints"
         ],
-        "newField": "LackOfInternet"
+        "newField": "LackOfInternet Count"
       }
     ],
     "sort": "sortKeyAsc",
