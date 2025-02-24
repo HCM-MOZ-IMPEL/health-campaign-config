@@ -39154,6 +39154,7 @@
     "aggregationPaths": [
       "Other",
       "PerformanceIssue",
+      "PerformanceIssue Count",
       "SecurityIssues",
       "DataIssues",
       "TechnicalIssues",
@@ -39161,7 +39162,9 @@
       "NotEnoughStock",
       "SyncNotWorking",
       "LackOfInternet",
-      "Total Complaints"
+      "LackOfInternet Count",
+      "Total Complaints",
+      "Total Complaints Count"
     ],
     "computedFields": [
       {
@@ -39177,10 +39180,10 @@
         "postAggregationTheory": "",
         "actionName": "StackPercentageComputedField",
         "fields": [
-          "PerformanceIssue",
-          "Total Complaints"
+          "PerformanceIssue Count",
+          "Total Complaints Count"
         ],
-        "newField": "PerformanceIssue Count"
+        "newField": "PerformanceIssue Percentage"
       },
       {
         "postAggregationTheory": "",
@@ -39196,9 +39199,9 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "DataIssues",
-          "Total Complaints"
+          "Total Complaints Count"
         ],
-        "newField": "DataIssues Count"
+        "newField": "DataIssues Percentage"
       },
       {
         "postAggregationTheory": "",
@@ -39240,14 +39243,13 @@
         "postAggregationTheory": "",
         "actionName": "StackPercentageComputedField",
         "fields": [
-          "LackOfInternet",
+          "LackOfInternet Count",
           "Total Complaints"
         ],
-        "newField": "LackOfInternet Count"
+        "newField": "LackOfInternet Percentage"
       }
     ],
     "sort": "sortKeyAsc",
-    "kind": "drillDown",
     "insight": {},
     "_comment": " "
   },
