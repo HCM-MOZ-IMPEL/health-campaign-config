@@ -10567,8 +10567,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "totalHouseholdsNotDeliveredChartDistrictCaboDelgado",
-                  "name": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_DISTRICT_CABO_DELGADO",
+                  "id": "totalHouseholdsNotDeliveredChartProvinceCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_PROVINCE_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -11969,8 +11969,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "totalHouseholdsNotDeliveredChartLocalityCaboDelgado",
-                  "name": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_LOCALITY_CABO_DELGADO",
+                  "id": "totalHouseholdsNotDeliveredChartDistrictCaboDelgado",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_DISTRICT_CABO_DELGADO",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
