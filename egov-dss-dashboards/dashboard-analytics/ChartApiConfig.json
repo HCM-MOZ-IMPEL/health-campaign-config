@@ -35097,7 +35097,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household Total\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Total Count Household Registered Cumulative\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household Total\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Total Count Households Visited Cumulative\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
       },
       {
         "module": "COMMON",
