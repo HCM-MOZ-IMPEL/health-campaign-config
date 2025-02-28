@@ -38452,7 +38452,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total closed households\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"ddMMMyyyy\",\"min_doc_count\":1},\"aggs\":{\"Total closed households\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "xtable",
