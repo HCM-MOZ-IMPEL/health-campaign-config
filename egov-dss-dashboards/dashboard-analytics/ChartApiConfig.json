@@ -38445,7 +38445,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.deliveryComments.keyword\":\"INSUFFICIENT_RESOURCES\"}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"format\":\"yyyy-MM-dd\",\"min_doc_count\":1},\"aggs\":{\"Household Rejected delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.deliveryComments.keyword\":\"INSUFFICIENT_RESOURCES\"}}]}},\"aggs\":{\"household count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"format\":\"yyyy-MM-dd\",\"min_doc_count\":1},\"aggs\":{\"Household Rejected Delivery Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
