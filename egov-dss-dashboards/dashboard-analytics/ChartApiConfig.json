@@ -38459,7 +38459,7 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "",
+    "action": "division",
     "plotLabel": "Daily Count",
     "filterKeys": [
       {
@@ -38479,6 +38479,11 @@
       "Overall Population target",
       "Total closed households",
       "Household Rejected Delivery Count"
+    ],
+    "divisorFields": [
+      "Overall Bednet Target",
+      "Overall Household target",
+      "Overall Population target"
     ],
     "computedFields": [
       {
