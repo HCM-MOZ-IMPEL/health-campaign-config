@@ -35097,14 +35097,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household Total\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"},\"aggs\":{\"Total Count Households Visited Cumulative\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total household visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":1000},\"aggs\":{\"Total Count Households Visited Cumulative\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population Covered\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Data.memberCount\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Covered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.province.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Total Population Covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -35558,9 +35558,9 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population Covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population Covered\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Data.memberCount\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -35640,10 +35640,10 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Covered till Today\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Population Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}}}},\"aggs\":{\"Population Covered till Today\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -35682,7 +35682,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Covered till Today\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Population Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}}}},\"aggs\":{\"Population Covered till Today\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
       },
       {
         "module": "COMMON",
