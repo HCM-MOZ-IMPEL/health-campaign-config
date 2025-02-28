@@ -34747,7 +34747,7 @@
   },
 
   "todaysVistsCaboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY",
     "queries": [
       {
         "module": "COMMON",
@@ -34778,7 +34778,7 @@
     "_comment": " "
   },
   "totalVisitedCaboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_VISITED",
     "queries": [
       {
         "module": "COMMON",
@@ -34800,7 +34800,7 @@
     "_comment": " "
   },
   "populationCoveredTodayCaboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY",
     "queries": [
       {
         "module": "COMMON",
@@ -34831,7 +34831,7 @@
     "_comment": " "
   },
   "totalPopulationCoveredCaboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED",
     "queries": [
       {
         "module": "COMMON",
@@ -34853,7 +34853,7 @@
     "_comment": " "
   },
   "todayDistributionsCaboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY",
     "queries": [
       {
         "module": "COMMON",
@@ -34884,7 +34884,7 @@
     "_comment": " "
   },
   "totalDistributionsCaboDelgado": {
-    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY",
     "queries": [
       {
         "module": "COMMON",
@@ -34906,7 +34906,7 @@
     "_comment": " "
   },
   "householdsCoverageHeatMapCaboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
     "queries": [
       {
         "module": "COMMON",
@@ -34952,7 +34952,7 @@
     "_comment": " "
   },
   "householdsCoverageHeatMapNationalProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -34998,7 +34998,7 @@
     "_comment": " "
   },
   "populationCoverageHeatMapCaboDelgado": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
     "queries": [
       {
         "module": "COMMON",
@@ -35044,7 +35044,7 @@
     "_comment": " "
   },
   "populationCoverageHeatMapNationalProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35090,21 +35090,21 @@
     "_comment": " "
   },
   "coverageByProvinceCaboDelgado": {
-    "chartName": "DSS_COVERAGE_BY_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_COVERAGE_BY_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"testProjectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Count Households Visited Cumulative\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Count Households Visited Cumulative\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":1000},\"aggs\":{\"count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Population Covered\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}},\"aggs\":{\"Data.memberCount\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}}}},\"aggs\":{\"Total Population Covered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.province.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -35198,7 +35198,7 @@
   },
 
   "overviewTotalTargetProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_TARGET_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_TARGET_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35272,7 +35272,7 @@
     "_comment": " "
   },
   "overviewTotalTargetDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_TARGET_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_TARGET_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -35346,7 +35346,7 @@
     "_comment": " "
   },
   "householdVisitsWithinDateRangeCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_HOUSEHOLDS_VISITED_OVER_DATERANGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_HOUSEHOLDS_VISITED_OVER_DATERANGE",
     "queries": [
       {
         "module": "COMMON",
@@ -35368,7 +35368,7 @@
     "_comment": " "
   },
   "totalVisitsCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLD_VISITS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLD_VISITS",
     "queries": [
       {
         "module": "COMMON",
@@ -35399,7 +35399,7 @@
     "_comment": " "
   },
   "householdVisitsTargetProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_VISITS_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_VISITS_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35425,7 +35425,7 @@
     "_comment": " "
   },
   "householdVisitsTargetDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_VISITS_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_VISITS_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -35451,7 +35451,7 @@
     "_comment": " "
   },
   "totalHouseholdCoverageProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35491,7 +35491,7 @@
     "_comment": " "
   },
   "totalHouseholdCoverageDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -35531,7 +35531,7 @@
     "_comment": " "
   },
   "overviewPopulationCoveredCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERED_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERED",
     "queries": [
       {
         "module": "COMMON",
@@ -35553,14 +35553,14 @@
     "_comment": " "
   },
   "overviewTotalPopulationCoveredCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_POPULATION_COVERED_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_POPULATION_COVERED",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population Covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population Covered for Date range\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Data.memberCount\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -35584,7 +35584,7 @@
     "_comment": " "
   },
   "overviewPopulationTargetedProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35610,7 +35610,7 @@
     "_comment": " "
   },
   "overviewPopulationTargetedDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -35636,14 +35636,14 @@
     "_comment": " "
   },
   "overviewPopulationCoverageAchievedProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Covered till Today\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population Covered till Today\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Data.memberCount\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -35675,14 +35675,14 @@
     "_comment": " "
   },
   "overviewPopulationCoverageAchievedDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"testProjectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Population Covered till Today\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population Covered till Today\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Data.memberCount\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -35714,7 +35714,7 @@
     "_comment": " "
   },
   "distributionsByRangeCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTIONS_DATE_RANGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTIONS_DATE_RANGE",
     "queries": [
       {
         "module": "COMMON",
@@ -35736,7 +35736,7 @@
     "_comment": " "
   },
   "totalDistributionsTillTodayCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_DISTRIBUTED_TILL_TODAY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_DISTRIBUTED_TILL_TODAY",
     "queries": [
       {
         "module": "COMMON",
@@ -35767,7 +35767,7 @@
     "_comment": " "
   },
   "distributionTargetProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_TARGET_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_TARGET_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35793,7 +35793,7 @@
     "_comment": " "
   },
   "distributionTargetDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_TARGET_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_TARGET_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -35815,7 +35815,7 @@
     "_comment": " "
   },
   "distributionCoverageProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_COVERAGE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_COVERAGE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35854,7 +35854,7 @@
     "_comment": " "
   },
   "distributionCoverageDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_COVERAGE_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_DISTRIBUTION_COVERAGE_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -35893,7 +35893,7 @@
     "_comment": " "
   },
   "totalHouseholdsNotDeliveredProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLDS_NOT_DELIVERED_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLDS_NOT_DELIVERED_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35916,7 +35916,7 @@
     "_comment": " "
   },
   "totalHouseholdsNotDeliveredDrilldownProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLDS_NOT_DELIVERED_DRILLDOWN_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLDS_NOT_DELIVERED_DRILLDOWN_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -35939,7 +35939,7 @@
     "_comment": " "
   },
   "totalComplaintsRegisteredCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BREAKDOWN_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BREAKDOWN",
     "queries": [
       {
         "module": "COMMON",
@@ -35968,7 +35968,7 @@
   },
   "complaintsByTypeDrilldownCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE",
     "queries": [
       {
         "module": "COMMON",
@@ -35992,7 +35992,7 @@
     "_comment": " "
   },
   "householdsCoverageBarchartByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -36044,7 +36044,7 @@
   },
   "householdsCoverageBarchartByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -36096,7 +36096,7 @@
   },
   "householdsCoverageBarchartByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_AdministrativeProvince_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_AdministrativeProvince",
     "queries": [
       {
         "module": "COMMON",
@@ -36148,7 +36148,7 @@
   },
   "householdsCoverageBarchartByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -36194,7 +36194,7 @@
     "_comment": " "
   },
   "checklistCompletionRateDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -36221,7 +36221,7 @@
   },
 
   "registrarSyncSummaryProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_REGISTRAR_SYNC_SUMMARY_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_REGISTRAR_SYNC_SUMMARY_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -36287,7 +36287,7 @@
     "_comment": " "
   },
   "registrarSyncSummaryDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_REGISTRAR_SYNC_SUMMARY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_REGISTRAR_SYNC_SUMMARY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -36353,7 +36353,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSES_VISITED_DISTRICT_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSES_VISITED_DISTRICT_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -36404,7 +36404,7 @@
   },
   "housesVisitedBarChartLocalityPercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSES_VISITED_LOCALITY_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSES_VISITED_LOCALITY_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -36455,7 +36455,7 @@
   },
   "housesVisitedBarChartAdministrativeProvincePercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSES_VISITED_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSES_VISITED_ADMINISTRATIVE_PROVINCE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -36506,7 +36506,7 @@
   },
   "housesVisitedBarChartVillagePercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSES_VISITED_VILLAGE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSES_VISITED_VILLAGE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -36556,7 +36556,7 @@
     "_comment": " "
   },
   "housesVisitedBarChartDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSES_VISITED_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSES_VISITED_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -36585,7 +36585,7 @@
   },
   "housesVisitedBarChartLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSES_VISITED_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSES_VISITED_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -36614,7 +36614,7 @@
   },
   "housesVisitedBarChartAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSES_VISITED_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSES_VISITED_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -36643,7 +36643,7 @@
   },
   "housesVisitedBarChartVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSES_VISITED_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSES_VISITED_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -36671,7 +36671,7 @@
     "_comment": " "
   },
   "populationCoveredBarChartDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -36723,7 +36723,7 @@
   },
   "populationCoveredBarChartLocalityPercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_POPULATION_COVERED_LOCALITY_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_LOCALITY_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -36774,7 +36774,7 @@
   },
   "populationCoveredBarChartAdministrativeProvincePercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_POPULATION_COVERED_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_ADMINISTRATIVE_PROVINCE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -36825,7 +36825,7 @@
   },
   "populationCoveredBarChartVillagePercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_POPULATION_COVERED_VILLAGE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_VILLAGE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -36870,7 +36870,7 @@
     "_comment": " "
   },
   "populationCoveredBarChartDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERED_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -36899,7 +36899,7 @@
   },
   "populationCoveredBarChartLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_POPULATION_COVERED_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -36928,7 +36928,7 @@
   },
   "populationCoveredBarChartAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_POPULATION_COVERED_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -36957,7 +36957,7 @@
   },
   "populationCoveredBarChartVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_POPULATION_COVERED_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERED_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -36980,7 +36980,7 @@
     "_comment": " "
   },
   "distributionCoverageByDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -37019,7 +37019,7 @@
   },
   "distributionCoverageByLocalityPercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_LOCALITY_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_LOCALITY_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -37058,7 +37058,7 @@
   },
   "distributionCoverageByAdministrativeProvincePercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_ADMINISTRATIVE_PROVINCE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -37097,7 +37097,7 @@
   },
   "distributionCoverageByVillagePercentCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_VILLAGE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_VILLAGE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -37135,7 +37135,7 @@
     "_comment": " "
   },
   "distributionCoverageByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -37164,7 +37164,7 @@
   },
   "distributionCoverageByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -37193,7 +37193,7 @@
   },
   "distributionCoverageByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -37222,7 +37222,7 @@
   },
   "distributionCoverageByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -37250,7 +37250,7 @@
     "_comment": " "
   },
   "bednetsDistributionCoverageDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -37300,7 +37300,7 @@
     "_comment": " "
   },
   "bednetsDistributionCoverageLocalityPercentCaboDelgado": {
-    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_LOCALITY_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_LOCALITY_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -37350,7 +37350,7 @@
     "_comment": " "
   },
   "bednetsDistributionCoverageAdministrativeProvincePercentCaboDelgado": {
-    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_ADMINISTRATIVE_PROVINCE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -37400,7 +37400,7 @@
     "_comment": " "
   },
   "bednetsDistributionCoverageVillagePercentCaboDelgado": {
-    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_VILLAGE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_VILLAGE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -37450,7 +37450,7 @@
     "_comment": " "
   },
   "bednetsDistributionCoverageDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -37478,7 +37478,7 @@
     "_comment": " "
   },
   "bednetsDistributionCoverageLocalityCaboDelgado": {
-    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -37506,7 +37506,7 @@
     "_comment": " "
   },
   "bednetsDistributionCoverageAdministrativeProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -37534,7 +37534,7 @@
     "_comment": " "
   },
   "bednetsDistributionCoverageVillageCaboDelgado": {
-    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTHL_BED_NETS_COVERAGE_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -37563,7 +37563,7 @@
   },
   "totalHouseholdsNotDeliveredChartProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -37594,7 +37594,7 @@
   },
   "totalHouseholdsNotDeliveredChartDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -37625,7 +37625,7 @@
   },
   "totalHouseholdsNotDeliveredChartLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -37655,7 +37655,7 @@
   },
   "totalHouseholdsNotDeliveredChartAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_DELIVERED_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -37679,7 +37679,7 @@
     "_comment": " "
   },
   "householdsCoverageHeatMapProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -37737,7 +37737,7 @@
     "_comment": " "
   },
   "householdsCoverageHeatMapDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -37795,7 +37795,7 @@
     "_comment": " "
   },
   "populationCoverageHeatMapProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -37850,7 +37850,7 @@
     "_comment": " "
   },
   "populationCoverageHeatMapDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -37905,7 +37905,7 @@
     "_comment": " "
   },
   "actualVsPlannedHouseholdLineGraphProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -37940,7 +37940,7 @@
     "_comment": " "
   },
   "actualVsPlannedHouseholdLineGraphDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -37975,7 +37975,7 @@
     "_comment": " "
   },
   "actualVsPlannedPopulationLineGraphProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -38010,7 +38010,7 @@
     "_comment": " "
   },
   "actualVsPlannedPopulationLineGraphDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -38045,7 +38045,7 @@
     "_comment": " "
   },
   "actualVsPlannedBednetsLineGraphProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -38080,7 +38080,7 @@
     "_comment": " "
   },
   "actualVsPlannedBednetsLineGraphDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_BEDNETS_LINE_GRAPH_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -38115,7 +38115,7 @@
     "_comment": " "
   },
   "registrationSummaryByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_RESGISTRATION_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_RESGISTRATION_SUMMARY_BY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -38396,7 +38396,7 @@
     "_comment": " "
   },
   "registrationSummaryByDistrictDayCaboDelgado": {
-    "chartName": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -38562,7 +38562,7 @@
   },
 
   "complaintsByDistrictTotalCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL",
     "queries": [
       {
         "module": "COMMON",
@@ -38592,7 +38592,7 @@
   },
   "complaintsByLocalityTotalCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY_TOTAL_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY_TOTAL",
     "queries": [
       {
         "module": "COMMON",
@@ -38622,7 +38622,7 @@
   },
   "complaintsByAdministrativeProvinceTotalCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_ADMINISTRATIVE_PROVINCE_TOTAL_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_ADMINISTRATIVE_PROVINCE_TOTAL",
     "queries": [
       {
         "module": "COMMON",
@@ -38652,7 +38652,7 @@
   },
   "complaintsByVillageTotalCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE_TOTAL_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE_TOTAL",
     "queries": [
       {
         "module": "COMMON",
@@ -38681,7 +38681,7 @@
     "_comment": " "
   },
   "totalComplaintsRegisteredByTypeCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE",
     "queries": [
       {
         "module": "COMMON",
@@ -38710,7 +38710,7 @@
   },
   "totalComplaintsRegisteredByStatusDrilldownCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_STATUS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_STATUS",
     "queries": [
       {
         "module": "COMMON",
@@ -38734,7 +38734,7 @@
     "_comment": " "
   },
   "complaintsByStatusBreakdownProvincePercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -38805,7 +38805,7 @@
     "kind": "drillDown"
   },
   "complaintsByStatusBreakdownDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -38876,7 +38876,7 @@
     "kind": "drillDown"
   },
   "complaintsByStatusBreakdownLocalityPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -38947,7 +38947,7 @@
     "kind": "drillDown"
   },
   "complaintsByStatusBreakdownAdministrativeProvincePercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_ADMINISTRATIVE_PROVINCE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -39017,7 +39017,7 @@
     "_comment": " "
   },
   "complaintsByStatusBreakdownProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -39049,7 +39049,7 @@
   },
   "complaintsByStatusBreakdownDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -39081,7 +39081,7 @@
   },
   "complaintsByStatusBreakdownLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -39113,7 +39113,7 @@
   },
   "complaintsByStatusBreakdownAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -39144,7 +39144,7 @@
     "_comment": " "
   },
   "complaintsByTypeBreakdownProvincialPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -39339,7 +39339,7 @@
     "_comment": " "
   },
   "complaintsByTypeBreakdownDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -39470,7 +39470,7 @@
     "_comment": " "
   },
   "complaintsByTypeBreakdownLocalityPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -39601,7 +39601,7 @@
     "_comment": " "
   },
   "complaintsByTypeBreakdownAdministrativeProvincePercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_ADMINISTRATIVE_PROVINCE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -39731,7 +39731,7 @@
     "_comment": " "
   },
   "complaintsByTypeBreakdownProvincialCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL",
     "queries": [
       {
         "module": "COMMON",
@@ -39769,7 +39769,7 @@
   },
   "complaintsByTypeBreakdownDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -39807,7 +39807,7 @@
   },
   "complaintsByTypeBreakdownLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -39845,7 +39845,7 @@
   },
   "complaintsByTypeBreakdownAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -39882,7 +39882,7 @@
     "_comment": " "
   },
   "ComplaintsShareByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -39920,7 +39920,7 @@
   },
   "ComplaintsShareByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -39958,7 +39958,7 @@
   },
   "ComplaintsShareByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -39996,7 +39996,7 @@
   },
   "ComplaintsShareByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -40033,7 +40033,7 @@
     "_comment": " "
   },
   "averageResolutionTimeProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_AVVERAGE_RESOLUTION_TIME_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVVERAGE_RESOLUTION_TIME_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -40062,7 +40062,7 @@
   },
   "averageResolutionTimeDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -40091,7 +40091,7 @@
   },
   "averageResolutionTimeLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -40120,7 +40120,7 @@
   },
   "averageResolutionTimeAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -40148,7 +40148,7 @@
     "_comment": " "
   },
   "complaintsByStatusSummaryProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -40224,7 +40224,7 @@
   },
   "complaintsByStatusSummaryDistrictCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -40300,7 +40300,7 @@
   },
   "complaintsByStatusSummaryLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -40376,7 +40376,7 @@
   },
   "complaintsByStatusSummaryAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -40451,7 +40451,7 @@
     "_comment": " "
   },
   "complaintsByStatusSummaryDayCaboDelgado": {
-    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY",
     "queries": [
       {
         "module": "COMMON",
@@ -40520,7 +40520,7 @@
     "_comment": " "
   },
   "openComplaintsSummaryByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -40560,7 +40560,7 @@
   },
   "openComplaintsSummaryByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -40600,7 +40600,7 @@
   },
   "openComplaintsSummaryByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -40640,7 +40640,7 @@
   },
   "openComplaintsSummaryByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -40680,7 +40680,7 @@
   },
   
   "warehouseManagerUserSyncCaboDelgado": {
-    "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE",
     "queries": [
       {
         "module": "COMMON",
@@ -40747,7 +40747,7 @@
     "_comment": " "
   },
   "inventoryStockInHandProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
     "queries": [
       {
         "module": "COMMON",
@@ -40800,7 +40800,7 @@
     "_comment": " "
   },
   "inventoryStockInHandDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -40853,7 +40853,7 @@
     "_comment": " "
   },
   "inventoryTheoreticalVsManualStockDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -40890,7 +40890,7 @@
     "_comment": " "
   },
   "inventoryTheoreticalVsManualStockLocalityCaboDelgado": {
-    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -40927,7 +40927,7 @@
     "_comment": " "
   },
   "stockTransactionsBreakdownProvincialCaboDelgado": {
-    "chartName": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL",
     "queries": [
       {
         "module": "COMMON",
@@ -40967,7 +40967,7 @@
     "_comment": " "
   },
   "stockTransactionsBreakdownDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_STOCK_TRANSACTIONS_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -41007,7 +41007,7 @@
     "_comment": " "
   },
   "warehouseDistributionLatLongPointsCaboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
         "module": "COMMON",
@@ -41055,7 +41055,7 @@
     "_comment": " "
   },
   "warehouseDistributionLatLongPointsDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
         "module": "COMMON",
@@ -41110,7 +41110,7 @@
     "_comment": " "
   },
   "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardCaboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
         "module": "COMMON",
@@ -41146,7 +41146,7 @@
     "_comment": " "
   },
   "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardCaboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
         "module": "COMMON",
@@ -41181,7 +41181,7 @@
     "_comment": " "
   },
   "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesCaboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
         "module": "COMMON",
@@ -41217,7 +41217,7 @@
     "_comment": " "
   },
   "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
         "module": "COMMON",
@@ -41253,7 +41253,7 @@
     "_comment": " "
   },
   "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardCaboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
         "module": "COMMON",
@@ -41310,7 +41310,7 @@
     "_comment": " "
   },
   "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardCaboDelgado": {
-    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
         "module": "COMMON",
@@ -41337,7 +41337,7 @@
     "_comment": " "
   },
   "InventorySummaryByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -41471,7 +41471,7 @@
   },
   "InventorySummaryByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -41605,7 +41605,7 @@
   },
 
   "supervisorUserSyncCaboDelgado": {
-    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE",
     "queries": [
       {
         "module": "COMMON",
@@ -41684,7 +41684,7 @@
     "_comment": " "
   },
   "checklistCompletionRateOfNationalSupervisorCaboDelgado": {
-    "chartName": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
     "queries": [
       {
         "module": "COMMON",
@@ -41710,7 +41710,7 @@
     "_comment": " "
   },
   "userDataSyncRateCaboDelgado": {
-    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
     "queries": [
       {
         "module": "COMMON",
@@ -41748,7 +41748,7 @@
     "_comment": " "
   },
   "checklistCompletionRateOfProvincialSupervisorCaboDelgado": {
-    "chartName": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
     "queries": [
       {
         "module": "COMMON",
@@ -41774,7 +41774,7 @@
     "_comment": " "
   },
   "checklistCompletionRateOfDistrictSupervisorCaboDelgado": {
-    "chartName": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
     "queries": [
       {
         "module": "COMMON",
@@ -41800,7 +41800,7 @@
     "_comment": " "
   },
   "checklistCompletionRateBySupervisorsBoundarySummaryDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -41875,7 +41875,7 @@
   },
   "checklistCompletionRateBySupervisorsBoundarySummaryLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -41950,7 +41950,7 @@
   },
   "checklistCompletionRateBySupervisorsBoundarySummaryAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -42025,7 +42025,7 @@
   },
   "checklistCompletionRateBySupervisorsBoundarySummaryVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -42099,7 +42099,7 @@
     "_comment": " "
   },
   "checklistCompletionRateBySupervisorsDaySummaryCaboDelgado": {
-    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY",
     "queries": [
       {
         "module": "COMMON",
@@ -42167,7 +42167,7 @@
   },
 
   "averageBednetsDistributedDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -42204,7 +42204,7 @@
   },
   "averageBednetsDistributedLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -42241,7 +42241,7 @@
   },
   "averageBednetsDistributedAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -42278,7 +42278,7 @@
   },
   "averageBednetsDistributedVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_AVERAGE_BEDNETS_DISTRIBUTED_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -42315,7 +42315,7 @@
   },
   
   "housesWithMoreThanTwentyMembersByDistrictCaboDelgado": {
-    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -42343,7 +42343,7 @@
     "_comment": " "
   },
   "housesWithMoreThanTwentyMembersByLocalityCaboDelgado": {
-    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -42371,7 +42371,7 @@
     "_comment": " "
   },
   "housesWithMoreThanTwentyMembersByAdministrativeProvinceCaboDelgado": {
-    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -42399,7 +42399,7 @@
     "_comment": " "
   },
   "housesWithMoreThanTwentyMembersByVillageCaboDelgado": {
-    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -42427,7 +42427,7 @@
     "_comment": " "
   },
   "locationNotEnabledByDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -42463,7 +42463,7 @@
     "_comment": " "
   },
   "locationNotEnabledByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -42491,7 +42491,7 @@
     "_comment": " "
   },
   "locationNotEnabledByLocalityCaboDelgado": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -42519,7 +42519,7 @@
     "_comment": " "
   },
   "locationNotEnabledByAdministrativeProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -42547,7 +42547,7 @@
     "_comment": " "
   },
   "locationNotEnabledByVillageCaboDelgado": {
-    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -42694,7 +42694,7 @@
     ]
   },
   "incompleteRecordsByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS",
     "queries": [
       {
         "module": "COMMON",
@@ -42746,7 +42746,7 @@
   },
   "incompleteRecordsByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS",
     "queries": [
       {
         "module": "COMMON",
@@ -42798,7 +42798,7 @@
   },
   "incompleteRecordsByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS",
     "queries": [
       {
         "module": "COMMON",
@@ -42850,7 +42850,7 @@
   },
   "incompleteRecordsByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_INCOMPLETE_RECORDS",
     "queries": [
       {
         "module": "COMMON",
@@ -42901,7 +42901,7 @@
     "_comment": " "
   },
   "suspectedFraudsByDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries": [
       {
         "module": "COMMON",
@@ -42930,7 +42930,7 @@
   },
   "suspectedFraudsByLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries": [
       {
         "module": "COMMON",
@@ -42959,7 +42959,7 @@
   },
   "suspectedFraudsByAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries": [
       {
         "module": "COMMON",
@@ -42988,7 +42988,7 @@
   },
   "suspectedFraudsByVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS",
     "queries": [
       {
         "module": "COMMON",
@@ -43016,7 +43016,7 @@
     "_comment": " "
   },
   "attendanceDistributorsDistrictPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_DISTRICT_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_DISTRICT_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -43085,7 +43085,7 @@
     ]
   },
   "attendanceDistributorsLocalityPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -43154,7 +43154,7 @@
     ]
   },
   "attendanceDistributorsAdministrativeProvincePercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_ADMINISTRATIVE_PROVINCE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_ADMINISTRATIVE_PROVINCE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -43223,7 +43223,7 @@
     ]
   },
   "attendanceDistributorsVillagePercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_VILLAGE_PERCENT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_VILLAGE_PERCENT",
     "queries": [
       {
         "module": "COMMON",
@@ -43292,7 +43292,7 @@
     ]
   },
   "attendanceDistributorsDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -43351,7 +43351,7 @@
     ]
   },
   "attendanceDistributorsLocalityCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -43410,7 +43410,7 @@
     ]
   },
   "attendanceDistributorsAdministrativeProvinceCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -43469,7 +43469,7 @@
     ]
   },
   "attendanceDistributorsVillageCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
@@ -43528,7 +43528,7 @@
     ]
   },
   "dataQualitySummaryDistrictCaboDelgado": {
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
@@ -43639,7 +43639,7 @@
   },
   "dataQualitySummaryLocalityCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY",
     "queries": [
       {
         "module": "COMMON",
@@ -43750,7 +43750,7 @@
   },
   "dataQualitySummaryAdministrativeProvinceCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_ADMINISTRATIVE_PROVINCE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
         "module": "COMMON",
@@ -43861,7 +43861,7 @@
   },
   "dataQualitySummaryVillageCaboDelgado": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_VILLAGE_CABO_DELGADO",
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_VILLAGE",
     "queries": [
       {
         "module": "COMMON",
