@@ -38461,6 +38461,7 @@
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Daily Count",
+    "computeMultiPaths": true,
     "filterKeys": [
       {
         "key": "Daily Count",
@@ -38512,7 +38513,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Households Distributed count",
+          "Households Distributed",
           "Overall Household target"
         ],
         "newField": "Target Achievement Household Distributed",
@@ -38522,7 +38523,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Total Population covered",
+          "Population covered",
           "Overall Population target"
         ],
         "newField": "Target Achievement Population",
@@ -38532,7 +38533,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Bednets distributed count",
+          "Bednets distributed",
           "Overall Bednet Target"
         ],
         "newField": "Target Achievement Bednets",
