@@ -38445,7 +38445,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.deliveryComments.keyword\":\"INSUFFICIENT_RESOURCES\"}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Household Rejected delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\": {\"AGGR\": {\"filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.deliveredTo.keyword\": \"HOUSEHOLD\"}},{\"term\": {\"Data.deliveryComments.keyword\": \"INSUFFICIENT_RESOURCES\"}}]}},\"aggs\": {\"household count\": {\"terms\": {\"size\": 500,\"order\": {\"_key\": \"asc\"}, \"field\": \"Data.boundaryHierarchy.district.keyword\"},\"aggs\": {\"Household Rejected delivery count\": {\"value_count\": {\"field\": \"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -38453,27 +38453,6 @@
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Total closed households\":{\"value_count\":{\"field\":\"Data.taskId.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Bednets Distributed Total\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"format\":\"dd MMM yyyy\",\"min_doc_count\":1},\"aggs\":{\"Target Bednets distributed\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"format\":\"ddMMMyyyy\",\"min_doc_count\":1},\"aggs\":{\"Target Households Distributed\":{\"value_count\":{\"field\":\"Data.householdId.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Daily Count\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"fixed_interval\":\"1d\",\"format\":\"ddMMMyyyy\",\"min_doc_count\":1},\"aggs\":{\"Target Population covered\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -38499,10 +38478,7 @@
       "Total Population covered",
       "Overall Population target",
       "Total closed households",
-      "Household Rejected Delivery Count",
-      "Target Bednets distributed",
-      "Target Households Distributed",
-      "Target Population covered"
+      "Household Rejected Delivery Count"
     ],
     "computedFields": [
       {
@@ -38536,7 +38512,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Target Households Distributed",
+          "Households Distributed",
           "Overall Household target"
         ],
         "newField": "Target Achievement Household Distributed",
@@ -38546,7 +38522,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Target Population covered",
+          "Population covered",
           "Overall Population target"
         ],
         "newField": "Target Achievement Population",
@@ -38556,7 +38532,7 @@
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
-          "Target Bednets distributed",
+          "Bednets distributed",
           "Overall Bednet Target"
         ],
         "newField": "Target Achievement Bednets",
