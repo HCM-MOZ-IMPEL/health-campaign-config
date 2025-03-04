@@ -38753,7 +38753,21 @@
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Pending Assignment\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Resolved\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Rejected\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -38773,7 +38787,9 @@
       "PENDING_ASSIGNMENT",
       "RESOLVED",
       "REJECTED",
-      "Total Complaints"
+      "Total Complaints Pending Assignment",
+      "Total Complaints Resolved",
+      "Total Complaints Rejected"
     ],
     "computedFields": [
       {
@@ -38781,7 +38797,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "PENDING_ASSIGNMENT",
-          "Total Complaints"
+          "Total Complaints Pending Assignment"
         ],
         "newField": "PENDING_ASSIGNMENT"
       },
@@ -38790,7 +38806,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "RESOLVED",
-          "Total Complaints"
+          "Total Complaints Resolved"
         ],
         "newField": "RESOLVED"
       },
@@ -38799,7 +38815,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "REJECTED",
-          "Total Complaints"
+          "Total Complaints Rejected"
         ],
         "newField": "REJECTED"
       }
@@ -38824,19 +38840,33 @@
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Pending Assignment\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Resolved\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Rejected\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "complaintsByStatusBreakdownLocalityPercentCaboDelgado",
+    "drillChart": "complaintsByStatusBreakdownDistrictPercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
     "filterKeys": [
       {
-        "key": "locality"
+        "key": "district"
       }
     ],
     "plotLabel": "none",
@@ -38844,7 +38874,9 @@
       "PENDING_ASSIGNMENT",
       "RESOLVED",
       "REJECTED",
-      "Total Complaints"
+      "Total Complaints Pending Assignment",
+      "Total Complaints Resolved",
+      "Total Complaints Rejected"
     ],
     "computedFields": [
       {
@@ -38852,7 +38884,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "PENDING_ASSIGNMENT",
-          "Total Complaints"
+          "Total Complaints Pending Assignment"
         ],
         "newField": "PENDING_ASSIGNMENT"
       },
@@ -38861,7 +38893,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "RESOLVED",
-          "Total Complaints"
+          "Total Complaints Resolved"
         ],
         "newField": "RESOLVED"
       },
@@ -38870,7 +38902,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "REJECTED",
-          "Total Complaints"
+          "Total Complaints Rejected"
         ],
         "newField": "REJECTED"
       }
@@ -38895,19 +38927,33 @@
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Pending Assignment\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Resolved\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Rejected\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "complaintsByStatusBreakdownAdministrativeProvincePercentCaboDelgado",
+    "drillChart": "complaintsByStatusBreakdownDistrictPercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
     "filterKeys": [
       {
-        "key": "administrativeProvince"
+        "key": "district"
       }
     ],
     "plotLabel": "none",
@@ -38915,7 +38961,9 @@
       "PENDING_ASSIGNMENT",
       "RESOLVED",
       "REJECTED",
-      "Total Complaints"
+      "Total Complaints Pending Assignment",
+      "Total Complaints Resolved",
+      "Total Complaints Rejected"
     ],
     "computedFields": [
       {
@@ -38923,7 +38971,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "PENDING_ASSIGNMENT",
-          "Total Complaints"
+          "Total Complaints Pending Assignment"
         ],
         "newField": "PENDING_ASSIGNMENT"
       },
@@ -38932,7 +38980,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "RESOLVED",
-          "Total Complaints"
+          "Total Complaints Resolved"
         ],
         "newField": "RESOLVED"
       },
@@ -38941,7 +38989,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "REJECTED",
-          "Total Complaints"
+          "Total Complaints Rejected"
         ],
         "newField": "REJECTED"
       }
@@ -38964,21 +39012,35 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Pending Assignment\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Resolved\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Rejected\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "percentage",
-    "drillChart": "none",
+    "drillChart": "complaintsByStatusBreakdownDistrictPercentCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
     "filterKeys": [
       {
-        "key": "village"
+        "key": "district"
       }
     ],
     "plotLabel": "none",
@@ -38986,7 +39048,9 @@
       "PENDING_ASSIGNMENT",
       "RESOLVED",
       "REJECTED",
-      "Total Complaints"
+      "Total Complaints Pending Assignment",
+      "Total Complaints Resolved",
+      "Total Complaints Rejected"
     ],
     "computedFields": [
       {
@@ -38994,7 +39058,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "PENDING_ASSIGNMENT",
-          "Total Complaints"
+          "Total Complaints Pending Assignment"
         ],
         "newField": "PENDING_ASSIGNMENT"
       },
@@ -39003,7 +39067,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "RESOLVED",
-          "Total Complaints"
+          "Total Complaints Resolved"
         ],
         "newField": "RESOLVED"
       },
@@ -39012,14 +39076,15 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "REJECTED",
-          "Total Complaints"
+          "Total Complaints Rejected"
         ],
         "newField": "REJECTED"
       }
     ],
     "sort": "sortKeyAsc",
     "insight": {},
-    "_comment": " "
+    "_comment": " ",
+    "kind": "drillDown"
   },
   "complaintsByStatusBreakdownProvinceCaboDelgado": {
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE",
@@ -39912,7 +39977,7 @@
     "documentType": "_doc",
     "action": "divisionbyconstant",
     "aggregationPaths": [
-      "% of Total Complaints",
+      "Complaints Breakdown",
       "Total Complaints"
     ],
     "filterKeys": [
