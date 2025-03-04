@@ -39407,7 +39407,63 @@
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Other\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count Other\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints PerformanceIssue\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count PerformanceIssue\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints SecurityIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count SecurityIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints DataIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count DataIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints TechnicalIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count TechnicalIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints UserAccountIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count UserAccountIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints NotEnoughStock\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count NotEnoughStock\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints SyncNotWorking\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count SyncNotWorking\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints LackOfInternet\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count LackOfInternet\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -39433,7 +39489,15 @@
       "NotEnoughStock",
       "SyncNotWorking",
       "LackOfInternet",
-      "Total Complaints"
+      "Total Complaints Other",
+      "Total Complaints PerformanceIssue",
+      "Total Complaints SecurityIssues",
+      "Total Complaints DataIssues",
+      "Total Complaints TechnicalIssues",
+      "Total Complaints UserAccountIssues",
+      "Total Complaints NotEnoughStock",
+      "Total Complaints SyncNotWorking",
+      "Total Complaints LackOfInternet"
     ],
     "computedFields": [
       {
@@ -39441,7 +39505,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "Other",
-          "Total Complaints"
+          "Total Complaints Other"
         ],
         "newField": "Other Count"
       },
@@ -39450,7 +39514,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "PerformanceIssue",
-          "Total Complaints"
+          "Total Complaints PerformanceIssue"
         ],
         "newField": "PerformanceIssue Count"
       },
@@ -39459,7 +39523,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "SecurityIssues",
-          "Total Complaints"
+          "Total Complaints SecurityIssues"
         ],
         "newField": "SecurityIssues Count"
       },
@@ -39468,7 +39532,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "DataIssues",
-          "Total Complaints"
+          "Total Complaints DataIssues"
         ],
         "newField": "DataIssues Count"
       },
@@ -39477,7 +39541,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "TechnicalIssues",
-          "Total Complaints"
+          "Total Complaints TechnicalIssues"
         ],
         "newField": "TechnicalIssues Count"
       },
@@ -39486,7 +39550,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "UserAccountIssues",
-          "Total Complaints"
+          "Total Complaints UserAccountIssues"
         ],
         "newField": "UserAccountIssues Count"
       },
@@ -39495,7 +39559,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "NotEnoughStock",
-          "Total Complaints"
+          "Total Complaints NotEnoughStock"
         ],
         "newField": "NotEnoughStock Count"
       },
@@ -39504,7 +39568,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "SyncNotWorking",
-          "Total Complaints"
+          "Total Complaints SyncNotWorking"
         ],
         "newField": "SyncNotWorking Count"
       },
@@ -39513,7 +39577,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "LackOfInternet",
-          "Total Complaints"
+          "Total Complaints LackOfInternet"
         ],
         "newField": "LackOfInternet Count"
       }
@@ -39538,7 +39602,63 @@
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Other\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count Other\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints PerformanceIssue\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count PerformanceIssue\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints SecurityIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count SecurityIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints DataIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count DataIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints TechnicalIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count TechnicalIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints UserAccountIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count UserAccountIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints NotEnoughStock\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count NotEnoughStock\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints SyncNotWorking\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count SyncNotWorking\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints LackOfInternet\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count LackOfInternet\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -39564,7 +39684,15 @@
       "NotEnoughStock",
       "SyncNotWorking",
       "LackOfInternet",
-      "Total Complaints"
+      "Total Complaints Other",
+      "Total Complaints PerformanceIssue",
+      "Total Complaints SecurityIssues",
+      "Total Complaints DataIssues",
+      "Total Complaints TechnicalIssues",
+      "Total Complaints UserAccountIssues",
+      "Total Complaints NotEnoughStock",
+      "Total Complaints SyncNotWorking",
+      "Total Complaints LackOfInternet"
     ],
     "computedFields": [
       {
@@ -39572,7 +39700,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "Other",
-          "Total Complaints"
+          "Total Complaints Other"
         ],
         "newField": "Other Count"
       },
@@ -39581,7 +39709,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "PerformanceIssue",
-          "Total Complaints"
+          "Total Complaints PerformanceIssue"
         ],
         "newField": "PerformanceIssue Count"
       },
@@ -39590,7 +39718,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "SecurityIssues",
-          "Total Complaints"
+          "Total Complaints SecurityIssues"
         ],
         "newField": "SecurityIssues Count"
       },
@@ -39599,7 +39727,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "DataIssues",
-          "Total Complaints"
+          "Total Complaints DataIssues"
         ],
         "newField": "DataIssues Count"
       },
@@ -39608,7 +39736,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "TechnicalIssues",
-          "Total Complaints"
+          "Total Complaints TechnicalIssues"
         ],
         "newField": "TechnicalIssues Count"
       },
@@ -39617,7 +39745,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "UserAccountIssues",
-          "Total Complaints"
+          "Total Complaints UserAccountIssues"
         ],
         "newField": "UserAccountIssues Count"
       },
@@ -39626,7 +39754,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "NotEnoughStock",
-          "Total Complaints"
+          "Total Complaints NotEnoughStock"
         ],
         "newField": "NotEnoughStock Count"
       },
@@ -39635,7 +39763,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "SyncNotWorking",
-          "Total Complaints"
+          "Total Complaints SyncNotWorking"
         ],
         "newField": "SyncNotWorking Count"
       },
@@ -39644,7 +39772,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "LackOfInternet",
-          "Total Complaints"
+          "Total Complaints LackOfInternet"
         ],
         "newField": "LackOfInternet Count"
       }
@@ -39669,7 +39797,63 @@
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "transformer-pgr-services",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints Other\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count Other\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints PerformanceIssue\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count PerformanceIssue\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints SecurityIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count SecurityIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints DataIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count DataIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints TechnicalIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count TechnicalIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints UserAccountIssues\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count UserAccountIssues\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints NotEnoughStock\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count NotEnoughStock\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints SyncNotWorking\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count SyncNotWorking\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "transformer-pgr-services",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Complaints LackOfInternet\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Total Complaints Count LackOfInternet\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -39695,7 +39879,15 @@
       "NotEnoughStock",
       "SyncNotWorking",
       "LackOfInternet",
-      "Total Complaints"
+      "Total Complaints Other",
+      "Total Complaints PerformanceIssue",
+      "Total Complaints SecurityIssues",
+      "Total Complaints DataIssues",
+      "Total Complaints TechnicalIssues",
+      "Total Complaints UserAccountIssues",
+      "Total Complaints NotEnoughStock",
+      "Total Complaints SyncNotWorking",
+      "Total Complaints LackOfInternet"
     ],
     "computedFields": [
       {
@@ -39703,7 +39895,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "Other",
-          "Total Complaints"
+          "Total Complaints Other"
         ],
         "newField": "Other Count"
       },
@@ -39712,7 +39904,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "PerformanceIssue",
-          "Total Complaints"
+          "Total Complaints PerformanceIssue"
         ],
         "newField": "PerformanceIssue Count"
       },
@@ -39721,7 +39913,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "SecurityIssues",
-          "Total Complaints"
+          "Total Complaints SecurityIssues"
         ],
         "newField": "SecurityIssues Count"
       },
@@ -39730,7 +39922,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "DataIssues",
-          "Total Complaints"
+          "Total Complaints DataIssues"
         ],
         "newField": "DataIssues Count"
       },
@@ -39739,7 +39931,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "TechnicalIssues",
-          "Total Complaints"
+          "Total Complaints TechnicalIssues"
         ],
         "newField": "TechnicalIssues Count"
       },
@@ -39748,7 +39940,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "UserAccountIssues",
-          "Total Complaints"
+          "Total Complaints UserAccountIssues"
         ],
         "newField": "UserAccountIssues Count"
       },
@@ -39757,7 +39949,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "NotEnoughStock",
-          "Total Complaints"
+          "Total Complaints NotEnoughStock"
         ],
         "newField": "NotEnoughStock Count"
       },
@@ -39766,7 +39958,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "SyncNotWorking",
-          "Total Complaints"
+          "Total Complaints SyncNotWorking"
         ],
         "newField": "SyncNotWorking Count"
       },
@@ -39775,7 +39967,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "LackOfInternet",
-          "Total Complaints"
+          "Total Complaints LackOfInternet"
         ],
         "newField": "LackOfInternet Count"
       }
