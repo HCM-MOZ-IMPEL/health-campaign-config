@@ -38799,7 +38799,7 @@
           "PENDING_ASSIGNMENT",
           "Total Complaints Pending Assignment"
         ],
-        "newField": "PENDING_ASSIGNMENT"
+        "newField": "Pending Assignment Complaints"
       },
       {
         "postAggregationTheory": "",
@@ -38808,7 +38808,7 @@
           "RESOLVED",
           "Total Complaints Resolved"
         ],
-        "newField": "RESOLVED"
+        "newField": "Resolved Complaints"
       },
       {
         "postAggregationTheory": "",
@@ -38817,7 +38817,7 @@
           "REJECTED",
           "Total Complaints Rejected"
         ],
-        "newField": "REJECTED"
+        "newField": "Rejected Complaints"
       }
     ],
     "sort": "sortKeyAsc",
@@ -39975,9 +39975,9 @@
     "plotLabel": "none",
     "drillChart": "ComplaintsShareByLocalityCaboDelgado",
     "documentType": "_doc",
-    "action": "divisionbyconstant",
+    "action": "percentage",
     "aggregationPaths": [
-      "Complaints Breakdown",
+      "% of Total Complaints",
       "Total Complaints"
     ],
     "filterKeys": [
