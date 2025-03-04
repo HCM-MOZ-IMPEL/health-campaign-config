@@ -35906,7 +35906,7 @@
     "chartType": "pie",
     "valueType": "number",
     "showLabel": true,
-    "drillChart": "totalHouseholdsNotDeliveredDrilldownProvinceCaboDelgado",
+    "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
@@ -37485,7 +37485,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Delivery Comment Filter\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.deliveryComments.keyword\"}}]}},\"aggs\":{\"Orientau00e7u00e3o nacional\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Program Mandate\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveryComments.keyword\":{\"value\":\"NATIONAL_ORIENTATION\"}}}]}},\"aggs\":{\"NAME\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Insuficiu00eancia de redes\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Insufficent\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveryComments.keyword\":{\"value\":\"INSUFFICIENT_RESOURCES\"}}}]}},\"aggs\":{\"NAME\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.isDelivered\":true}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Bednets distributed\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Bednets distributed count\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -40474,7 +40474,6 @@
     "showFooter": true,
     "plotLabel": "Summary Daywise",
     "excludedColumns": [
-      "S.N.",
       "Resolved Complaints Count",
       "Rejected Complaints Count",
       "Open Complaints Count"
