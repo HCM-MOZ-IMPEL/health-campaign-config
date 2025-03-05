@@ -42871,36 +42871,6 @@
     "plotLabel": "none",
     "chartType": "line",
     "valueType": "number",
-    "drillChart": "entriesDoneByWMsLocalityCaboDelgado",
-    "isCumulative": false,
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "WM Stock Entries"
-    ],
-    "insight": {},
-    "_comment": " ",
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ]
-  },
-  "entriesDoneByWMsLocalityCaboDelgado": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_LOCALITY",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "plotLabel": "none",
-    "chartType": "line",
-    "valueType": "number",
     "drillChart": "entriesDoneByWMsAdministrativeProvinceCaboDelgado",
     "isCumulative": false,
     "documentType": "_doc",
@@ -42912,7 +42882,7 @@
     "_comment": " ",
     "filterKeys": [
       {
-        "key": "locality"
+        "key": "district"
       }
     ]
   },
@@ -42931,36 +42901,6 @@
     "plotLabel": "none",
     "chartType": "line",
     "valueType": "number",
-    "drillChart": "entriesDoneByWMsVillageCaboDelgado",
-    "isCumulative": false,
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "WM Stock Entries"
-    ],
-    "insight": {},
-    "_comment": " ",
-    "filterKeys": [
-      {
-        "key": "administrativeProvince"
-      }
-    ]
-  },
-  "entriesDoneByWMsVillageCaboDelgado": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_VILLAGE",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      }
-    ],
-    "plotLabel": "none",
-    "chartType": "line",
-    "valueType": "number",
     "drillChart": "none",
     "isCumulative": false,
     "documentType": "_doc",
@@ -42972,7 +42912,7 @@
     "_comment": " ",
     "filterKeys": [
       {
-        "key": "village"
+        "key": "administrativeProvince"
       }
     ]
   },
@@ -43839,7 +43779,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "filterKeys": [
@@ -43850,121 +43790,10 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "dataQualitySummaryLocalityCaboDelgado",
-    "documentType": "_doc",
-    "action": "",
-    "plotLabel": "districts",
-    "excludedColumns": [
-      "Household with more than 20 members count",
-      "Location not enabled count",
-      "WHM Stock Entries count",
-      "total_users_registered_more_than_3",
-      "Total Houses Registered count",
-      "negative_households_visited_count"
-    ],
-    "excludedBucketKeys": [
-      "daily_users"
-    ],
-    "hideInsights": true,
-    "showFooter": true,
-    "hideHeaderDenomination": true,
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household with more than 20 members count"
-        ],
-        "newField": "Household with more than 20 members",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Location not enabled count"
-        ],
-        "newField": "Location Not Enabled Count",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "WHM Stock Entries count"
-        ],
-        "newField": "WHM Stock Entries Count",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Total Houses Registered count",
-          "negative_households_visited_count"
-        ],
-        "newField": "Households Not Sprayed Count",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "total_users_registered_more_than_3"
-        ],
-        "newField": "Suspected Frauds Count",
-        "_comments": ""
-      }
-    ],
-    "insight": {},
-    "sort": "sortKeyAsc",
-    "_comment": " "
-  },
-  "dataQualitySummaryLocalityCaboDelgado": {
-    "kind": "drillDown",
-    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"WHM Stock Entries count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality\"}}]}},\"aggs\":{\"Total Houses Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Houses Registered count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}},\"Household with more than 20 members\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}},\"aggs\":{\"Household by district\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Household with more than 20 members count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}},\"Location not enabled\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location not enabled by district\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Location not enabled count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"negative_households_visited_count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count * -1;\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
-      }
-    ],
-    "filterKeys": [
-      {
-        "key": "locality",
-        "column": "locality"
-      }
-    ],
-    "chartType": "xtable",
-    "valueType": "number",
     "drillChart": "dataQualitySummaryAdministrativeProvinceCaboDelgado",
     "documentType": "_doc",
     "action": "",
-    "plotLabel": "locality",
+    "plotLabel": "districts",
     "excludedColumns": [
       "Household with more than 20 members count",
       "Location not enabled count",
@@ -44061,7 +43890,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "filterKeys": [
@@ -44072,7 +43901,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "dataQualitySummaryVillageCaboDelgado",
+    "drillChart": "dataQualitySummaryLocalityCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "administrativeProvince",
@@ -44098,6 +43927,117 @@
           "Household with more than 20 members count"
         ],
         "newField": "Household With More Than 20 Members Count",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Location not enabled count"
+        ],
+        "newField": "Location Not Enabled Count",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "WHM Stock Entries count"
+        ],
+        "newField": "WHM Stock Entries Count",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Houses Registered count",
+          "negative_households_visited_count"
+        ],
+        "newField": "Households Not Sprayed Count",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "total_users_registered_more_than_3"
+        ],
+        "newField": "Suspected Frauds Count",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "sort": "sortKeyAsc",
+    "_comment": " "
+  },
+  "dataQualitySummaryLocalityCaboDelgado": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":{\"value\":\"WAREHOUSE_MANAGER\"}}}]}},\"aggs\":{\"WM Stock Entries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"WHM Stock Entries count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality\"}}]}},\"aggs\":{\"Total Houses Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Total Houses Registered count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}},\"Household with more than 20 members\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}},\"aggs\":{\"Household by district\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Household with more than 20 members count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}},\"Location not enabled\":{\"filter\":{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.geoPoint\"}}}},\"aggs\":{\"Location not enabled by district\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Location not enabled count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"CLOSED_HOUSEHOLD\"]}}]}},\"aggs\":{\"Total Houses Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"negative_households_visited_count\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.householdId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName].size() > 0) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count * -1;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+      }
+    ],
+    "filterKeys": [
+      {
+        "key": "locality",
+        "column": "locality"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "dataQualitySummaryVillageCaboDelgado",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "locality",
+    "excludedColumns": [
+      "Household with more than 20 members count",
+      "Location not enabled count",
+      "WHM Stock Entries count",
+      "total_users_registered_more_than_3",
+      "Total Houses Registered count",
+      "negative_households_visited_count"
+    ],
+    "excludedBucketKeys": [
+      "daily_users"
+    ],
+    "hideInsights": true,
+    "showFooter": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Household with more than 20 members count"
+        ],
+        "newField": "Household with more than 20 members",
         "_comments": ""
       },
       {
@@ -44172,7 +44112,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\"},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered > 3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_registered_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "filterKeys": [
