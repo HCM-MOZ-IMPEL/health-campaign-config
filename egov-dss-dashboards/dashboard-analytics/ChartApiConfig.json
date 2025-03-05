@@ -42455,14 +42455,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
@@ -42492,14 +42492,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
@@ -42529,14 +42529,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
@@ -42566,14 +42566,14 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Total Bednets Distributed\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Total Bednets\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
       }
