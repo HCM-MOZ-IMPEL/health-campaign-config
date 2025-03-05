@@ -10525,40 +10525,6 @@
               ]
             },
             {
-              "id": 6031,
-              "name": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
-              "label": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
-              "vizType": "chart",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "bednetsDistributionCoverageDistrictPercentCaboDelgado",
-                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT_PERCENT",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
-                  "id": "bednetsDistributionCoverageDistrictCaboDelgado",
-                  "name": "DSS_HEALTHL_BED_NETS_COVERAGE_DISTRICT",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_HEALTH_REGISTRATION_DISTRIBUTION",
-          "vizArray": [
-            {
               "id": 6032,
               "name": "DSS_HEALTH_R_D_HOUSEHOLD_NOT_DELIVERED",
               "label": "DSS_HEALTH_R_D_HOUSEHOLD_NOT_DELIVERED",
