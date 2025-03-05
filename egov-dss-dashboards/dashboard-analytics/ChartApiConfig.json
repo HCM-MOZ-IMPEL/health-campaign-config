@@ -43258,78 +43258,9 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.household.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "plotLabel": "none",
-    "drillChart": "attendanceDistributorsLocalityPercentCaboDelgado",
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "Community Distributors Marked Present",
-      "Total distributors",
-      "OneOrMoreThanOneEntries"
-    ],
-    "computeMultiPaths": true,
-    "sort": "sortKeyAsc",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "StackPercentageComputedField",
-        "fields": [
-          "Community Distributors Marked Present",
-          "Total distributors"
-        ],
-        "newField": "Attendance percent from Phone",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "StackPercentageComputedField",
-        "fields": [
-          "OneOrMoreThanOneEntries",
-          "Total distributors"
-        ],
-        "newField": "CDDs with more than one entry percent",
-        "_comments": ""
-      }
-    ],
-    "insight": {},
-    "_comment": " ",
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ]
-  },
-  "attendanceDistributorsLocalityPercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "attendanceLog.time",
-        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.locality.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -43372,7 +43303,7 @@
     "_comment": " ",
     "filterKeys": [
       {
-        "key": "locality"
+        "key": "district"
       }
     ]
   },
@@ -43396,78 +43327,9 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.household.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "percentage",
-    "plotLabel": "none",
-    "drillChart": "attendanceDistributorsVillagePercentCaboDelgado",
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "Community Distributors Marked Present",
-      "Total distributors",
-      "OneOrMoreThanOneEntries"
-    ],
-    "computeMultiPaths": true,
-    "sort": "sortKeyAsc",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "StackPercentageComputedField",
-        "fields": [
-          "Community Distributors Marked Present",
-          "Total distributors"
-        ],
-        "newField": "Attendance percent from Phone",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "StackPercentageComputedField",
-        "fields": [
-          "OneOrMoreThanOneEntries",
-          "Total distributors"
-        ],
-        "newField": "CDDs with more than one entry percent",
-        "_comments": ""
-      }
-    ],
-    "insight": {},
-    "_comment": " ",
-    "filterKeys": [
-      {
-        "key": "administrativeProvince"
-      }
-    ]
-  },
-  "attendanceDistributorsVillagePercentCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_VILLAGE_PERCENT",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "attendanceLog.time",
-        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"locality\": \"boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.village.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-staff-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total distributors\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -43510,7 +43372,7 @@
     "_comment": " ",
     "filterKeys": [
       {
-        "key": "village"
+        "key": "administrativeProvince"
       }
     ]
   },
@@ -43527,68 +43389,9 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.household.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "attendanceDistributorsLocalityCaboDelgado",
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "Community Distributors Marked Present",
-      "OneOrMoreThanOneEntries"
-    ],
-    "computeMultiPaths": false,
-    "sort": "sortKeyAsc",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Community Distributors Marked Present"
-        ],
-        "newField": "Attendance from Phone",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "OneOrMoreThanOneEntries"
-        ],
-        "newField": "CDDs with more than one entry",
-        "_comments": ""
-      }
-    ],
-    "insight": {},
-    "_comment": " ",
-    "filterKeys": [
-      {
-        "key": "district"
-      }
-    ]
-  },
-  "attendanceDistributorsLocalityCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_LOCALITY",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "attendanceLog.time",
-        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.locality.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -43628,7 +43431,7 @@
     "_comment": " ",
     "filterKeys": [
       {
-        "key": "locality"
+        "key": "district"
       }
     ]
   },
@@ -43645,7 +43448,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.household.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
       }
@@ -43688,65 +43491,6 @@
     "filterKeys": [
       {
         "key": "administrativeProvince"
-      }
-    ]
-  },
-  "attendanceDistributorsVillageCaboDelgado": {
-    "chartName": "DSS_HEALTH_ATTENDANCE_DISTRIBUTORS_VILLAGE",
-    "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "attendanceLog.time",
-        "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"locality\": \"boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.village.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
-      }
-    ],
-    "chartType": "line",
-    "isCumulative": false,
-    "valueType": "number",
-    "plotLabel": "none",
-    "drillChart": "none",
-    "documentType": "_doc",
-    "action": "",
-    "aggregationPaths": [
-      "Community Distributors Marked Present",
-      "OneOrMoreThanOneEntries"
-    ],
-    "computeMultiPaths": false,
-    "sort": "sortKeyAsc",
-    "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Community Distributors Marked Present"
-        ],
-        "newField": "Attendance from Phone",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "OneOrMoreThanOneEntries"
-        ],
-        "newField": "CDDs with more than one entry",
-        "_comments": ""
-      }
-    ],
-    "insight": {},
-    "_comment": " ",
-    "filterKeys": [
-      {
-        "key": "village"
       }
     ]
   },
