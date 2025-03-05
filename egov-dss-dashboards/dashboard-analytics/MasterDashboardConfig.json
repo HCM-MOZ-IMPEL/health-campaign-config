@@ -11212,7 +11212,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "userDataSyncRateCaboDelgado",
+                  "id": "userDataSyncRateDistrictCaboDelgado",
                   "name": "DSS_HEALTH_USER_DATA_SYNC_RATE",
                   "code": "",
                   "chartType": "bar",
