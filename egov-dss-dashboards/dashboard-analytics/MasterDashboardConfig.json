@@ -10505,7 +10505,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "distributionCoverageByDistrictPercentCaboDelgado",
+                  "id": "bednetsDistributionCoverageDistrictPercentCaboDelgado",
                   "name": "DSS_HEALTH_DISTRIBUTION_COVERAGE_BY_DISTRICT_PERCENT",
                   "code": "",
                   "chartType": "bar",
