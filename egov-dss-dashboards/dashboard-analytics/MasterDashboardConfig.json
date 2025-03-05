@@ -10848,15 +10848,6 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "complaintsByStatusBreakdownProvincePercentCaboDelgado",
-                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE_PERCENT",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
                   "id": "complaintsByStatusBreakdownProvinceCaboDelgado",
                   "name": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCE",
                   "code": "",
@@ -10875,15 +10866,6 @@
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
-                {
-                  "id": "complaintsByTypeBreakdownProvincialPercentCaboDelgado",
-                  "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL_PERCENT",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
                 {
                   "id": "complaintsByTypeBreakdownProvincialCaboDelgado",
                   "name": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL",

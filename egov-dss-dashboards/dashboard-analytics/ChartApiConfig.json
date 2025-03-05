@@ -41976,6 +41976,44 @@
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
+    "drillChart": "userDataSyncRateDistrictCaboDelgado",
+    "documentType": "_doc",
+    "action": "percentage",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "userDataSyncRateDistrictCaboDelgado": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\n  \"size\": 0, \n  \"aggs\": {\n    \"NAME\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"terms\": {\n                \"Data.role.keyword\": [\n                  \"PROVINCIAL_SUPERVISOR\",\n                  \"DISTRICT_SUPERVISOR\"               ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Users Synced\": {\n          \"terms\": {\n            \"field\": \"Data.boundaryHierarchy.district.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Unique Users Synced\": {\n              \"scripted_metric\": {\n                \"params\": {\n                  \"fieldName\": \"Data.syncedUserId.keyword\"\n                },\n                \"init_script\": \"state.list = []\",\n                \"map_script\": \"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\n                \"combine_script\": \"return state.list;\",\n                \"reduce_script\": \"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return count;\"\n              }\n            }\n          }\n        }\n      } \n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"NATIONAL_SUPERVISOR\",\"LOCAL_MONITOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Total Users Created Count\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
     "drillChart": "none",
     "documentType": "_doc",
     "action": "percentage",
