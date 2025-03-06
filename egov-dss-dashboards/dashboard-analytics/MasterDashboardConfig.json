@@ -10661,7 +10661,7 @@
               "charts": [
                 {
                   "id": "registrationSummaryByDistrictCaboDelgado",
-                  "name": "DSS_HEALTH_RESGISTRATION_SUMMARY_BY_DISTRICT",
+                  "name": "DSS_HEALTH_REGISTRATION_SUMMARY_BY_DISTRICT",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
