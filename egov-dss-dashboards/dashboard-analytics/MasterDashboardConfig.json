@@ -11027,7 +11027,7 @@
                   "id": "stockTransactionsBreakdownProvincialCaboDelgado",
                   "name": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": []
                 }
