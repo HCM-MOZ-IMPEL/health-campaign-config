@@ -11295,8 +11295,8 @@
           "vizArray": [
             {
               "id": 6102,
-              "name": "DSS_HEALTH_TEAM_PERFORMANCE_SUMMARY_TABLE",
-              "label": "DSS_HEALTH_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -11366,7 +11366,8 @@
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
-                  "headers": []
+                  "headers": [],
+                  "tabName": "NUMBER"
                 }
               ]
             },
@@ -11934,8 +11935,8 @@
           "vizArray": [
             {
               "id": 6043,
-              "name": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
-              "label": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -12665,8 +12666,8 @@
           "vizArray": [
             {
               "id": 6106,
-              "name": "DSS_HEALTH_TEAM_PERFORMANCE_SUMMARY_TABLE",
-              "label": "DSS_HEALTH_TEAM_PERFORMANCE_SUMMARY_TABLE",
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
