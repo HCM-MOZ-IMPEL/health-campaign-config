@@ -43477,7 +43477,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Household with more than 20 members"
+      "Households with more than 20 members"
     ],
     "filterKeys": [
       {
@@ -43993,7 +43993,7 @@
         "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"minute\",\"min_doc_count\":1},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered>3\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Suspected Frauds\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":5000},\"aggs\":{\"daily_users\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"calendar_interval\":\"day\",\"min_doc_count\":100},\"aggs\":{\"users\":{\"terms\":{\"field\":\"Data.household.clientAuditDetails.createdBy.keyword\",\"size\":1000},\"aggs\":{\"house_registered_count\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}},\"users_with_more_than_3\":{\"bucket_selector\":{\"buckets_path\":{\"houseRegistered\":\"house_registered_count\"},\"script\":\"params.houseRegistered>120\"}}}},\"number_of_users_registered_more_than_3\":{\"bucket_script\":{\"buckets_path\":{\"count_users\":\"users._bucket_count\"},\"script\":\"params.count_users\"}}}},\"total_users_sprayed_more_than_3\":{\"sum_bucket\":{\"buckets_path\":\"daily_users>number_of_users_registered_more_than_3\"}}}}}}"
       }
     ],
     "chartType": "line",
@@ -44264,7 +44264,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Community Distributors Marked Present",
+      "Bednet Distributors Marked Present",
       "OneOrMoreThanOneEntries"
     ],
     "computeMultiPaths": false,

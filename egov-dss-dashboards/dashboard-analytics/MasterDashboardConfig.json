@@ -10550,8 +10550,8 @@
           "vizArray": [
             {
               "id": 6033,
-              "name": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
-              "label": "DSS_HEALTH_COMMUNITIES_COVERED_NOT_COVERED",
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -11017,8 +11017,8 @@
             },
             {
               "id": 6077,
-              "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
-              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
+              "name": "DSS_HEALTH_STOCK_TRANSACTIONS_CABO",
+              "label": "DSS_HEALTH_STOCK_TRANSACTIONS_CABO",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -11373,8 +11373,8 @@
             },
             {
               "id": 6110,
-              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
-              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS",
+              "name": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_CABO",
+              "label": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_CABO",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -11397,8 +11397,8 @@
           "vizArray": [
             {
               "id": 6111,
-              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
-              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
+              "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO",
+              "label": "DSS_HEALTH_INCOMPLETE_RECORDS_CABO",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -11415,8 +11415,8 @@
             },
             {
               "id": 6112,
-              "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
-              "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
+              "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO",
+              "label": "DSS_HEALTH_SUSPECTED_FRAUDS_CABO",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -11535,8 +11535,8 @@
           "vizArray": [
             {
               "id": 6019,
-              "name": "DSS_HEALTH_HOUSEHOLDS",
-              "label": "DSS_HEALTH_HOUSEHOLDS",
+              "name": "DSS_HEALTH_HOUSEHOLDS_CABO",
+              "label": "DSS_HEALTH_HOUSEHOLDS_CABO",
               "vizType": "stacked-collection",
               "noUnit": true,
               "isCollapsible": false,
