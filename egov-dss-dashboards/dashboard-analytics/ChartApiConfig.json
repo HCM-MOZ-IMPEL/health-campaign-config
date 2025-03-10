@@ -35350,10 +35350,10 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"DateRange visits\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Population Covered for Date range\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"DateRange visits\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -43325,8 +43325,8 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\", \"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Total_Spray_Operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -43337,7 +43337,7 @@
     "action": "division",
     "aggregationPaths": [
       "Average Bednets Distributed",
-      "Distribution Days"
+      "Total_Spray_Operators"
     ],
     "filterKeys": [
       {
@@ -43362,19 +43362,19 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}]}},\"aggs\":{\"Distribution Days\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Days\":{\"cardinality\":{\"field\":\"Data.taskDates\"}}}}}}}}"
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.role.keyword\":\"DISTRIBUTOR\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Total_Spray_Operators\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "averageBednetsDistributedLocalityCaboDelgado",
+    "drillChart": "none",
     "documentType": "_doc",
     "action": "division",
     "aggregationPaths": [
       "Average Bednets Distributed",
-      "Distribution Days"
+      "Total_Spray_Operators"
     ],
     "filterKeys": [
       {
