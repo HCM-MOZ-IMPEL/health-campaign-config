@@ -10184,8 +10184,8 @@
           "vizArray": [
             {
               "id": 6009,
-              "name": "DSS_HEALTH_HOUSEHOLDS",
-              "label": "DSS_HEALTH_HOUSEHOLDS",
+              "name": "DSS_HEALTH_HOUSEHOLDS_CABO",
+              "label": "DSS_HEALTH_HOUSEHOLDS_CABO",
               "vizType": "stacked-collection",
               "noUnit": true,
               "isCollapsible": false,
