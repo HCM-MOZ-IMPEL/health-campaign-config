@@ -10653,8 +10653,8 @@
           "vizArray": [
             {
               "id": 6036,
-              "name": "DSS_HEALTH_SUMMARY_REGISTRATION",
-              "label": "DSS_HEALTH_SUMMARY_REGISTRATION",
+              "name": "DSS_HEALTH_SUMMARY_REGISTRATION_CABO",
+              "label": "DSS_HEALTH_SUMMARY_REGISTRATION_CABO",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -12045,7 +12045,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "registrationSummaryByDistrictCaboDelgado",
+                  "id": "registrationSummaryByAdministrativeProvinceCaboDelgado",
                   "name": "DSS_HEALTH_RESGISTRATION_SUMMARY_BY_DISTRICT",
                   "code": "",
                   "chartType": "table",

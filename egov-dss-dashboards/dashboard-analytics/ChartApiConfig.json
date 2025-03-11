@@ -35051,7 +35051,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -35279,21 +35279,21 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Household TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Household TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Distribution TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Distribution TargetValue\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -35432,7 +35432,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Households per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd)*365\"}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"HOUSEHOLD\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target Households per Day\":{\"bucket_script\":{\"buckets_path\":{\"tpd\":\"Target per day\"},\"script\":\"(params.tpd)*365\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -35617,7 +35617,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\": 0,\"aggs\": {\"AGGR\": {\"filters\": {\"filters\": {\"Campaign Filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.targetType.keyword\": \"INDIVIDUAL\"}},{\"exists\": {\"field\": \"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\": {\"Overall Target\": {\"sum\": {\"field\": \"Data.overallTarget\"}},\"Target per day\": {\"sum\": {\"field\": \"Data.targetPerDay\"}},\"Target Population per Day\": {\"bucket_script\": {\"buckets_path\": {\"tpd\": \"Target per day\"},\"script\": \"(params.tpd) * 365\"}}}}}}"
+        "aggrQuery": "{\"size\": 0,\"aggs\": {\"AGGR\": {\"filters\": {\"filters\": {\"Campaign Filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.targetType.keyword\": \"INDIVIDUAL\"}},{\"exists\": {\"field\": \"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\": {\"Overall Target\": {\"sum\": {\"field\": \"Data.overallTarget\"}},\"Target per day\": {\"sum\": {\"field\": \"Data.targetPerDay\"}},\"Target Population per Day\": {\"bucket_script\": {\"buckets_path\": {\"tpd\": \"Target per day\"},\"script\": \"(params.tpd) * 365\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -35689,7 +35689,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -35800,7 +35800,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Bednets Target\":{\"filters\":{\"filters\":{\"distributions\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target by Range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target\"},\"script\":\"(params.target) * 365\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Bednets Target\":{\"filters\":{\"filters\":{\"distributions\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Overall Target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"Target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target by Range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target\"},\"script\":\"(params.target) * 365\"}}}}}}"
       }
     ],
     "chartType": "metric",
@@ -35861,7 +35861,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Distribution Target\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"target\":{\"sum\":{\"field\":\"Data.overallTarget\"}}}}}}"
       },
       {
         "module": "COMMON",
@@ -37802,7 +37802,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -37815,7 +37815,7 @@
     "filterKeys": [],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "populationCoverageHeatMapDistrictCaboDelgado",
+    "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Districts",
@@ -37857,14 +37857,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"INDIVIDUAL\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Population Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Overall Population target\":{\"sum\":{\"field\":\"Data.overallTarget\"}},\"target\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for daterange\":{\"bucket_script\":{\"buckets_path\":{\"SUM\":\"target\"},\"script\":\"(params.SUM)*365\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population Covered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"total_count\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total Population Covered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"total_count\":{\"sum\":{\"field\":\"Data.memberCount\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -38252,7 +38252,7 @@
           "Total Households distributed",
           "Household Target for Date Range"
         ],
-        "newField": "Target Achievement Household",
+        "newField": "Target Achievement Household Cabo",
         "_comments": ""
       },
       {
@@ -38271,7 +38271,7 @@
           "Total Population covered",
           "Population Target for Date Range"
         ],
-        "newField": "Target Achievement Population",
+        "newField": "Target Achievement Population Cabo",
         "_comments": ""
       },
       {
@@ -38290,7 +38290,7 @@
           "Total Bednets distributed",
           "Bednets Target for Date Range"
         ],
-        "newField": "Target Achievement Bednets",
+        "newField": "Target Achievement Bednets Cabo",
         "_comments": ""
       },
       {
@@ -38299,7 +38299,7 @@
         "fields": [
           "Household Target for Date Range"
         ],
-        "newField": "Households Targeted for Date Range",
+        "newField": "Households Targeted for Date Range Cabo",
         "_comments": ""
       },
       {
@@ -38308,7 +38308,7 @@
         "fields": [
           "Households distributed count"
         ],
-        "newField": "Households distributed",
+        "newField": "Households distributed Cabo",
         "_comments": ""
       },
       {
@@ -38317,7 +38317,7 @@
         "fields": [
           "Population Target for Date Range"
         ],
-        "newField": "Population Targeted for Date Range",
+        "newField": "Population Targeted for Date Range Cabo",
         "_comments": ""
       },
       {
@@ -38326,7 +38326,7 @@
         "fields": [
           "Population covered count"
         ],
-        "newField": "Population covered",
+        "newField": "Population covered Cabo",
         "_comments": ""
       },
       {
@@ -38335,7 +38335,7 @@
         "fields": [
           "Bednets Target for Date Range"
         ],
-        "newField": "Bednets Targeted for date Range",
+        "newField": "Bednets Targeted for date Range Cabo",
         "_comments": ""
       },
       {
@@ -38344,7 +38344,7 @@
         "fields": [
           "Bednets distributed count"
         ],
-        "newField": "Bednets distributed",
+        "newField": "Bednets distributed Cabo",
         "_comments": ""
       },
       {
@@ -38537,7 +38537,7 @@
           "Total Households distributed",
           "Household Target for Date Range"
         ],
-        "newField": "Target Achievement Household",
+        "newField": "Target Achievement Household Cabo",
         "_comments": ""
       },
       {
@@ -38556,7 +38556,7 @@
           "Total Population covered",
           "Population Target for Date Range"
         ],
-        "newField": "Target Achievement Population",
+        "newField": "Target Achievement Population Cabo",
         "_comments": ""
       },
       {
@@ -38575,7 +38575,7 @@
           "Total Bednets distributed",
           "Bednets Target for Date Range"
         ],
-        "newField": "Target Achievement Bednets",
+        "newField": "Target Achievement Bednets Cabo",
         "_comments": ""
       },
       {
@@ -38584,7 +38584,7 @@
         "fields": [
           "Household Target for Date Range"
         ],
-        "newField": "Households Targeted for Date Range",
+        "newField": "Households Targeted for Date Range Cabo",
         "_comments": ""
       },
       {
@@ -38593,7 +38593,7 @@
         "fields": [
           "Households distributed count"
         ],
-        "newField": "Households distributed",
+        "newField": "Households distributed Cabo",
         "_comments": ""
       },
       {
@@ -38602,7 +38602,7 @@
         "fields": [
           "Population Target for Date Range"
         ],
-        "newField": "Population Targeted for Date Range",
+        "newField": "Population Targeted for Date Range Cabo",
         "_comments": ""
       },
       {
@@ -38611,7 +38611,7 @@
         "fields": [
           "Population covered count"
         ],
-        "newField": "Population covered",
+        "newField": "Population covered Cabo",
         "_comments": ""
       },
       {
@@ -38620,7 +38620,7 @@
         "fields": [
           "Bednets Target for Date Range"
         ],
-        "newField": "Bednets Targeted for date Range",
+        "newField": "Bednets Targeted for date Range Cabo",
         "_comments": ""
       },
       {
@@ -38629,7 +38629,7 @@
         "fields": [
           "Bednets distributed count"
         ],
-        "newField": "Bednets distributed",
+        "newField": "Bednets distributed Cabo",
         "_comments": ""
       },
       {
@@ -38823,7 +38823,7 @@
           "Total Households distributed",
           "Household Target for Date Range"
         ],
-        "newField": "Target Achievement Household",
+        "newField": "Target Achievement Household Cabo",
         "_comments": ""
       },
       {
@@ -38842,7 +38842,7 @@
           "Total Population covered",
           "Population Target for Date Range"
         ],
-        "newField": "Target Achievement Population",
+        "newField": "Target Achievement Population Cabo",
         "_comments": ""
       },
       {
@@ -38861,7 +38861,7 @@
           "Total Bednets distributed",
           "Bednets Target for Date Range"
         ],
-        "newField": "Target Achievement Bednets",
+        "newField": "Target Achievement Bednets Cabo",
         "_comments": ""
       },
       {
@@ -38870,7 +38870,7 @@
         "fields": [
           "Household Target for Date Range"
         ],
-        "newField": "Households Targeted for Date Range",
+        "newField": "Households Targeted for Date Range Cabo",
         "_comments": ""
       },
       {
@@ -38879,7 +38879,7 @@
         "fields": [
           "Households distributed count"
         ],
-        "newField": "Households distributed",
+        "newField": "Households distributed Cabo",
         "_comments": ""
       },
       {
@@ -38888,7 +38888,7 @@
         "fields": [
           "Population Target for Date Range"
         ],
-        "newField": "Population Targeted for Date Range",
+        "newField": "Population Targeted for Date Range Cabo",
         "_comments": ""
       },
       {
@@ -38897,7 +38897,7 @@
         "fields": [
           "Population covered count"
         ],
-        "newField": "Population covered",
+        "newField": "Population covered Cabo",
         "_comments": ""
       },
       {
@@ -38906,7 +38906,7 @@
         "fields": [
           "Bednets Target for Date Range"
         ],
-        "newField": "Bednets Targeted for date Range",
+        "newField": "Bednets Targeted for date Range Cabo",
         "_comments": ""
       },
       {
@@ -38915,7 +38915,7 @@
         "fields": [
           "Bednets distributed count"
         ],
-        "newField": "Bednets distributed",
+        "newField": "Bednets distributed Cabo",
         "_comments": ""
       },
       {
@@ -39109,7 +39109,7 @@
           "Total Households distributed",
           "Household Target for Date Range"
         ],
-        "newField": "Target Achievement Household",
+        "newField": "Target Achievement Household Cabo",
         "_comments": ""
       },
       {
@@ -39128,7 +39128,7 @@
           "Total Population covered",
           "Population Target for Date Range"
         ],
-        "newField": "Target Achievement Population",
+        "newField": "Target Achievement Population Cabo",
         "_comments": ""
       },
       {
@@ -39147,7 +39147,7 @@
           "Total Bednets distributed",
           "Bednets Target for Date Range"
         ],
-        "newField": "Target Achievement Bednets",
+        "newField": "Target Achievement Bednets Cabo",
         "_comments": ""
       },
       {
@@ -39156,7 +39156,7 @@
         "fields": [
           "Household Target for Date Range"
         ],
-        "newField": "Households Targeted for Date Range",
+        "newField": "Households Targeted for Date Range Cabo",
         "_comments": ""
       },
       {
@@ -39165,7 +39165,7 @@
         "fields": [
           "Households distributed count"
         ],
-        "newField": "Households distributed",
+        "newField": "Households distributed Cabo",
         "_comments": ""
       },
       {
@@ -39174,7 +39174,7 @@
         "fields": [
           "Population Target for Date Range"
         ],
-        "newField": "Population Targeted for Date Range",
+        "newField": "Population Targeted for Date Range Cabo",
         "_comments": ""
       },
       {
@@ -39183,7 +39183,7 @@
         "fields": [
           "Population covered count"
         ],
-        "newField": "Population covered",
+        "newField": "Population covered Cabo",
         "_comments": ""
       },
       {
@@ -39192,7 +39192,7 @@
         "fields": [
           "Bednets Target for Date Range"
         ],
-        "newField": "Bednets Targeted for date Range",
+        "newField": "Bednets Targeted for date Range Cabo",
         "_comments": ""
       },
       {
@@ -39201,7 +39201,7 @@
         "fields": [
           "Bednets distributed count"
         ],
-        "newField": "Bednets distributed",
+        "newField": "Bednets distributed Cabo",
         "_comments": ""
       },
       {
@@ -39340,7 +39340,10 @@
       "Overall Population target",
       "Total closed households",
       "Household Rejected Delivery Count",
-      "Non Delivery HH Rejected"
+      "Non Delivery HH Rejected",
+      "Target Achievement Household Distributed",
+      "Target Achievement Population",
+      "Target Achievement Bednets"
     ],
     "divisorFields": [
       "Overall Bednet Target",
@@ -39354,7 +39357,7 @@
         "fields": [
           "Households Distributed count"
         ],
-        "newField": "Households Distributed",
+        "newField": "Households Distributed Cabo",
         "_comments": ""
       },
       {
@@ -39363,7 +39366,7 @@
         "fields": [
           "Total Population covered"
         ],
-        "newField": "Population covered",
+        "newField": "Population covered Cabo",
         "_comments": ""
       },
       {
@@ -39372,7 +39375,7 @@
         "fields": [
           "Bednets distributed count"
         ],
-        "newField": "Bednets distributed",
+        "newField": "Bednets distributed Cabo",
         "_comments": ""
       },
       {
