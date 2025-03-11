@@ -10075,8 +10075,8 @@
           "vizArray": [
             {
               "id": 6004,
-              "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
-              "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
+              "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_CABO",
+              "label": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_CABO",
               "vizType": "heatmap",
               "noUnit": true,
               "isCollapsible": false,
@@ -10589,7 +10589,7 @@
                   "chartType": "heatmap",
                   "filter": "",
                   "headers": [],
-                  "tabName": "HOUSEHOLD"
+                  "tabName": "HOUSEHOLDS"
                 },
                 {
                   "id": "populationCoverageHeatMapProvinceCaboDelgado",
