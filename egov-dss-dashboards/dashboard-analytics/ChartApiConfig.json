@@ -44366,7 +44366,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "inventoryStockInHandDistrictCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
@@ -44386,21 +44386,21 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\": 0, \"aggs\": {\"AGGR\": {\"filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.targetType.keyword\": \"PRODUCT\"}},{\"exists\": {\"field\": \"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\": {\"Overall Target\": {\"terms\": {\"size\": 500,\"field\": \"Data.boundaryHierarchy.locality.keyword\",\"order\": {\"_key\": \"asc\"}},\"aggs\": {\"SUM\": {\"sum\": {\"field\": \"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"size\": 0, \"aggs\": {\"AGGR\": {\"filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.targetType.keyword\": \"PRODUCT\"}},{\"exists\": {\"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\": {\"Overall Target\": {\"terms\": {\"size\": 500,\"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\": {\"_key\": \"asc\"}},\"aggs\": {\"SUM\": {\"sum\": {\"field\": \"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\": 0, \"aggs\": {\"Total Distributions\": {\"filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.deliveredTo.keyword\": \"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"exists\": {\"field\": \"Data.quantity\"}}]}},\"aggs\": {\"Distributions by locality\": {\"terms\": {\"field\": \"Data.boundaryHierarchy.locality.keyword\",\"size\": 500,\"order\": {\"_key\": \"asc\"}},\"aggs\": {\"Distributions\": {\"sum\": {\"script\": {\"source\": \"doc['Data.quantity'].value*(-1)\"}}}}}}}}}"
+        "aggrQuery": "{\"size\": 0, \"aggs\": {\"Total Distributions\": {\"filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.deliveredTo.keyword\": \"HOUSEHOLD\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"exists\": {\"field\": \"Data.quantity\"}}]}},\"aggs\": {\"Distributions by locality\": {\"terms\": {\"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\": 500,\"order\": {\"_key\": \"asc\"}},\"aggs\": {\"Distributions\": {\"sum\": {\"script\": {\"source\": \"doc['Data.quantity'].value*(-1)\"}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -44439,21 +44439,21 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Theoretical Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Theoretical Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.stockReconciliation.clientAuditDetails.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-reconciliation-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_docs\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest\":{\"top_hits\":{\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"size\":1}},\"sum_calculatedCount\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}},\"Total Stock\":{\"sum_bucket\":{\"buckets_path\":\"latest_docs>sum_calculatedCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_docs\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest\":{\"top_hits\":{\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"size\":1}},\"sum_calculatedCount\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}},\"Total Stock\":{\"sum_bucket\":{\"buckets_path\":\"latest_docs>sum_calculatedCount\"}}}}}}}}"
       }
     ],
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "inventoryTheoreticalVsManualStockApCaboDelgado",
     "filterKeys": [
       {
         "key": "district"
@@ -44468,7 +44468,7 @@
     "insight": {},
     "_comment": " "
   },
-  "inventoryTheoreticalVsManualStockLocalityCaboDelgado": {
+  "inventoryTheoreticalVsManualStockApCaboDelgado": {
     "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_LOCALITY",
     "queries": [
       {
@@ -44476,14 +44476,14 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Theoretical Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Theoretical Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "Data.stockReconciliation.clientAuditDetails.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-reconciliation-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_docs\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest\":{\"top_hits\":{\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"size\":1}},\"sum_calculatedCount\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}},\"Total Stock\":{\"sum_bucket\":{\"buckets_path\":\"latest_docs>sum_calculatedCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_docs\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest\":{\"top_hits\":{\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"size\":1}},\"sum_calculatedCount\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}},\"Total Stock\":{\"sum_bucket\":{\"buckets_path\":\"latest_docs>sum_calculatedCount\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -44513,7 +44513,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"StockReceived\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}}]}},\"aggs\":{\"StockReceived Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Received Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockIssued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.reason\"}}}}]}},\"aggs\":{\"StockIssued Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Issued Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockReturned\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}}]}},\"aggs\":{\"StockReturned Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Returned Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"In Hand Stock Count\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}},\"aggs\":{\"StockReceived\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}}]}},\"aggs\":{\"StockReceived Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Received Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockIssued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.reason\"}}}}]}},\"aggs\":{\"StockIssued Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Issued Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockReturned\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}}]}},\"aggs\":{\"StockReturned Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Returned Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"In Hand Stock Count\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -44527,7 +44527,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "stockTransactionsBreakdownDistrictCaboDelgado",
     "filterKeys": [
       {
         "key": "district"
@@ -44553,14 +44553,14 @@
         "dateRefField": "Data.lastModifiedTime",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"StockReceived\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}}]}},\"aggs\":{\"StockReceived Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Received Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockIssued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.reason\"}}}}]}},\"aggs\":{\"StockIssued Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Issued Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockReturned\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}}]}},\"aggs\":{\"StockReturned Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Returned Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"In Hand Stock Count\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}},\"aggs\":{\"StockReceived\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}}]}},\"aggs\":{\"StockReceived Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Received Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockIssued\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.reason\"}}}}]}},\"aggs\":{\"StockIssued Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Issued Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"StockReturned\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}}]}},\"aggs\":{\"StockReturned Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Returned Stock Count\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"In Hand Stock Count\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\": 0, \"aggs\": {\"Stock Used\": {\"filter\": {\"bool\": {\"must\": [{\"exists\": {\"field\": \"Data.quantity\"}}]}},\"aggs\": {\"Stock Used by Locality\": {\"terms\": {\"field\": \"Data.boundaryHierarchy.locality.keyword\",\"size\": 500,\"order\": {\"_key\": \"asc\"}},\"aggs\": {\"Used Stock\": {\"sum\": {\"field\": \"Data.quantity\"}}}}}}}}"
+        "aggrQuery": "{\"size\": 0, \"aggs\": {\"Stock Used\": {\"filter\": {\"bool\": {\"must\": [{\"exists\": {\"field\": \"Data.quantity\"}}]}},\"aggs\": {\"Stock Used by Locality\": {\"terms\": {\"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\": 500,\"order\": {\"_key\": \"asc\"}},\"aggs\": {\"Used Stock\": {\"sum\": {\"field\": \"Data.quantity\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -44570,7 +44570,7 @@
     "drillChart": "none",
     "filterKeys": [
       {
-        "key": "locality"
+        "key": "AdministrativeProvince"
       }
     ],
     "documentType": "_doc",
@@ -44696,14 +44696,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"Stock Received Filter\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"Stock Received\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"Stock Dispatched Filter\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"Stock Dispatched\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}]}}}},\"aggs\":{\"Stock Received Filter\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"Stock Received\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}},\"Stock Dispatched Filter\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"Stock Dispatched\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}]}}}},\"aggs\":{\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -44732,14 +44732,14 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"Will last for\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}]}}}},\"aggs\":{\"Will last for\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}}}},\"aggs\":{\"Target Per Day\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.targetPerDay\"}}}}}}}}"
       }
     ],
     "filterKeys": [],
@@ -44839,7 +44839,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}}}},\"aggs\":{\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}]}}}},\"aggs\":{\"Stock in Hand\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -44923,35 +44923,35 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Product Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target per day\"},\"script\":\"(params.target)*365\"}},\"Target for days to last\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target per day\"},\"script\":\"(params.target)*100\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Product Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target per day\"},\"script\":\"(params.target)*365\"}},\"Target for days to last\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target per day\"},\"script\":\"(params.target)*100\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Outgoing\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Outgoing\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Returned Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Returned\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Returned Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Returned\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"District Warehouse\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -44963,7 +44963,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "InventorySummaryByLocalityCaboDelgado",
+    "drillChart": "InventorySummaryByAPCaboDelgado",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Inventory summary By District",
@@ -45048,7 +45048,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "InventorySummaryByLocalityCaboDelgado": {
+  "InventorySummaryByAPCaboDelgado": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY",
     "queries": [
@@ -45057,42 +45057,42 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Product Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target per day\"},\"script\":\"(params.target)*365\"}},\"Target for days to last\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target per day\"},\"script\":\"(params.target)*100\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Product Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Target per day\":{\"sum\":{\"field\":\"Data.targetPerDay\"}},\"Target for range\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target per day\"},\"script\":\"(params.target)*365\"}},\"Target for days to last\":{\"bucket_script\":{\"buckets_path\":{\"target\":\"Target per day\"},\"script\":\"(params.target)*100\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Outgoing\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Outgoing\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Returned Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Returned\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},{\"term\":{\"Data.reason.keyword\":\"RETURNED\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Returned Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Returned\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"WAREHOUSE\"}}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\": 0, \"aggs\": {\"StockUsed\": {\"filter\": {\"bool\": {\"must\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.locality.keyword\"}}, {\"term\": {\"Data.status.keyword\": \"ADMINISTRATION_SUCCESS\"}}, {\"term\": {\"Data.deliveredTo.keyword\": \"HOUSEHOLD\"}}]}}, \"aggs\": {\"StockUsedByLocality\": {\"terms\": {\"field\": \"Data.boundaryHierarchy.locality.keyword\", \"size\": 500, \"order\": {\"_key\": \"asc\"}}, \"aggs\": {\"UsedStock\": {\"sum\": {\"script\": {\"source\": \"doc['Data.quantity'].size() > 0 ? doc['Data.quantity'].value : 0\"}}}}}}}}}"
+        "aggrQuery": "{\"size\": 0, \"aggs\": {\"StockUsed\": {\"filter\": {\"bool\": {\"must\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\"}}, {\"term\": {\"Data.status.keyword\": \"ADMINISTRATION_SUCCESS\"}}, {\"term\": {\"Data.deliveredTo.keyword\": \"HOUSEHOLD\"}}]}}, \"aggs\": {\"StockUsedByLocality\": {\"terms\": {\"field\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"size\": 500, \"order\": {\"_key\": \"asc\"}}, \"aggs\": {\"UsedStock\": {\"sum\": {\"script\": {\"source\": \"doc['Data.quantity'].size() > 0 ? doc['Data.quantity'].value : 0\"}}}}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -45182,7 +45182,6 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-
   "supervisorUserSyncCaboDelgado": {
     "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE",
     "queries": [

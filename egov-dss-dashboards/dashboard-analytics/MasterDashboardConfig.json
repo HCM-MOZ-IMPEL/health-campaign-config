@@ -10750,8 +10750,8 @@
                   "id": "communitiesCoveredNotCoveredCaboDelgado",
                   "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "communities-covered-and-not-covered",
+                  "moduleName": "irs",
+                  "pageName": "communities-covered-and-not-covered-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -10887,8 +10887,8 @@
                   "id": "successfulRegistrationDistribution",
                   "name": "DASHBOARD_SUCCESSFUL_REGISTRATION_DISTRIBUTION",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "successful-registration-distribution-map",
+                  "moduleName": "irs",
+                  "pageName": "successful-registration-distribution-map-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -10913,8 +10913,8 @@
                   "id": "closedHouseholdMap",
                   "name": "DASHBOARD_CLOSED_HOUSEHOLD",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "closed-household-map",
+                  "moduleName": "irs",
+                  "pageName": "closed-household-map-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -10939,8 +10939,8 @@
                   "id": "usersChecklistMap",
                   "name": "DASHBOARD_USERS_CHECKLIST",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "users-checklist-map",
+                  "moduleName": "irs",
+                  "pageName": "users-checklist-map-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -11254,14 +11254,6 @@
                   "headers": []
                 },
                 {
-                  "id": "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardCaboDelgado",
-                  "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesCaboDelgado",
                   "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
                   "code": "",
@@ -11495,8 +11487,8 @@
                   "id": "teamPerformanceSummaryTableDistrictCaboDelgado",
                   "name": "DASHBOARD_TEAM_PERFORMANCE_SUMMARY_TABLE_DISTRICT",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "team-performance-district",
+                  "moduleName": "irs",
+                  "pageName": "team-performance-district-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -11674,6 +11666,110 @@
                   "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_DISTRICT",
                   "code": "",
                   "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 603,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-administration-summary",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 601,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-histogram",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 602,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-stock-summary",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 602,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-special-cases",
+                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -12135,8 +12231,8 @@
                   "id": "communitiesCoveredNotCoveredCaboDelgado",
                   "name": "DASHBOARD_COMMUNITIES_COVERED_AND_NOT_COVERED",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "communities-covered-and-not-covered",
+                  "moduleName": "irs",
+                  "pageName": "communities-covered-and-not-covered-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -12272,8 +12368,8 @@
                   "id": "successfulRegistrationDistribution",
                   "name": "DASHBOARD_SUCCESSFUL_REGISTRATION_DISTRIBUTION",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "successful-registration-distribution-map",
+                  "moduleName": "irs",
+                  "pageName": "successful-registration-distribution-map-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -12298,8 +12394,8 @@
                   "id": "closedHouseholdMap",
                   "name": "DASHBOARD_CLOSED_HOUSEHOLD",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "closed-household-map",
+                  "moduleName": "irs",
+                  "pageName": "closed-household-map-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -12324,8 +12420,8 @@
                   "id": "usersChecklistMap",
                   "name": "DASHBOARD_USERS_CHECKLIST",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "users-checklist-map",
+                  "moduleName": "irs",
+                  "pageName": "users-checklist-map-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -12599,7 +12695,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "inventoryTheoreticalVsManualStockLocalityCaboDelgado",
+                  "id": "inventoryTheoreticalVsManualStockApCaboDelgado",
                   "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_LOCALITY",
                   "code": "",
                   "chartType": "bar",
@@ -12673,7 +12769,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "InventorySummaryByLocalityCaboDelgado",
+                  "id": "InventorySummaryByAPCaboDelgado",
                   "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY",
                   "code": "",
                   "chartType": "table",
@@ -12866,8 +12962,8 @@
                   "id": "teamPerformanceSummaryTableLocalityCaboDelgado",
                   "name": "DASHBOARD_TEAM_PERFORMANCE_SUMMARY_TABLE_LOCALITY",
                   "code": "",
-                  "moduleName": "cabo-delgado-bednet",
-                  "pageName": "team-performance-locality",
+                  "moduleName": "irs",
+                  "pageName": "team-performance-district-cabo",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -13044,6 +13140,110 @@
                   "name": "DSS_HEALTH_DATA_QUALITY_SUMMARY_LOCALITY",
                   "code": "",
                   "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 603,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-administration-summary",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 601,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-histogram",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 602,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-stock-summary",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 602,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-special-cases",
+                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
