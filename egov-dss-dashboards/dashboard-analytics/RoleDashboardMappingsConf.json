@@ -163,15 +163,15 @@
       "dashboards": [
         {
           "name": "National Health Dashboard",
-          "id": "national-health-dashboard-cabo-delgado"
+          "id": "national-health-dashboard-cabo_delgado"
         },
         {
           "name": "Provincial Health Dashboard",
-          "id": "provincial-health-dashboard-cabo-delgado"
+          "id": "provincial-health-dashboard-cabo_delgado"
         },
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard-cabo-delgado"
+          "id": "district-health-dashboard-cabo_delgado"
         }
       ]
     },
@@ -184,11 +184,11 @@
       "dashboards": [
         {
           "name": "Provincial Health Dashboard",
-          "id": "provincial-health-dashboard-cabo-delgado"
+          "id": "provincial-health-dashboard-cabo_delgado"
         },
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard-cabo-delgado"
+          "id": "district-health-dashboard-cabo_delgado"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "dashboards": [
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard-cabo-delgado"
+          "id": "district-health-dashboard-cabo_delgado"
         }
       ]
     }

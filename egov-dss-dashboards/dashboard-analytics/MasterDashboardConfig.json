@@ -10171,7 +10171,7 @@
     },
     {
       "name": "DSS_HEALTH_NATIONAL_DASHBOARD_HEADING",
-      "id": "national-health-dashboard-cabo-delgado",
+      "id": "national-health-dashboard-cabo_delgado",
       "isActive": "",
       "style": "linear",
       "visualizations": [
@@ -10313,7 +10313,7 @@
               "noUnit": true,
               "isCollapsible": false,
               "ref": {
-                "url": "provincial-health-dashboard-cabo-delgado",
+                "url": "provincial-health-dashboard-cabo_delgado",
                 "logoUrl": "",
                 "type": "internal"
               },
@@ -10334,7 +10334,7 @@
     },
     {
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_HEADING",
-      "id": "provincial-health-dashboard-cabo-delgado",
+      "id": "provincial-health-dashboard-cabo_delgado",
       "isActive": "",
       "style": "linear",
       "hideFilterFields": [
@@ -11781,7 +11781,7 @@
     },
     {
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_HEADING",
-      "id": "district-health-dashboard-cabo-delgado",
+      "id": "district-health-dashboard-cabo_delgado",
       "isActive": "",
       "hideFilterFields": [
         "DDR",
