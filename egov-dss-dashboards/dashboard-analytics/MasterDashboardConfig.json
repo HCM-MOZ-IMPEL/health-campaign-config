@@ -10189,7 +10189,7 @@
               "charts": [
                 {
                   "id": "todaysVistsCaboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED_TODAY",
+                  "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_DELIVERED_TODAY",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -10241,7 +10241,7 @@
               "charts": [
                 {
                   "id": "todayDistributionsCaboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY",
+                  "name": "DSS_HEALTH_NATIONAL_TODAY_DISTRIBUTED_BEDNETS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -10249,7 +10249,7 @@
                 },
                 {
                   "id": "totalDistributionsCaboDelgado",
-                  "name": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_DISTRIBUTED_BEDNETS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
