@@ -44364,6 +44364,11 @@
       }
     ],
     "isCumulative": false,
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
     "valueType": "number",
     "plotLabel": "none",
     "drillChart": "inventoryStockInHandDistrictCaboDelgado",
