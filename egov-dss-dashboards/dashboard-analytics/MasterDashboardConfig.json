@@ -10181,8 +10181,8 @@
           "vizArray": [
             {
               "id": 6000,
-              "name": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED",
-              "label": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_VISITED",
+              "name": "DSS_HEALTH_HOUSEHOLDS_DISTRIBUTED",
+              "label": "DSS_HEALTH_HOUSEHOLDS_DISTRIBUTED",
               "vizType": "stacked-collection",
               "noUnit": true,
               "isCollapsible": false,
@@ -10233,8 +10233,8 @@
             },
             {
               "id": 6002,
-              "name": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
-              "label": "DSS_HEALTH_BEDNETS_DISTRIBUTED",
+              "name": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
               "vizType": "stacked-collection",
               "noUnit": true,
               "isCollapsible": false,
@@ -10374,8 +10374,8 @@
           "vizArray": [
             {
               "id": 6009,
-              "name": "DSS_HEALTH_HOUSEHOLDS_CABO",
-              "label": "DSS_HEALTH_HOUSEHOLDS_CABO",
+              "name": "DSS_HEALTH_HOUSEHOLDS_DISTRIBUTED",
+              "label": "DSS_HEALTH_HOUSEHOLDS_DISTRIBUTED",
               "vizType": "stacked-collection",
               "noUnit": true,
               "isCollapsible": false,
@@ -10521,13 +10521,7 @@
                   "headers": []
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_HEALTH_OVERVIEW",
-          "vizArray": [
+            },
             {
               "id": 6013,
               "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
@@ -11968,13 +11962,7 @@
                   "headers": []
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_HEALTH_OVERVIEW",
-          "vizArray": [
+            },
             {
               "id": 6023,
               "name": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS",
