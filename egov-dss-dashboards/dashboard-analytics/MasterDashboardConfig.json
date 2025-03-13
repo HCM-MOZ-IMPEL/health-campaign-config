@@ -10352,7 +10352,7 @@
               "id": 6007,
               "name": "DSS_HEALTH_OVERVIEW_TARGET",
               "label": "DSS_HEALTH_OVERVIEW_TARGET",
-              "vizType": "bannercard",
+              "vizType": "bannercard-nonsync",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
