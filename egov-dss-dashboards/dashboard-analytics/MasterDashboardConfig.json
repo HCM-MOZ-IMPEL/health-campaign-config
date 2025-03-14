@@ -11698,7 +11698,7 @@
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
-              "id": 601,
+              "id": 602,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -11710,7 +11710,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "cabo-histogram",
+                  "pageName": "cabo-stock-summary",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -11736,7 +11736,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "cabo-stock-summary",
+                  "pageName": "cabo-special-cases",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -11750,7 +11750,7 @@
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
-              "id": 602,
+              "id": 601,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -11762,7 +11762,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "cabo-special-cases",
+                  "pageName": "cabo-histogram",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -13166,7 +13166,7 @@
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
-              "id": 601,
+              "id": 602,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -13178,7 +13178,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "cabo-histogram",
+                  "pageName": "cabo-stock-summary",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -13204,7 +13204,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "cabo-stock-summary",
+                  "pageName": "cabo-special-cases",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -13218,7 +13218,7 @@
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
-              "id": 602,
+              "id": 601,
               "name": "DSS_HEALTH_KIBANA_SCREEN",
               "label": "DSS_HEALTH_KIBANA_SCREEN",
               "vizType": "chart",
@@ -13230,7 +13230,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "cabo-special-cases",
+                  "pageName": "cabo-histogram",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []

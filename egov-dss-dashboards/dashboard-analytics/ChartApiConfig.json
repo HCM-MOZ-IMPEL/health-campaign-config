@@ -45009,7 +45009,7 @@
         "fields": [
           "Incoming"
         ],
-        "newField": "Total Incoming Stock",
+        "newField": "Total Bednet Incoming Stock",
         "_comments": ""
       },
       {
@@ -45018,7 +45018,7 @@
         "fields": [
           "Outgoing"
         ],
-        "newField": "Total Outgoing Stock",
+        "newField": "Total Bednet Outgoing Stock",
         "_comments": ""
       },
       {
@@ -45027,7 +45027,7 @@
         "fields": [
           "Returned"
         ],
-        "newField": "Total Returned Stock",
+        "newField": "Total Bednet Returned Stock",
         "_comments": ""
       },
       {
@@ -45036,7 +45036,7 @@
         "fields": [
           "Total Stock"
         ],
-        "newField": "Total Stock Balance",
+        "newField": "Total Bednet Stock Balance",
         "_comments": ""
       },
       {
@@ -45045,7 +45045,7 @@
         "fields": [
           "UsedStock"
         ],
-        "newField": "Stocks Used",
+        "newField": "Stocks Bednet Used",
         "_comments": ""
       }
     ],
@@ -45143,7 +45143,7 @@
         "fields": [
           "Incoming"
         ],
-        "newField": "Total Incoming Stock",
+        "newField": "Total Bednet Incoming Stock",
         "_comments": ""
       },
       {
@@ -45152,7 +45152,7 @@
         "fields": [
           "Outgoing"
         ],
-        "newField": "Total Outgoing Stock",
+        "newField": "Total Bednet Outgoing Stock",
         "_comments": ""
       },
       {
@@ -45161,7 +45161,7 @@
         "fields": [
           "Returned"
         ],
-        "newField": "Total Returned Stock",
+        "newField": "Total Bednet Returned Stock",
         "_comments": ""
       },
       {
@@ -45170,7 +45170,7 @@
         "fields": [
           "Total Stock"
         ],
-        "newField": "Total Stock Balance",
+        "newField": "Total Bednet Stock Balance",
         "_comments": ""
       },
       {
@@ -45179,7 +45179,7 @@
         "fields": [
           "UsedStock"
         ],
-        "newField": "Stocks Used",
+        "newField": "Stocks Bednet Used",
         "_comments": ""
       }
     ],
