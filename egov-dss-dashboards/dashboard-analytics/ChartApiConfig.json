@@ -46474,7 +46474,14 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.createdTime",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total distributors copy\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
@@ -46490,6 +46497,7 @@
     "aggregationPaths": [
       "Community Distributors Marked Present",
       "Total distributors",
+      "Total distributors copy",
       "OneOrMoreThanOneEntries"
     ],
     "computeMultiPaths": true,
@@ -46510,7 +46518,7 @@
         "actionName": "StackPercentageComputedField",
         "fields": [
           "OneOrMoreThanOneEntries",
-          "Total distributors"
+          "Total distributors copy"
         ],
         "newField": "CDDs with more than one entry percent",
         "_comments": ""
@@ -46605,7 +46613,7 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.auditDetails.createdTime",
+        "dateRefField": "Data.household.clientAuditDetails.createdTime",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "household-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRIBUTOR\",\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"OneOrMoreThanOneEntries\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"unique_users_count\":{\"cardinality\":{\"field\":\"Data.household.auditDetails.createdBy.keyword\"}}}}}}}}"
