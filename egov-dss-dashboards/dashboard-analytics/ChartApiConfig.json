@@ -46609,7 +46609,7 @@
         "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Bednet Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -46637,7 +46637,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Community Distributors Marked Present"
+          "Bednet Distributors Marked Present"
         ],
         "newField": "Attendance from Phone",
         "_comments": ""
@@ -46668,7 +46668,7 @@
         "dateRefField": "attendanceLog.time",
         "requestQueryMap": "{\"province\": \"boundaryHierarchy.province.keyword\", \"district\": \"boundaryHierarchy.district.keyword\", \"locality\": \"boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"additionalDetails.projectTypeId.keyword\"}",
         "indexName": "attendance-log-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Community Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILTER\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"attendanceLog.type.keyword\":\"EXIT\"}},{\"term\":{\"attendanceLog.status.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"Bednet Distributors Marked Present\":{\"terms\":{\"field\":\"boundaryHierarchy.administrativeProvince.keyword\",\"size\":100},\"aggs\":{\"cardinality\":{\"cardinality\":{\"field\":\"attendanceLog.individualId.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -46686,7 +46686,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Community Distributors Marked Present",
+      "Bednet Distributors Marked Present",
       "OneOrMoreThanOneEntries"
     ],
     "computeMultiPaths": false,
@@ -46696,7 +46696,7 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Community Distributors Marked Present"
+          "Bednet Distributors Marked Present"
         ],
         "newField": "Attendance from Phone",
         "_comments": ""
