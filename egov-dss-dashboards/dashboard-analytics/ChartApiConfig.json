@@ -44219,7 +44219,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-index-v1",
-        "aggrQuery": "{\"size\": 0, \"aggs\": {\"AGGR\": {\"filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.targetType.keyword\": \"PRODUCT\"}},{\"exists\": {\"field\": \"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\": {\"Overall Target\": {\"terms\": {\"size\": 500,\"field\": \"Data.boundaryHierarchy.district.keyword\",\"order\": {\"_key\": \"asc\"}},\"aggs\": {\"SUM\": {\"sum\": {\"field\": \"Data.overallTarget\"}}}}}}}}"
+        "aggrQuery": "{\"size\": 0, \"aggs\": {\"AGGR\": {\"filter\": {\"bool\": {\"must\": [{\"term\": {\"Data.targetType.keyword\": \"PRODUCT\"}},{\"exists\": {\"field\": \"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\": [{\"exists\": {\"field\": \"Data.boundaryHierarchy.admnistrativeProvince.keyword\"}}]}},\"aggs\": {\"Overall Target\": {\"terms\": {\"size\": 500,\"field\": \"Data.boundaryHierarchy.district.keyword\",\"order\": {\"_key\": \"asc\"}},\"aggs\": {\"SUM\": {\"sum\": {\"field\": \"Data.overallTarget\"}}}}}}}}"
       },
       {
         "module": "COMMON",
