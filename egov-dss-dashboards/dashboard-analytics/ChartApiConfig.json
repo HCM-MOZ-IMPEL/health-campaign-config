@@ -11522,18 +11522,18 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Total Count Households Visited Today"
+          "Total Count Households Visited Cumulative"
         ],
-        "newField": "Total Households Visited Today",
+        "newField": "Total Households Visited Cumulative IRS",
         "_comments": ""
       },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Total Count Households Visited Cumulative"
+          "Total Population Covered"
         ],
-        "newField": "Total Households Visited Cumulative",
+        "newField": "Total Population Covered IRS",
         "_comments": ""
       },
       {
