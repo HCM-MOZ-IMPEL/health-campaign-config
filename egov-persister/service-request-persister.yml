@@ -122,7 +122,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update service details in service table
-      fromTopic: update-service-health
+      fromTopic: update-service
       isTransaction: true
       isAuditEnabled: true
       module: SERVICE-REQUEST
@@ -173,7 +173,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update Service Definition
-      fromTopic: update-service-definition-health
+      fromTopic: update-service-definition
       isTransaction: true
       queryMaps:
         - query: UPDATE eg_service_definition SET lastmodifiedby = ?, lastmodifiedtime = ?, additionaldetails = ?, isactive = ? WHERE id = ?
