@@ -3068,24 +3068,6 @@
                   "tabName": "NUMBER"
                 }
               ]
-            },
-            {
-              "id": 2107,
-              "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
-              "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "totalHousesNotSprayedByReasonProvince",
-                  "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_PROVINCE",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
             }
           ]
         },
@@ -4990,24 +4972,6 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "NUMBER"
-                }
-              ]
-            },
-            {
-              "id": 3107,
-              "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
-              "label": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "totalHousesNotSprayedByReasonDistrict",
-                  "name": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_DISTRICT",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
                 }
               ]
             }
