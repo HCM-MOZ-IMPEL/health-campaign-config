@@ -4156,24 +4156,6 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2705,
-              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
-              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "incompleteRecordsByDistrict",
-                  "name": "DSS_HEALTH_INCOMPLETE_HOUSES",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
               "id": 2706,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
               "label": "DSS_HEALTH_SUSPECTED_FRAUDS",
@@ -6029,24 +6011,6 @@
           "row": 4,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
-            {
-              "id": 3705,
-              "name": "DSS_HEALTH_INCOMPLETE_RECORDS",
-              "label": "DSS_HEALTH_INCOMPLETE_RECORDS",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "incompleteRecordsByAP",
-                  "name": "DSS_HEALTH_INCOMPLETE_HOUSES",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
             {
               "id": 3706,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS",
