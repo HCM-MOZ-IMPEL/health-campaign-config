@@ -4392,6 +4392,32 @@
               ]
             }
           ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 20110,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "malariaCasesChecklist",
+                  "name": "DSS_HEALTH_SPRAY_OPERATORS_SYNC_HISTOGRAM",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "malaria-cases-checklist",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -6241,6 +6267,32 @@
                   "code": "",
                   "moduleName": "irs",
                   "pageName": "spray-ops-sync-histogram",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_HEALTH_CUSTOM_KPIS",
+          "vizArray": [
+            {
+              "id": 20110,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "malariaCasesChecklist",
+                  "name": "DSS_HEALTH_SPRAY_OPERATORS_SYNC_HISTOGRAM",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "malaria-cases-checklist",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
