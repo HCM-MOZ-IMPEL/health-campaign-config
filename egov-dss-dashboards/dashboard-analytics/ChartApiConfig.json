@@ -626,7 +626,7 @@
         "fields": [
           "Bottles used today"
         ],
-        "newField": "Bottles Used Today",
+        "newField": "N.º\u00A0de\u00A0garrafas\u00A0usadas\u00A0hoje",
         "_comments": ""
       },
       {
@@ -636,7 +636,7 @@
           "Households visited",
           "NegativeHouseholdsSprayed"
         ],
-        "newField": "No. of houses not sprayed today",
+        "newField": "N.º de casas não pulverizadas hoje",
         "_comments": ""
       },
       {
