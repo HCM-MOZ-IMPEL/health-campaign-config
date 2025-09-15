@@ -591,7 +591,7 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "plotLabel": "User Name",
+    "plotLabel": "Nome\u00A0do\u00A0utilizador",
     "excludedColumns": [
       "NegativeHouseholdsSprayed",
       "NegativeBottlesUsedToday",
@@ -608,7 +608,7 @@
         "fields": [
           "Households visited"
         ],
-        "newField": "Households Visited",
+        "newField": "Agregados\u00A0familiares\u00A0visitados",
         "_comments": ""
       },
       {
@@ -617,7 +617,7 @@
         "fields": [
           "Households sprayed"
         ],
-        "newField": "Households Sprayed",
+        "newField": "Totalde\u00A0casas\u00A0pulverizadas\u00A0hoje",
         "_comments": ""
       },
       {
@@ -636,7 +636,7 @@
           "Households visited",
           "NegativeHouseholdsSprayed"
         ],
-        "newField": "N.º de casas não pulverizadas hoje",
+        "newField": "N.º\u00A0de\u00A0casas\u00A0não\u00A0pulverizadas\u00A0hoje",
         "_comments": ""
       },
       {
@@ -645,7 +645,7 @@
         "fields": [
           "Stock count per user"
         ],
-        "newField": "Stock Count Per User",
+        "newField": "Estoque\u00A0recebido\u00A0pelo\u00A0usuário",
         "_comments": ""
       },
       {
@@ -655,7 +655,7 @@
           "Stock count per user",
           "NegativeBottlesUsedToday"
         ],
-        "newField": "No. of remaining bottles",
+        "newField": "Número\u00A0de\u00A0garrafas\u00A0restantes",
         "_comments": ""
       },
       {
@@ -664,7 +664,7 @@
         "fields": [
           "Lastsyncedtime"
         ],
-        "newField": "Last synced time",
+        "newField": "Última\u00A0hora\u00A0de\u00A0sincronização",
         "_comments": ""
       }
     ],
@@ -698,7 +698,7 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "plotLabel": "User Name",
+    "plotLabel": "Nome\u00A0do\u00A0utilizador",
     "excludedColumns": [
       "Total houses sprayed",
       "Totalhousesvisited"
@@ -711,7 +711,7 @@
           "Total houses sprayed",
           "Totalhousesvisited"
         ],
-        "newField": "House coverage ratio",
+        "newField": "%\u00A0de\u00A0agregados\u00A0familiares\u00A0pulverizados\u00A0com\u00A0sucesso",
         "_comments": ""
       }
     ],
