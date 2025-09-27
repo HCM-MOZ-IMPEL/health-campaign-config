@@ -7043,7 +7043,41 @@
           ]
         },
         {
-          "row": 3,
+          "row":3,
+          "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
+          "vizArray": [
+            {
+              "id": 21011,
+              "name": "DSS_HEALTH_ROOMS_COVERAGE",
+              "label": "DSS_HEALTH_ROOMS_COVERAGE",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "roomCoverageBarChartDistrictPercent",
+                  "name": "DSS_HEALTH_ROOM_COVERAGE_DISTRICT_PERCENT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "roomCoverageBarChartDistrict",
+                  "name": "DSS_HEALTH_ROOM_COVERAGE_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -7067,7 +7101,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -7129,7 +7163,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -7163,7 +7197,7 @@
           ]
         },
         {
-          "row": 6,
+          "row": 7,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -7215,7 +7249,7 @@
           ]
         },
         {
-          "row": 7,
+          "row": 8,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -7267,7 +7301,7 @@
           ]
         },
         {
-          "row": 8,
+          "row": 9,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -7301,7 +7335,7 @@
           ]
         },
         {
-          "row": 9,
+          "row": 10,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -8497,11 +8531,11 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "malariaCasesChecklist",
-                  "name": "DSS_HEALTH_SPRAY_OPERATORS_SYNC_HISTOGRAM",
+                  "id": "targetTypeCoverages",
+                  "name": "DSS_HEALTH_TARGETS_VS_COVERAGE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "malaria-cases-checklist",
+                  "pageName": "target-type-coverage",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -8957,7 +8991,41 @@
           ]
         },
         {
-          "row": 3,
+          "row":3,
+          "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
+          "vizArray": [
+            {
+              "id": 31011,
+              "name": "DSS_HEALTH_ROOMS_COVERAGE",
+              "label": "DSS_HEALTH_ROOMS_COVERAGE",
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "roomCoverageBarChartApPercent",
+                  "name": "DSS_HEALTH_ROOM_COVERAGE_DISTRICT_PERCENT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "roomCoverageBarChartAp",
+                  "name": "DSS_HEALTH_ROOM_COVERAGE_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -8981,7 +9049,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -9043,7 +9111,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -9077,7 +9145,7 @@
           ]
         },
         {
-          "row": 6,
+          "row": 7,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -9129,7 +9197,7 @@
           ]
         },
         {
-          "row": 7,
+          "row": 8,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -9181,7 +9249,7 @@
           ]
         },
         {
-          "row": 8,
+          "row": 9,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -9215,7 +9283,7 @@
           ]
         },
         {
-          "row": 9,
+          "row": 10,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -10379,11 +10447,11 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "malariaCasesChecklist",
-                  "name": "DSS_HEALTH_SPRAY_OPERATORS_SYNC_HISTOGRAM",
+                  "id": "targetTypeCoverages",
+                  "name": "DSS_HEALTH_TARGETS_VS_COVERAGE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "malaria-cases-checklist",
+                  "pageName": "target-type-coverage",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
