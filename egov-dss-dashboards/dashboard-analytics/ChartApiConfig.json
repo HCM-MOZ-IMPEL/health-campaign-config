@@ -437,7 +437,7 @@
         "fields": [
           "Lastsyncedtime"
         ],
-        "newField": "Ultima Sincronizacao",
+        "newField": "Last synced time",
         "_comments": ""
       }
     ],
