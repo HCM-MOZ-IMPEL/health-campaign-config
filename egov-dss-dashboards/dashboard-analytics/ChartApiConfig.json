@@ -356,7 +356,7 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "",
-    "plotLabel": "User Name",
+    "plotLabel": "Utilizador",
     "excludedColumns": [
       "Households visited",
       "Children Administered 3 to 11",
@@ -374,7 +374,7 @@
         "fields": [
           "Households visited"
         ],
-        "newField": "Households Visited",
+        "newField": "AF Visitados",
         "_comments": ""
       },
       {
@@ -383,7 +383,7 @@
         "fields": [
           "Children Administered 3 to 11"
         ],
-        "newField": "Children_Administered_3_11",
+        "newField": "Crianças 3-11 administradas",
         "_comments": ""
       },
       {
@@ -392,7 +392,7 @@
         "fields": [
           "Children Administered 12 to 59"
         ],
-        "newField": "Children_Administered_12_59",
+        "newField": "Crianças 12-59 administradas",
         "_comments": ""
       },
       {
@@ -401,7 +401,7 @@
         "fields": [
           "SPAQ1 used"
         ],
-        "newField": "SPAQ1_used",
+        "newField": "SPAQ1 Usado",
         "_comments": ""
       },
       {
@@ -410,7 +410,7 @@
         "fields": [
           "SPAQ2 used"
         ],
-        "newField": "SPAQ2_used",
+        "newField": "SPAQ2 Usado",
         "_comments": ""
       },
       {
@@ -419,7 +419,7 @@
         "fields": [
           "Beneficiary Referred"
         ],
-        "newField": "Beneficiary_Referred",
+        "newField": "Referidos",
         "_comments": ""
       },
       {
@@ -428,7 +428,7 @@
         "fields": [
           "Household Refused"
         ],
-        "newField": "Household_Refused",
+        "newField": "agregado familiar recusou",
         "_comments": ""
       },
       {
@@ -437,7 +437,7 @@
         "fields": [
           "Lastsyncedtime"
         ],
-        "newField": "Last synced time",
+        "newField": "Ultima Sincronizacao",
         "_comments": ""
       }
     ],
