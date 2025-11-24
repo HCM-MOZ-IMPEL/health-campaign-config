@@ -8029,7 +8029,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "houseCoverageRatioByDistrict",
+                  "id": "houseCoverageRatioByDistrictMisau",
                   "name": "DSS_HEALTH_HOUSE_COVERAGE_BY_DISTRICT",
                   "code": "",
                   "chartType": "bar",
@@ -9963,7 +9963,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "houseCoverageRatioByAP",
+                  "id": "houseCoverageRatioByAPMisau",
                   "name": "DSS_HEALTH_HOUSE_COVERAGE_BY_AP",
                   "code": "",
                   "chartType": "bar",
