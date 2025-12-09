@@ -51,3 +51,17 @@ ServiceMaps:
               - inJsonPath: $.projectTypeId
                 outJsonPath: $.Data.additionalDetails.projectTypeId
           timeStampField: $.createdTime
+    - topic: save-user-action-project-task-bulk-topic
+      configKey: INDEX
+      indexes:
+        - name: user-action-index-v1
+          type: user-action
+          id: $.clientReferenceId,$.tenantId
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.userAction.clientAuditDetails.lastModifiedTime
