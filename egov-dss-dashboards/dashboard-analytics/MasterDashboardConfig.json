@@ -10762,7 +10762,7 @@
               },
               "charts": [
                 {
-                  "id": "coverageByProvince",
+                  "id": "coverageByProvinceIRS",
                   "name": "DSS_COVERAGE_BY_PROVINCE",
                   "code": "",
                   "chartType": "table",
