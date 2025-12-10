@@ -56,7 +56,7 @@ ServiceMaps:
       indexes:
         - name: user-action-index-v1
           type: user-action
-          id: $.userAction.clientReferenceId,$.tenantId
+          id: $.userAction.clientReferenceId
           isBulk: true
           jsonPath: $
           customJsonMapping:
