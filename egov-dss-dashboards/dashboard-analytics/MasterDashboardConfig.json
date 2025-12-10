@@ -6689,7 +6689,7 @@
                   "headers": []
                 },
                 {
-                  "id": "totalHouseholdCoverageProvince",
+                  "id": "totalHouseholdCoverageProvinceIRS",
                   "name": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_SPRAYED_PROVINCE",
                   "code": "",
                   "chartType": "metric",
@@ -6731,7 +6731,7 @@
                   "headers": []
                 },
                 {
-                  "id": "overviewPopulationCoverageAchievedProvince",
+                  "id": "overviewPopulationCoverageAchievedProvinceIRS",
                   "name": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
@@ -6773,7 +6773,7 @@
                   "headers": []
                 },
                 {
-                  "id": "distributionCoverageProvince",
+                  "id": "distributionCoverageProvinceIRS",
                   "name": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE",
                   "code": "",
                   "chartType": "metric",
