@@ -6641,7 +6641,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "targetsForCampaignProvince",
+                  "id": "targetsForCampaignProvinceIRS",
                   "name": "DSS_HEALTH_TARGETS_FOR_THE_CAMPAIGN",
                   "code": "",
                   "chartType": "table",
@@ -8571,7 +8571,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "targetsForCampaignDistrict",
+                  "id": "targetsForCampaignDistrictIRS",
                   "name": "DSS_HEALTH_TARGETS_FOR_THE_CAMPAIGN",
                   "code": "",
                   "chartType": "table",
