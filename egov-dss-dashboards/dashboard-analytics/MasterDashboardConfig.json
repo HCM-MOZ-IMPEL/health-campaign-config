@@ -15923,6 +15923,32 @@
           ]
         },
         {
+          "row": 3,
+          "name": "DSS_VEHICLE_TRACKING",
+          "vizArray": [
+            {
+              "id": 602,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "vehicleTracking",
+                  "name": "DSS_VEHICLE_TRACKING_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "nampula-vehicle-tracking",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
