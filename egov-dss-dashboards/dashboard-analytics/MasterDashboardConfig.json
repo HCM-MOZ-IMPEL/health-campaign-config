@@ -14959,7 +14959,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "administration-successful-national",
+                  "pageName": "smcnmp26-administration-successful-national",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -14985,7 +14985,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "administration-unsuccessful-national",
+                  "pageName": "smcnmp26-administration-unsuccessful-national",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -15011,7 +15011,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "households-registered-national",
+                  "pageName": "smcnmp26-households-registered-national",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -15037,7 +15037,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "niassa-checklist-maps",
+                  "pageName": "smcnmp26-checklist-maps",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -15533,6 +15533,32 @@
           ]
         },
         {
+          "row": 5,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 2631,
+              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "",
+                  "name": "DSS_ELIGIBILITY_ASSESSMENT_CHECKLIST",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "eligibility-assessment-checklist",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 6,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
@@ -15965,7 +15991,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "niassa-administration-summary",
+                  "pageName": "smcnmp26-administration-summary",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -15991,7 +16017,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "niassa-histogram",
+                  "pageName": "smcnmp26-histogram",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -16017,7 +16043,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "niassa-stock-summary",
+                  "pageName": "smcnmp26-stock-summary",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -16679,7 +16705,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "administration-successful-national",
+                  "pageName": "smcnmp26-administration-successful-national",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -16705,7 +16731,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "administration-unsuccessful-national",
+                  "pageName": "smcnmp26-administration-unsuccessful-national",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -16731,7 +16757,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "households-registered-national",
+                  "pageName": "smcnmp26-households-registered-national",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -16757,7 +16783,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "niassa-checklist-maps",
+                  "pageName": "smcnmp26-niassa-checklist-maps",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -17253,6 +17279,32 @@
           ]
         },
         {
+          "row": 5,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 2631,
+              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "",
+                  "name": "DSS_ELIGIBILITY_ASSESSMENT_CHECKLIST",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "eligibility-assessment-checklist",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 6,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
@@ -17644,6 +17696,32 @@
         },
         {
           "row": 1,
+          "name": "DSS_VEHICLE_TRACKING",
+          "vizArray": [
+            {
+              "id": 602,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "vehicleTracking",
+                  "name": "DSS_VEHICLE_TRACKING_KPI",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "nampula-vehicle-tracking",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
           "name": "DSS_CUSTOM_KPIS",
           "vizArray": [
             {
@@ -17659,7 +17737,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "niassa-administration-summary",
+                  "pageName": "smcnmp26-administration-summary",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -17685,7 +17763,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "niassa-histogram",
+                  "pageName": "smcnmp26-histogram",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -17711,7 +17789,7 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "moduleName": "irs",
-                  "pageName": "niassa-stock-summary",
+                  "pageName": "smcnmp26-stock-summary",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
