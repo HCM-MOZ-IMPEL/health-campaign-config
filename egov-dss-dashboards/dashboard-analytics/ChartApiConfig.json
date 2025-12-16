@@ -34071,18 +34071,16 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "smc-niassa-facility-targets",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"SPAQ1\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Campaign Filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"3-11MONTH\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.province.keyword\"}}]}}}},\"aggs\":{\"Overall Population Target\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}"
       }
     ],
     "chartType": "metric",
-    "valueType": "percentage",
     "isCappedTillToday": true,
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "percentage",
+    "action": "",
     "aggregationPaths": [
-      "Children Administered till today",
-      "Overall Population Target"
+      "Children Administered till today"
     ],
     "insight": {
       "chartResponseMap": "overviewPopulationCoverageAchievedProvinceSMC",
