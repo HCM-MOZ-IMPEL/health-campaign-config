@@ -34075,13 +34075,14 @@
       }
     ],
     "chartType": "metric",
-    "valueType": "number",
+    "valueType": "percentage",
     "isCappedTillToday": true,
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "",
+    "action": "percentage",
     "aggregationPaths": [
-      "Children Administered till today"
+      "Children Administered till today",
+      "Overall Population Target"
     ],
     "insight": {
       "chartResponseMap": "overviewPopulationCoverageAchievedProvinceSMC",
