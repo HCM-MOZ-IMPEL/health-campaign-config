@@ -34075,6 +34075,7 @@
       }
     ],
     "chartType": "metric",
+    "valueType": "number",
     "isCappedTillToday": true,
     "drillChart": "none",
     "documentType": "_doc",
