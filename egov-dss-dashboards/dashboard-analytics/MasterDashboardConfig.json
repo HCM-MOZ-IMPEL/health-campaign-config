@@ -12281,24 +12281,6 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2108,
-              "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-              "label": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "incompleteRecordsByDistrictSMC",
-                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
               "id": 2106,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
               "label": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
@@ -13974,24 +13956,6 @@
           "row": 4,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
-            {
-              "id": 3108,
-              "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-              "label": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "incompleteRecordsByAPSMC",
-                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
             {
               "id": 3106,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
@@ -15840,24 +15804,6 @@
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
-              "id": 2108,
-              "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-              "label": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "incompleteRecordsByDistrictSMC",
-                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
               "id": 2106,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
               "label": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
@@ -17585,24 +17531,6 @@
           "row": 4,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
-            {
-              "id": 3108,
-              "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-              "label": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "incompleteRecordsByAPSMC",
-                  "name": "DSS_HEALTH_INCOMPLETE_RECORDS_CHILDREN",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
             {
               "id": 3106,
               "name": "DSS_HEALTH_SUSPECTED_FRAUDS_CHILDREN",
