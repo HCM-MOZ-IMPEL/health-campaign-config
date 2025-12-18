@@ -17251,32 +17251,6 @@
           ]
         },
         {
-          "row": 5,
-          "name": "DSS_HEALTH_SUPERVISION",
-          "vizArray": [
-            {
-              "id": 2631,
-              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "",
-                  "name": "DSS_ELIGIBILITY_ASSESSMENT_CHECKLIST",
-                  "code": "",
-                  "moduleName": "irs",
-                  "pageName": "eligibility-assessment-checklist",
-                  "chartType": "kibanaComponent",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
           "row": 6,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
@@ -17649,6 +17623,32 @@
           ]
         },
         {
+          "row": 3,
+          "name": "DSS_HEALTH_REFERRAL_AND_SIDE_EFFECTS",
+          "vizArray": [
+            {
+              "id": 2631,
+              "name": "DSS_PHARMACOVIGILANCE_CHECKLIST_INFO",
+              "label": "DSS_PHARMACOVIGILANCE_CHECKLIST_INFO",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "",
+                  "name": "DSS_PHARMACOVIGILANCE_CHECKLIST_INFO",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "pharmacovigilance-checklist-info",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_VEHICLE_TRACKING",
           "vizArray": [
@@ -17666,6 +17666,32 @@
                   "code": "",
                   "moduleName": "irs",
                   "pageName": "nampula-vehicle-tracking",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_PAV",
+          "vizArray": [
+            {
+              "id": 2631,
+              "name": "DSS_HEALTH_PAV_INFO",
+              "label": "DSS_HEALTH_PAV_INFO",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "",
+                  "name": "DSS_HEALTH_PAV_INFO",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "pav-checklist-info",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
