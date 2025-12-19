@@ -255,7 +255,57 @@
           "id": "district-health-dashboard-irsmisau"
         }
       ]
+    },
+    {
+      "_comment": "This role is for national level supervisor who can access National health dashboards",
+      "roleId": 23,
+      "roleName": "NationalSupervisor",
+      "isSuper": "",
+      "orgId": "",
+      "dashboards": [
+        {
+          "name": "National Health Dashboard",
+          "id": "national-health-dashboard-smcnmp26"
+        },
+        {
+          "name": "Provincial Health Dashboard",
+          "id": "provincial-health-dashboard-smcnmp26"
+        },
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-smcnmp26"
+        }
+      ]
+    },
+    {
+      "_comment": "This role is for provincial level supervisor who can access Provincial health dashboards",
+      "roleId": 24,
+      "roleName": "ProvincialSupervisor",
+      "isSuper": "",
+      "orgId": "",
+      "dashboards": [
+        {
+          "name": "Provincial Health Dashboard",
+          "id": "provincial-health-dashboard-smcnmp26"
+        },
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-smcnmp26"
+        }
+      ]
+    },
+    {
+      "_comment": "This role is for district level supervisor who can access District health dashboards",
+      "roleId": 25,
+      "roleName": "DistrictSupervisor",
+      "isSuper": "",
+      "orgId": "",
+      "dashboards": [
+        {
+          "name": "District Health Dashboard",
+          "id": "district-health-dashboard-smcnmp26"
+        }
+      ]
     }
-
   ]
 }
