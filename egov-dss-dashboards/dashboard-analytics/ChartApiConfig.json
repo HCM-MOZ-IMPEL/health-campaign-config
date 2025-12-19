@@ -21770,10 +21770,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Total Pregnant Women Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}}]}},\"aggs\":{\"Total Pregnant Women Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
       }
     ],
     "plotLabel": "none",
@@ -21807,10 +21807,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Total Pregnant Women Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}}]}},\"aggs\":{\"Total Pregnant Women Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
       }
     ],
     "plotLabel": "none",
@@ -21844,10 +21844,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Total Pregnant Women Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}}]}},\"aggs\":{\"Total Pregnant Women Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
       }
     ],
     "plotLabel": "none",
@@ -21881,10 +21881,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Total Pregnant Women Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.pregnantWomen\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}}]}},\"aggs\":{\"Total Pregnant Women Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.pregnantWomen\"}}}}}}}}"
       }
     ],
     "plotLabel": "none",
@@ -22024,10 +22024,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Total Children U5 Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}}]}},\"aggs\":{\"Total Children U5 Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}}}}"
       }
     ],
     "plotLabel": "none",
@@ -22061,10 +22061,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Total Children U5 Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}}]}},\"aggs\":{\"Total Children U5 Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}}}}"
       }
     ],
     "plotLabel": "none",
@@ -22098,10 +22098,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Total Children U5 Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}}]}},\"aggs\":{\"Total Children U5 Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}}}}"
       }
     ],
     "plotLabel": "none",
@@ -22135,10 +22135,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.household.clientAuditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Total Children U5 Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Vulnerable Population Filter\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.children\":{\"gt\":0}}},{\"term\":{\"Data.deliveredTo.keyword\":{\"value\":\"HOUSEHOLD\"}}}]}},\"aggs\":{\"Total Children U5 Percent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"Data.additionalDetails.children\"}}}}}}}}"
       }
     ],
     "plotLabel": "none",
