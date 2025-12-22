@@ -31794,7 +31794,9 @@
       "Total distributors",
       "Total supervisors",
       "Total children administered Count",
-      "Total children registered Count"
+      "Total children registered Count",
+      "COM_DIS_ATTENDANCE_PERCENT",
+      "SUP_ATTENDANCE_PERCENT"
     ],
     "excludedBucketKeys": [
       "per_day"
@@ -31913,7 +31915,9 @@
       "Total distributors",
       "Total supervisors",
       "Total children administered Count",
-      "Total children registered Count"
+      "Total children registered Count",
+      "COM_DIS_ATTENDANCE_PERCENT",
+      "SUP_ATTENDANCE_PERCENT"
     ],
     "excludedBucketKeys": [
       "per_day"
