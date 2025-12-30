@@ -8543,6 +8543,32 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_REUSE_KPIS",
+          "vizArray": [
+            {
+              "id": 2200,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_DATA_REUSE_IRS",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "irs-data-reuse",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -10452,6 +10478,32 @@
                   "code": "",
                   "moduleName": "irs",
                   "pageName": "target-type-coverage",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_REUSE_KPIS",
+          "vizArray": [
+            {
+              "id": 2200,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_DATA_REUSE_IRS",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "irs-data-reuse",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
@@ -15961,6 +16013,32 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_REUSE_KPIS",
+          "vizArray": [
+            {
+              "id": 2200,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_DATA_REUSE_SMC",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "smc26-data-reuse",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -17708,6 +17786,32 @@
                   "code": "",
                   "moduleName": "irs",
                   "pageName": "smcnmp26-stock-summary",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_REUSE_KPIS",
+          "vizArray": [
+            {
+              "id": 2200,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_DATA_REUSE_SMC",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "smc26-data-reuse",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
