@@ -15627,24 +15627,6 @@
                   "headers": []
                 }
               ]
-            },
-            {
-              "id": 2002,
-              "name": "DSS_HEALTH_CHILDREN_COVERAGE",
-              "label": "DSS_HEALTH_CHILDREN_COVERAGE",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "childrenCoverageRatioByDistrictSMC",
-                  "name": "DSS_HEALTH_CHILDREN_COVERAGE",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
             }
           ]
         },
