@@ -76,7 +76,7 @@ serviceMaps:
       transactionCodeJsonPath: $.id
       #below twofields of audit are applied on the whole object recieved in the kafka
       userUuidJsonPath: $.[0].auditDetails.lastModifiedBy
-      auditAttributeBasePath: $.*   
+      auditAttributeBasePath: $.*
       queryMaps:
         - query: UPDATE project_staff SET lastModifiedBy=?, lastModifiedTime=?, rowVersion=?, isDeleted=?, additionalDetails=? WHERE id=?;
           basePath: $.*
@@ -161,34 +161,6 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.lastModifiedTime
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
             - jsonPath: $.*.tag
-            - jsonPath: $.*.id
-
-    - version: 1.0
-      description: Deletes Project Beneficiaries
-      fromTopic: delete-project-beneficiary-topic
-      isTransaction: true
-      isAuditEnabled: true
-      module: PROJECT-BENEFICIARY-DELETE
-      #below there fields are applied on each index if the object is an array
-      objecIdJsonPath: $.id
-      tenantIdJsonPath: $.tenantId
-      transactionCodeJsonPath: $.id
-      #below twofields of audit are applied on the whole object recieved in the kafka
-      userUuidJsonPath: $.[0].auditDetails.lastModifiedBy
-      auditAttributeBasePath: $.*   
-      queryMaps:
-        - query: UPDATE project_beneficiary SET lastModifiedBy=?, lastModifiedTime=?, clientLastModifiedTime = ?, clientLastModifiedBy = ?, rowVersion=?, isDeleted=?, additionalDetails=? WHERE id=?;
-          basePath: $.*
-          jsonMaps:
-            - jsonPath: $.*.auditDetails.lastModifiedBy
-            - jsonPath: $.*.auditDetails.lastModifiedTime
-            - jsonPath: $.*.clientAuditDetails.lastModifiedTime
-            - jsonPath: $.*.clientAuditDetails.lastModifiedBy
-            - jsonPath: $.*.rowVersion
-            - jsonPath: $.*.isDeleted
-            - jsonPath: $.*.additionalFields
-              type: JSON
-              dbType: JSONB
             - jsonPath: $.*.id
 
     - version: 1.0
@@ -583,31 +555,6 @@ serviceMaps:
             - jsonPath: $.*.isDeleted
             - jsonPath: $.*.id
 
-    - version: 1.0
-      description: Delete a project resourcce
-      fromTopic: delete-project-resource-topic
-      isTransaction: true
-      isAuditEnabled: true
-      module: PROJECT-RESOURCE-UPDATE
-      #below there fields are applied on each index if the object is an array
-      objecIdJsonPath: $.id
-      tenantIdJsonPath: $.tenantId
-      transactionCodeJsonPath: $.id
-      #below twofields of audit are applied on the whole object recieved in the kafka
-      userUuidJsonPath: $.[0].auditDetails.lastModifiedBy
-      auditAttributeBasePath: $.*       
-      queryMaps:
-        - query: UPDATE project_resource SET lastModifiedBy=?, lastModifiedTime=?, rowVersion=?, isDeleted=?, additionalDetails=?  WHERE id = ?
-          basePath: $.*
-          jsonMaps:
-            - jsonPath: $.*.auditDetails.lastModifiedBy
-            - jsonPath: $.*.auditDetails.lastModifiedTime
-            - jsonPath: $.*.rowVersion
-            - jsonPath: $.*.isDeleted
-            - jsonPath: $.*.additionalFields
-              type: JSON
-              dbType: JSONB
-            - jsonPath: $.*.id
 
     - version: 1.0
       description: Saves a project facility
@@ -687,28 +634,3 @@ serviceMaps:
 
             - jsonPath: $.*.id
 
-    - version: 1.0
-      description: Deletes Project Facility
-      fromTopic: delete-project-facility-topic
-      isTransaction: true
-      isAuditEnabled: true
-      module: PROJECT-FACILITY
-      #below there fields are applied on each index if the object is an array
-      objecIdJsonPath: $.id
-      tenantIdJsonPath: $.tenantId
-      transactionCodeJsonPath: $.id
-      #below twofields of audit are applied on the whole object recieved in the kafka
-      userUuidJsonPath: $.[0].auditDetails.lastModifiedBy
-      auditAttributeBasePath: $.*   
-      queryMaps:
-        - query: UPDATE project_facility SET lastModifiedBy=?, lastModifiedTime=?, rowVersion=?, isDeleted=?, additionalDetails=? WHERE id=?;
-          basePath: $.*
-          jsonMaps:
-            - jsonPath: $.*.auditDetails.lastModifiedBy
-            - jsonPath: $.*.auditDetails.lastModifiedTime
-            - jsonPath: $.*.rowVersion
-            - jsonPath: $.*.isDeleted
-            - jsonPath: $.*.additionalFields
-              type: JSON
-              dbType: JSONB
-            - jsonPath: $.*.id

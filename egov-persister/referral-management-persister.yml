@@ -61,22 +61,6 @@ serviceMaps:
             - jsonPath: $.*.id
 
     - version: 1.0
-      description: Deletes a side effect
-      fromTopic: delete-side-effect-topic
-      isTransaction: true
-      queryMaps:
-        - query: UPDATE SIDE_EFFECT SET lastModifiedBy = ?, lastModifiedTime = ?, clientLastModifiedBy = ?, clientLastModifiedTime = ?, rowVersion = ?, isDeleted = ? WHERE ID = ?;
-          basePath: $.*
-          jsonMaps:
-            - jsonPath: $.*.auditDetails.lastModifiedBy
-            - jsonPath: $.*.auditDetails.lastModifiedTime
-            - jsonPath: $.*.clientAuditDetails.lastModifiedBy
-            - jsonPath: $.*.clientAuditDetails.lastModifiedTime
-            - jsonPath: $.*.rowVersion
-            - jsonPath: $.*.isDeleted
-            - jsonPath: $.*.id
-
-    - version: 1.0
       description: Saves a referral
       fromTopic: save-referral-topic
       isTransaction: true
@@ -142,22 +126,6 @@ serviceMaps:
             - jsonPath: $.*.id
 
     - version: 1.0
-      description: Deletes a referral
-      fromTopic: delete-referral-topic
-      isTransaction: true
-      queryMaps:
-        - query: UPDATE REFERRAL SET lastModifiedBy = ?, lastModifiedTime = ?, clientLastModifiedBy = ?, clientLastModifiedTime = ?, rowVersion = ?, isDeleted = ? WHERE ID = ?;
-          basePath: $.*
-          jsonMaps:
-            - jsonPath: $.*.auditDetails.lastModifiedBy
-            - jsonPath: $.*.auditDetails.lastModifiedTime
-            - jsonPath: $.*.clientAuditDetails.lastModifiedBy
-            - jsonPath: $.*.clientAuditDetails.lastModifiedTime
-            - jsonPath: $.*.rowVersion
-            - jsonPath: $.*.isDeleted
-            - jsonPath: $.*.id
-
-    - version: 1.0
       description: Saves a hfreferral
       fromTopic: save-hfreferral-topic
       isTransaction: true
@@ -214,20 +182,4 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
             - jsonPath: $.*.clientAuditDetails.lastModifiedTime
             - jsonPath: $.*.rowVersion
-            - jsonPath: $.*.id
-
-    - version: 1.0
-      description: Deletes a hfreferral
-      fromTopic: delete-hfreferral-topic
-      isTransaction: true
-      queryMaps:
-        - query: UPDATE hf_referral SET lastModifiedBy = ?, lastModifiedTime = ?, clientLastModifiedBy = ?, clientLastModifiedTime = ?, rowVersion = ?, isDeleted = ? WHERE ID = ?;
-          basePath: $.*
-          jsonMaps:
-            - jsonPath: $.*.auditDetails.lastModifiedBy
-            - jsonPath: $.*.auditDetails.lastModifiedTime
-            - jsonPath: $.*.clientAuditDetails.lastModifiedBy
-            - jsonPath: $.*.clientAuditDetails.lastModifiedTime
-            - jsonPath: $.*.rowVersion
-            - jsonPath: $.*.isDeleted
             - jsonPath: $.*.id
