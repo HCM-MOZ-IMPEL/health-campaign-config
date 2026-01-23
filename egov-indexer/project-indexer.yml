@@ -37,16 +37,6 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: delete-project-beneficiary-topic
-      configKey: INDEX
-      indexes:
-        - name: project-beneficiary-index-v1
-          type: project-beneficiary
-          id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
-
 
     - topic: save-project-resource-topic
       configKey: INDEX
@@ -68,16 +58,6 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: delete-project-resource-topic
-      configKey: INDEX
-      indexes:
-        - name: project-resource-index-v1
-          type: project-resource
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
-
     - topic: save-project-facility-topic
       configKey: INDEX
       indexes:
@@ -89,16 +69,6 @@ ServiceMaps:
           timeStampField: $.auditDetails.createdTime
 
     - topic: update-project-facility-topic
-      configKey: INDEX
-      indexes:
-        - name: project-facility-index-v1
-          type: project-facility
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
-
-    - topic: delete-project-facility-topic
       configKey: INDEX
       indexes:
         - name: project-facility-index-v1

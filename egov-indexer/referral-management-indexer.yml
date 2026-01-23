@@ -48,16 +48,6 @@ ServiceMaps:
                 outJsonPath: $.Data.userAddress
           timeStampField: $.referral.auditDetails.lastModifiedTime
 
-    - topic: delete-referral-topic
-      configKey: INDEX
-      indexes:
-        - name: referral-index-v1
-          type: referral
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
-
     - topic: transformer-producer-side-effect-index-v1-topic
       configKey: INDEX
       indexes:
@@ -106,16 +96,6 @@ ServiceMaps:
                 outJsonPath: $.Data.additionalDetails
           timeStampField: $.sideEffect.auditDetails.lastModifiedTime
 
-    - topic: delete-side-effect-topic
-      configKey: INDEX
-      indexes:
-        - name: side-effect-index-v1
-          type: side-effect
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
-
     - topic: transformer-producer-hfreferral-index-v1-topic
       configKey: INDEX
       indexes:
@@ -130,13 +110,3 @@ ServiceMaps:
               - inJsonPath: $
                 outJsonPath: $.Data
           timeStampField: $.hfReferral.clientAuditDetails.lastModifiedTime
-
-    - topic: delete-hfreferral-topic
-      configKey: INDEX
-      indexes:
-        - name: hf-referral-index-v1
-          type: hfreferral
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime

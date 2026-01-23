@@ -20,12 +20,3 @@ ServiceMaps:
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
-    - topic: delete-individual-topic
-      configKey: INDEX
-      indexes:
-        - name: individual-index-v1
-          type: individual
-          id: $.clientReferenceId
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
