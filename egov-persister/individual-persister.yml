@@ -88,7 +88,7 @@ serviceMaps:
             - jsonPath: $.*.address.*.auditDetails.createdTime
             - jsonPath: $.*.address.*.auditDetails.lastModifiedTime
             - jsonPath: $.*.address.*.isDeleted
-        - query: INSERT INTO individual_identifier(id, clientReferenceId, identifierType, identifierId, individualId, createdBy, lastModifiedBy, createdTime, lastModifiedTime, isDeleted) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO NOTHING;
+        - query: INSERT INTO individual_identifier(id, clientReferenceId, identifierType, identifierId, individualId, createdBy, lastModifiedBy, createdTime, lastModifiedTime, isDeleted) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(individualid, identifiertype, isdeleted) DO NOTHING;
           basePath: $.*.identifiers.*
           jsonMaps:
             - jsonPath: $.*.identifiers.*.id
