@@ -14336,6 +14336,30 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
+              "id": 6007,
+              "name": "DSS_HEALTH_OVERVIEW_TARGET",
+              "label": "DSS_HEALTH_OVERVIEW_TARGET",
+              "vizType": "bannercard-nonsync",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewTotalTargetProvinceSmc",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_TARGET_PROVINCE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
               "id": 201,
               "name": "DSS_HEALTH_CHILDREN_ADMINISTERED_3_11",
               "label": "DSS_HEALTH_CHILDREN_ADMINISTERED_3_11",
@@ -14464,7 +14488,7 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -14596,7 +14620,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -14620,7 +14644,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -14662,7 +14686,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -15995,6 +16019,30 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
+              "id": 6007,
+              "name": "DSS_HEALTH_OVERVIEW_TARGET",
+              "label": "DSS_HEALTH_OVERVIEW_TARGET",
+              "vizType": "bannercard-nonsync",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overviewTotalTargetProvinceSmc",
+                  "name": "DSS_HEALTH_OVERVIEW_TOTAL_TARGET_PROVINCE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
               "id": 301,
               "name": "DSS_HEALTH_CHILDREN_ADMINISTERED_3_11",
               "label": "DSS_HEALTH_CHILDREN_ADMINISTERED_3_11",
@@ -16123,7 +16171,7 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -16255,7 +16303,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -16279,7 +16327,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -16321,7 +16369,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
@@ -16337,47 +16385,6 @@
                   "name": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_AP",
                   "code": "",
                   "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 6,
-          "name": "DSS_HEALTH_OVERVIEW",
-          "vizArray": [
-            {
-              "id": 308,
-              "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
-              "label": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "checklistCompletionRateDistrictSMC",
-                  "name": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_AP",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 2252,
-              "name": "DSS_HEALTH_REFERRAL_SUMMARY",
-              "label": "DSS_HEALTH_REFERRAL_SUMMARY",
-              "vizType": "chart",
-              "noUnit": true,
-              "charts": [
-                {
-                  "id": "referralSummaryByAPsSMC",
-                  "name": "DSS_HEALTH_REFERRAL_SUMMARY",
-                  "code": "",
-                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": []
                 }
