@@ -15614,31 +15614,6 @@
           ]
         },
         {
-          "row": 4,
-          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
-          "vizArray": [
-            {
-              "id": 216,
-              "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
-              "label": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "summaryTeamPerformanceByDistrictSMC",
-                  "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_BY_DISTRICT",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "BOUNDARY"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "row": 1,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
@@ -17309,93 +17284,6 @@
                   "chartType": "bar",
                   "filter": "",
                   "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
-          "vizArray": [
-            {
-              "id": 3005,
-              "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
-              "label": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "attendanceSprayOperatorsAPPercentSMC",
-                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
-                  "id": "attendanceSprayOperatorsAPSMC",
-                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                }
-              ]
-            },
-            {
-              "id": 3006,
-              "name": "DSS_HEALTH_ATTENDANCE_SUPERVISOR_SMC",
-              "label": "DSS_HEALTH_ATTENDANCE_SUPERVISOR_SMC",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "attendanceSupervisorsAPPercentSMC",
-                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
-                  "id": "attendanceSupervisorAPSMC",
-                  "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
-          "vizArray": [
-            {
-              "id": 216,
-              "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
-              "label": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "summaryTeamPerformanceByAPSMC",
-                  "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_BY_AP",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "BOUNDARY"
                 }
               ]
             }
