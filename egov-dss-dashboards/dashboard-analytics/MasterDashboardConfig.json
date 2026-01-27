@@ -14904,6 +14904,24 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 3190,
+              "name": "DSS_HEALTH_ALL_COMMUNITY_DISTRIBUTORS_SYNC",
+              "label": "DSS_HEALTH_ALL_COMMUNITY_DISTRIBUTORS_SYNC",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communityDistributorsSyncDistrictSMC",
+                  "name": "DSS_HEALTH_ALL_COMMUNITY_DISTRIBUTORS_SYNC",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -15560,30 +15578,6 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
-          "vizArray": [
-            {
-              "id": 2000,
-              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "vizType": "bannercard",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "distributorSyncSummaryProvinceSMC",
-                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
                 }
               ]
             }
@@ -16562,6 +16556,24 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 3191,
+              "name": "DSS_HEALTH_ALL_COMMUNITY_DISTRIBUTORS_SYNC",
+              "label": "DSS_HEALTH_ALL_COMMUNITY_DISTRIBUTORS_SYNC",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communityDistributorsSyncDistrictSMC",
+                  "name": "DSS_HEALTH_ALL_COMMUNITY_DISTRIBUTORS_SYNC",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -17218,30 +17230,6 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
-          "vizArray": [
-            {
-              "id": 3000,
-              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "vizType": "bannercard",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "distributorSyncSummaryDistrictSMC",
-                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
                 }
               ]
             }
