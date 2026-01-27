@@ -15567,6 +15567,54 @@
         },
         {
           "row": 1,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 2000,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributorSyncSummaryProvinceSMC",
+                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 2003,
+              "name": "AVERAGE_NO_OF_CHILDREN_ADMINISTERED",
+              "label": "AVERAGE_NO_OF_CHILDREN_ADMINISTERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageNumberOfHousesSprayedByDistrictSMC",
+                  "name": "AVERAGE_NO_OF_CHILDREN_ADMINISTERED",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -17170,6 +17218,72 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 3000,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "distributorSyncSummaryDistrictSMC",
+                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
+          "vizArray": [
+            {
+              "id": 3003,
+              "name": "AVERAGE_NO_OF_CHILDREN_ADMINISTERED",
+              "label": "AVERAGE_NO_OF_CHILDREN_ADMINISTERED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "averageNumberOfHousesSprayedByAPSMC",
+                  "name": "AVERAGE_NO_OF_CHILDREN_ADMINISTERED",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3002,
+              "name": "DSS_HEALTH_CHILDREN_COVERAGE",
+              "label": "DSS_HEALTH_CHILDREN_COVERAGE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "childrenCoverageRatioByAPSMC",
+                  "name": "DSS_HEALTH_CHILDREN_COVERAGE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
