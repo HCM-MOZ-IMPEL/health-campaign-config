@@ -33623,7 +33623,7 @@
     ],
     "insight": {},
     "_comment": " "
-  }
+  },
   "checklistCompletionRateAllSupervisorsDistrictSMC": {
     "chartName": "DSS_HEALTH_ALL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_DISTRICT",
     "queries": [
