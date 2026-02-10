@@ -15316,7 +15316,13 @@
                   "headers": []
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
             {
               "id": 244,
               "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
@@ -15338,7 +15344,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
@@ -15394,7 +15400,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
@@ -15578,6 +15584,40 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_SYNC",
+          "vizArray": [
+            {
+              "id": 2220,
+              "name": "COMMUNITY_DISTRIBUTOR_SYNC_BY_DISTRICT",
+              "label": "COMMUNITY_DISTRIBUTOR_SYNC_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communityDistributorsSyncRateByDistrictSmc",
+                  "name": "COMMUNITY_DISTRIBUTOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "communityDistributorsSyncedCountByDistrictSmc",
+                  "name": "COMMUNITY_DISTRIBUTOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
                 }
               ]
             }
@@ -16968,7 +17008,13 @@
                   "headers": []
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
             {
               "id": 344,
               "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
@@ -16981,7 +17027,7 @@
                   "id": "stockTransactionsBreakdownDistrictSMC",
                   "name": "DSS_HEALTH_STOCK_TRANSACTIONS_BREAKDOWN",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "sideBySideBar",
                   "filter": "",
                   "headers": []
                 }
@@ -16990,7 +17036,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
@@ -17046,7 +17092,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
