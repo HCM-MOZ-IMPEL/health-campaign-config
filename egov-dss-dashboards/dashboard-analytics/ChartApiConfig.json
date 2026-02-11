@@ -38062,7 +38062,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"FILETR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}},\"aggs\":{\"Districts\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"Quantity Administered\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       }
