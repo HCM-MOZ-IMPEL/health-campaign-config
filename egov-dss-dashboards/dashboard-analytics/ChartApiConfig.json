@@ -36166,7 +36166,7 @@
       "Total children ineligible count",
       "Closed Household non delivery count",
       "Others non delivery count",
-      "Funeral non delivery reason"
+      "Funeral non delivery count"
     ],
     "computedFields": [
       {
@@ -36512,7 +36512,7 @@
       "Total children ineligible count",
       "Closed Household non delivery count",
       "Others non delivery count",
-      "Funeral non delivery reason"
+      "Funeral non delivery count"
     ],
     "computedFields": [
       {
