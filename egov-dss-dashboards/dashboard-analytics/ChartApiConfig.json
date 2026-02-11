@@ -29698,6 +29698,20 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedPositiveForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.attributes.attributeCode.keyword\":\"HF_REASON_FEVER_Q1.YES.F1\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"POSITIVE\"}}]}}}}]}},\"aggs\":{\"TestedPositiveForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\": 1000},\"aggs\":{\"PositiveForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "service-task-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedNegativeForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.attributes.attributeCode.keyword\":\"HF_REASON_FEVER_Q1.YES.F1\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"NEGATIVE\"}}]}}}}]}},\"aggs\":{\"TestedNegativeForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\": 1000},\"aggs\":{\"NegativeForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}},{\"term\":{\"Data.role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Total children administered at HF\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Children Administered at HF\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -29717,7 +29731,9 @@
       "ChildrenReferred Count",
       "ChildrenReferredByHF Count",
       "ChildrenReferredWithFever Count",
-      "TestedPositiveForMalaria Count"
+      "TestedPositiveForMalaria Count",
+      "TestedNegativeForMalaria Count",
+      "Total children administered at HF"
     ],
     "insight": {},
     "_comment": " "
@@ -29746,6 +29762,20 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.boundaryHierarchy.district.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedPositiveForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.attributes.attributeCode.keyword\":\"HF_REASON_FEVER_Q1.YES.F1\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"POSITIVE\"}}]}}}}]}},\"aggs\":{\"TestedPositiveForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\": 1000},\"aggs\":{\"PositiveForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "service-task-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedNegativeForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.attributes.attributeCode.keyword\":\"HF_REASON_FEVER_Q1.YES.F1\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"NEGATIVE\"}}]}}}}]}},\"aggs\":{\"TestedNegativeForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\": 1000},\"aggs\":{\"NegativeForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}},{\"term\":{\"Data.role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Total children administered at HF\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Children Administered at HF\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -29793,6 +29823,20 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedPositiveForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.attributes.attributeCode.keyword\":\"HF_REASON_FEVER_Q1.YES.F1\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"POSITIVE\"}}]}}}}]}},\"aggs\":{\"TestedPositiveForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\": 1000},\"aggs\":{\"PositiveForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "service-task-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedNegativeForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.attributes.attributeCode.keyword\":\"HF_REASON_FEVER_Q1.YES.F1\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"NEGATIVE\"}}]}}}}]}},\"aggs\":{\"TestedNegativeForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\": 1000},\"aggs\":{\"NegativeForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}},{\"term\":{\"Data.role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Total children administered at HF\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Children Administered at HF\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
@@ -29814,7 +29858,9 @@
       "Referred Children Count",
       "Referred Children By HFCount",
       "Referred Children With Fever Count",
-      "PositiveForMalaria Children Count"
+      "PositiveForMalaria Children Count",
+      "NegativeForMalaria Children Count",
+      "Children Administered at HF"
     ],
     "computedFields": [
       {
@@ -29871,6 +29917,34 @@
           "Referred Children Count"
         ],
         "newField": "% of children Tested +ve for Malaria",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "NegativeForMalaria Children Count"
+        ],
+        "newField": "Tested Negative for Malaria",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "NegativeForMalaria Children Count",
+          "Referred Children Count"
+        ],
+        "newField": "% of children Tested Negative for Malaria",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Children Administered at HF"
+        ],
+        "newField": "Children Administered at Health Unit",
         "_comments": ""
       }
     ],
@@ -29904,6 +29978,20 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "service-task-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedPositiveForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.attributes.attributeCode.keyword\":\"HF_REASON_FEVER_Q1.YES.F1\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"POSITIVE\"}}]}}}}]}},\"aggs\":{\"TestedPositiveForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\": 1000},\"aggs\":{\"PositiveForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"projectTypeId\":\"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "service-task-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedNegativeForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"bool\":{\"must\":[{\"term\":{\"Data.attributes.attributeCode.keyword\":\"HF_REASON_FEVER_Q1.YES.F1\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"NEGATIVE\"}}]}}}}]}},\"aggs\":{\"TestedNegativeForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\": 1000},\"aggs\":{\"NegativeForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}},{\"term\":{\"Data.role.keyword\":{\"value\":\"HEALTH_FACILITY_SUPERVISOR\"}}}]}},\"aggs\":{\"Total children administered at HF\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Children Administered at HF\":{\"value_count\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
@@ -29925,7 +30013,9 @@
       "Referred Children Count",
       "Referred Children By HFCount",
       "Referred Children With Fever Count",
-      "PositiveForMalaria Children Count"
+      "PositiveForMalaria Children Count",
+      "NegativeForMalaria Children Count",
+      "Children Administered at HF"
     ],
     "computedFields": [
       {
@@ -29982,6 +30072,34 @@
           "Referred Children Count"
         ],
         "newField": "% of children Tested +ve for Malaria",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "NegativeForMalaria Children Count"
+        ],
+        "newField": "Tested Negative for Malaria",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "NegativeForMalaria Children Count",
+          "Referred Children Count"
+        ],
+        "newField": "% of children Tested Negative for Malaria",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Children Administered at HF"
+        ],
+        "newField": "Children Administered at Health Unit",
         "_comments": ""
       }
     ],
@@ -36006,7 +36124,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Recusa\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Refused non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Refused Reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Recusa\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Refused non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Funeral Reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Funeral\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Funeral non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Closed Reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Casa Fechada\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Closed Household non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Others Reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Outros\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Others non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
@@ -36045,7 +36163,10 @@
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
-      "Total children ineligible count"
+      "Total children ineligible count",
+      "Closed Household non delivery count",
+      "Others non delivery count",
+      "Funeral non delivery reason"
     ],
     "computedFields": [
       {
@@ -36220,6 +36341,33 @@
           "Total children ineligible count"
         ],
         "newField": "Children ineligible",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Funeral non delivery count"
+        ],
+        "newField": "Funeral non delivery reason",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Closed Household non delivery count"
+        ],
+        "newField": "Closed Household non delivery reason",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Others non delivery count"
+        ],
+        "newField": "Others non delivery reason",
         "_comments": ""
       }
     ],
@@ -36322,7 +36470,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Recusa\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\":500},\"aggs\":{\"Refused non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Refused Reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Recusa\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\":500},\"aggs\":{\"Refused non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Funeral Reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Funeral\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\":500},\"aggs\":{\"Funeral non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Closed Reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Casa Fechada\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\":500},\"aggs\":{\"Closed Household non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}},\"Others Reason\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"CLOSED_HOUSEHOLD\"}},{\"term\":{\"Data.additionalDetails.Reason.keyword\":\"Outros\"}}]}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthFacility.keyword\",\"size\":500},\"aggs\":{\"Others non delivery count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
@@ -36361,7 +36509,10 @@
       "Referral count",
       "Refused non delivery count",
       "Adverse events count",
-      "Total children ineligible count"
+      "Total children ineligible count",
+      "Closed Household non delivery count",
+      "Others non delivery count",
+      "Funeral non delivery reason"
     ],
     "computedFields": [
       {
@@ -36536,6 +36687,33 @@
           "Total children ineligible count"
         ],
         "newField": "Children ineligible",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Funeral non delivery count"
+        ],
+        "newField": "Funeral non delivery reason",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Closed Household non delivery count"
+        ],
+        "newField": "Closed Household non delivery reason",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Others non delivery count"
+        ],
+        "newField": "Others non delivery reason",
         "_comments": ""
       }
     ],
@@ -37873,6 +38051,20 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-reconciliation-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_docs\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest\":{\"top_hits\":{\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"size\":1}},\"sum_calculatedCount\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}},\"Total Stock Reconciliation\":{\"sum_bucket\":{\"buckets_path\":\"latest_docs>sum_calculatedCount\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"FILETR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.administrationStatus.keyword\":{\"value\":\"ADMINISTRATION_SUCCESS\"}}},{\"term\":{\"Data.additionalDetails.doseIndex\":{\"value\":\"01\"}}}]}},\"aggs\":{\"Districts\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":100},\"aggs\":{\"Quantity Administered\":{\"sum\":{\"field\":\"Data.quantity\"}}}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -37920,11 +38112,50 @@
       },
       {
         "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Incoming",
+          "Target for range"
+        ],
+        "newField": "Percentage Incoming Stock Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
           "Outgoing"
         ],
-        "newField": "Outgoing Stock Smc",
+        "newField": "Dispatched Stock Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Outgoing",
+          "Target for range"
+        ],
+        "newField": "Percentage Dispatched Stock Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Quantity Administered"
+        ],
+        "newField": "Quantity Administered Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Quantity Administered",
+          "Target for range"
+        ],
+        "newField": "Percentage Quantity Administered Smc",
         "_comments": ""
       },
       {
@@ -37938,11 +38169,30 @@
       },
       {
         "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Returned",
+          "Target for range"
+        ],
+        "newField": "Percentage Returned Stock Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
           "Total Stock"
         ],
         "newField": "Stock Left Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Stock Reconciliation"
+        ],
+        "newField": "Stock Reconciliation Smc",
         "_comments": ""
       }
     ],
@@ -37988,6 +38238,13 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.facilityType.keyword\":\"Health Facility\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.facilityName.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"RECEIVED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Outgoing Stock\":{\"filter\":{\"term\":{\"Data.eventType.keyword\":\"DISPATCHED\"}},\"aggs\":{\"SUM\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}},\"Total Stock\":{\"bucket_script\":{\"buckets_path\":{\"IS\":\"Incoming Stock>SUM\",\"OS\":\"Outgoing Stock>SUM\"},\"script\":\"params.IS-params.OS\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "stock-reconciliation-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.facilityName.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_per_facilityId\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest_doc\":{\"top_hits\":{\"size\":1,\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"_source\":false,\"docvalue_fields\":[\"Data.stockReconciliation.physicalCount\"]}},\"latest_physicalCount\":{\"max\":{\"script\":{\"source\":\"doc['Data.stockReconciliation.physicalCount'].value\"}}}}},\"Total Stock Reconciliation\":{\"sum_bucket\":{\"buckets_path\":\"latest_per_facilityId>latest_physicalCount\"}}}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -38021,7 +38278,7 @@
         "fields": [
           "Target for range"
         ],
-        "newField": "Product Target To Receive",
+        "newField": "Product Target To Receive Smc",
         "_comments": ""
       },
       {
@@ -38030,7 +38287,17 @@
         "fields": [
           "Incoming"
         ],
-        "newField": "Incoming Stock",
+        "newField": "Incoming Stock Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Incoming",
+          "Target for range"
+        ],
+        "newField": "Percentage Incoming Stock Smc",
         "_comments": ""
       },
       {
@@ -38039,7 +38306,17 @@
         "fields": [
           "Outgoing"
         ],
-        "newField": "Outgoing Stock",
+        "newField": "Dispatched Stock Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Outgoing",
+          "Target for range"
+        ],
+        "newField": "Percentage Dispatched Stock Smc",
         "_comments": ""
       },
       {
@@ -38048,7 +38325,17 @@
         "fields": [
           "Returned"
         ],
-        "newField": "Returned Stock",
+        "newField": "Returned Stock Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Returned",
+          "Target for range"
+        ],
+        "newField": "Percentage Returned Stock Smc",
         "_comments": ""
       },
       {
@@ -38057,7 +38344,16 @@
         "fields": [
           "Total Stock"
         ],
-        "newField": "Stock Left",
+        "newField": "Stock Left Smc",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Stock Reconciliation"
+        ],
+        "newField": "Stock Reconciliation Smc",
         "_comments": ""
       }
     ],
