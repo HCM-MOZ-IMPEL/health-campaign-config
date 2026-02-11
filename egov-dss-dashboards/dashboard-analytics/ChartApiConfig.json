@@ -48643,6 +48643,44 @@
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
+    "drillChart": "communityDistributorsSyncRateByApSmc",
+    "documentType": "_doc",
+    "action": "percentage",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "communityDistributorsSyncRateByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
     "drillChart": "none",
     "documentType": "_doc",
     "action": "percentage",
@@ -48675,6 +48713,44 @@
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "communityDistributorsSyncedCountByApSmc",
+    "documentType": "_doc",
+    "action": "none",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "communityDistributorsSyncedCountByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_DISTRIBUTOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -48757,7 +48833,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "districtSupervisorSyncedCountByApSmc",
     "documentType": "_doc",
     "action": "none",
     "filterKeys": [
@@ -48769,6 +48845,36 @@
     "aggregationPaths": [
       "Total Users Synced",
       "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "districtSupervisorSyncedCountByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"DISTRICT_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "none",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced"
     ],
     "insight": {},
     "_comment": " "
@@ -48789,6 +48895,44 @@
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "communitySupervisorSyncRateByApSmc",
+    "documentType": "_doc",
+    "action": "percentage",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "communitySupervisorSyncRateByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -48833,6 +48977,44 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
+    "drillChart": "communitySupervisorSyncedCountByApSmc",
+    "documentType": "_doc",
+    "action": "none",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "communitySupervisorSyncedCountByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"COMMUNITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
     "drillChart": "none",
     "documentType": "_doc",
     "action": "none",
@@ -48865,6 +49047,44 @@
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"SPAQ_MANAGER\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "spaqManagerSyncRateByApSmc",
+    "documentType": "_doc",
+    "action": "percentage",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "spaqManagerSyncRateByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"SPAQ_MANAGER\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"SPAQ_MANAGER\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -48909,6 +49129,44 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
+    "drillChart": "spaqManagerSyncedCountByApSmc",
+    "documentType": "_doc",
+    "action": "none",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "spaqManagerSyncedCountByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"SPAQ_MANAGER\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"SPAQ_MANAGER\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
     "drillChart": "none",
     "documentType": "_doc",
     "action": "none",
@@ -48941,6 +49199,44 @@
         "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
         "indexName": "project-staff-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "healthSupervisorSyncRateByApSmc",
+    "documentType": "_doc",
+    "action": "percentage",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "healthSupervisorSyncRateByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -48985,6 +49281,44 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
+    "drillChart": "healthSupervisorSyncedCountByApSmc",
+    "documentType": "_doc",
+    "action": "none",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Total Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "healthSupervisorSyncedCountByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "indexName": "project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Created\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.userId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
     "drillChart": "none",
     "documentType": "_doc",
     "action": "none",
@@ -49013,10 +49347,48 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
-        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "user-sync-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"PROVINCIAL_SUPERVISOR\"]}}]}},\"aggs\":{\"Provincial Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "nationalProvincialSyncedCountByApSmc",
+    "documentType": "_doc",
+    "action": "none",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "National Total Users Synced",
+      "Provincial Total Users Synced"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "nationalProvincialSyncedCountByApSmc": {
+    "chartName": "DSS_HEALTH_USER_DATA_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\"]}}]}},\"aggs\":{\"National Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
+        "indexName": "user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"PROVINCIAL_SUPERVISOR\"]}}]}},\"aggs\":{\"Provincial Total Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.syncedUserId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) state.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); int count = 0;for(shardList in states) {if(shardList != null) {for(key in shardList) {if(!uniqueValueMap.containsKey(key)) {count +=1;  uniqueValueMap.put(key, key);}}}} return count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",

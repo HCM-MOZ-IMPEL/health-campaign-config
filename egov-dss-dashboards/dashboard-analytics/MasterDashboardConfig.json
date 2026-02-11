@@ -15620,47 +15620,7 @@
                   "tabName": "NUMBER"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 2,
-          "name": "DSS_HEALTH_SYNC",
-          "vizArray": [
-            {
-              "id": 2221,
-              "name": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
-              "label": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "districtSupervisorSyncRateByDistrictSmc",
-                  "name": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
-                  "id": "districtSupervisorSyncedCountByDistrictSmc",
-                  "name": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_HEALTH_SYNC",
-          "vizArray": [
+            },
             {
               "id": 2222,
               "name": "COMMUNITY_SUPERVISOR_SYNC_BY_DISTRICT",
@@ -15692,9 +15652,37 @@
           ]
         },
         {
-          "row": 4,
+          "row": 2,
           "name": "DSS_HEALTH_SYNC",
           "vizArray": [
+            {
+              "id": 2224,
+              "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+              "label": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "healthSupervisorSyncRateByDistrictSmc",
+                  "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "healthSupervisorSyncedCountByDistrictSmc",
+                  "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
             {
               "id": 2223,
               "name": "SPAQ_MANAGER_SYNC_BY_DISTRICT",
@@ -15726,20 +15714,20 @@
           ]
         },
         {
-          "row": 5,
+          "row": 3,
           "name": "DSS_HEALTH_SYNC",
           "vizArray": [
             {
-              "id": 2224,
-              "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
-              "label": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+              "id": 2221,
+              "name": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
+              "label": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "healthSupervisorSyncRateByDistrictSmc",
-                  "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "id": "districtSupervisorSyncRateByDistrictSmc",
+                  "name": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -15747,8 +15735,8 @@
                   "tabName": "PERCENT"
                 },
                 {
-                  "id": "healthSupervisorSyncedCountByDistrictSmc",
-                  "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "id": "districtSupervisorSyncedCountByDistrictSmc",
+                  "name": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -15756,13 +15744,7 @@
                   "tabName": "NUMBER"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 6,
-          "name": "DSS_HEALTH_SYNC",
-          "vizArray": [
+            },
             {
               "id": 2225,
               "name": "NATIONAL_PROVINCIAL_SUPERVISOR_SYNC_BY_DISTRICT",
@@ -17436,6 +17418,172 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "DAYWISE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_SYNC",
+          "vizArray": [
+            {
+              "id": 3220,
+              "name": "COMMUNITY_DISTRIBUTOR_SYNC_BY_DISTRICT",
+              "label": "COMMUNITY_DISTRIBUTOR_SYNC_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communityDistributorsSyncRateByApSmc",
+                  "name": "COMMUNITY_DISTRIBUTOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "communityDistributorsSyncedCountByApSmc",
+                  "name": "COMMUNITY_DISTRIBUTOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 3222,
+              "name": "COMMUNITY_SUPERVISOR_SYNC_BY_DISTRICT",
+              "label": "COMMUNITY_SUPERVISOR_SYNC_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "communitySupervisorSyncRateByApSmc",
+                  "name": "COMMUNITY_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "communitySupervisorSyncedCountByApSmc",
+                  "name": "COMMUNITY_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_SYNC",
+          "vizArray": [
+            {
+              "id": 3224,
+              "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+              "label": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "healthSupervisorSyncRateByApSmc",
+                  "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "healthSupervisorSyncedCountByApSmc",
+                  "name": "HEALTH_FACILITY_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            },
+            {
+              "id": 3223,
+              "name": "SPAQ_MANAGER_SYNC_BY_DISTRICT",
+              "label": "SPAQ_MANAGER_SYNC_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "spaqManagerSyncRateByApSmc",
+                  "name": "SPAQ_MANAGER_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "PERCENT"
+                },
+                {
+                  "id": "spaqManagerSyncedCountByApSmc",
+                  "name": "SPAQ_MANAGER_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "NUMBER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_SYNC",
+          "vizArray": [
+            {
+              "id": 3221,
+              "name": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
+              "label": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "districtSupervisorSyncedCountByApSmc",
+                  "name": "DISTRICT_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 3225,
+              "name": "NATIONAL_PROVINCIAL_SUPERVISOR_SYNC_BY_DISTRICT",
+              "label": "NATIONAL_PROVINCIAL_SUPERVISOR_SYNC_BY_DISTRICT",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "nationalProvincialSyncedCountByApSmc",
+                  "name": "NATIONAL_PROVINCIAL_SUPERVISOR_SYNC_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
