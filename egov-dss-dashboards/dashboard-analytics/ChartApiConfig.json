@@ -38057,7 +38057,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-reconciliation-latest-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":1000,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Total Stock Reconciliation\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":1000,\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Total Stock Reconciliation\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}}}}}}"
       },
       {
         "module": "COMMON",
