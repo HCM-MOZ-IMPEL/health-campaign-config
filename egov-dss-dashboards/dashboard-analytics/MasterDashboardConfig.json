@@ -15277,8 +15277,8 @@
           "vizArray": [
             {
               "id": 242,
-              "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
-              "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND",
+              "name": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_VS_REQUIRED",
+              "label": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_VS_REQUIRED",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
@@ -15782,30 +15782,6 @@
                   "name": "AVERAGE_NO_OF_CHILDREN_ADMINISTERED",
                   "code": "",
                   "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_HEALTH_DATA_QUALITY",
-          "vizArray": [
-            {
-              "id": 2000,
-              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "vizType": "bannercard",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "distributorSyncSummaryProvinceSMC",
-                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
-                  "code": "",
-                  "chartType": "table",
                   "filter": "",
                   "headers": []
                 }
