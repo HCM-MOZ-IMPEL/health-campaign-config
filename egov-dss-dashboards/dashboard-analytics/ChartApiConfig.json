@@ -38277,16 +38277,6 @@
       },
       {
         "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "Incoming",
-          "Target for range"
-        ],
-        "newField": "Percentage Incoming Stock Smc",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
           "Outgoing"
@@ -38296,31 +38286,11 @@
       },
       {
         "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "Outgoing",
-          "Target for range"
-        ],
-        "newField": "Percentage Dispatched Stock Smc",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
           "Returned"
         ],
         "newField": "Returned Stock Smc",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "Returned",
-          "Target for range"
-        ],
-        "newField": "Percentage Returned Stock Smc",
         "_comments": ""
       },
       {
