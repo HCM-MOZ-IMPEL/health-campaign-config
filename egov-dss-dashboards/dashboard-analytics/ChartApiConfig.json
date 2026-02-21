@@ -38209,13 +38209,6 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.projectTypeId.keyword\"}",
-        "indexName": "smc-niassa-facility-targets",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.targetType.keyword\":\"PRODUCT\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Product Target\":{\"terms\":{\"size\":500,\"order\":{\"_key\":\"asc\"},\"field\":\"Data.userAddress.keyword\"},\"aggs\":{\"Target for range\":{\"sum\":{\"field\":\"Data.targetForDay\"}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
-        "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
         "indexName": "stock-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.facilityType.keyword\":\"Health Facility\"}},{\"term\":{\"Data.reason.keyword\":\"RECEIVED\"}}]}},\"aggs\":{\"Available Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.facilityName.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Incoming\":{\"sum\":{\"field\":\"Data.physicalCount\"}}}}}}}}"
@@ -38267,22 +38260,12 @@
     "hideHeaderDenomination": true,
     "excludedColumns": [
       "SUM",
-      "Target for range",
       "Incoming",
       "Outgoing",
       "Returned",
       "Total Stock"
     ],
     "computedFields": [
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Target for range"
-        ],
-        "newField": "Product Target To Receive Smc",
-        "_comments": ""
-      },
       {
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
