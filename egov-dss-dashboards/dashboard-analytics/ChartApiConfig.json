@@ -38238,8 +38238,8 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"projectTypeId\": \"Data.additionalDetails.projectTypeId.keyword\"}",
-        "indexName": "stock-reconciliation-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":500,\"field\":\"Data.facilityName.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"latest_per_facilityId\":{\"terms\":{\"field\":\"Data.stockReconciliation.facilityId.keyword\",\"size\":10000},\"aggs\":{\"latest_doc\":{\"top_hits\":{\"size\":1,\"sort\":[{\"Data.stockReconciliation.clientAuditDetails.lastModifiedTime\":{\"order\":\"desc\"}}],\"_source\":false,\"docvalue_fields\":[\"Data.stockReconciliation.physicalCount\"]}},\"latest_physicalCount\":{\"max\":{\"script\":{\"source\":\"doc['Data.stockReconciliation.physicalCount'].value\"}}}}},\"Total Stock Reconciliation\":{\"sum_bucket\":{\"buckets_path\":\"latest_per_facilityId>latest_physicalCount\"}}}}}}}}"
+        "indexName": "smc-latestdoc-stock-reconciliation-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"FILTERS\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.facilityType.keyword\":{\"value\":\"Health Facility\"}}}]}}}},\"aggs\":{\"Manual Stock\":{\"terms\":{\"size\":1000,\"field\":\"Data.facilityName.keyword\"},\"aggs\":{\"Total Stock Reconciliation\":{\"sum\":{\"field\":\"Data.stockReconciliation.physicalCount\"}}}}}}}}"
       }
     ],
     "chartType": "xtable",
@@ -38263,7 +38263,8 @@
       "Incoming",
       "Outgoing",
       "Returned",
-      "Total Stock"
+      "Total Stock",
+      "Total Stock Reconciliation"
     ],
     "computedFields": [
       {
