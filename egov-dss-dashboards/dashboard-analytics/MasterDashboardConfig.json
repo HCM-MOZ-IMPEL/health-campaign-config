@@ -16108,6 +16108,32 @@
         },
         {
           "row": 1,
+          "name": "DSS_SMC_ONCHO",
+          "vizArray": [
+            {
+              "id": 22001,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SMC_ONCHO",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "smc26-smc-oncho",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
           "name": "DSS_REUSE_KPIS",
           "vizArray": [
             {
@@ -17922,6 +17948,32 @@
                   "code": "",
                   "moduleName": "irs",
                   "pageName": "smcnmp26-stock-summary",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_SMC_ONCHO",
+          "vizArray": [
+            {
+              "id": 32001,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SMC_ONCHO",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "smc26-smc-oncho",
                   "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
