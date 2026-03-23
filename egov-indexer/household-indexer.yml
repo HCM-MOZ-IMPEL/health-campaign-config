@@ -18,7 +18,7 @@ ServiceMaps:
           timeStampField: $.household.clientAuditDetails.lastModifiedTime
         - name: user-sync-index-v1
           type: users
-          id: $.id
+          id: $.household.clientReferenceId
           isBulk: true
           jsonPath: $
           customJsonMapping:
@@ -48,7 +48,7 @@ ServiceMaps:
                 outJsonPath: $.Data.userAddress
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
-          timeStampField: $.createdTime
+          timeStampField: $.household.clientAuditDetails.lastModifiedTime
     - topic: delete-household-topic
       configKey: INDEX
       indexes:
