@@ -18,7 +18,7 @@ ServiceMaps:
           timeStampField: $.createdTime
         - name: user-sync-index-v1
           type: users
-          id: $.id,$.tenantId,$.clientReferenceId
+          id: $.clientReferenceId,$.tenantId
           isBulk: true
           jsonPath: $
           customJsonMapping:
@@ -38,8 +38,6 @@ ServiceMaps:
                 outJsonPath: $.Data.createdTime
               - inJsonPath: $.syncedTimeStamp
                 outJsonPath: $.Data.syncedTimeStamp
-              - inJsonPath: $.@timestamp
-                outJsonPath: $.Data.@timestamp
               - inJsonPath: $.taskDates
                 outJsonPath: $.Data.taskDates
               - inJsonPath: $.syncedDate
