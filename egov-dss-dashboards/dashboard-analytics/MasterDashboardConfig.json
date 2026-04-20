@@ -15590,6 +15590,32 @@
           ]
         },
         {
+          "row": 7,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 26310,
+              "name": "DSS_HEALTH_CHECKLIST_CABO",
+              "label": "DSS_HEALTH_CHECKLIST_CABO",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "",
+                  "name": "DSS_HEALTH_CHECKLIST_CABO",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "cabo-checklist-dashboard",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "row": 1,
           "name": "DSS_HEALTH_SYNC",
           "vizArray": [
