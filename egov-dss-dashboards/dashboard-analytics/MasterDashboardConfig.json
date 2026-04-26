@@ -18036,6 +18036,32 @@
         },
         {
           "row": 1,
+          "name": "DSS_SMC_ITN_ICD",
+          "vizArray": [
+            {
+              "id": 32001,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "none",
+                  "name": "DSS_SMC_ITN_ICD_CHART",
+                  "code": "",
+                  "moduleName": "irs",
+                  "pageName": "smc26-smc-itn-icd",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
           "name": "DSS_REUSE_KPIS",
           "vizArray": [
             {
